@@ -1,0 +1,60 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+
+ENTITY pipeline IS
+PORT 
+( 
+   Data: IN std_logic_vector(6 downto 0);
+   clk, rst : IN std_logic;                        
+   Qout0, Qout1 Qout2, Qout3, Qout4, Qout5, Qout6, Qout7 : OUT std_logic_vector(6 downto 0)                            
+); 
+END pipeline;
+
+ARCHITECTURE Behavior OF pipeline IS
+	component bit7_reg PORT (Dat: IN std_logic_vector(6 downto 0);
+                            clk, rst : IN std_logic;                        
+                            Quat : OUT std_logic_vector(6 downto 0)                             
+                           ); 
+	END component;
+	BEGIN
+	
+		p0 : bit7_reg PORT MAP (Dat => data,
+		                       -- Clk => ,
+									  --	rst =>  ,
+									   Quat => Qout0);
+		p1: bit7_reg PORT MAP (Dat => Qout0,
+		                       -- Clk => ,
+									  --	rst =>  ,
+									   Quat => Qout1);
+										
+		p2 : bit7_reg PORT MAP (Dat => Qout1,
+		                       -- Clk => ,
+									  --	rst =>  ,
+									   Quat => Qout2);
+		p3: bit7_reg PORT MAP (Dat => Qout2,
+		                       -- Clk => ,
+									  --	rst =>  ,
+									   Quat => Qout3);
+										
+		p4 : bit7_reg PORT MAP (Dat => Qout3,
+		                       -- Clk => ,
+									  --	rst =>  ,
+									   Quat => Qout4);
+		p5: bit7_reg PORT MAP (Dat => Qout4,
+		                       -- Clk => ,
+									  --	rst =>  ,
+									   Quat => Qout5);
+		
+		p6: bit7_reg PORT MAP (Dat => Qout5,
+		                       -- Clk => ,
+									  --	rst =>  ,
+									   Quat => Qout6);
+										
+		p7: bit7_reg PORT MAP (Dat => Qout6,
+		                       -- Clk => ,
+									  --	rst =>  ,
+									   Quat => Qout7);
+										
+	
+END Behavior;

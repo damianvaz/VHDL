@@ -1,0 +1,255 @@
+|part1_2
+SW[0] => dflipf:y0.rst
+SW[0] => dflipf:y1.rst
+SW[0] => dflipf:y2.rst
+SW[0] => dflipf:y3.rst
+SW[0] => dflipf:y4.rst
+SW[0] => dflipf:y5.rst
+SW[0] => dflipf:y6.rst
+SW[0] => dflipf:y7.rst
+SW[0] => dflipf:y8.rst
+SW[1] => comb.IN1
+SW[1] => comb.IN1
+SW[1] => comb.IN1
+SW[1] => comb.IN1
+SW[1] => comb.IN1
+SW[1] => comb.IN1
+SW[1] => comb.IN1
+SW[1] => comb.IN1
+KEY0 => dflipf:y0.clock
+KEY0 => dflipf:y1.clock
+KEY0 => dflipf:y2.clock
+KEY0 => dflipf:y3.clock
+KEY0 => dflipf:y4.clock
+KEY0 => dflipf:y5.clock
+KEY0 => dflipf:y6.clock
+KEY0 => dflipf:y7.clock
+KEY0 => dflipf:y8.clock
+LEDG0 <= otp.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[0] <= dflipf:y0.Qt
+LEDR[1] <= dflipf:y1.Qt
+LEDR[2] <= dflipf:y2.Qt
+LEDR[3] <= dflipf:y3.Qt
+LEDR[4] <= dflipf:y4.Qt
+LEDR[5] <= dflipf:y5.Qt
+LEDR[6] <= dflipf:y6.Qt
+LEDR[7] <= dflipf:y7.Qt
+LEDR[8] <= dflipf:y8.Qt
+
+
+|part1_2|dflipf:y0
+Dt => dla:m1.d
+clock => dla:m2.Clk
+clock => dla:m1.Clk
+rst => Qt.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y0|dla:m1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y0|dla:m2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y1
+Dt => dla:m1.d
+clock => dla:m2.Clk
+clock => dla:m1.Clk
+rst => Qt.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y1|dla:m1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y1|dla:m2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y2
+Dt => dla:m1.d
+clock => dla:m2.Clk
+clock => dla:m1.Clk
+rst => Qt.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y2|dla:m1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y2|dla:m2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y3
+Dt => dla:m1.d
+clock => dla:m2.Clk
+clock => dla:m1.Clk
+rst => Qt.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y3|dla:m1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y3|dla:m2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y4
+Dt => dla:m1.d
+clock => dla:m2.Clk
+clock => dla:m1.Clk
+rst => Qt.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y4|dla:m1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y4|dla:m2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y5
+Dt => dla:m1.d
+clock => dla:m2.Clk
+clock => dla:m1.Clk
+rst => Qt.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y5|dla:m1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y5|dla:m2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y6
+Dt => dla:m1.d
+clock => dla:m2.Clk
+clock => dla:m1.Clk
+rst => Qt.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y6|dla:m1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y6|dla:m2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y7
+Dt => dla:m1.d
+clock => dla:m2.Clk
+clock => dla:m1.Clk
+rst => Qt.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y7|dla:m1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y7|dla:m2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y8
+Dt => dla:m1.d
+clock => dla:m2.Clk
+clock => dla:m1.Clk
+rst => Qt.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y8|dla:m1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part1_2|dflipf:y8|dla:m2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+

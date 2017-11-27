@@ -1,0 +1,51 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+-- multiplexador 5x1 de 3 bits
+
+ENTITY part3 IS
+PORT 
+( 
+   SW : IN std_logic_vector(17 DOWNTO 0);            -- switches placa DE2 servirao como inputs para os sinais 
+   LEDR : OUT std_logic_vector(17 DOWNTO 0);         -- Leds vermelhos da placa vao receber os inputs
+	LEDG : OUT std_logic_vector(2 DOWNTO 0)           -- Leds verdes da placa vao receber a saida do multiplexador 5x1
+); 
+END part3;
+
+ARCHITECTURE Behavior OF part3 IS
+   signal x, y, u, v, w : std_logic_vector(2 DOWNTO 0);                 -- x e y, u e v sao as entradas do multiplexador 
+	signal s, outp1, outp2, outp3, outp4 : std_logic_vector(2 DOWNTO 0); -- s eh a entrada selecao do multiplexador
+	component multiplexador PORT (a, b : IN std_logic_vector(2 downto 0);
+	                              s : IN std_logic;
+											m : OUT std_logic_vector(2 DOWNTO 0));
+	END component;
+	BEGIN
+	   u <= SW(14 DOWNTO 12);
+		v <= SW(11 DOWNTO 9);
+		w <= SW(8 DOWNTO 6);
+      x <= SW(5 DOWNTO 3);                          
+	   y <= SW(2 DOWNTO 0);                          
+	   s <= SW(17 DOWNTO 15);                                  
+	   
+		
+		m1 : multiplexador PORT MAP (a => u,
+		                             b => v,
+											  s => s(0),
+											  m => outp1);
+		m2 : multiplexador PORT MAP (a => w,
+		                             b => x,
+											  s => s(0),
+											  m => outp2);
+		m3 : multiplexador PORT MAP (a => outp1,
+		                             b => outp2,
+											  s => s(1),
+											  m => outp3);
+		m4 : multiplexador PORT MAP (a => outp3,
+		                             b => y,
+											  s => s(2),
+											  m => outp4);
+		
+		LEDR <= SW;                                    -- os leds recebem a entrada dos switches
+	   
+	   LEDG <= outp4;                                     -- Leds verdes recebem a saida do multiplexador m
+END Behavior;

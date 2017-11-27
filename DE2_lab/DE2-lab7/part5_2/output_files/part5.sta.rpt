@@ -1,0 +1,2231 @@
+TimeQuest Timing Analyzer report for part5
+Thu Jun 23 08:54:22 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'KEY0'
+ 12. Slow Model Hold: 'KEY0'
+ 13. Slow Model Minimum Pulse Width: 'KEY0'
+ 14. Clock to Output Times
+ 15. Minimum Clock to Output Times
+ 16. Propagation Delay
+ 17. Minimum Propagation Delay
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'KEY0'
+ 24. Fast Model Hold: 'KEY0'
+ 25. Fast Model Minimum Pulse Width: 'KEY0'
+ 26. Clock to Output Times
+ 27. Minimum Clock to Output Times
+ 28. Propagation Delay
+ 29. Minimum Propagation Delay
+ 30. Multicorner Timing Analysis Summary
+ 31. Clock to Output Times
+ 32. Minimum Clock to Output Times
+ 33. Progagation Delay
+ 34. Minimum Progagation Delay
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; part5                                                             ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                           ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets  ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
+; KEY0       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { KEY0 } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                   ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 785.55 MHz ; 450.05 MHz      ; KEY0       ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; KEY0  ; -0.273 ; -0.273        ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; KEY0  ; 0.524 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; KEY0  ; -1.222 ; -10.222               ;
++-------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'KEY0'                                                                                       ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node      ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; -0.273 ; fsm:F0|state.A ; fsm:F0|state.B ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.309      ;
+; -0.148 ; fsm:F0|state.I ; fsm:F0|state.B ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.184      ;
+; 0.102  ; fsm:F0|state.C ; fsm:F0|state.D ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.934      ;
+; 0.103  ; fsm:F0|state.E ; fsm:F0|state.F ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.933      ;
+; 0.242  ; fsm:F0|state.G ; fsm:F0|state.H ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.794      ;
+; 0.243  ; fsm:F0|state.B ; fsm:F0|state.C ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.793      ;
+; 0.244  ; fsm:F0|state.D ; fsm:F0|state.E ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.792      ;
+; 0.245  ; fsm:F0|state.F ; fsm:F0|state.G ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.791      ;
+; 0.246  ; fsm:F0|state.H ; fsm:F0|state.I ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.790      ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'KEY0'                                                                                       ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node      ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; 0.524 ; fsm:F0|state.H ; fsm:F0|state.I ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.790      ;
+; 0.525 ; fsm:F0|state.F ; fsm:F0|state.G ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.791      ;
+; 0.526 ; fsm:F0|state.D ; fsm:F0|state.E ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.792      ;
+; 0.527 ; fsm:F0|state.B ; fsm:F0|state.C ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.793      ;
+; 0.528 ; fsm:F0|state.G ; fsm:F0|state.H ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.794      ;
+; 0.667 ; fsm:F0|state.E ; fsm:F0|state.F ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.933      ;
+; 0.668 ; fsm:F0|state.C ; fsm:F0|state.D ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.934      ;
+; 0.918 ; fsm:F0|state.I ; fsm:F0|state.B ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.184      ;
+; 1.043 ; fsm:F0|state.A ; fsm:F0|state.B ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.309      ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'KEY0'                                                          ;
++--------+--------------+----------------+------------------+-------+------------+----------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target         ;
++--------+--------------+----------------+------------------+-------+------------+----------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; KEY0  ; Rise       ; KEY0           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Fall       ; fsm:F0|state.A ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Fall       ; fsm:F0|state.A ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Fall       ; fsm:F0|state.B ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Fall       ; fsm:F0|state.B ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Fall       ; fsm:F0|state.C ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Fall       ; fsm:F0|state.C ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Fall       ; fsm:F0|state.D ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Fall       ; fsm:F0|state.D ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Fall       ; fsm:F0|state.E ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Fall       ; fsm:F0|state.E ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Fall       ; fsm:F0|state.F ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Fall       ; fsm:F0|state.F ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Fall       ; fsm:F0|state.G ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Fall       ; fsm:F0|state.G ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Fall       ; fsm:F0|state.H ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Fall       ; fsm:F0|state.H ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Fall       ; fsm:F0|state.I ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Fall       ; fsm:F0|state.I ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; F0|state.A|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; F0|state.A|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; F0|state.B|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; F0|state.B|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; F0|state.C|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; F0|state.C|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; F0|state.D|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; F0|state.D|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; F0|state.E|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; F0|state.E|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; F0|state.F|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; F0|state.F|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; F0|state.G|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; F0|state.G|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; F0|state.H|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; F0|state.H|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; F0|state.I|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; F0|state.I|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; KEY0|combout   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; KEY0|combout   ;
++--------+--------------+----------------+------------------+-------+------------+----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; HEX0[*]   ; KEY0       ; 17.169 ; 17.169 ; Rise       ; KEY0            ;
+;  HEX0[0]  ; KEY0       ; 16.022 ; 16.022 ; Rise       ; KEY0            ;
+;  HEX0[1]  ; KEY0       ; 17.010 ; 17.010 ; Rise       ; KEY0            ;
+;  HEX0[2]  ; KEY0       ; 16.115 ; 16.115 ; Rise       ; KEY0            ;
+;  HEX0[3]  ; KEY0       ; 17.169 ; 17.169 ; Rise       ; KEY0            ;
+;  HEX0[4]  ; KEY0       ; 16.121 ; 16.121 ; Rise       ; KEY0            ;
+;  HEX0[5]  ; KEY0       ; 16.527 ; 16.527 ; Rise       ; KEY0            ;
+;  HEX0[6]  ; KEY0       ; 16.548 ; 16.548 ; Rise       ; KEY0            ;
+; HEX1[*]   ; KEY0       ; 18.808 ; 18.808 ; Rise       ; KEY0            ;
+;  HEX1[0]  ; KEY0       ; 18.188 ; 18.188 ; Rise       ; KEY0            ;
+;  HEX1[1]  ; KEY0       ; 18.808 ; 18.808 ; Rise       ; KEY0            ;
+;  HEX1[2]  ; KEY0       ; 18.178 ; 18.178 ; Rise       ; KEY0            ;
+;  HEX1[3]  ; KEY0       ; 18.224 ; 18.224 ; Rise       ; KEY0            ;
+;  HEX1[4]  ; KEY0       ; 18.798 ; 18.798 ; Rise       ; KEY0            ;
+;  HEX1[5]  ; KEY0       ; 18.102 ; 18.102 ; Rise       ; KEY0            ;
+;  HEX1[6]  ; KEY0       ; 18.107 ; 18.107 ; Rise       ; KEY0            ;
+; HEX2[*]   ; KEY0       ; 23.043 ; 23.043 ; Rise       ; KEY0            ;
+;  HEX2[0]  ; KEY0       ; 21.576 ; 21.576 ; Rise       ; KEY0            ;
+;  HEX2[1]  ; KEY0       ; 23.043 ; 23.043 ; Rise       ; KEY0            ;
+;  HEX2[2]  ; KEY0       ; 21.447 ; 21.447 ; Rise       ; KEY0            ;
+;  HEX2[3]  ; KEY0       ; 21.425 ; 21.425 ; Rise       ; KEY0            ;
+;  HEX2[4]  ; KEY0       ; 21.570 ; 21.570 ; Rise       ; KEY0            ;
+;  HEX2[5]  ; KEY0       ; 21.522 ; 21.522 ; Rise       ; KEY0            ;
+;  HEX2[6]  ; KEY0       ; 21.549 ; 21.549 ; Rise       ; KEY0            ;
+; HEX3[*]   ; KEY0       ; 26.575 ; 26.575 ; Rise       ; KEY0            ;
+;  HEX3[0]  ; KEY0       ; 25.740 ; 25.740 ; Rise       ; KEY0            ;
+;  HEX3[1]  ; KEY0       ; 26.575 ; 26.575 ; Rise       ; KEY0            ;
+;  HEX3[2]  ; KEY0       ; 25.709 ; 25.709 ; Rise       ; KEY0            ;
+;  HEX3[3]  ; KEY0       ; 24.397 ; 24.397 ; Rise       ; KEY0            ;
+;  HEX3[4]  ; KEY0       ; 25.085 ; 25.085 ; Rise       ; KEY0            ;
+;  HEX3[5]  ; KEY0       ; 25.172 ; 25.172 ; Rise       ; KEY0            ;
+;  HEX3[6]  ; KEY0       ; 24.610 ; 24.610 ; Rise       ; KEY0            ;
+; HEX4[*]   ; KEY0       ; 34.289 ; 34.289 ; Rise       ; KEY0            ;
+;  HEX4[0]  ; KEY0       ; 31.527 ; 31.527 ; Rise       ; KEY0            ;
+;  HEX4[1]  ; KEY0       ; 34.289 ; 34.289 ; Rise       ; KEY0            ;
+;  HEX4[2]  ; KEY0       ; 31.517 ; 31.517 ; Rise       ; KEY0            ;
+;  HEX4[3]  ; KEY0       ; 32.847 ; 32.847 ; Rise       ; KEY0            ;
+;  HEX4[4]  ; KEY0       ; 30.637 ; 30.637 ; Rise       ; KEY0            ;
+;  HEX4[5]  ; KEY0       ; 30.796 ; 30.796 ; Rise       ; KEY0            ;
+;  HEX4[6]  ; KEY0       ; 33.677 ; 33.677 ; Rise       ; KEY0            ;
+; HEX5[*]   ; KEY0       ; 38.160 ; 38.160 ; Rise       ; KEY0            ;
+;  HEX5[0]  ; KEY0       ; 34.326 ; 34.326 ; Rise       ; KEY0            ;
+;  HEX5[1]  ; KEY0       ; 38.160 ; 38.160 ; Rise       ; KEY0            ;
+;  HEX5[2]  ; KEY0       ; 35.259 ; 35.259 ; Rise       ; KEY0            ;
+;  HEX5[3]  ; KEY0       ; 36.246 ; 36.246 ; Rise       ; KEY0            ;
+;  HEX5[4]  ; KEY0       ; 34.251 ; 34.251 ; Rise       ; KEY0            ;
+;  HEX5[5]  ; KEY0       ; 34.887 ; 34.887 ; Rise       ; KEY0            ;
+;  HEX5[6]  ; KEY0       ; 36.462 ; 36.462 ; Rise       ; KEY0            ;
+; HEX6[*]   ; KEY0       ; 42.423 ; 42.423 ; Rise       ; KEY0            ;
+;  HEX6[0]  ; KEY0       ; 37.734 ; 37.734 ; Rise       ; KEY0            ;
+;  HEX6[1]  ; KEY0       ; 42.423 ; 42.423 ; Rise       ; KEY0            ;
+;  HEX6[2]  ; KEY0       ; 38.758 ; 38.758 ; Rise       ; KEY0            ;
+;  HEX6[3]  ; KEY0       ; 40.214 ; 40.214 ; Rise       ; KEY0            ;
+;  HEX6[4]  ; KEY0       ; 37.930 ; 37.930 ; Rise       ; KEY0            ;
+;  HEX6[5]  ; KEY0       ; 38.933 ; 38.933 ; Rise       ; KEY0            ;
+;  HEX6[6]  ; KEY0       ; 40.522 ; 40.522 ; Rise       ; KEY0            ;
+; HEX7[*]   ; KEY0       ; 45.970 ; 45.970 ; Rise       ; KEY0            ;
+;  HEX7[0]  ; KEY0       ; 42.316 ; 42.316 ; Rise       ; KEY0            ;
+;  HEX7[1]  ; KEY0       ; 45.970 ; 45.970 ; Rise       ; KEY0            ;
+;  HEX7[2]  ; KEY0       ; 43.281 ; 43.281 ; Rise       ; KEY0            ;
+;  HEX7[3]  ; KEY0       ; 44.393 ; 44.393 ; Rise       ; KEY0            ;
+;  HEX7[4]  ; KEY0       ; 41.404 ; 41.404 ; Rise       ; KEY0            ;
+;  HEX7[5]  ; KEY0       ; 42.814 ; 42.814 ; Rise       ; KEY0            ;
+;  HEX7[6]  ; KEY0       ; 44.335 ; 44.335 ; Rise       ; KEY0            ;
+; HEX0[*]   ; KEY0       ; 17.169 ; 17.169 ; Fall       ; KEY0            ;
+;  HEX0[0]  ; KEY0       ; 16.022 ; 16.022 ; Fall       ; KEY0            ;
+;  HEX0[1]  ; KEY0       ; 17.010 ; 17.010 ; Fall       ; KEY0            ;
+;  HEX0[2]  ; KEY0       ; 16.115 ; 16.115 ; Fall       ; KEY0            ;
+;  HEX0[3]  ; KEY0       ; 17.169 ; 17.169 ; Fall       ; KEY0            ;
+;  HEX0[4]  ; KEY0       ; 16.121 ; 16.121 ; Fall       ; KEY0            ;
+;  HEX0[5]  ; KEY0       ; 16.527 ; 16.527 ; Fall       ; KEY0            ;
+;  HEX0[6]  ; KEY0       ; 16.548 ; 16.548 ; Fall       ; KEY0            ;
+; HEX1[*]   ; KEY0       ; 18.808 ; 18.808 ; Fall       ; KEY0            ;
+;  HEX1[0]  ; KEY0       ; 18.188 ; 18.188 ; Fall       ; KEY0            ;
+;  HEX1[1]  ; KEY0       ; 18.808 ; 18.808 ; Fall       ; KEY0            ;
+;  HEX1[2]  ; KEY0       ; 18.178 ; 18.178 ; Fall       ; KEY0            ;
+;  HEX1[3]  ; KEY0       ; 18.224 ; 18.224 ; Fall       ; KEY0            ;
+;  HEX1[4]  ; KEY0       ; 18.798 ; 18.798 ; Fall       ; KEY0            ;
+;  HEX1[5]  ; KEY0       ; 18.102 ; 18.102 ; Fall       ; KEY0            ;
+;  HEX1[6]  ; KEY0       ; 18.107 ; 18.107 ; Fall       ; KEY0            ;
+; HEX2[*]   ; KEY0       ; 23.043 ; 23.043 ; Fall       ; KEY0            ;
+;  HEX2[0]  ; KEY0       ; 21.576 ; 21.576 ; Fall       ; KEY0            ;
+;  HEX2[1]  ; KEY0       ; 23.043 ; 23.043 ; Fall       ; KEY0            ;
+;  HEX2[2]  ; KEY0       ; 21.447 ; 21.447 ; Fall       ; KEY0            ;
+;  HEX2[3]  ; KEY0       ; 21.425 ; 21.425 ; Fall       ; KEY0            ;
+;  HEX2[4]  ; KEY0       ; 21.570 ; 21.570 ; Fall       ; KEY0            ;
+;  HEX2[5]  ; KEY0       ; 21.522 ; 21.522 ; Fall       ; KEY0            ;
+;  HEX2[6]  ; KEY0       ; 21.549 ; 21.549 ; Fall       ; KEY0            ;
+; HEX3[*]   ; KEY0       ; 26.575 ; 26.575 ; Fall       ; KEY0            ;
+;  HEX3[0]  ; KEY0       ; 25.740 ; 25.740 ; Fall       ; KEY0            ;
+;  HEX3[1]  ; KEY0       ; 26.575 ; 26.575 ; Fall       ; KEY0            ;
+;  HEX3[2]  ; KEY0       ; 25.709 ; 25.709 ; Fall       ; KEY0            ;
+;  HEX3[3]  ; KEY0       ; 24.397 ; 24.397 ; Fall       ; KEY0            ;
+;  HEX3[4]  ; KEY0       ; 25.085 ; 25.085 ; Fall       ; KEY0            ;
+;  HEX3[5]  ; KEY0       ; 25.172 ; 25.172 ; Fall       ; KEY0            ;
+;  HEX3[6]  ; KEY0       ; 24.610 ; 24.610 ; Fall       ; KEY0            ;
+; HEX4[*]   ; KEY0       ; 34.289 ; 34.289 ; Fall       ; KEY0            ;
+;  HEX4[0]  ; KEY0       ; 31.527 ; 31.527 ; Fall       ; KEY0            ;
+;  HEX4[1]  ; KEY0       ; 34.289 ; 34.289 ; Fall       ; KEY0            ;
+;  HEX4[2]  ; KEY0       ; 31.517 ; 31.517 ; Fall       ; KEY0            ;
+;  HEX4[3]  ; KEY0       ; 32.847 ; 32.847 ; Fall       ; KEY0            ;
+;  HEX4[4]  ; KEY0       ; 30.637 ; 30.637 ; Fall       ; KEY0            ;
+;  HEX4[5]  ; KEY0       ; 30.796 ; 30.796 ; Fall       ; KEY0            ;
+;  HEX4[6]  ; KEY0       ; 33.677 ; 33.677 ; Fall       ; KEY0            ;
+; HEX5[*]   ; KEY0       ; 38.160 ; 38.160 ; Fall       ; KEY0            ;
+;  HEX5[0]  ; KEY0       ; 34.326 ; 34.326 ; Fall       ; KEY0            ;
+;  HEX5[1]  ; KEY0       ; 38.160 ; 38.160 ; Fall       ; KEY0            ;
+;  HEX5[2]  ; KEY0       ; 35.259 ; 35.259 ; Fall       ; KEY0            ;
+;  HEX5[3]  ; KEY0       ; 36.246 ; 36.246 ; Fall       ; KEY0            ;
+;  HEX5[4]  ; KEY0       ; 34.251 ; 34.251 ; Fall       ; KEY0            ;
+;  HEX5[5]  ; KEY0       ; 34.887 ; 34.887 ; Fall       ; KEY0            ;
+;  HEX5[6]  ; KEY0       ; 36.462 ; 36.462 ; Fall       ; KEY0            ;
+; HEX6[*]   ; KEY0       ; 42.423 ; 42.423 ; Fall       ; KEY0            ;
+;  HEX6[0]  ; KEY0       ; 37.734 ; 37.734 ; Fall       ; KEY0            ;
+;  HEX6[1]  ; KEY0       ; 42.423 ; 42.423 ; Fall       ; KEY0            ;
+;  HEX6[2]  ; KEY0       ; 38.758 ; 38.758 ; Fall       ; KEY0            ;
+;  HEX6[3]  ; KEY0       ; 40.214 ; 40.214 ; Fall       ; KEY0            ;
+;  HEX6[4]  ; KEY0       ; 37.930 ; 37.930 ; Fall       ; KEY0            ;
+;  HEX6[5]  ; KEY0       ; 38.933 ; 38.933 ; Fall       ; KEY0            ;
+;  HEX6[6]  ; KEY0       ; 40.522 ; 40.522 ; Fall       ; KEY0            ;
+; HEX7[*]   ; KEY0       ; 45.970 ; 45.970 ; Fall       ; KEY0            ;
+;  HEX7[0]  ; KEY0       ; 42.316 ; 42.316 ; Fall       ; KEY0            ;
+;  HEX7[1]  ; KEY0       ; 45.970 ; 45.970 ; Fall       ; KEY0            ;
+;  HEX7[2]  ; KEY0       ; 43.281 ; 43.281 ; Fall       ; KEY0            ;
+;  HEX7[3]  ; KEY0       ; 44.393 ; 44.393 ; Fall       ; KEY0            ;
+;  HEX7[4]  ; KEY0       ; 41.404 ; 41.404 ; Fall       ; KEY0            ;
+;  HEX7[5]  ; KEY0       ; 42.814 ; 42.814 ; Fall       ; KEY0            ;
+;  HEX7[6]  ; KEY0       ; 44.335 ; 44.335 ; Fall       ; KEY0            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; HEX0[*]   ; KEY0       ; 13.363 ; 13.363 ; Rise       ; KEY0            ;
+;  HEX0[0]  ; KEY0       ; 14.065 ; 14.065 ; Rise       ; KEY0            ;
+;  HEX0[1]  ; KEY0       ; 14.354 ; 14.354 ; Rise       ; KEY0            ;
+;  HEX0[2]  ; KEY0       ; 13.634 ; 13.634 ; Rise       ; KEY0            ;
+;  HEX0[3]  ; KEY0       ; 14.152 ; 14.152 ; Rise       ; KEY0            ;
+;  HEX0[4]  ; KEY0       ; 13.363 ; 13.363 ; Rise       ; KEY0            ;
+;  HEX0[5]  ; KEY0       ; 14.106 ; 14.106 ; Rise       ; KEY0            ;
+;  HEX0[6]  ; KEY0       ; 13.732 ; 13.732 ; Rise       ; KEY0            ;
+; HEX1[*]   ; KEY0       ; 11.783 ; 11.783 ; Rise       ; KEY0            ;
+;  HEX1[0]  ; KEY0       ; 12.068 ; 12.068 ; Rise       ; KEY0            ;
+;  HEX1[1]  ; KEY0       ; 12.241 ; 12.241 ; Rise       ; KEY0            ;
+;  HEX1[2]  ; KEY0       ; 11.783 ; 11.783 ; Rise       ; KEY0            ;
+;  HEX1[3]  ; KEY0       ; 12.210 ; 12.210 ; Rise       ; KEY0            ;
+;  HEX1[4]  ; KEY0       ; 12.376 ; 12.376 ; Rise       ; KEY0            ;
+;  HEX1[5]  ; KEY0       ; 11.835 ; 11.835 ; Rise       ; KEY0            ;
+;  HEX1[6]  ; KEY0       ; 12.485 ; 12.485 ; Rise       ; KEY0            ;
+; HEX2[*]   ; KEY0       ; 11.782 ; 11.782 ; Rise       ; KEY0            ;
+;  HEX2[0]  ; KEY0       ; 12.084 ; 12.084 ; Rise       ; KEY0            ;
+;  HEX2[1]  ; KEY0       ; 12.019 ; 12.019 ; Rise       ; KEY0            ;
+;  HEX2[2]  ; KEY0       ; 11.789 ; 11.789 ; Rise       ; KEY0            ;
+;  HEX2[3]  ; KEY0       ; 12.832 ; 12.832 ; Rise       ; KEY0            ;
+;  HEX2[4]  ; KEY0       ; 11.782 ; 11.782 ; Rise       ; KEY0            ;
+;  HEX2[5]  ; KEY0       ; 12.128 ; 12.128 ; Rise       ; KEY0            ;
+;  HEX2[6]  ; KEY0       ; 12.370 ; 12.370 ; Rise       ; KEY0            ;
+; HEX3[*]   ; KEY0       ; 11.498 ; 11.498 ; Rise       ; KEY0            ;
+;  HEX3[0]  ; KEY0       ; 11.498 ; 11.498 ; Rise       ; KEY0            ;
+;  HEX3[1]  ; KEY0       ; 11.682 ; 11.682 ; Rise       ; KEY0            ;
+;  HEX3[2]  ; KEY0       ; 11.910 ; 11.910 ; Rise       ; KEY0            ;
+;  HEX3[3]  ; KEY0       ; 11.780 ; 11.780 ; Rise       ; KEY0            ;
+;  HEX3[4]  ; KEY0       ; 12.040 ; 12.040 ; Rise       ; KEY0            ;
+;  HEX3[5]  ; KEY0       ; 12.012 ; 12.012 ; Rise       ; KEY0            ;
+;  HEX3[6]  ; KEY0       ; 11.669 ; 11.669 ; Rise       ; KEY0            ;
+; HEX4[*]   ; KEY0       ; 12.179 ; 12.179 ; Rise       ; KEY0            ;
+;  HEX4[0]  ; KEY0       ; 13.084 ; 13.084 ; Rise       ; KEY0            ;
+;  HEX4[1]  ; KEY0       ; 13.275 ; 13.275 ; Rise       ; KEY0            ;
+;  HEX4[2]  ; KEY0       ; 12.179 ; 12.179 ; Rise       ; KEY0            ;
+;  HEX4[3]  ; KEY0       ; 12.887 ; 12.887 ; Rise       ; KEY0            ;
+;  HEX4[4]  ; KEY0       ; 12.876 ; 12.876 ; Rise       ; KEY0            ;
+;  HEX4[5]  ; KEY0       ; 12.608 ; 12.608 ; Rise       ; KEY0            ;
+;  HEX4[6]  ; KEY0       ; 12.596 ; 12.596 ; Rise       ; KEY0            ;
+; HEX5[*]   ; KEY0       ; 12.413 ; 12.413 ; Rise       ; KEY0            ;
+;  HEX5[0]  ; KEY0       ; 12.457 ; 12.457 ; Rise       ; KEY0            ;
+;  HEX5[1]  ; KEY0       ; 12.456 ; 12.456 ; Rise       ; KEY0            ;
+;  HEX5[2]  ; KEY0       ; 12.717 ; 12.717 ; Rise       ; KEY0            ;
+;  HEX5[3]  ; KEY0       ; 12.760 ; 12.760 ; Rise       ; KEY0            ;
+;  HEX5[4]  ; KEY0       ; 13.082 ; 13.082 ; Rise       ; KEY0            ;
+;  HEX5[5]  ; KEY0       ; 12.983 ; 12.983 ; Rise       ; KEY0            ;
+;  HEX5[6]  ; KEY0       ; 12.413 ; 12.413 ; Rise       ; KEY0            ;
+; HEX6[*]   ; KEY0       ; 12.207 ; 12.207 ; Rise       ; KEY0            ;
+;  HEX6[0]  ; KEY0       ; 12.207 ; 12.207 ; Rise       ; KEY0            ;
+;  HEX6[1]  ; KEY0       ; 12.482 ; 12.482 ; Rise       ; KEY0            ;
+;  HEX6[2]  ; KEY0       ; 12.456 ; 12.456 ; Rise       ; KEY0            ;
+;  HEX6[3]  ; KEY0       ; 12.761 ; 12.761 ; Rise       ; KEY0            ;
+;  HEX6[4]  ; KEY0       ; 13.164 ; 13.164 ; Rise       ; KEY0            ;
+;  HEX6[5]  ; KEY0       ; 12.868 ; 12.868 ; Rise       ; KEY0            ;
+;  HEX6[6]  ; KEY0       ; 13.282 ; 13.282 ; Rise       ; KEY0            ;
+; HEX7[*]   ; KEY0       ; 12.802 ; 12.802 ; Rise       ; KEY0            ;
+;  HEX7[0]  ; KEY0       ; 13.217 ; 13.217 ; Rise       ; KEY0            ;
+;  HEX7[1]  ; KEY0       ; 12.813 ; 12.813 ; Rise       ; KEY0            ;
+;  HEX7[2]  ; KEY0       ; 12.811 ; 12.811 ; Rise       ; KEY0            ;
+;  HEX7[3]  ; KEY0       ; 12.802 ; 12.802 ; Rise       ; KEY0            ;
+;  HEX7[4]  ; KEY0       ; 12.965 ; 12.965 ; Rise       ; KEY0            ;
+;  HEX7[5]  ; KEY0       ; 13.457 ; 13.457 ; Rise       ; KEY0            ;
+;  HEX7[6]  ; KEY0       ; 13.495 ; 13.495 ; Rise       ; KEY0            ;
+; HEX0[*]   ; KEY0       ; 11.766 ; 11.766 ; Fall       ; KEY0            ;
+;  HEX0[0]  ; KEY0       ; 12.603 ; 12.603 ; Fall       ; KEY0            ;
+;  HEX0[1]  ; KEY0       ; 13.009 ; 13.009 ; Fall       ; KEY0            ;
+;  HEX0[2]  ; KEY0       ; 11.766 ; 11.766 ; Fall       ; KEY0            ;
+;  HEX0[3]  ; KEY0       ; 12.937 ; 12.937 ; Fall       ; KEY0            ;
+;  HEX0[4]  ; KEY0       ; 11.937 ; 11.937 ; Fall       ; KEY0            ;
+;  HEX0[5]  ; KEY0       ; 12.932 ; 12.932 ; Fall       ; KEY0            ;
+;  HEX0[6]  ; KEY0       ; 12.612 ; 12.612 ; Fall       ; KEY0            ;
+; HEX1[*]   ; KEY0       ; 11.783 ; 11.783 ; Fall       ; KEY0            ;
+;  HEX1[0]  ; KEY0       ; 12.068 ; 12.068 ; Fall       ; KEY0            ;
+;  HEX1[1]  ; KEY0       ; 12.241 ; 12.241 ; Fall       ; KEY0            ;
+;  HEX1[2]  ; KEY0       ; 11.783 ; 11.783 ; Fall       ; KEY0            ;
+;  HEX1[3]  ; KEY0       ; 12.210 ; 12.210 ; Fall       ; KEY0            ;
+;  HEX1[4]  ; KEY0       ; 12.376 ; 12.376 ; Fall       ; KEY0            ;
+;  HEX1[5]  ; KEY0       ; 11.835 ; 11.835 ; Fall       ; KEY0            ;
+;  HEX1[6]  ; KEY0       ; 12.485 ; 12.485 ; Fall       ; KEY0            ;
+; HEX2[*]   ; KEY0       ; 11.782 ; 11.782 ; Fall       ; KEY0            ;
+;  HEX2[0]  ; KEY0       ; 12.084 ; 12.084 ; Fall       ; KEY0            ;
+;  HEX2[1]  ; KEY0       ; 12.019 ; 12.019 ; Fall       ; KEY0            ;
+;  HEX2[2]  ; KEY0       ; 11.789 ; 11.789 ; Fall       ; KEY0            ;
+;  HEX2[3]  ; KEY0       ; 12.832 ; 12.832 ; Fall       ; KEY0            ;
+;  HEX2[4]  ; KEY0       ; 11.782 ; 11.782 ; Fall       ; KEY0            ;
+;  HEX2[5]  ; KEY0       ; 12.128 ; 12.128 ; Fall       ; KEY0            ;
+;  HEX2[6]  ; KEY0       ; 12.370 ; 12.370 ; Fall       ; KEY0            ;
+; HEX3[*]   ; KEY0       ; 11.498 ; 11.498 ; Fall       ; KEY0            ;
+;  HEX3[0]  ; KEY0       ; 11.498 ; 11.498 ; Fall       ; KEY0            ;
+;  HEX3[1]  ; KEY0       ; 11.682 ; 11.682 ; Fall       ; KEY0            ;
+;  HEX3[2]  ; KEY0       ; 11.910 ; 11.910 ; Fall       ; KEY0            ;
+;  HEX3[3]  ; KEY0       ; 11.780 ; 11.780 ; Fall       ; KEY0            ;
+;  HEX3[4]  ; KEY0       ; 12.040 ; 12.040 ; Fall       ; KEY0            ;
+;  HEX3[5]  ; KEY0       ; 12.012 ; 12.012 ; Fall       ; KEY0            ;
+;  HEX3[6]  ; KEY0       ; 11.669 ; 11.669 ; Fall       ; KEY0            ;
+; HEX4[*]   ; KEY0       ; 12.179 ; 12.179 ; Fall       ; KEY0            ;
+;  HEX4[0]  ; KEY0       ; 13.084 ; 13.084 ; Fall       ; KEY0            ;
+;  HEX4[1]  ; KEY0       ; 13.275 ; 13.275 ; Fall       ; KEY0            ;
+;  HEX4[2]  ; KEY0       ; 12.179 ; 12.179 ; Fall       ; KEY0            ;
+;  HEX4[3]  ; KEY0       ; 12.887 ; 12.887 ; Fall       ; KEY0            ;
+;  HEX4[4]  ; KEY0       ; 12.876 ; 12.876 ; Fall       ; KEY0            ;
+;  HEX4[5]  ; KEY0       ; 12.608 ; 12.608 ; Fall       ; KEY0            ;
+;  HEX4[6]  ; KEY0       ; 12.596 ; 12.596 ; Fall       ; KEY0            ;
+; HEX5[*]   ; KEY0       ; 12.413 ; 12.413 ; Fall       ; KEY0            ;
+;  HEX5[0]  ; KEY0       ; 12.457 ; 12.457 ; Fall       ; KEY0            ;
+;  HEX5[1]  ; KEY0       ; 12.456 ; 12.456 ; Fall       ; KEY0            ;
+;  HEX5[2]  ; KEY0       ; 12.717 ; 12.717 ; Fall       ; KEY0            ;
+;  HEX5[3]  ; KEY0       ; 12.760 ; 12.760 ; Fall       ; KEY0            ;
+;  HEX5[4]  ; KEY0       ; 13.082 ; 13.082 ; Fall       ; KEY0            ;
+;  HEX5[5]  ; KEY0       ; 12.983 ; 12.983 ; Fall       ; KEY0            ;
+;  HEX5[6]  ; KEY0       ; 12.413 ; 12.413 ; Fall       ; KEY0            ;
+; HEX6[*]   ; KEY0       ; 12.207 ; 12.207 ; Fall       ; KEY0            ;
+;  HEX6[0]  ; KEY0       ; 12.207 ; 12.207 ; Fall       ; KEY0            ;
+;  HEX6[1]  ; KEY0       ; 12.482 ; 12.482 ; Fall       ; KEY0            ;
+;  HEX6[2]  ; KEY0       ; 12.456 ; 12.456 ; Fall       ; KEY0            ;
+;  HEX6[3]  ; KEY0       ; 12.761 ; 12.761 ; Fall       ; KEY0            ;
+;  HEX6[4]  ; KEY0       ; 13.164 ; 13.164 ; Fall       ; KEY0            ;
+;  HEX6[5]  ; KEY0       ; 12.868 ; 12.868 ; Fall       ; KEY0            ;
+;  HEX6[6]  ; KEY0       ; 13.282 ; 13.282 ; Fall       ; KEY0            ;
+; HEX7[*]   ; KEY0       ; 12.802 ; 12.802 ; Fall       ; KEY0            ;
+;  HEX7[0]  ; KEY0       ; 13.217 ; 13.217 ; Fall       ; KEY0            ;
+;  HEX7[1]  ; KEY0       ; 12.813 ; 12.813 ; Fall       ; KEY0            ;
+;  HEX7[2]  ; KEY0       ; 12.811 ; 12.811 ; Fall       ; KEY0            ;
+;  HEX7[3]  ; KEY0       ; 12.802 ; 12.802 ; Fall       ; KEY0            ;
+;  HEX7[4]  ; KEY0       ; 12.965 ; 12.965 ; Fall       ; KEY0            ;
+;  HEX7[5]  ; KEY0       ; 13.457 ; 13.457 ; Fall       ; KEY0            ;
+;  HEX7[6]  ; KEY0       ; 13.495 ; 13.495 ; Fall       ; KEY0            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------+
+; Propagation Delay                                    ;
++------------+-------------+----+--------+--------+----+
+; Input Port ; Output Port ; RR ; RF     ; FR     ; FF ;
++------------+-------------+----+--------+--------+----+
+; SW0        ; HEX0[0]     ;    ; 8.147  ; 8.147  ;    ;
+; SW0        ; HEX0[1]     ;    ; 8.627  ; 8.627  ;    ;
+; SW0        ; HEX0[2]     ;    ; 7.825  ; 7.825  ;    ;
+; SW0        ; HEX0[3]     ;    ; 9.154  ; 9.154  ;    ;
+; SW0        ; HEX0[4]     ;    ; 7.687  ; 7.687  ;    ;
+; SW0        ; HEX0[5]     ;    ; 8.648  ; 8.648  ;    ;
+; SW0        ; HEX0[6]     ;    ; 8.177  ; 8.177  ;    ;
+; SW0        ; HEX1[0]     ;    ; 10.512 ; 10.512 ;    ;
+; SW0        ; HEX1[1]     ;    ; 10.432 ; 10.432 ;    ;
+; SW0        ; HEX1[2]     ;    ; 10.212 ; 10.212 ;    ;
+; SW0        ; HEX1[3]     ;    ; 9.973  ; 9.973  ;    ;
+; SW0        ; HEX1[4]     ;    ; 10.362 ; 10.362 ;    ;
+; SW0        ; HEX1[5]     ;    ; 9.978  ; 9.978  ;    ;
+; SW0        ; HEX1[6]     ;    ; 9.735  ; 9.735  ;    ;
+; SW0        ; HEX2[0]     ;    ; 13.900 ; 13.900 ;    ;
+; SW0        ; HEX2[1]     ;    ; 14.667 ; 14.667 ;    ;
+; SW0        ; HEX2[2]     ;    ; 13.481 ; 13.481 ;    ;
+; SW0        ; HEX2[3]     ;    ; 13.174 ; 13.174 ;    ;
+; SW0        ; HEX2[4]     ;    ; 13.134 ; 13.134 ;    ;
+; SW0        ; HEX2[5]     ;    ; 13.398 ; 13.398 ;    ;
+; SW0        ; HEX2[6]     ;    ; 13.177 ; 13.177 ;    ;
+; SW0        ; HEX3[0]     ;    ; 18.064 ; 18.064 ;    ;
+; SW0        ; HEX3[1]     ;    ; 18.199 ; 18.199 ;    ;
+; SW0        ; HEX3[2]     ;    ; 17.743 ; 17.743 ;    ;
+; SW0        ; HEX3[3]     ;    ; 16.146 ; 16.146 ;    ;
+; SW0        ; HEX3[4]     ;    ; 16.649 ; 16.649 ;    ;
+; SW0        ; HEX3[5]     ;    ; 17.048 ; 17.048 ;    ;
+; SW0        ; HEX3[6]     ;    ; 16.238 ; 16.238 ;    ;
+; SW0        ; HEX4[0]     ;    ; 23.851 ; 23.851 ;    ;
+; SW0        ; HEX4[1]     ;    ; 25.913 ; 25.913 ;    ;
+; SW0        ; HEX4[2]     ;    ; 23.551 ; 23.551 ;    ;
+; SW0        ; HEX4[3]     ;    ; 24.596 ; 24.596 ;    ;
+; SW0        ; HEX4[4]     ;    ; 22.201 ; 22.201 ;    ;
+; SW0        ; HEX4[5]     ;    ; 22.672 ; 22.672 ;    ;
+; SW0        ; HEX4[6]     ;    ; 25.305 ; 25.305 ;    ;
+; SW0        ; HEX5[0]     ;    ; 26.650 ; 26.650 ;    ;
+; SW0        ; HEX5[1]     ;    ; 29.784 ; 29.784 ;    ;
+; SW0        ; HEX5[2]     ;    ; 27.293 ; 27.293 ;    ;
+; SW0        ; HEX5[3]     ;    ; 27.995 ; 27.995 ;    ;
+; SW0        ; HEX5[4]     ;    ; 25.815 ; 25.815 ;    ;
+; SW0        ; HEX5[5]     ;    ; 26.763 ; 26.763 ;    ;
+; SW0        ; HEX5[6]     ;    ; 28.090 ; 28.090 ;    ;
+; SW0        ; HEX6[0]     ;    ; 30.058 ; 30.058 ;    ;
+; SW0        ; HEX6[1]     ;    ; 34.047 ; 34.047 ;    ;
+; SW0        ; HEX6[2]     ;    ; 30.792 ; 30.792 ;    ;
+; SW0        ; HEX6[3]     ;    ; 31.963 ; 31.963 ;    ;
+; SW0        ; HEX6[4]     ;    ; 29.494 ; 29.494 ;    ;
+; SW0        ; HEX6[5]     ;    ; 30.809 ; 30.809 ;    ;
+; SW0        ; HEX6[6]     ;    ; 32.150 ; 32.150 ;    ;
+; SW0        ; HEX7[0]     ;    ; 34.640 ; 34.640 ;    ;
+; SW0        ; HEX7[1]     ;    ; 37.594 ; 37.594 ;    ;
+; SW0        ; HEX7[2]     ;    ; 35.315 ; 35.315 ;    ;
+; SW0        ; HEX7[3]     ;    ; 36.142 ; 36.142 ;    ;
+; SW0        ; HEX7[4]     ;    ; 32.968 ; 32.968 ;    ;
+; SW0        ; HEX7[5]     ;    ; 34.690 ; 34.690 ;    ;
+; SW0        ; HEX7[6]     ;    ; 35.963 ; 35.963 ;    ;
++------------+-------------+----+--------+--------+----+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; SW0        ; HEX0[0]     ;    ; 8.147 ; 8.147 ;    ;
+; SW0        ; HEX0[1]     ;    ; 8.627 ; 8.627 ;    ;
+; SW0        ; HEX0[2]     ;    ; 7.825 ; 7.825 ;    ;
+; SW0        ; HEX0[3]     ;    ; 9.154 ; 9.154 ;    ;
+; SW0        ; HEX0[4]     ;    ; 7.687 ; 7.687 ;    ;
+; SW0        ; HEX0[5]     ;    ; 8.648 ; 8.648 ;    ;
+; SW0        ; HEX0[6]     ;    ; 8.177 ; 8.177 ;    ;
+; SW0        ; HEX1[0]     ;    ; 6.765 ; 6.765 ;    ;
+; SW0        ; HEX1[1]     ;    ; 6.745 ; 6.745 ;    ;
+; SW0        ; HEX1[2]     ;    ; 6.718 ; 6.718 ;    ;
+; SW0        ; HEX1[3]     ;    ; 6.565 ; 6.565 ;    ;
+; SW0        ; HEX1[4]     ;    ; 6.709 ; 6.709 ;    ;
+; SW0        ; HEX1[5]     ;    ; 6.591 ; 6.591 ;    ;
+; SW0        ; HEX1[6]     ;    ; 6.621 ; 6.621 ;    ;
+; SW0        ; HEX2[0]     ;    ; 6.642 ; 6.642 ;    ;
+; SW0        ; HEX2[1]     ;    ; 6.642 ; 6.642 ;    ;
+; SW0        ; HEX2[2]     ;    ; 6.747 ; 6.747 ;    ;
+; SW0        ; HEX2[3]     ;    ; 6.695 ; 6.695 ;    ;
+; SW0        ; HEX2[4]     ;    ; 6.454 ; 6.454 ;    ;
+; SW0        ; HEX2[5]     ;    ; 6.303 ; 6.303 ;    ;
+; SW0        ; HEX2[6]     ;    ; 6.572 ; 6.572 ;    ;
+; SW0        ; HEX3[0]     ;    ; 6.266 ; 6.266 ;    ;
+; SW0        ; HEX3[1]     ;    ; 6.331 ; 6.331 ;    ;
+; SW0        ; HEX3[2]     ;    ; 6.555 ; 6.555 ;    ;
+; SW0        ; HEX3[3]     ;    ; 6.283 ; 6.283 ;    ;
+; SW0        ; HEX3[4]     ;    ; 6.256 ; 6.256 ;    ;
+; SW0        ; HEX3[5]     ;    ; 6.575 ; 6.575 ;    ;
+; SW0        ; HEX3[6]     ;    ; 6.246 ; 6.246 ;    ;
+; SW0        ; HEX4[0]     ;    ; 7.460 ; 7.460 ;    ;
+; SW0        ; HEX4[1]     ;    ; 6.786 ; 6.786 ;    ;
+; SW0        ; HEX4[2]     ;    ; 6.800 ; 6.800 ;    ;
+; SW0        ; HEX4[3]     ;    ; 7.408 ; 7.408 ;    ;
+; SW0        ; HEX4[4]     ;    ; 7.238 ; 7.238 ;    ;
+; SW0        ; HEX4[5]     ;    ; 7.357 ; 7.357 ;    ;
+; SW0        ; HEX4[6]     ;    ; 7.332 ; 7.332 ;    ;
+; SW0        ; HEX5[0]     ;    ; 7.157 ; 7.157 ;    ;
+; SW0        ; HEX5[1]     ;    ; 7.046 ; 7.046 ;    ;
+; SW0        ; HEX5[2]     ;    ; 7.054 ; 7.054 ;    ;
+; SW0        ; HEX5[3]     ;    ; 7.140 ; 7.140 ;    ;
+; SW0        ; HEX5[4]     ;    ; 7.338 ; 7.338 ;    ;
+; SW0        ; HEX5[5]     ;    ; 7.115 ; 7.115 ;    ;
+; SW0        ; HEX5[6]     ;    ; 7.025 ; 7.025 ;    ;
+; SW0        ; HEX6[0]     ;    ; 7.015 ; 7.015 ;    ;
+; SW0        ; HEX6[1]     ;    ; 7.125 ; 7.125 ;    ;
+; SW0        ; HEX6[2]     ;    ; 7.090 ; 7.090 ;    ;
+; SW0        ; HEX6[3]     ;    ; 7.534 ; 7.534 ;    ;
+; SW0        ; HEX6[4]     ;    ; 7.970 ; 7.970 ;    ;
+; SW0        ; HEX6[5]     ;    ; 7.968 ; 7.968 ;    ;
+; SW0        ; HEX6[6]     ;    ; 7.651 ; 7.651 ;    ;
+; SW0        ; HEX7[0]     ;    ; 7.852 ; 7.852 ;    ;
+; SW0        ; HEX7[1]     ;    ; 7.711 ; 7.711 ;    ;
+; SW0        ; HEX7[2]     ;    ; 7.654 ; 7.654 ;    ;
+; SW0        ; HEX7[3]     ;    ; 7.717 ; 7.717 ;    ;
+; SW0        ; HEX7[4]     ;    ; 7.976 ; 7.976 ;    ;
+; SW0        ; HEX7[5]     ;    ; 8.008 ; 8.008 ;    ;
+; SW0        ; HEX7[6]     ;    ; 8.028 ; 8.028 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++-------------------------------+
+; Fast Model Setup Summary      ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; KEY0  ; 0.429 ; 0.000         ;
++-------+-------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; KEY0  ; 0.240 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; KEY0  ; -1.222 ; -10.222               ;
++-------+--------+-----------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'KEY0'                                                                                      ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node      ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; 0.429 ; fsm:F0|state.A ; fsm:F0|state.B ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.603      ;
+; 0.475 ; fsm:F0|state.I ; fsm:F0|state.B ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.557      ;
+; 0.552 ; fsm:F0|state.C ; fsm:F0|state.D ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.480      ;
+; 0.554 ; fsm:F0|state.E ; fsm:F0|state.F ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.478      ;
+; 0.636 ; fsm:F0|state.G ; fsm:F0|state.H ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.396      ;
+; 0.638 ; fsm:F0|state.B ; fsm:F0|state.C ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.394      ;
+; 0.639 ; fsm:F0|state.D ; fsm:F0|state.E ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.393      ;
+; 0.640 ; fsm:F0|state.F ; fsm:F0|state.G ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.392      ;
+; 0.640 ; fsm:F0|state.H ; fsm:F0|state.I ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.392      ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'KEY0'                                                                                       ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node      ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; 0.240 ; fsm:F0|state.F ; fsm:F0|state.G ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.392      ;
+; 0.240 ; fsm:F0|state.H ; fsm:F0|state.I ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.392      ;
+; 0.241 ; fsm:F0|state.D ; fsm:F0|state.E ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.393      ;
+; 0.242 ; fsm:F0|state.B ; fsm:F0|state.C ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.394      ;
+; 0.244 ; fsm:F0|state.G ; fsm:F0|state.H ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.396      ;
+; 0.326 ; fsm:F0|state.E ; fsm:F0|state.F ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.478      ;
+; 0.328 ; fsm:F0|state.C ; fsm:F0|state.D ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.480      ;
+; 0.405 ; fsm:F0|state.I ; fsm:F0|state.B ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.557      ;
+; 0.451 ; fsm:F0|state.A ; fsm:F0|state.B ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.603      ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'KEY0'                                                          ;
++--------+--------------+----------------+------------------+-------+------------+----------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target         ;
++--------+--------------+----------------+------------------+-------+------------+----------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; KEY0  ; Rise       ; KEY0           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Fall       ; fsm:F0|state.A ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Fall       ; fsm:F0|state.A ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Fall       ; fsm:F0|state.B ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Fall       ; fsm:F0|state.B ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Fall       ; fsm:F0|state.C ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Fall       ; fsm:F0|state.C ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Fall       ; fsm:F0|state.D ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Fall       ; fsm:F0|state.D ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Fall       ; fsm:F0|state.E ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Fall       ; fsm:F0|state.E ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Fall       ; fsm:F0|state.F ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Fall       ; fsm:F0|state.F ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Fall       ; fsm:F0|state.G ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Fall       ; fsm:F0|state.G ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Fall       ; fsm:F0|state.H ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Fall       ; fsm:F0|state.H ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Fall       ; fsm:F0|state.I ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Fall       ; fsm:F0|state.I ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; F0|state.A|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; F0|state.A|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; F0|state.B|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; F0|state.B|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; F0|state.C|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; F0|state.C|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; F0|state.D|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; F0|state.D|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; F0|state.E|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; F0|state.E|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; F0|state.F|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; F0|state.F|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; F0|state.G|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; F0|state.G|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; F0|state.H|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; F0|state.H|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; F0|state.I|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; F0|state.I|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; KEY0|combout   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; KEY0|combout   ;
++--------+--------------+----------------+------------------+-------+------------+----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; HEX0[*]   ; KEY0       ; 8.893  ; 8.893  ; Rise       ; KEY0            ;
+;  HEX0[0]  ; KEY0       ; 8.428  ; 8.428  ; Rise       ; KEY0            ;
+;  HEX0[1]  ; KEY0       ; 8.751  ; 8.751  ; Rise       ; KEY0            ;
+;  HEX0[2]  ; KEY0       ; 8.447  ; 8.447  ; Rise       ; KEY0            ;
+;  HEX0[3]  ; KEY0       ; 8.893  ; 8.893  ; Rise       ; KEY0            ;
+;  HEX0[4]  ; KEY0       ; 8.408  ; 8.408  ; Rise       ; KEY0            ;
+;  HEX0[5]  ; KEY0       ; 8.580  ; 8.580  ; Rise       ; KEY0            ;
+;  HEX0[6]  ; KEY0       ; 8.593  ; 8.593  ; Rise       ; KEY0            ;
+; HEX1[*]   ; KEY0       ; 9.432  ; 9.432  ; Rise       ; KEY0            ;
+;  HEX1[0]  ; KEY0       ; 9.192  ; 9.192  ; Rise       ; KEY0            ;
+;  HEX1[1]  ; KEY0       ; 9.432  ; 9.432  ; Rise       ; KEY0            ;
+;  HEX1[2]  ; KEY0       ; 9.099  ; 9.099  ; Rise       ; KEY0            ;
+;  HEX1[3]  ; KEY0       ; 9.170  ; 9.170  ; Rise       ; KEY0            ;
+;  HEX1[4]  ; KEY0       ; 9.378  ; 9.378  ; Rise       ; KEY0            ;
+;  HEX1[5]  ; KEY0       ; 9.145  ; 9.145  ; Rise       ; KEY0            ;
+;  HEX1[6]  ; KEY0       ; 9.148  ; 9.148  ; Rise       ; KEY0            ;
+; HEX2[*]   ; KEY0       ; 11.141 ; 11.141 ; Rise       ; KEY0            ;
+;  HEX2[0]  ; KEY0       ; 10.550 ; 10.550 ; Rise       ; KEY0            ;
+;  HEX2[1]  ; KEY0       ; 11.141 ; 11.141 ; Rise       ; KEY0            ;
+;  HEX2[2]  ; KEY0       ; 10.474 ; 10.474 ; Rise       ; KEY0            ;
+;  HEX2[3]  ; KEY0       ; 10.521 ; 10.521 ; Rise       ; KEY0            ;
+;  HEX2[4]  ; KEY0       ; 10.520 ; 10.520 ; Rise       ; KEY0            ;
+;  HEX2[5]  ; KEY0       ; 10.571 ; 10.571 ; Rise       ; KEY0            ;
+;  HEX2[6]  ; KEY0       ; 10.583 ; 10.583 ; Rise       ; KEY0            ;
+; HEX3[*]   ; KEY0       ; 12.618 ; 12.618 ; Rise       ; KEY0            ;
+;  HEX3[0]  ; KEY0       ; 12.318 ; 12.318 ; Rise       ; KEY0            ;
+;  HEX3[1]  ; KEY0       ; 12.618 ; 12.618 ; Rise       ; KEY0            ;
+;  HEX3[2]  ; KEY0       ; 12.298 ; 12.298 ; Rise       ; KEY0            ;
+;  HEX3[3]  ; KEY0       ; 11.733 ; 11.733 ; Rise       ; KEY0            ;
+;  HEX3[4]  ; KEY0       ; 12.030 ; 12.030 ; Rise       ; KEY0            ;
+;  HEX3[5]  ; KEY0       ; 12.086 ; 12.086 ; Rise       ; KEY0            ;
+;  HEX3[6]  ; KEY0       ; 11.841 ; 11.841 ; Rise       ; KEY0            ;
+; HEX4[*]   ; KEY0       ; 16.175 ; 16.175 ; Rise       ; KEY0            ;
+;  HEX4[0]  ; KEY0       ; 14.898 ; 14.898 ; Rise       ; KEY0            ;
+;  HEX4[1]  ; KEY0       ; 16.175 ; 16.175 ; Rise       ; KEY0            ;
+;  HEX4[2]  ; KEY0       ; 14.915 ; 14.915 ; Rise       ; KEY0            ;
+;  HEX4[3]  ; KEY0       ; 15.566 ; 15.566 ; Rise       ; KEY0            ;
+;  HEX4[4]  ; KEY0       ; 14.562 ; 14.562 ; Rise       ; KEY0            ;
+;  HEX4[5]  ; KEY0       ; 14.683 ; 14.683 ; Rise       ; KEY0            ;
+;  HEX4[6]  ; KEY0       ; 15.967 ; 15.967 ; Rise       ; KEY0            ;
+; HEX5[*]   ; KEY0       ; 17.821 ; 17.821 ; Rise       ; KEY0            ;
+;  HEX5[0]  ; KEY0       ; 16.047 ; 16.047 ; Rise       ; KEY0            ;
+;  HEX5[1]  ; KEY0       ; 17.821 ; 17.821 ; Rise       ; KEY0            ;
+;  HEX5[2]  ; KEY0       ; 16.484 ; 16.484 ; Rise       ; KEY0            ;
+;  HEX5[3]  ; KEY0       ; 17.021 ; 17.021 ; Rise       ; KEY0            ;
+;  HEX5[4]  ; KEY0       ; 16.076 ; 16.076 ; Rise       ; KEY0            ;
+;  HEX5[5]  ; KEY0       ; 16.409 ; 16.409 ; Rise       ; KEY0            ;
+;  HEX5[6]  ; KEY0       ; 17.131 ; 17.131 ; Rise       ; KEY0            ;
+; HEX6[*]   ; KEY0       ; 19.630 ; 19.630 ; Rise       ; KEY0            ;
+;  HEX6[0]  ; KEY0       ; 17.544 ; 17.544 ; Rise       ; KEY0            ;
+;  HEX6[1]  ; KEY0       ; 19.630 ; 19.630 ; Rise       ; KEY0            ;
+;  HEX6[2]  ; KEY0       ; 18.001 ; 18.001 ; Rise       ; KEY0            ;
+;  HEX6[3]  ; KEY0       ; 18.771 ; 18.771 ; Rise       ; KEY0            ;
+;  HEX6[4]  ; KEY0       ; 17.738 ; 17.738 ; Rise       ; KEY0            ;
+;  HEX6[5]  ; KEY0       ; 18.217 ; 18.217 ; Rise       ; KEY0            ;
+;  HEX6[6]  ; KEY0       ; 18.923 ; 18.923 ; Rise       ; KEY0            ;
+; HEX7[*]   ; KEY0       ; 21.240 ; 21.240 ; Rise       ; KEY0            ;
+;  HEX7[0]  ; KEY0       ; 19.549 ; 19.549 ; Rise       ; KEY0            ;
+;  HEX7[1]  ; KEY0       ; 21.240 ; 21.240 ; Rise       ; KEY0            ;
+;  HEX7[2]  ; KEY0       ; 19.958 ; 19.958 ; Rise       ; KEY0            ;
+;  HEX7[3]  ; KEY0       ; 20.520 ; 20.520 ; Rise       ; KEY0            ;
+;  HEX7[4]  ; KEY0       ; 19.196 ; 19.196 ; Rise       ; KEY0            ;
+;  HEX7[5]  ; KEY0       ; 19.882 ; 19.882 ; Rise       ; KEY0            ;
+;  HEX7[6]  ; KEY0       ; 20.600 ; 20.600 ; Rise       ; KEY0            ;
+; HEX0[*]   ; KEY0       ; 8.893  ; 8.893  ; Fall       ; KEY0            ;
+;  HEX0[0]  ; KEY0       ; 8.428  ; 8.428  ; Fall       ; KEY0            ;
+;  HEX0[1]  ; KEY0       ; 8.751  ; 8.751  ; Fall       ; KEY0            ;
+;  HEX0[2]  ; KEY0       ; 8.447  ; 8.447  ; Fall       ; KEY0            ;
+;  HEX0[3]  ; KEY0       ; 8.893  ; 8.893  ; Fall       ; KEY0            ;
+;  HEX0[4]  ; KEY0       ; 8.408  ; 8.408  ; Fall       ; KEY0            ;
+;  HEX0[5]  ; KEY0       ; 8.580  ; 8.580  ; Fall       ; KEY0            ;
+;  HEX0[6]  ; KEY0       ; 8.593  ; 8.593  ; Fall       ; KEY0            ;
+; HEX1[*]   ; KEY0       ; 9.432  ; 9.432  ; Fall       ; KEY0            ;
+;  HEX1[0]  ; KEY0       ; 9.192  ; 9.192  ; Fall       ; KEY0            ;
+;  HEX1[1]  ; KEY0       ; 9.432  ; 9.432  ; Fall       ; KEY0            ;
+;  HEX1[2]  ; KEY0       ; 9.099  ; 9.099  ; Fall       ; KEY0            ;
+;  HEX1[3]  ; KEY0       ; 9.170  ; 9.170  ; Fall       ; KEY0            ;
+;  HEX1[4]  ; KEY0       ; 9.378  ; 9.378  ; Fall       ; KEY0            ;
+;  HEX1[5]  ; KEY0       ; 9.145  ; 9.145  ; Fall       ; KEY0            ;
+;  HEX1[6]  ; KEY0       ; 9.148  ; 9.148  ; Fall       ; KEY0            ;
+; HEX2[*]   ; KEY0       ; 11.141 ; 11.141 ; Fall       ; KEY0            ;
+;  HEX2[0]  ; KEY0       ; 10.550 ; 10.550 ; Fall       ; KEY0            ;
+;  HEX2[1]  ; KEY0       ; 11.141 ; 11.141 ; Fall       ; KEY0            ;
+;  HEX2[2]  ; KEY0       ; 10.474 ; 10.474 ; Fall       ; KEY0            ;
+;  HEX2[3]  ; KEY0       ; 10.521 ; 10.521 ; Fall       ; KEY0            ;
+;  HEX2[4]  ; KEY0       ; 10.520 ; 10.520 ; Fall       ; KEY0            ;
+;  HEX2[5]  ; KEY0       ; 10.571 ; 10.571 ; Fall       ; KEY0            ;
+;  HEX2[6]  ; KEY0       ; 10.583 ; 10.583 ; Fall       ; KEY0            ;
+; HEX3[*]   ; KEY0       ; 12.618 ; 12.618 ; Fall       ; KEY0            ;
+;  HEX3[0]  ; KEY0       ; 12.318 ; 12.318 ; Fall       ; KEY0            ;
+;  HEX3[1]  ; KEY0       ; 12.618 ; 12.618 ; Fall       ; KEY0            ;
+;  HEX3[2]  ; KEY0       ; 12.298 ; 12.298 ; Fall       ; KEY0            ;
+;  HEX3[3]  ; KEY0       ; 11.733 ; 11.733 ; Fall       ; KEY0            ;
+;  HEX3[4]  ; KEY0       ; 12.030 ; 12.030 ; Fall       ; KEY0            ;
+;  HEX3[5]  ; KEY0       ; 12.086 ; 12.086 ; Fall       ; KEY0            ;
+;  HEX3[6]  ; KEY0       ; 11.841 ; 11.841 ; Fall       ; KEY0            ;
+; HEX4[*]   ; KEY0       ; 16.175 ; 16.175 ; Fall       ; KEY0            ;
+;  HEX4[0]  ; KEY0       ; 14.898 ; 14.898 ; Fall       ; KEY0            ;
+;  HEX4[1]  ; KEY0       ; 16.175 ; 16.175 ; Fall       ; KEY0            ;
+;  HEX4[2]  ; KEY0       ; 14.915 ; 14.915 ; Fall       ; KEY0            ;
+;  HEX4[3]  ; KEY0       ; 15.566 ; 15.566 ; Fall       ; KEY0            ;
+;  HEX4[4]  ; KEY0       ; 14.562 ; 14.562 ; Fall       ; KEY0            ;
+;  HEX4[5]  ; KEY0       ; 14.683 ; 14.683 ; Fall       ; KEY0            ;
+;  HEX4[6]  ; KEY0       ; 15.967 ; 15.967 ; Fall       ; KEY0            ;
+; HEX5[*]   ; KEY0       ; 17.821 ; 17.821 ; Fall       ; KEY0            ;
+;  HEX5[0]  ; KEY0       ; 16.047 ; 16.047 ; Fall       ; KEY0            ;
+;  HEX5[1]  ; KEY0       ; 17.821 ; 17.821 ; Fall       ; KEY0            ;
+;  HEX5[2]  ; KEY0       ; 16.484 ; 16.484 ; Fall       ; KEY0            ;
+;  HEX5[3]  ; KEY0       ; 17.021 ; 17.021 ; Fall       ; KEY0            ;
+;  HEX5[4]  ; KEY0       ; 16.076 ; 16.076 ; Fall       ; KEY0            ;
+;  HEX5[5]  ; KEY0       ; 16.409 ; 16.409 ; Fall       ; KEY0            ;
+;  HEX5[6]  ; KEY0       ; 17.131 ; 17.131 ; Fall       ; KEY0            ;
+; HEX6[*]   ; KEY0       ; 19.630 ; 19.630 ; Fall       ; KEY0            ;
+;  HEX6[0]  ; KEY0       ; 17.544 ; 17.544 ; Fall       ; KEY0            ;
+;  HEX6[1]  ; KEY0       ; 19.630 ; 19.630 ; Fall       ; KEY0            ;
+;  HEX6[2]  ; KEY0       ; 18.001 ; 18.001 ; Fall       ; KEY0            ;
+;  HEX6[3]  ; KEY0       ; 18.771 ; 18.771 ; Fall       ; KEY0            ;
+;  HEX6[4]  ; KEY0       ; 17.738 ; 17.738 ; Fall       ; KEY0            ;
+;  HEX6[5]  ; KEY0       ; 18.217 ; 18.217 ; Fall       ; KEY0            ;
+;  HEX6[6]  ; KEY0       ; 18.923 ; 18.923 ; Fall       ; KEY0            ;
+; HEX7[*]   ; KEY0       ; 21.240 ; 21.240 ; Fall       ; KEY0            ;
+;  HEX7[0]  ; KEY0       ; 19.549 ; 19.549 ; Fall       ; KEY0            ;
+;  HEX7[1]  ; KEY0       ; 21.240 ; 21.240 ; Fall       ; KEY0            ;
+;  HEX7[2]  ; KEY0       ; 19.958 ; 19.958 ; Fall       ; KEY0            ;
+;  HEX7[3]  ; KEY0       ; 20.520 ; 20.520 ; Fall       ; KEY0            ;
+;  HEX7[4]  ; KEY0       ; 19.196 ; 19.196 ; Fall       ; KEY0            ;
+;  HEX7[5]  ; KEY0       ; 19.882 ; 19.882 ; Fall       ; KEY0            ;
+;  HEX7[6]  ; KEY0       ; 20.600 ; 20.600 ; Fall       ; KEY0            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; HEX0[*]   ; KEY0       ; 7.264 ; 7.264 ; Rise       ; KEY0            ;
+;  HEX0[0]  ; KEY0       ; 7.623 ; 7.623 ; Rise       ; KEY0            ;
+;  HEX0[1]  ; KEY0       ; 7.668 ; 7.668 ; Rise       ; KEY0            ;
+;  HEX0[2]  ; KEY0       ; 7.418 ; 7.418 ; Rise       ; KEY0            ;
+;  HEX0[3]  ; KEY0       ; 7.591 ; 7.591 ; Rise       ; KEY0            ;
+;  HEX0[4]  ; KEY0       ; 7.264 ; 7.264 ; Rise       ; KEY0            ;
+;  HEX0[5]  ; KEY0       ; 7.527 ; 7.527 ; Rise       ; KEY0            ;
+;  HEX0[6]  ; KEY0       ; 7.414 ; 7.414 ; Rise       ; KEY0            ;
+; HEX1[*]   ; KEY0       ; 6.423 ; 6.423 ; Rise       ; KEY0            ;
+;  HEX1[0]  ; KEY0       ; 6.635 ; 6.635 ; Rise       ; KEY0            ;
+;  HEX1[1]  ; KEY0       ; 6.709 ; 6.709 ; Rise       ; KEY0            ;
+;  HEX1[2]  ; KEY0       ; 6.436 ; 6.436 ; Rise       ; KEY0            ;
+;  HEX1[3]  ; KEY0       ; 6.634 ; 6.634 ; Rise       ; KEY0            ;
+;  HEX1[4]  ; KEY0       ; 6.692 ; 6.692 ; Rise       ; KEY0            ;
+;  HEX1[5]  ; KEY0       ; 6.423 ; 6.423 ; Rise       ; KEY0            ;
+;  HEX1[6]  ; KEY0       ; 6.739 ; 6.739 ; Rise       ; KEY0            ;
+; HEX2[*]   ; KEY0       ; 6.402 ; 6.402 ; Rise       ; KEY0            ;
+;  HEX2[0]  ; KEY0       ; 6.586 ; 6.586 ; Rise       ; KEY0            ;
+;  HEX2[1]  ; KEY0       ; 6.520 ; 6.520 ; Rise       ; KEY0            ;
+;  HEX2[2]  ; KEY0       ; 6.443 ; 6.443 ; Rise       ; KEY0            ;
+;  HEX2[3]  ; KEY0       ; 6.872 ; 6.872 ; Rise       ; KEY0            ;
+;  HEX2[4]  ; KEY0       ; 6.402 ; 6.402 ; Rise       ; KEY0            ;
+;  HEX2[5]  ; KEY0       ; 6.595 ; 6.595 ; Rise       ; KEY0            ;
+;  HEX2[6]  ; KEY0       ; 6.656 ; 6.656 ; Rise       ; KEY0            ;
+; HEX3[*]   ; KEY0       ; 6.298 ; 6.298 ; Rise       ; KEY0            ;
+;  HEX3[0]  ; KEY0       ; 6.298 ; 6.298 ; Rise       ; KEY0            ;
+;  HEX3[1]  ; KEY0       ; 6.376 ; 6.376 ; Rise       ; KEY0            ;
+;  HEX3[2]  ; KEY0       ; 6.473 ; 6.473 ; Rise       ; KEY0            ;
+;  HEX3[3]  ; KEY0       ; 6.439 ; 6.439 ; Rise       ; KEY0            ;
+;  HEX3[4]  ; KEY0       ; 6.560 ; 6.560 ; Rise       ; KEY0            ;
+;  HEX3[5]  ; KEY0       ; 6.526 ; 6.526 ; Rise       ; KEY0            ;
+;  HEX3[6]  ; KEY0       ; 6.362 ; 6.362 ; Rise       ; KEY0            ;
+; HEX4[*]   ; KEY0       ; 6.691 ; 6.691 ; Rise       ; KEY0            ;
+;  HEX4[0]  ; KEY0       ; 7.111 ; 7.111 ; Rise       ; KEY0            ;
+;  HEX4[1]  ; KEY0       ; 7.165 ; 7.165 ; Rise       ; KEY0            ;
+;  HEX4[2]  ; KEY0       ; 6.691 ; 6.691 ; Rise       ; KEY0            ;
+;  HEX4[3]  ; KEY0       ; 6.986 ; 6.986 ; Rise       ; KEY0            ;
+;  HEX4[4]  ; KEY0       ; 7.005 ; 7.005 ; Rise       ; KEY0            ;
+;  HEX4[5]  ; KEY0       ; 6.851 ; 6.851 ; Rise       ; KEY0            ;
+;  HEX4[6]  ; KEY0       ; 6.852 ; 6.852 ; Rise       ; KEY0            ;
+; HEX5[*]   ; KEY0       ; 6.787 ; 6.787 ; Rise       ; KEY0            ;
+;  HEX5[0]  ; KEY0       ; 6.828 ; 6.828 ; Rise       ; KEY0            ;
+;  HEX5[1]  ; KEY0       ; 6.824 ; 6.824 ; Rise       ; KEY0            ;
+;  HEX5[2]  ; KEY0       ; 6.899 ; 6.899 ; Rise       ; KEY0            ;
+;  HEX5[3]  ; KEY0       ; 6.939 ; 6.939 ; Rise       ; KEY0            ;
+;  HEX5[4]  ; KEY0       ; 7.069 ; 7.069 ; Rise       ; KEY0            ;
+;  HEX5[5]  ; KEY0       ; 7.026 ; 7.026 ; Rise       ; KEY0            ;
+;  HEX5[6]  ; KEY0       ; 6.787 ; 6.787 ; Rise       ; KEY0            ;
+; HEX6[*]   ; KEY0       ; 6.702 ; 6.702 ; Rise       ; KEY0            ;
+;  HEX6[0]  ; KEY0       ; 6.702 ; 6.702 ; Rise       ; KEY0            ;
+;  HEX6[1]  ; KEY0       ; 6.834 ; 6.834 ; Rise       ; KEY0            ;
+;  HEX6[2]  ; KEY0       ; 6.806 ; 6.806 ; Rise       ; KEY0            ;
+;  HEX6[3]  ; KEY0       ; 6.965 ; 6.965 ; Rise       ; KEY0            ;
+;  HEX6[4]  ; KEY0       ; 7.150 ; 7.150 ; Rise       ; KEY0            ;
+;  HEX6[5]  ; KEY0       ; 7.035 ; 7.035 ; Rise       ; KEY0            ;
+;  HEX6[6]  ; KEY0       ; 7.196 ; 7.196 ; Rise       ; KEY0            ;
+; HEX7[*]   ; KEY0       ; 6.994 ; 6.994 ; Rise       ; KEY0            ;
+;  HEX7[0]  ; KEY0       ; 7.185 ; 7.185 ; Rise       ; KEY0            ;
+;  HEX7[1]  ; KEY0       ; 7.015 ; 7.015 ; Rise       ; KEY0            ;
+;  HEX7[2]  ; KEY0       ; 7.026 ; 7.026 ; Rise       ; KEY0            ;
+;  HEX7[3]  ; KEY0       ; 6.994 ; 6.994 ; Rise       ; KEY0            ;
+;  HEX7[4]  ; KEY0       ; 7.075 ; 7.075 ; Rise       ; KEY0            ;
+;  HEX7[5]  ; KEY0       ; 7.293 ; 7.293 ; Rise       ; KEY0            ;
+;  HEX7[6]  ; KEY0       ; 7.307 ; 7.307 ; Rise       ; KEY0            ;
+; HEX0[*]   ; KEY0       ; 6.024 ; 6.024 ; Fall       ; KEY0            ;
+;  HEX0[0]  ; KEY0       ; 6.409 ; 6.409 ; Fall       ; KEY0            ;
+;  HEX0[1]  ; KEY0       ; 6.484 ; 6.484 ; Fall       ; KEY0            ;
+;  HEX0[2]  ; KEY0       ; 6.024 ; 6.024 ; Fall       ; KEY0            ;
+;  HEX0[3]  ; KEY0       ; 6.456 ; 6.456 ; Fall       ; KEY0            ;
+;  HEX0[4]  ; KEY0       ; 6.053 ; 6.053 ; Fall       ; KEY0            ;
+;  HEX0[5]  ; KEY0       ; 6.434 ; 6.434 ; Fall       ; KEY0            ;
+;  HEX0[6]  ; KEY0       ; 6.285 ; 6.285 ; Fall       ; KEY0            ;
+; HEX1[*]   ; KEY0       ; 6.076 ; 6.076 ; Fall       ; KEY0            ;
+;  HEX1[0]  ; KEY0       ; 6.563 ; 6.563 ; Fall       ; KEY0            ;
+;  HEX1[1]  ; KEY0       ; 6.551 ; 6.551 ; Fall       ; KEY0            ;
+;  HEX1[2]  ; KEY0       ; 6.076 ; 6.076 ; Fall       ; KEY0            ;
+;  HEX1[3]  ; KEY0       ; 6.131 ; 6.131 ; Fall       ; KEY0            ;
+;  HEX1[4]  ; KEY0       ; 6.354 ; 6.354 ; Fall       ; KEY0            ;
+;  HEX1[5]  ; KEY0       ; 6.372 ; 6.372 ; Fall       ; KEY0            ;
+;  HEX1[6]  ; KEY0       ; 6.588 ; 6.588 ; Fall       ; KEY0            ;
+; HEX2[*]   ; KEY0       ; 6.402 ; 6.402 ; Fall       ; KEY0            ;
+;  HEX2[0]  ; KEY0       ; 6.586 ; 6.586 ; Fall       ; KEY0            ;
+;  HEX2[1]  ; KEY0       ; 6.520 ; 6.520 ; Fall       ; KEY0            ;
+;  HEX2[2]  ; KEY0       ; 6.443 ; 6.443 ; Fall       ; KEY0            ;
+;  HEX2[3]  ; KEY0       ; 6.872 ; 6.872 ; Fall       ; KEY0            ;
+;  HEX2[4]  ; KEY0       ; 6.402 ; 6.402 ; Fall       ; KEY0            ;
+;  HEX2[5]  ; KEY0       ; 6.595 ; 6.595 ; Fall       ; KEY0            ;
+;  HEX2[6]  ; KEY0       ; 6.656 ; 6.656 ; Fall       ; KEY0            ;
+; HEX3[*]   ; KEY0       ; 6.298 ; 6.298 ; Fall       ; KEY0            ;
+;  HEX3[0]  ; KEY0       ; 6.298 ; 6.298 ; Fall       ; KEY0            ;
+;  HEX3[1]  ; KEY0       ; 6.376 ; 6.376 ; Fall       ; KEY0            ;
+;  HEX3[2]  ; KEY0       ; 6.473 ; 6.473 ; Fall       ; KEY0            ;
+;  HEX3[3]  ; KEY0       ; 6.439 ; 6.439 ; Fall       ; KEY0            ;
+;  HEX3[4]  ; KEY0       ; 6.560 ; 6.560 ; Fall       ; KEY0            ;
+;  HEX3[5]  ; KEY0       ; 6.526 ; 6.526 ; Fall       ; KEY0            ;
+;  HEX3[6]  ; KEY0       ; 6.362 ; 6.362 ; Fall       ; KEY0            ;
+; HEX4[*]   ; KEY0       ; 6.691 ; 6.691 ; Fall       ; KEY0            ;
+;  HEX4[0]  ; KEY0       ; 7.111 ; 7.111 ; Fall       ; KEY0            ;
+;  HEX4[1]  ; KEY0       ; 7.165 ; 7.165 ; Fall       ; KEY0            ;
+;  HEX4[2]  ; KEY0       ; 6.691 ; 6.691 ; Fall       ; KEY0            ;
+;  HEX4[3]  ; KEY0       ; 6.986 ; 6.986 ; Fall       ; KEY0            ;
+;  HEX4[4]  ; KEY0       ; 7.005 ; 7.005 ; Fall       ; KEY0            ;
+;  HEX4[5]  ; KEY0       ; 6.851 ; 6.851 ; Fall       ; KEY0            ;
+;  HEX4[6]  ; KEY0       ; 6.852 ; 6.852 ; Fall       ; KEY0            ;
+; HEX5[*]   ; KEY0       ; 6.787 ; 6.787 ; Fall       ; KEY0            ;
+;  HEX5[0]  ; KEY0       ; 6.828 ; 6.828 ; Fall       ; KEY0            ;
+;  HEX5[1]  ; KEY0       ; 6.824 ; 6.824 ; Fall       ; KEY0            ;
+;  HEX5[2]  ; KEY0       ; 6.899 ; 6.899 ; Fall       ; KEY0            ;
+;  HEX5[3]  ; KEY0       ; 6.939 ; 6.939 ; Fall       ; KEY0            ;
+;  HEX5[4]  ; KEY0       ; 7.069 ; 7.069 ; Fall       ; KEY0            ;
+;  HEX5[5]  ; KEY0       ; 7.026 ; 7.026 ; Fall       ; KEY0            ;
+;  HEX5[6]  ; KEY0       ; 6.787 ; 6.787 ; Fall       ; KEY0            ;
+; HEX6[*]   ; KEY0       ; 6.702 ; 6.702 ; Fall       ; KEY0            ;
+;  HEX6[0]  ; KEY0       ; 6.702 ; 6.702 ; Fall       ; KEY0            ;
+;  HEX6[1]  ; KEY0       ; 6.834 ; 6.834 ; Fall       ; KEY0            ;
+;  HEX6[2]  ; KEY0       ; 6.806 ; 6.806 ; Fall       ; KEY0            ;
+;  HEX6[3]  ; KEY0       ; 6.965 ; 6.965 ; Fall       ; KEY0            ;
+;  HEX6[4]  ; KEY0       ; 7.150 ; 7.150 ; Fall       ; KEY0            ;
+;  HEX6[5]  ; KEY0       ; 7.035 ; 7.035 ; Fall       ; KEY0            ;
+;  HEX6[6]  ; KEY0       ; 7.196 ; 7.196 ; Fall       ; KEY0            ;
+; HEX7[*]   ; KEY0       ; 6.994 ; 6.994 ; Fall       ; KEY0            ;
+;  HEX7[0]  ; KEY0       ; 7.185 ; 7.185 ; Fall       ; KEY0            ;
+;  HEX7[1]  ; KEY0       ; 7.015 ; 7.015 ; Fall       ; KEY0            ;
+;  HEX7[2]  ; KEY0       ; 7.026 ; 7.026 ; Fall       ; KEY0            ;
+;  HEX7[3]  ; KEY0       ; 6.994 ; 6.994 ; Fall       ; KEY0            ;
+;  HEX7[4]  ; KEY0       ; 7.075 ; 7.075 ; Fall       ; KEY0            ;
+;  HEX7[5]  ; KEY0       ; 7.293 ; 7.293 ; Fall       ; KEY0            ;
+;  HEX7[6]  ; KEY0       ; 7.307 ; 7.307 ; Fall       ; KEY0            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------+
+; Propagation Delay                                    ;
++------------+-------------+----+--------+--------+----+
+; Input Port ; Output Port ; RR ; RF     ; FR     ; FF ;
++------------+-------------+----+--------+--------+----+
+; SW0        ; HEX0[0]     ;    ; 4.280  ; 4.280  ;    ;
+; SW0        ; HEX0[1]     ;    ; 4.388  ; 4.388  ;    ;
+; SW0        ; HEX0[2]     ;    ; 4.079  ; 4.079  ;    ;
+; SW0        ; HEX0[3]     ;    ; 4.679  ; 4.679  ;    ;
+; SW0        ; HEX0[4]     ;    ; 4.018  ; 4.018  ;    ;
+; SW0        ; HEX0[5]     ;    ; 4.437  ; 4.437  ;    ;
+; SW0        ; HEX0[6]     ;    ; 4.260  ; 4.260  ;    ;
+; SW0        ; HEX1[0]     ;    ; 5.138  ; 5.138  ;    ;
+; SW0        ; HEX1[1]     ;    ; 5.080  ; 5.080  ;    ;
+; SW0        ; HEX1[2]     ;    ; 4.931  ; 4.931  ;    ;
+; SW0        ; HEX1[3]     ;    ; 4.846  ; 4.846  ;    ;
+; SW0        ; HEX1[4]     ;    ; 5.016  ; 5.016  ;    ;
+; SW0        ; HEX1[5]     ;    ; 4.880  ; 4.880  ;    ;
+; SW0        ; HEX1[6]     ;    ; 4.819  ; 4.819  ;    ;
+; SW0        ; HEX2[0]     ;    ; 6.496  ; 6.496  ;    ;
+; SW0        ; HEX2[1]     ;    ; 6.789  ; 6.789  ;    ;
+; SW0        ; HEX2[2]     ;    ; 6.306  ; 6.306  ;    ;
+; SW0        ; HEX2[3]     ;    ; 6.197  ; 6.197  ;    ;
+; SW0        ; HEX2[4]     ;    ; 6.158  ; 6.158  ;    ;
+; SW0        ; HEX2[5]     ;    ; 6.306  ; 6.306  ;    ;
+; SW0        ; HEX2[6]     ;    ; 6.254  ; 6.254  ;    ;
+; SW0        ; HEX3[0]     ;    ; 8.264  ; 8.264  ;    ;
+; SW0        ; HEX3[1]     ;    ; 8.266  ; 8.266  ;    ;
+; SW0        ; HEX3[2]     ;    ; 8.130  ; 8.130  ;    ;
+; SW0        ; HEX3[3]     ;    ; 7.409  ; 7.409  ;    ;
+; SW0        ; HEX3[4]     ;    ; 7.668  ; 7.668  ;    ;
+; SW0        ; HEX3[5]     ;    ; 7.821  ; 7.821  ;    ;
+; SW0        ; HEX3[6]     ;    ; 7.512  ; 7.512  ;    ;
+; SW0        ; HEX4[0]     ;    ; 10.844 ; 10.844 ;    ;
+; SW0        ; HEX4[1]     ;    ; 11.823 ; 11.823 ;    ;
+; SW0        ; HEX4[2]     ;    ; 10.747 ; 10.747 ;    ;
+; SW0        ; HEX4[3]     ;    ; 11.242 ; 11.242 ;    ;
+; SW0        ; HEX4[4]     ;    ; 10.200 ; 10.200 ;    ;
+; SW0        ; HEX4[5]     ;    ; 10.418 ; 10.418 ;    ;
+; SW0        ; HEX4[6]     ;    ; 11.638 ; 11.638 ;    ;
+; SW0        ; HEX5[0]     ;    ; 11.993 ; 11.993 ;    ;
+; SW0        ; HEX5[1]     ;    ; 13.469 ; 13.469 ;    ;
+; SW0        ; HEX5[2]     ;    ; 12.316 ; 12.316 ;    ;
+; SW0        ; HEX5[3]     ;    ; 12.697 ; 12.697 ;    ;
+; SW0        ; HEX5[4]     ;    ; 11.714 ; 11.714 ;    ;
+; SW0        ; HEX5[5]     ;    ; 12.144 ; 12.144 ;    ;
+; SW0        ; HEX5[6]     ;    ; 12.802 ; 12.802 ;    ;
+; SW0        ; HEX6[0]     ;    ; 13.490 ; 13.490 ;    ;
+; SW0        ; HEX6[1]     ;    ; 15.278 ; 15.278 ;    ;
+; SW0        ; HEX6[2]     ;    ; 13.833 ; 13.833 ;    ;
+; SW0        ; HEX6[3]     ;    ; 14.447 ; 14.447 ;    ;
+; SW0        ; HEX6[4]     ;    ; 13.376 ; 13.376 ;    ;
+; SW0        ; HEX6[5]     ;    ; 13.952 ; 13.952 ;    ;
+; SW0        ; HEX6[6]     ;    ; 14.594 ; 14.594 ;    ;
+; SW0        ; HEX7[0]     ;    ; 15.495 ; 15.495 ;    ;
+; SW0        ; HEX7[1]     ;    ; 16.888 ; 16.888 ;    ;
+; SW0        ; HEX7[2]     ;    ; 15.790 ; 15.790 ;    ;
+; SW0        ; HEX7[3]     ;    ; 16.196 ; 16.196 ;    ;
+; SW0        ; HEX7[4]     ;    ; 14.834 ; 14.834 ;    ;
+; SW0        ; HEX7[5]     ;    ; 15.617 ; 15.617 ;    ;
+; SW0        ; HEX7[6]     ;    ; 16.271 ; 16.271 ;    ;
++------------+-------------+----+--------+--------+----+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; SW0        ; HEX0[0]     ;    ; 4.280 ; 4.280 ;    ;
+; SW0        ; HEX0[1]     ;    ; 4.388 ; 4.388 ;    ;
+; SW0        ; HEX0[2]     ;    ; 4.079 ; 4.079 ;    ;
+; SW0        ; HEX0[3]     ;    ; 4.679 ; 4.679 ;    ;
+; SW0        ; HEX0[4]     ;    ; 4.018 ; 4.018 ;    ;
+; SW0        ; HEX0[5]     ;    ; 4.437 ; 4.437 ;    ;
+; SW0        ; HEX0[6]     ;    ; 4.260 ; 4.260 ;    ;
+; SW0        ; HEX1[0]     ;    ; 3.548 ; 3.548 ;    ;
+; SW0        ; HEX1[1]     ;    ; 3.546 ; 3.546 ;    ;
+; SW0        ; HEX1[2]     ;    ; 3.465 ; 3.465 ;    ;
+; SW0        ; HEX1[3]     ;    ; 3.405 ; 3.405 ;    ;
+; SW0        ; HEX1[4]     ;    ; 3.470 ; 3.470 ;    ;
+; SW0        ; HEX1[5]     ;    ; 3.416 ; 3.416 ;    ;
+; SW0        ; HEX1[6]     ;    ; 3.437 ; 3.437 ;    ;
+; SW0        ; HEX2[0]     ;    ; 3.457 ; 3.457 ;    ;
+; SW0        ; HEX2[1]     ;    ; 3.416 ; 3.416 ;    ;
+; SW0        ; HEX2[2]     ;    ; 3.494 ; 3.494 ;    ;
+; SW0        ; HEX2[3]     ;    ; 3.479 ; 3.479 ;    ;
+; SW0        ; HEX2[4]     ;    ; 3.354 ; 3.354 ;    ;
+; SW0        ; HEX2[5]     ;    ; 3.289 ; 3.289 ;    ;
+; SW0        ; HEX2[6]     ;    ; 3.392 ; 3.392 ;    ;
+; SW0        ; HEX3[0]     ;    ; 3.250 ; 3.250 ;    ;
+; SW0        ; HEX3[1]     ;    ; 3.282 ; 3.282 ;    ;
+; SW0        ; HEX3[2]     ;    ; 3.384 ; 3.384 ;    ;
+; SW0        ; HEX3[3]     ;    ; 3.284 ; 3.284 ;    ;
+; SW0        ; HEX3[4]     ;    ; 3.268 ; 3.268 ;    ;
+; SW0        ; HEX3[5]     ;    ; 3.399 ; 3.399 ;    ;
+; SW0        ; HEX3[6]     ;    ; 3.233 ; 3.233 ;    ;
+; SW0        ; HEX4[0]     ;    ; 3.877 ; 3.877 ;    ;
+; SW0        ; HEX4[1]     ;    ; 3.572 ; 3.572 ;    ;
+; SW0        ; HEX4[2]     ;    ; 3.579 ; 3.579 ;    ;
+; SW0        ; HEX4[3]     ;    ; 3.860 ; 3.860 ;    ;
+; SW0        ; HEX4[4]     ;    ; 3.793 ; 3.793 ;    ;
+; SW0        ; HEX4[5]     ;    ; 3.845 ; 3.845 ;    ;
+; SW0        ; HEX4[6]     ;    ; 3.832 ; 3.832 ;    ;
+; SW0        ; HEX5[0]     ;    ; 3.741 ; 3.741 ;    ;
+; SW0        ; HEX5[1]     ;    ; 3.690 ; 3.690 ;    ;
+; SW0        ; HEX5[2]     ;    ; 3.683 ; 3.683 ;    ;
+; SW0        ; HEX5[3]     ;    ; 3.747 ; 3.747 ;    ;
+; SW0        ; HEX5[4]     ;    ; 3.822 ; 3.822 ;    ;
+; SW0        ; HEX5[5]     ;    ; 3.722 ; 3.722 ;    ;
+; SW0        ; HEX5[6]     ;    ; 3.687 ; 3.687 ;    ;
+; SW0        ; HEX6[0]     ;    ; 3.682 ; 3.682 ;    ;
+; SW0        ; HEX6[1]     ;    ; 3.738 ; 3.738 ;    ;
+; SW0        ; HEX6[2]     ;    ; 3.716 ; 3.716 ;    ;
+; SW0        ; HEX6[3]     ;    ; 3.965 ; 3.965 ;    ;
+; SW0        ; HEX6[4]     ;    ; 4.151 ; 4.151 ;    ;
+; SW0        ; HEX6[5]     ;    ; 4.141 ; 4.141 ;    ;
+; SW0        ; HEX6[6]     ;    ; 4.001 ; 4.001 ;    ;
+; SW0        ; HEX7[0]     ;    ; 4.108 ; 4.108 ;    ;
+; SW0        ; HEX7[1]     ;    ; 4.049 ; 4.049 ;    ;
+; SW0        ; HEX7[2]     ;    ; 4.011 ; 4.011 ;    ;
+; SW0        ; HEX7[3]     ;    ; 4.031 ; 4.031 ;    ;
+; SW0        ; HEX7[4]     ;    ; 4.153 ; 4.153 ;    ;
+; SW0        ; HEX7[5]     ;    ; 4.188 ; 4.188 ;    ;
+; SW0        ; HEX7[6]     ;    ; 4.201 ; 4.201 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+--------+-------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -0.273 ; 0.240 ; N/A      ; N/A     ; -1.222              ;
+;  KEY0            ; -0.273 ; 0.240 ; N/A      ; N/A     ; -1.222              ;
+; Design-wide TNS  ; -0.273 ; 0.0   ; 0.0      ; 0.0     ; -10.222             ;
+;  KEY0            ; -0.273 ; 0.000 ; N/A      ; N/A     ; -10.222             ;
++------------------+--------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; HEX0[*]   ; KEY0       ; 17.169 ; 17.169 ; Rise       ; KEY0            ;
+;  HEX0[0]  ; KEY0       ; 16.022 ; 16.022 ; Rise       ; KEY0            ;
+;  HEX0[1]  ; KEY0       ; 17.010 ; 17.010 ; Rise       ; KEY0            ;
+;  HEX0[2]  ; KEY0       ; 16.115 ; 16.115 ; Rise       ; KEY0            ;
+;  HEX0[3]  ; KEY0       ; 17.169 ; 17.169 ; Rise       ; KEY0            ;
+;  HEX0[4]  ; KEY0       ; 16.121 ; 16.121 ; Rise       ; KEY0            ;
+;  HEX0[5]  ; KEY0       ; 16.527 ; 16.527 ; Rise       ; KEY0            ;
+;  HEX0[6]  ; KEY0       ; 16.548 ; 16.548 ; Rise       ; KEY0            ;
+; HEX1[*]   ; KEY0       ; 18.808 ; 18.808 ; Rise       ; KEY0            ;
+;  HEX1[0]  ; KEY0       ; 18.188 ; 18.188 ; Rise       ; KEY0            ;
+;  HEX1[1]  ; KEY0       ; 18.808 ; 18.808 ; Rise       ; KEY0            ;
+;  HEX1[2]  ; KEY0       ; 18.178 ; 18.178 ; Rise       ; KEY0            ;
+;  HEX1[3]  ; KEY0       ; 18.224 ; 18.224 ; Rise       ; KEY0            ;
+;  HEX1[4]  ; KEY0       ; 18.798 ; 18.798 ; Rise       ; KEY0            ;
+;  HEX1[5]  ; KEY0       ; 18.102 ; 18.102 ; Rise       ; KEY0            ;
+;  HEX1[6]  ; KEY0       ; 18.107 ; 18.107 ; Rise       ; KEY0            ;
+; HEX2[*]   ; KEY0       ; 23.043 ; 23.043 ; Rise       ; KEY0            ;
+;  HEX2[0]  ; KEY0       ; 21.576 ; 21.576 ; Rise       ; KEY0            ;
+;  HEX2[1]  ; KEY0       ; 23.043 ; 23.043 ; Rise       ; KEY0            ;
+;  HEX2[2]  ; KEY0       ; 21.447 ; 21.447 ; Rise       ; KEY0            ;
+;  HEX2[3]  ; KEY0       ; 21.425 ; 21.425 ; Rise       ; KEY0            ;
+;  HEX2[4]  ; KEY0       ; 21.570 ; 21.570 ; Rise       ; KEY0            ;
+;  HEX2[5]  ; KEY0       ; 21.522 ; 21.522 ; Rise       ; KEY0            ;
+;  HEX2[6]  ; KEY0       ; 21.549 ; 21.549 ; Rise       ; KEY0            ;
+; HEX3[*]   ; KEY0       ; 26.575 ; 26.575 ; Rise       ; KEY0            ;
+;  HEX3[0]  ; KEY0       ; 25.740 ; 25.740 ; Rise       ; KEY0            ;
+;  HEX3[1]  ; KEY0       ; 26.575 ; 26.575 ; Rise       ; KEY0            ;
+;  HEX3[2]  ; KEY0       ; 25.709 ; 25.709 ; Rise       ; KEY0            ;
+;  HEX3[3]  ; KEY0       ; 24.397 ; 24.397 ; Rise       ; KEY0            ;
+;  HEX3[4]  ; KEY0       ; 25.085 ; 25.085 ; Rise       ; KEY0            ;
+;  HEX3[5]  ; KEY0       ; 25.172 ; 25.172 ; Rise       ; KEY0            ;
+;  HEX3[6]  ; KEY0       ; 24.610 ; 24.610 ; Rise       ; KEY0            ;
+; HEX4[*]   ; KEY0       ; 34.289 ; 34.289 ; Rise       ; KEY0            ;
+;  HEX4[0]  ; KEY0       ; 31.527 ; 31.527 ; Rise       ; KEY0            ;
+;  HEX4[1]  ; KEY0       ; 34.289 ; 34.289 ; Rise       ; KEY0            ;
+;  HEX4[2]  ; KEY0       ; 31.517 ; 31.517 ; Rise       ; KEY0            ;
+;  HEX4[3]  ; KEY0       ; 32.847 ; 32.847 ; Rise       ; KEY0            ;
+;  HEX4[4]  ; KEY0       ; 30.637 ; 30.637 ; Rise       ; KEY0            ;
+;  HEX4[5]  ; KEY0       ; 30.796 ; 30.796 ; Rise       ; KEY0            ;
+;  HEX4[6]  ; KEY0       ; 33.677 ; 33.677 ; Rise       ; KEY0            ;
+; HEX5[*]   ; KEY0       ; 38.160 ; 38.160 ; Rise       ; KEY0            ;
+;  HEX5[0]  ; KEY0       ; 34.326 ; 34.326 ; Rise       ; KEY0            ;
+;  HEX5[1]  ; KEY0       ; 38.160 ; 38.160 ; Rise       ; KEY0            ;
+;  HEX5[2]  ; KEY0       ; 35.259 ; 35.259 ; Rise       ; KEY0            ;
+;  HEX5[3]  ; KEY0       ; 36.246 ; 36.246 ; Rise       ; KEY0            ;
+;  HEX5[4]  ; KEY0       ; 34.251 ; 34.251 ; Rise       ; KEY0            ;
+;  HEX5[5]  ; KEY0       ; 34.887 ; 34.887 ; Rise       ; KEY0            ;
+;  HEX5[6]  ; KEY0       ; 36.462 ; 36.462 ; Rise       ; KEY0            ;
+; HEX6[*]   ; KEY0       ; 42.423 ; 42.423 ; Rise       ; KEY0            ;
+;  HEX6[0]  ; KEY0       ; 37.734 ; 37.734 ; Rise       ; KEY0            ;
+;  HEX6[1]  ; KEY0       ; 42.423 ; 42.423 ; Rise       ; KEY0            ;
+;  HEX6[2]  ; KEY0       ; 38.758 ; 38.758 ; Rise       ; KEY0            ;
+;  HEX6[3]  ; KEY0       ; 40.214 ; 40.214 ; Rise       ; KEY0            ;
+;  HEX6[4]  ; KEY0       ; 37.930 ; 37.930 ; Rise       ; KEY0            ;
+;  HEX6[5]  ; KEY0       ; 38.933 ; 38.933 ; Rise       ; KEY0            ;
+;  HEX6[6]  ; KEY0       ; 40.522 ; 40.522 ; Rise       ; KEY0            ;
+; HEX7[*]   ; KEY0       ; 45.970 ; 45.970 ; Rise       ; KEY0            ;
+;  HEX7[0]  ; KEY0       ; 42.316 ; 42.316 ; Rise       ; KEY0            ;
+;  HEX7[1]  ; KEY0       ; 45.970 ; 45.970 ; Rise       ; KEY0            ;
+;  HEX7[2]  ; KEY0       ; 43.281 ; 43.281 ; Rise       ; KEY0            ;
+;  HEX7[3]  ; KEY0       ; 44.393 ; 44.393 ; Rise       ; KEY0            ;
+;  HEX7[4]  ; KEY0       ; 41.404 ; 41.404 ; Rise       ; KEY0            ;
+;  HEX7[5]  ; KEY0       ; 42.814 ; 42.814 ; Rise       ; KEY0            ;
+;  HEX7[6]  ; KEY0       ; 44.335 ; 44.335 ; Rise       ; KEY0            ;
+; HEX0[*]   ; KEY0       ; 17.169 ; 17.169 ; Fall       ; KEY0            ;
+;  HEX0[0]  ; KEY0       ; 16.022 ; 16.022 ; Fall       ; KEY0            ;
+;  HEX0[1]  ; KEY0       ; 17.010 ; 17.010 ; Fall       ; KEY0            ;
+;  HEX0[2]  ; KEY0       ; 16.115 ; 16.115 ; Fall       ; KEY0            ;
+;  HEX0[3]  ; KEY0       ; 17.169 ; 17.169 ; Fall       ; KEY0            ;
+;  HEX0[4]  ; KEY0       ; 16.121 ; 16.121 ; Fall       ; KEY0            ;
+;  HEX0[5]  ; KEY0       ; 16.527 ; 16.527 ; Fall       ; KEY0            ;
+;  HEX0[6]  ; KEY0       ; 16.548 ; 16.548 ; Fall       ; KEY0            ;
+; HEX1[*]   ; KEY0       ; 18.808 ; 18.808 ; Fall       ; KEY0            ;
+;  HEX1[0]  ; KEY0       ; 18.188 ; 18.188 ; Fall       ; KEY0            ;
+;  HEX1[1]  ; KEY0       ; 18.808 ; 18.808 ; Fall       ; KEY0            ;
+;  HEX1[2]  ; KEY0       ; 18.178 ; 18.178 ; Fall       ; KEY0            ;
+;  HEX1[3]  ; KEY0       ; 18.224 ; 18.224 ; Fall       ; KEY0            ;
+;  HEX1[4]  ; KEY0       ; 18.798 ; 18.798 ; Fall       ; KEY0            ;
+;  HEX1[5]  ; KEY0       ; 18.102 ; 18.102 ; Fall       ; KEY0            ;
+;  HEX1[6]  ; KEY0       ; 18.107 ; 18.107 ; Fall       ; KEY0            ;
+; HEX2[*]   ; KEY0       ; 23.043 ; 23.043 ; Fall       ; KEY0            ;
+;  HEX2[0]  ; KEY0       ; 21.576 ; 21.576 ; Fall       ; KEY0            ;
+;  HEX2[1]  ; KEY0       ; 23.043 ; 23.043 ; Fall       ; KEY0            ;
+;  HEX2[2]  ; KEY0       ; 21.447 ; 21.447 ; Fall       ; KEY0            ;
+;  HEX2[3]  ; KEY0       ; 21.425 ; 21.425 ; Fall       ; KEY0            ;
+;  HEX2[4]  ; KEY0       ; 21.570 ; 21.570 ; Fall       ; KEY0            ;
+;  HEX2[5]  ; KEY0       ; 21.522 ; 21.522 ; Fall       ; KEY0            ;
+;  HEX2[6]  ; KEY0       ; 21.549 ; 21.549 ; Fall       ; KEY0            ;
+; HEX3[*]   ; KEY0       ; 26.575 ; 26.575 ; Fall       ; KEY0            ;
+;  HEX3[0]  ; KEY0       ; 25.740 ; 25.740 ; Fall       ; KEY0            ;
+;  HEX3[1]  ; KEY0       ; 26.575 ; 26.575 ; Fall       ; KEY0            ;
+;  HEX3[2]  ; KEY0       ; 25.709 ; 25.709 ; Fall       ; KEY0            ;
+;  HEX3[3]  ; KEY0       ; 24.397 ; 24.397 ; Fall       ; KEY0            ;
+;  HEX3[4]  ; KEY0       ; 25.085 ; 25.085 ; Fall       ; KEY0            ;
+;  HEX3[5]  ; KEY0       ; 25.172 ; 25.172 ; Fall       ; KEY0            ;
+;  HEX3[6]  ; KEY0       ; 24.610 ; 24.610 ; Fall       ; KEY0            ;
+; HEX4[*]   ; KEY0       ; 34.289 ; 34.289 ; Fall       ; KEY0            ;
+;  HEX4[0]  ; KEY0       ; 31.527 ; 31.527 ; Fall       ; KEY0            ;
+;  HEX4[1]  ; KEY0       ; 34.289 ; 34.289 ; Fall       ; KEY0            ;
+;  HEX4[2]  ; KEY0       ; 31.517 ; 31.517 ; Fall       ; KEY0            ;
+;  HEX4[3]  ; KEY0       ; 32.847 ; 32.847 ; Fall       ; KEY0            ;
+;  HEX4[4]  ; KEY0       ; 30.637 ; 30.637 ; Fall       ; KEY0            ;
+;  HEX4[5]  ; KEY0       ; 30.796 ; 30.796 ; Fall       ; KEY0            ;
+;  HEX4[6]  ; KEY0       ; 33.677 ; 33.677 ; Fall       ; KEY0            ;
+; HEX5[*]   ; KEY0       ; 38.160 ; 38.160 ; Fall       ; KEY0            ;
+;  HEX5[0]  ; KEY0       ; 34.326 ; 34.326 ; Fall       ; KEY0            ;
+;  HEX5[1]  ; KEY0       ; 38.160 ; 38.160 ; Fall       ; KEY0            ;
+;  HEX5[2]  ; KEY0       ; 35.259 ; 35.259 ; Fall       ; KEY0            ;
+;  HEX5[3]  ; KEY0       ; 36.246 ; 36.246 ; Fall       ; KEY0            ;
+;  HEX5[4]  ; KEY0       ; 34.251 ; 34.251 ; Fall       ; KEY0            ;
+;  HEX5[5]  ; KEY0       ; 34.887 ; 34.887 ; Fall       ; KEY0            ;
+;  HEX5[6]  ; KEY0       ; 36.462 ; 36.462 ; Fall       ; KEY0            ;
+; HEX6[*]   ; KEY0       ; 42.423 ; 42.423 ; Fall       ; KEY0            ;
+;  HEX6[0]  ; KEY0       ; 37.734 ; 37.734 ; Fall       ; KEY0            ;
+;  HEX6[1]  ; KEY0       ; 42.423 ; 42.423 ; Fall       ; KEY0            ;
+;  HEX6[2]  ; KEY0       ; 38.758 ; 38.758 ; Fall       ; KEY0            ;
+;  HEX6[3]  ; KEY0       ; 40.214 ; 40.214 ; Fall       ; KEY0            ;
+;  HEX6[4]  ; KEY0       ; 37.930 ; 37.930 ; Fall       ; KEY0            ;
+;  HEX6[5]  ; KEY0       ; 38.933 ; 38.933 ; Fall       ; KEY0            ;
+;  HEX6[6]  ; KEY0       ; 40.522 ; 40.522 ; Fall       ; KEY0            ;
+; HEX7[*]   ; KEY0       ; 45.970 ; 45.970 ; Fall       ; KEY0            ;
+;  HEX7[0]  ; KEY0       ; 42.316 ; 42.316 ; Fall       ; KEY0            ;
+;  HEX7[1]  ; KEY0       ; 45.970 ; 45.970 ; Fall       ; KEY0            ;
+;  HEX7[2]  ; KEY0       ; 43.281 ; 43.281 ; Fall       ; KEY0            ;
+;  HEX7[3]  ; KEY0       ; 44.393 ; 44.393 ; Fall       ; KEY0            ;
+;  HEX7[4]  ; KEY0       ; 41.404 ; 41.404 ; Fall       ; KEY0            ;
+;  HEX7[5]  ; KEY0       ; 42.814 ; 42.814 ; Fall       ; KEY0            ;
+;  HEX7[6]  ; KEY0       ; 44.335 ; 44.335 ; Fall       ; KEY0            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; HEX0[*]   ; KEY0       ; 7.264 ; 7.264 ; Rise       ; KEY0            ;
+;  HEX0[0]  ; KEY0       ; 7.623 ; 7.623 ; Rise       ; KEY0            ;
+;  HEX0[1]  ; KEY0       ; 7.668 ; 7.668 ; Rise       ; KEY0            ;
+;  HEX0[2]  ; KEY0       ; 7.418 ; 7.418 ; Rise       ; KEY0            ;
+;  HEX0[3]  ; KEY0       ; 7.591 ; 7.591 ; Rise       ; KEY0            ;
+;  HEX0[4]  ; KEY0       ; 7.264 ; 7.264 ; Rise       ; KEY0            ;
+;  HEX0[5]  ; KEY0       ; 7.527 ; 7.527 ; Rise       ; KEY0            ;
+;  HEX0[6]  ; KEY0       ; 7.414 ; 7.414 ; Rise       ; KEY0            ;
+; HEX1[*]   ; KEY0       ; 6.423 ; 6.423 ; Rise       ; KEY0            ;
+;  HEX1[0]  ; KEY0       ; 6.635 ; 6.635 ; Rise       ; KEY0            ;
+;  HEX1[1]  ; KEY0       ; 6.709 ; 6.709 ; Rise       ; KEY0            ;
+;  HEX1[2]  ; KEY0       ; 6.436 ; 6.436 ; Rise       ; KEY0            ;
+;  HEX1[3]  ; KEY0       ; 6.634 ; 6.634 ; Rise       ; KEY0            ;
+;  HEX1[4]  ; KEY0       ; 6.692 ; 6.692 ; Rise       ; KEY0            ;
+;  HEX1[5]  ; KEY0       ; 6.423 ; 6.423 ; Rise       ; KEY0            ;
+;  HEX1[6]  ; KEY0       ; 6.739 ; 6.739 ; Rise       ; KEY0            ;
+; HEX2[*]   ; KEY0       ; 6.402 ; 6.402 ; Rise       ; KEY0            ;
+;  HEX2[0]  ; KEY0       ; 6.586 ; 6.586 ; Rise       ; KEY0            ;
+;  HEX2[1]  ; KEY0       ; 6.520 ; 6.520 ; Rise       ; KEY0            ;
+;  HEX2[2]  ; KEY0       ; 6.443 ; 6.443 ; Rise       ; KEY0            ;
+;  HEX2[3]  ; KEY0       ; 6.872 ; 6.872 ; Rise       ; KEY0            ;
+;  HEX2[4]  ; KEY0       ; 6.402 ; 6.402 ; Rise       ; KEY0            ;
+;  HEX2[5]  ; KEY0       ; 6.595 ; 6.595 ; Rise       ; KEY0            ;
+;  HEX2[6]  ; KEY0       ; 6.656 ; 6.656 ; Rise       ; KEY0            ;
+; HEX3[*]   ; KEY0       ; 6.298 ; 6.298 ; Rise       ; KEY0            ;
+;  HEX3[0]  ; KEY0       ; 6.298 ; 6.298 ; Rise       ; KEY0            ;
+;  HEX3[1]  ; KEY0       ; 6.376 ; 6.376 ; Rise       ; KEY0            ;
+;  HEX3[2]  ; KEY0       ; 6.473 ; 6.473 ; Rise       ; KEY0            ;
+;  HEX3[3]  ; KEY0       ; 6.439 ; 6.439 ; Rise       ; KEY0            ;
+;  HEX3[4]  ; KEY0       ; 6.560 ; 6.560 ; Rise       ; KEY0            ;
+;  HEX3[5]  ; KEY0       ; 6.526 ; 6.526 ; Rise       ; KEY0            ;
+;  HEX3[6]  ; KEY0       ; 6.362 ; 6.362 ; Rise       ; KEY0            ;
+; HEX4[*]   ; KEY0       ; 6.691 ; 6.691 ; Rise       ; KEY0            ;
+;  HEX4[0]  ; KEY0       ; 7.111 ; 7.111 ; Rise       ; KEY0            ;
+;  HEX4[1]  ; KEY0       ; 7.165 ; 7.165 ; Rise       ; KEY0            ;
+;  HEX4[2]  ; KEY0       ; 6.691 ; 6.691 ; Rise       ; KEY0            ;
+;  HEX4[3]  ; KEY0       ; 6.986 ; 6.986 ; Rise       ; KEY0            ;
+;  HEX4[4]  ; KEY0       ; 7.005 ; 7.005 ; Rise       ; KEY0            ;
+;  HEX4[5]  ; KEY0       ; 6.851 ; 6.851 ; Rise       ; KEY0            ;
+;  HEX4[6]  ; KEY0       ; 6.852 ; 6.852 ; Rise       ; KEY0            ;
+; HEX5[*]   ; KEY0       ; 6.787 ; 6.787 ; Rise       ; KEY0            ;
+;  HEX5[0]  ; KEY0       ; 6.828 ; 6.828 ; Rise       ; KEY0            ;
+;  HEX5[1]  ; KEY0       ; 6.824 ; 6.824 ; Rise       ; KEY0            ;
+;  HEX5[2]  ; KEY0       ; 6.899 ; 6.899 ; Rise       ; KEY0            ;
+;  HEX5[3]  ; KEY0       ; 6.939 ; 6.939 ; Rise       ; KEY0            ;
+;  HEX5[4]  ; KEY0       ; 7.069 ; 7.069 ; Rise       ; KEY0            ;
+;  HEX5[5]  ; KEY0       ; 7.026 ; 7.026 ; Rise       ; KEY0            ;
+;  HEX5[6]  ; KEY0       ; 6.787 ; 6.787 ; Rise       ; KEY0            ;
+; HEX6[*]   ; KEY0       ; 6.702 ; 6.702 ; Rise       ; KEY0            ;
+;  HEX6[0]  ; KEY0       ; 6.702 ; 6.702 ; Rise       ; KEY0            ;
+;  HEX6[1]  ; KEY0       ; 6.834 ; 6.834 ; Rise       ; KEY0            ;
+;  HEX6[2]  ; KEY0       ; 6.806 ; 6.806 ; Rise       ; KEY0            ;
+;  HEX6[3]  ; KEY0       ; 6.965 ; 6.965 ; Rise       ; KEY0            ;
+;  HEX6[4]  ; KEY0       ; 7.150 ; 7.150 ; Rise       ; KEY0            ;
+;  HEX6[5]  ; KEY0       ; 7.035 ; 7.035 ; Rise       ; KEY0            ;
+;  HEX6[6]  ; KEY0       ; 7.196 ; 7.196 ; Rise       ; KEY0            ;
+; HEX7[*]   ; KEY0       ; 6.994 ; 6.994 ; Rise       ; KEY0            ;
+;  HEX7[0]  ; KEY0       ; 7.185 ; 7.185 ; Rise       ; KEY0            ;
+;  HEX7[1]  ; KEY0       ; 7.015 ; 7.015 ; Rise       ; KEY0            ;
+;  HEX7[2]  ; KEY0       ; 7.026 ; 7.026 ; Rise       ; KEY0            ;
+;  HEX7[3]  ; KEY0       ; 6.994 ; 6.994 ; Rise       ; KEY0            ;
+;  HEX7[4]  ; KEY0       ; 7.075 ; 7.075 ; Rise       ; KEY0            ;
+;  HEX7[5]  ; KEY0       ; 7.293 ; 7.293 ; Rise       ; KEY0            ;
+;  HEX7[6]  ; KEY0       ; 7.307 ; 7.307 ; Rise       ; KEY0            ;
+; HEX0[*]   ; KEY0       ; 6.024 ; 6.024 ; Fall       ; KEY0            ;
+;  HEX0[0]  ; KEY0       ; 6.409 ; 6.409 ; Fall       ; KEY0            ;
+;  HEX0[1]  ; KEY0       ; 6.484 ; 6.484 ; Fall       ; KEY0            ;
+;  HEX0[2]  ; KEY0       ; 6.024 ; 6.024 ; Fall       ; KEY0            ;
+;  HEX0[3]  ; KEY0       ; 6.456 ; 6.456 ; Fall       ; KEY0            ;
+;  HEX0[4]  ; KEY0       ; 6.053 ; 6.053 ; Fall       ; KEY0            ;
+;  HEX0[5]  ; KEY0       ; 6.434 ; 6.434 ; Fall       ; KEY0            ;
+;  HEX0[6]  ; KEY0       ; 6.285 ; 6.285 ; Fall       ; KEY0            ;
+; HEX1[*]   ; KEY0       ; 6.076 ; 6.076 ; Fall       ; KEY0            ;
+;  HEX1[0]  ; KEY0       ; 6.563 ; 6.563 ; Fall       ; KEY0            ;
+;  HEX1[1]  ; KEY0       ; 6.551 ; 6.551 ; Fall       ; KEY0            ;
+;  HEX1[2]  ; KEY0       ; 6.076 ; 6.076 ; Fall       ; KEY0            ;
+;  HEX1[3]  ; KEY0       ; 6.131 ; 6.131 ; Fall       ; KEY0            ;
+;  HEX1[4]  ; KEY0       ; 6.354 ; 6.354 ; Fall       ; KEY0            ;
+;  HEX1[5]  ; KEY0       ; 6.372 ; 6.372 ; Fall       ; KEY0            ;
+;  HEX1[6]  ; KEY0       ; 6.588 ; 6.588 ; Fall       ; KEY0            ;
+; HEX2[*]   ; KEY0       ; 6.402 ; 6.402 ; Fall       ; KEY0            ;
+;  HEX2[0]  ; KEY0       ; 6.586 ; 6.586 ; Fall       ; KEY0            ;
+;  HEX2[1]  ; KEY0       ; 6.520 ; 6.520 ; Fall       ; KEY0            ;
+;  HEX2[2]  ; KEY0       ; 6.443 ; 6.443 ; Fall       ; KEY0            ;
+;  HEX2[3]  ; KEY0       ; 6.872 ; 6.872 ; Fall       ; KEY0            ;
+;  HEX2[4]  ; KEY0       ; 6.402 ; 6.402 ; Fall       ; KEY0            ;
+;  HEX2[5]  ; KEY0       ; 6.595 ; 6.595 ; Fall       ; KEY0            ;
+;  HEX2[6]  ; KEY0       ; 6.656 ; 6.656 ; Fall       ; KEY0            ;
+; HEX3[*]   ; KEY0       ; 6.298 ; 6.298 ; Fall       ; KEY0            ;
+;  HEX3[0]  ; KEY0       ; 6.298 ; 6.298 ; Fall       ; KEY0            ;
+;  HEX3[1]  ; KEY0       ; 6.376 ; 6.376 ; Fall       ; KEY0            ;
+;  HEX3[2]  ; KEY0       ; 6.473 ; 6.473 ; Fall       ; KEY0            ;
+;  HEX3[3]  ; KEY0       ; 6.439 ; 6.439 ; Fall       ; KEY0            ;
+;  HEX3[4]  ; KEY0       ; 6.560 ; 6.560 ; Fall       ; KEY0            ;
+;  HEX3[5]  ; KEY0       ; 6.526 ; 6.526 ; Fall       ; KEY0            ;
+;  HEX3[6]  ; KEY0       ; 6.362 ; 6.362 ; Fall       ; KEY0            ;
+; HEX4[*]   ; KEY0       ; 6.691 ; 6.691 ; Fall       ; KEY0            ;
+;  HEX4[0]  ; KEY0       ; 7.111 ; 7.111 ; Fall       ; KEY0            ;
+;  HEX4[1]  ; KEY0       ; 7.165 ; 7.165 ; Fall       ; KEY0            ;
+;  HEX4[2]  ; KEY0       ; 6.691 ; 6.691 ; Fall       ; KEY0            ;
+;  HEX4[3]  ; KEY0       ; 6.986 ; 6.986 ; Fall       ; KEY0            ;
+;  HEX4[4]  ; KEY0       ; 7.005 ; 7.005 ; Fall       ; KEY0            ;
+;  HEX4[5]  ; KEY0       ; 6.851 ; 6.851 ; Fall       ; KEY0            ;
+;  HEX4[6]  ; KEY0       ; 6.852 ; 6.852 ; Fall       ; KEY0            ;
+; HEX5[*]   ; KEY0       ; 6.787 ; 6.787 ; Fall       ; KEY0            ;
+;  HEX5[0]  ; KEY0       ; 6.828 ; 6.828 ; Fall       ; KEY0            ;
+;  HEX5[1]  ; KEY0       ; 6.824 ; 6.824 ; Fall       ; KEY0            ;
+;  HEX5[2]  ; KEY0       ; 6.899 ; 6.899 ; Fall       ; KEY0            ;
+;  HEX5[3]  ; KEY0       ; 6.939 ; 6.939 ; Fall       ; KEY0            ;
+;  HEX5[4]  ; KEY0       ; 7.069 ; 7.069 ; Fall       ; KEY0            ;
+;  HEX5[5]  ; KEY0       ; 7.026 ; 7.026 ; Fall       ; KEY0            ;
+;  HEX5[6]  ; KEY0       ; 6.787 ; 6.787 ; Fall       ; KEY0            ;
+; HEX6[*]   ; KEY0       ; 6.702 ; 6.702 ; Fall       ; KEY0            ;
+;  HEX6[0]  ; KEY0       ; 6.702 ; 6.702 ; Fall       ; KEY0            ;
+;  HEX6[1]  ; KEY0       ; 6.834 ; 6.834 ; Fall       ; KEY0            ;
+;  HEX6[2]  ; KEY0       ; 6.806 ; 6.806 ; Fall       ; KEY0            ;
+;  HEX6[3]  ; KEY0       ; 6.965 ; 6.965 ; Fall       ; KEY0            ;
+;  HEX6[4]  ; KEY0       ; 7.150 ; 7.150 ; Fall       ; KEY0            ;
+;  HEX6[5]  ; KEY0       ; 7.035 ; 7.035 ; Fall       ; KEY0            ;
+;  HEX6[6]  ; KEY0       ; 7.196 ; 7.196 ; Fall       ; KEY0            ;
+; HEX7[*]   ; KEY0       ; 6.994 ; 6.994 ; Fall       ; KEY0            ;
+;  HEX7[0]  ; KEY0       ; 7.185 ; 7.185 ; Fall       ; KEY0            ;
+;  HEX7[1]  ; KEY0       ; 7.015 ; 7.015 ; Fall       ; KEY0            ;
+;  HEX7[2]  ; KEY0       ; 7.026 ; 7.026 ; Fall       ; KEY0            ;
+;  HEX7[3]  ; KEY0       ; 6.994 ; 6.994 ; Fall       ; KEY0            ;
+;  HEX7[4]  ; KEY0       ; 7.075 ; 7.075 ; Fall       ; KEY0            ;
+;  HEX7[5]  ; KEY0       ; 7.293 ; 7.293 ; Fall       ; KEY0            ;
+;  HEX7[6]  ; KEY0       ; 7.307 ; 7.307 ; Fall       ; KEY0            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------+
+; Progagation Delay                                    ;
++------------+-------------+----+--------+--------+----+
+; Input Port ; Output Port ; RR ; RF     ; FR     ; FF ;
++------------+-------------+----+--------+--------+----+
+; SW0        ; HEX0[0]     ;    ; 8.147  ; 8.147  ;    ;
+; SW0        ; HEX0[1]     ;    ; 8.627  ; 8.627  ;    ;
+; SW0        ; HEX0[2]     ;    ; 7.825  ; 7.825  ;    ;
+; SW0        ; HEX0[3]     ;    ; 9.154  ; 9.154  ;    ;
+; SW0        ; HEX0[4]     ;    ; 7.687  ; 7.687  ;    ;
+; SW0        ; HEX0[5]     ;    ; 8.648  ; 8.648  ;    ;
+; SW0        ; HEX0[6]     ;    ; 8.177  ; 8.177  ;    ;
+; SW0        ; HEX1[0]     ;    ; 10.512 ; 10.512 ;    ;
+; SW0        ; HEX1[1]     ;    ; 10.432 ; 10.432 ;    ;
+; SW0        ; HEX1[2]     ;    ; 10.212 ; 10.212 ;    ;
+; SW0        ; HEX1[3]     ;    ; 9.973  ; 9.973  ;    ;
+; SW0        ; HEX1[4]     ;    ; 10.362 ; 10.362 ;    ;
+; SW0        ; HEX1[5]     ;    ; 9.978  ; 9.978  ;    ;
+; SW0        ; HEX1[6]     ;    ; 9.735  ; 9.735  ;    ;
+; SW0        ; HEX2[0]     ;    ; 13.900 ; 13.900 ;    ;
+; SW0        ; HEX2[1]     ;    ; 14.667 ; 14.667 ;    ;
+; SW0        ; HEX2[2]     ;    ; 13.481 ; 13.481 ;    ;
+; SW0        ; HEX2[3]     ;    ; 13.174 ; 13.174 ;    ;
+; SW0        ; HEX2[4]     ;    ; 13.134 ; 13.134 ;    ;
+; SW0        ; HEX2[5]     ;    ; 13.398 ; 13.398 ;    ;
+; SW0        ; HEX2[6]     ;    ; 13.177 ; 13.177 ;    ;
+; SW0        ; HEX3[0]     ;    ; 18.064 ; 18.064 ;    ;
+; SW0        ; HEX3[1]     ;    ; 18.199 ; 18.199 ;    ;
+; SW0        ; HEX3[2]     ;    ; 17.743 ; 17.743 ;    ;
+; SW0        ; HEX3[3]     ;    ; 16.146 ; 16.146 ;    ;
+; SW0        ; HEX3[4]     ;    ; 16.649 ; 16.649 ;    ;
+; SW0        ; HEX3[5]     ;    ; 17.048 ; 17.048 ;    ;
+; SW0        ; HEX3[6]     ;    ; 16.238 ; 16.238 ;    ;
+; SW0        ; HEX4[0]     ;    ; 23.851 ; 23.851 ;    ;
+; SW0        ; HEX4[1]     ;    ; 25.913 ; 25.913 ;    ;
+; SW0        ; HEX4[2]     ;    ; 23.551 ; 23.551 ;    ;
+; SW0        ; HEX4[3]     ;    ; 24.596 ; 24.596 ;    ;
+; SW0        ; HEX4[4]     ;    ; 22.201 ; 22.201 ;    ;
+; SW0        ; HEX4[5]     ;    ; 22.672 ; 22.672 ;    ;
+; SW0        ; HEX4[6]     ;    ; 25.305 ; 25.305 ;    ;
+; SW0        ; HEX5[0]     ;    ; 26.650 ; 26.650 ;    ;
+; SW0        ; HEX5[1]     ;    ; 29.784 ; 29.784 ;    ;
+; SW0        ; HEX5[2]     ;    ; 27.293 ; 27.293 ;    ;
+; SW0        ; HEX5[3]     ;    ; 27.995 ; 27.995 ;    ;
+; SW0        ; HEX5[4]     ;    ; 25.815 ; 25.815 ;    ;
+; SW0        ; HEX5[5]     ;    ; 26.763 ; 26.763 ;    ;
+; SW0        ; HEX5[6]     ;    ; 28.090 ; 28.090 ;    ;
+; SW0        ; HEX6[0]     ;    ; 30.058 ; 30.058 ;    ;
+; SW0        ; HEX6[1]     ;    ; 34.047 ; 34.047 ;    ;
+; SW0        ; HEX6[2]     ;    ; 30.792 ; 30.792 ;    ;
+; SW0        ; HEX6[3]     ;    ; 31.963 ; 31.963 ;    ;
+; SW0        ; HEX6[4]     ;    ; 29.494 ; 29.494 ;    ;
+; SW0        ; HEX6[5]     ;    ; 30.809 ; 30.809 ;    ;
+; SW0        ; HEX6[6]     ;    ; 32.150 ; 32.150 ;    ;
+; SW0        ; HEX7[0]     ;    ; 34.640 ; 34.640 ;    ;
+; SW0        ; HEX7[1]     ;    ; 37.594 ; 37.594 ;    ;
+; SW0        ; HEX7[2]     ;    ; 35.315 ; 35.315 ;    ;
+; SW0        ; HEX7[3]     ;    ; 36.142 ; 36.142 ;    ;
+; SW0        ; HEX7[4]     ;    ; 32.968 ; 32.968 ;    ;
+; SW0        ; HEX7[5]     ;    ; 34.690 ; 34.690 ;    ;
+; SW0        ; HEX7[6]     ;    ; 35.963 ; 35.963 ;    ;
++------------+-------------+----+--------+--------+----+
+
+
++----------------------------------------------------+
+; Minimum Progagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; SW0        ; HEX0[0]     ;    ; 4.280 ; 4.280 ;    ;
+; SW0        ; HEX0[1]     ;    ; 4.388 ; 4.388 ;    ;
+; SW0        ; HEX0[2]     ;    ; 4.079 ; 4.079 ;    ;
+; SW0        ; HEX0[3]     ;    ; 4.679 ; 4.679 ;    ;
+; SW0        ; HEX0[4]     ;    ; 4.018 ; 4.018 ;    ;
+; SW0        ; HEX0[5]     ;    ; 4.437 ; 4.437 ;    ;
+; SW0        ; HEX0[6]     ;    ; 4.260 ; 4.260 ;    ;
+; SW0        ; HEX1[0]     ;    ; 3.548 ; 3.548 ;    ;
+; SW0        ; HEX1[1]     ;    ; 3.546 ; 3.546 ;    ;
+; SW0        ; HEX1[2]     ;    ; 3.465 ; 3.465 ;    ;
+; SW0        ; HEX1[3]     ;    ; 3.405 ; 3.405 ;    ;
+; SW0        ; HEX1[4]     ;    ; 3.470 ; 3.470 ;    ;
+; SW0        ; HEX1[5]     ;    ; 3.416 ; 3.416 ;    ;
+; SW0        ; HEX1[6]     ;    ; 3.437 ; 3.437 ;    ;
+; SW0        ; HEX2[0]     ;    ; 3.457 ; 3.457 ;    ;
+; SW0        ; HEX2[1]     ;    ; 3.416 ; 3.416 ;    ;
+; SW0        ; HEX2[2]     ;    ; 3.494 ; 3.494 ;    ;
+; SW0        ; HEX2[3]     ;    ; 3.479 ; 3.479 ;    ;
+; SW0        ; HEX2[4]     ;    ; 3.354 ; 3.354 ;    ;
+; SW0        ; HEX2[5]     ;    ; 3.289 ; 3.289 ;    ;
+; SW0        ; HEX2[6]     ;    ; 3.392 ; 3.392 ;    ;
+; SW0        ; HEX3[0]     ;    ; 3.250 ; 3.250 ;    ;
+; SW0        ; HEX3[1]     ;    ; 3.282 ; 3.282 ;    ;
+; SW0        ; HEX3[2]     ;    ; 3.384 ; 3.384 ;    ;
+; SW0        ; HEX3[3]     ;    ; 3.284 ; 3.284 ;    ;
+; SW0        ; HEX3[4]     ;    ; 3.268 ; 3.268 ;    ;
+; SW0        ; HEX3[5]     ;    ; 3.399 ; 3.399 ;    ;
+; SW0        ; HEX3[6]     ;    ; 3.233 ; 3.233 ;    ;
+; SW0        ; HEX4[0]     ;    ; 3.877 ; 3.877 ;    ;
+; SW0        ; HEX4[1]     ;    ; 3.572 ; 3.572 ;    ;
+; SW0        ; HEX4[2]     ;    ; 3.579 ; 3.579 ;    ;
+; SW0        ; HEX4[3]     ;    ; 3.860 ; 3.860 ;    ;
+; SW0        ; HEX4[4]     ;    ; 3.793 ; 3.793 ;    ;
+; SW0        ; HEX4[5]     ;    ; 3.845 ; 3.845 ;    ;
+; SW0        ; HEX4[6]     ;    ; 3.832 ; 3.832 ;    ;
+; SW0        ; HEX5[0]     ;    ; 3.741 ; 3.741 ;    ;
+; SW0        ; HEX5[1]     ;    ; 3.690 ; 3.690 ;    ;
+; SW0        ; HEX5[2]     ;    ; 3.683 ; 3.683 ;    ;
+; SW0        ; HEX5[3]     ;    ; 3.747 ; 3.747 ;    ;
+; SW0        ; HEX5[4]     ;    ; 3.822 ; 3.822 ;    ;
+; SW0        ; HEX5[5]     ;    ; 3.722 ; 3.722 ;    ;
+; SW0        ; HEX5[6]     ;    ; 3.687 ; 3.687 ;    ;
+; SW0        ; HEX6[0]     ;    ; 3.682 ; 3.682 ;    ;
+; SW0        ; HEX6[1]     ;    ; 3.738 ; 3.738 ;    ;
+; SW0        ; HEX6[2]     ;    ; 3.716 ; 3.716 ;    ;
+; SW0        ; HEX6[3]     ;    ; 3.965 ; 3.965 ;    ;
+; SW0        ; HEX6[4]     ;    ; 4.151 ; 4.151 ;    ;
+; SW0        ; HEX6[5]     ;    ; 4.141 ; 4.141 ;    ;
+; SW0        ; HEX6[6]     ;    ; 4.001 ; 4.001 ;    ;
+; SW0        ; HEX7[0]     ;    ; 4.108 ; 4.108 ;    ;
+; SW0        ; HEX7[1]     ;    ; 4.049 ; 4.049 ;    ;
+; SW0        ; HEX7[2]     ;    ; 4.011 ; 4.011 ;    ;
+; SW0        ; HEX7[3]     ;    ; 4.031 ; 4.031 ;    ;
+; SW0        ; HEX7[4]     ;    ; 4.153 ; 4.153 ;    ;
+; SW0        ; HEX7[5]     ;    ; 4.188 ; 4.188 ;    ;
+; SW0        ; HEX7[6]     ;    ; 4.201 ; 4.201 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; KEY0       ; KEY0     ; 0        ; 0        ; 0        ; 9        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; KEY0       ; KEY0     ; 0        ; 0        ; 0        ; 9        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 121   ; 121  ;
+; Unconstrained Output Ports      ; 56    ; 56   ;
+; Unconstrained Output Port Paths ; 272   ; 272  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Jun 23 08:54:19 2016
+Info: Command: quartus_sta part5 -c part5
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'part5.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name KEY0 KEY0
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p7|m7|d2|Qa|combout"
+    Warning (332126): Node "p0|p7|m7|d2|Qb|datac"
+    Warning (332126): Node "p0|p7|m7|d2|Qb|combout"
+    Warning (332126): Node "p0|p7|m7|d2|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p7|m7|d1|Qa|combout"
+    Warning (332126): Node "p0|p7|m7|d1|Qb|datac"
+    Warning (332126): Node "p0|p7|m7|d1|Qb|combout"
+    Warning (332126): Node "p0|p7|m7|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p7|m6|d2|Qa|combout"
+    Warning (332126): Node "p0|p7|m6|d2|Qb|datad"
+    Warning (332126): Node "p0|p7|m6|d2|Qb|combout"
+    Warning (332126): Node "p0|p7|m6|d2|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p7|m6|d1|Qa|combout"
+    Warning (332126): Node "p0|p7|m6|d1|Qb|datac"
+    Warning (332126): Node "p0|p7|m6|d1|Qb|combout"
+    Warning (332126): Node "p0|p7|m6|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p7|m5|d2|Qa|combout"
+    Warning (332126): Node "p0|p7|m5|d2|Qb|datad"
+    Warning (332126): Node "p0|p7|m5|d2|Qb|combout"
+    Warning (332126): Node "p0|p7|m5|d2|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p7|m5|d1|Qa|combout"
+    Warning (332126): Node "p0|p7|m5|d1|Qb|datac"
+    Warning (332126): Node "p0|p7|m5|d1|Qb|combout"
+    Warning (332126): Node "p0|p7|m5|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p7|m4|d2|Qa|combout"
+    Warning (332126): Node "p0|p7|m4|d2|Qb|datad"
+    Warning (332126): Node "p0|p7|m4|d2|Qb|combout"
+    Warning (332126): Node "p0|p7|m4|d2|Qa|dataa"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p7|m4|d1|Qa|combout"
+    Warning (332126): Node "p0|p7|m4|d1|Qb|datac"
+    Warning (332126): Node "p0|p7|m4|d1|Qb|combout"
+    Warning (332126): Node "p0|p7|m4|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p7|m3|d2|Qa|combout"
+    Warning (332126): Node "p0|p7|m3|d2|Qb|datad"
+    Warning (332126): Node "p0|p7|m3|d2|Qb|combout"
+    Warning (332126): Node "p0|p7|m3|d2|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p7|m3|d1|Qa|combout"
+    Warning (332126): Node "p0|p7|m3|d1|Qb|datad"
+    Warning (332126): Node "p0|p7|m3|d1|Qb|combout"
+    Warning (332126): Node "p0|p7|m3|d1|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p7|m2|d2|Qa|combout"
+    Warning (332126): Node "p0|p7|m2|d2|Qb|datac"
+    Warning (332126): Node "p0|p7|m2|d2|Qb|combout"
+    Warning (332126): Node "p0|p7|m2|d2|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p7|m2|d1|Qa|combout"
+    Warning (332126): Node "p0|p7|m2|d1|Qb|datad"
+    Warning (332126): Node "p0|p7|m2|d1|Qb|combout"
+    Warning (332126): Node "p0|p7|m2|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p7|m1|d2|Qa|combout"
+    Warning (332126): Node "p0|p7|m1|d2|Qb|datad"
+    Warning (332126): Node "p0|p7|m1|d2|Qb|combout"
+    Warning (332126): Node "p0|p7|m1|d2|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p7|m1|d1|Qa|combout"
+    Warning (332126): Node "p0|p7|m1|d1|Qb|datab"
+    Warning (332126): Node "p0|p7|m1|d1|Qb|combout"
+    Warning (332126): Node "p0|p7|m1|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p6|m7|d2|Qa|combout"
+    Warning (332126): Node "p0|p6|m7|d2|Qb|datad"
+    Warning (332126): Node "p0|p6|m7|d2|Qb|combout"
+    Warning (332126): Node "p0|p6|m7|d2|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p6|m7|d1|Qa|combout"
+    Warning (332126): Node "p0|p6|m7|d1|Qb|datac"
+    Warning (332126): Node "p0|p6|m7|d1|Qb|combout"
+    Warning (332126): Node "p0|p6|m7|d1|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p6|m6|d2|Qa|combout"
+    Warning (332126): Node "p0|p6|m6|d2|Qb|datac"
+    Warning (332126): Node "p0|p6|m6|d2|Qb|combout"
+    Warning (332126): Node "p0|p6|m6|d2|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p6|m6|d1|Qa|combout"
+    Warning (332126): Node "p0|p6|m6|d1|Qb|datab"
+    Warning (332126): Node "p0|p6|m6|d1|Qb|combout"
+    Warning (332126): Node "p0|p6|m6|d1|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p6|m5|d2|Qa|combout"
+    Warning (332126): Node "p0|p6|m5|d2|Qb|datad"
+    Warning (332126): Node "p0|p6|m5|d2|Qb|combout"
+    Warning (332126): Node "p0|p6|m5|d2|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p6|m5|d1|Qa|combout"
+    Warning (332126): Node "p0|p6|m5|d1|Qb|datad"
+    Warning (332126): Node "p0|p6|m5|d1|Qb|combout"
+    Warning (332126): Node "p0|p6|m5|d1|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p6|m4|d2|Qa|combout"
+    Warning (332126): Node "p0|p6|m4|d2|Qb|datad"
+    Warning (332126): Node "p0|p6|m4|d2|Qb|combout"
+    Warning (332126): Node "p0|p6|m4|d2|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p6|m4|d1|Qa|combout"
+    Warning (332126): Node "p0|p6|m4|d1|Qb|datad"
+    Warning (332126): Node "p0|p6|m4|d1|Qb|combout"
+    Warning (332126): Node "p0|p6|m4|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p6|m3|d2|Qa|combout"
+    Warning (332126): Node "p0|p6|m3|d2|Qb|datad"
+    Warning (332126): Node "p0|p6|m3|d2|Qb|combout"
+    Warning (332126): Node "p0|p6|m3|d2|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p6|m3|d1|Qa|combout"
+    Warning (332126): Node "p0|p6|m3|d1|Qb|datad"
+    Warning (332126): Node "p0|p6|m3|d1|Qb|combout"
+    Warning (332126): Node "p0|p6|m3|d1|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p6|m2|d2|Qa|combout"
+    Warning (332126): Node "p0|p6|m2|d2|Qb|datad"
+    Warning (332126): Node "p0|p6|m2|d2|Qb|combout"
+    Warning (332126): Node "p0|p6|m2|d2|Qa|dataa"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p6|m2|d1|Qa|combout"
+    Warning (332126): Node "p0|p6|m2|d1|Qb|dataa"
+    Warning (332126): Node "p0|p6|m2|d1|Qb|combout"
+    Warning (332126): Node "p0|p6|m2|d1|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p6|m1|d2|Qa|combout"
+    Warning (332126): Node "p0|p6|m1|d2|Qb|datac"
+    Warning (332126): Node "p0|p6|m1|d2|Qb|combout"
+    Warning (332126): Node "p0|p6|m1|d2|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p6|m1|d1|Qa|combout"
+    Warning (332126): Node "p0|p6|m1|d1|Qb|datad"
+    Warning (332126): Node "p0|p6|m1|d1|Qb|combout"
+    Warning (332126): Node "p0|p6|m1|d1|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p5|m7|d2|Qa|combout"
+    Warning (332126): Node "p0|p5|m7|d2|Qb|datad"
+    Warning (332126): Node "p0|p5|m7|d2|Qb|combout"
+    Warning (332126): Node "p0|p5|m7|d2|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p5|m7|d1|Qa|combout"
+    Warning (332126): Node "p0|p5|m7|d1|Qb|dataa"
+    Warning (332126): Node "p0|p5|m7|d1|Qb|combout"
+    Warning (332126): Node "p0|p5|m7|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p5|m6|d2|Qa|combout"
+    Warning (332126): Node "p0|p5|m6|d2|Qb|datac"
+    Warning (332126): Node "p0|p5|m6|d2|Qb|combout"
+    Warning (332126): Node "p0|p5|m6|d2|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p5|m6|d1|Qa|combout"
+    Warning (332126): Node "p0|p5|m6|d1|Qb|datac"
+    Warning (332126): Node "p0|p5|m6|d1|Qb|combout"
+    Warning (332126): Node "p0|p5|m6|d1|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p5|m5|d2|Qa|combout"
+    Warning (332126): Node "p0|p5|m5|d2|Qb|datad"
+    Warning (332126): Node "p0|p5|m5|d2|Qb|combout"
+    Warning (332126): Node "p0|p5|m5|d2|Qa|dataa"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p5|m5|d1|Qa|combout"
+    Warning (332126): Node "p0|p5|m5|d1|Qb|datad"
+    Warning (332126): Node "p0|p5|m5|d1|Qb|combout"
+    Warning (332126): Node "p0|p5|m5|d1|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p5|m4|d2|Qa|combout"
+    Warning (332126): Node "p0|p5|m4|d2|Qb|datad"
+    Warning (332126): Node "p0|p5|m4|d2|Qb|combout"
+    Warning (332126): Node "p0|p5|m4|d2|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p5|m4|d1|Qa|combout"
+    Warning (332126): Node "p0|p5|m4|d1|Qb|dataa"
+    Warning (332126): Node "p0|p5|m4|d1|Qb|combout"
+    Warning (332126): Node "p0|p5|m4|d1|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p5|m3|d2|Qa|combout"
+    Warning (332126): Node "p0|p5|m3|d2|Qb|datad"
+    Warning (332126): Node "p0|p5|m3|d2|Qb|combout"
+    Warning (332126): Node "p0|p5|m3|d2|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p5|m3|d1|Qa|combout"
+    Warning (332126): Node "p0|p5|m3|d1|Qb|datad"
+    Warning (332126): Node "p0|p5|m3|d1|Qb|combout"
+    Warning (332126): Node "p0|p5|m3|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p5|m2|d2|Qa|combout"
+    Warning (332126): Node "p0|p5|m2|d2|Qb|datad"
+    Warning (332126): Node "p0|p5|m2|d2|Qb|combout"
+    Warning (332126): Node "p0|p5|m2|d2|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p5|m2|d1|Qa|combout"
+    Warning (332126): Node "p0|p5|m2|d1|Qb|datad"
+    Warning (332126): Node "p0|p5|m2|d1|Qb|combout"
+    Warning (332126): Node "p0|p5|m2|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p5|m1|d2|Qa|combout"
+    Warning (332126): Node "p0|p5|m1|d2|Qb|datad"
+    Warning (332126): Node "p0|p5|m1|d2|Qb|combout"
+    Warning (332126): Node "p0|p5|m1|d2|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p5|m1|d1|Qa|combout"
+    Warning (332126): Node "p0|p5|m1|d1|Qb|datab"
+    Warning (332126): Node "p0|p5|m1|d1|Qb|combout"
+    Warning (332126): Node "p0|p5|m1|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p4|m7|d2|Qa|combout"
+    Warning (332126): Node "p0|p4|m7|d2|Qb|datad"
+    Warning (332126): Node "p0|p4|m7|d2|Qb|combout"
+    Warning (332126): Node "p0|p4|m7|d2|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p4|m7|d1|Qa|combout"
+    Warning (332126): Node "p0|p4|m7|d1|Qb|datad"
+    Warning (332126): Node "p0|p4|m7|d1|Qb|combout"
+    Warning (332126): Node "p0|p4|m7|d1|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p4|m6|d2|Qa|combout"
+    Warning (332126): Node "p0|p4|m6|d2|Qb|datad"
+    Warning (332126): Node "p0|p4|m6|d2|Qb|combout"
+    Warning (332126): Node "p0|p4|m6|d2|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p4|m6|d1|Qa|combout"
+    Warning (332126): Node "p0|p4|m6|d1|Qb|datad"
+    Warning (332126): Node "p0|p4|m6|d1|Qb|combout"
+    Warning (332126): Node "p0|p4|m6|d1|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p4|m5|d2|Qa|combout"
+    Warning (332126): Node "p0|p4|m5|d2|Qb|datad"
+    Warning (332126): Node "p0|p4|m5|d2|Qb|combout"
+    Warning (332126): Node "p0|p4|m5|d2|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p4|m5|d1|Qa|combout"
+    Warning (332126): Node "p0|p4|m5|d1|Qb|datad"
+    Warning (332126): Node "p0|p4|m5|d1|Qb|combout"
+    Warning (332126): Node "p0|p4|m5|d1|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p4|m4|d2|Qa|combout"
+    Warning (332126): Node "p0|p4|m4|d2|Qb|datad"
+    Warning (332126): Node "p0|p4|m4|d2|Qb|combout"
+    Warning (332126): Node "p0|p4|m4|d2|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p4|m4|d1|Qa|combout"
+    Warning (332126): Node "p0|p4|m4|d1|Qb|datad"
+    Warning (332126): Node "p0|p4|m4|d1|Qb|combout"
+    Warning (332126): Node "p0|p4|m4|d1|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p4|m3|d2|Qa|combout"
+    Warning (332126): Node "p0|p4|m3|d2|Qb|datad"
+    Warning (332126): Node "p0|p4|m3|d2|Qb|combout"
+    Warning (332126): Node "p0|p4|m3|d2|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p4|m3|d1|Qa|combout"
+    Warning (332126): Node "p0|p4|m3|d1|Qb|datad"
+    Warning (332126): Node "p0|p4|m3|d1|Qb|combout"
+    Warning (332126): Node "p0|p4|m3|d1|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p4|m2|d2|Qa|combout"
+    Warning (332126): Node "p0|p4|m2|d2|Qb|datad"
+    Warning (332126): Node "p0|p4|m2|d2|Qb|combout"
+    Warning (332126): Node "p0|p4|m2|d2|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p4|m2|d1|Qa|combout"
+    Warning (332126): Node "p0|p4|m2|d1|Qb|datad"
+    Warning (332126): Node "p0|p4|m2|d1|Qb|combout"
+    Warning (332126): Node "p0|p4|m2|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p4|m1|d2|Qa|combout"
+    Warning (332126): Node "p0|p4|m1|d2|Qb|dataa"
+    Warning (332126): Node "p0|p4|m1|d2|Qb|combout"
+    Warning (332126): Node "p0|p4|m1|d2|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p4|m1|d1|Qa|combout"
+    Warning (332126): Node "p0|p4|m1|d1|Qb|datad"
+    Warning (332126): Node "p0|p4|m1|d1|Qb|combout"
+    Warning (332126): Node "p0|p4|m1|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p3|m7|d2|Qa|combout"
+    Warning (332126): Node "p0|p3|m7|d2|Qb|datad"
+    Warning (332126): Node "p0|p3|m7|d2|Qb|combout"
+    Warning (332126): Node "p0|p3|m7|d2|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p3|m7|d1|Qa|combout"
+    Warning (332126): Node "p0|p3|m7|d1|Qb|datad"
+    Warning (332126): Node "p0|p3|m7|d1|Qb|combout"
+    Warning (332126): Node "p0|p3|m7|d1|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p3|m6|d2|Qa|combout"
+    Warning (332126): Node "p0|p3|m6|d2|Qb|datad"
+    Warning (332126): Node "p0|p3|m6|d2|Qb|combout"
+    Warning (332126): Node "p0|p3|m6|d2|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p3|m6|d1|Qa|combout"
+    Warning (332126): Node "p0|p3|m6|d1|Qb|datad"
+    Warning (332126): Node "p0|p3|m6|d1|Qb|combout"
+    Warning (332126): Node "p0|p3|m6|d1|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p3|m5|d2|Qa|combout"
+    Warning (332126): Node "p0|p3|m5|d2|Qb|datad"
+    Warning (332126): Node "p0|p3|m5|d2|Qb|combout"
+    Warning (332126): Node "p0|p3|m5|d2|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p3|m5|d1|Qa|combout"
+    Warning (332126): Node "p0|p3|m5|d1|Qb|datab"
+    Warning (332126): Node "p0|p3|m5|d1|Qb|combout"
+    Warning (332126): Node "p0|p3|m5|d1|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p3|m4|d2|Qa|combout"
+    Warning (332126): Node "p0|p3|m4|d2|Qb|datad"
+    Warning (332126): Node "p0|p3|m4|d2|Qb|combout"
+    Warning (332126): Node "p0|p3|m4|d2|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p3|m4|d1|Qa|combout"
+    Warning (332126): Node "p0|p3|m4|d1|Qb|datad"
+    Warning (332126): Node "p0|p3|m4|d1|Qb|combout"
+    Warning (332126): Node "p0|p3|m4|d1|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p3|m3|d2|Qa|combout"
+    Warning (332126): Node "p0|p3|m3|d2|Qb|datab"
+    Warning (332126): Node "p0|p3|m3|d2|Qb|combout"
+    Warning (332126): Node "p0|p3|m3|d2|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p3|m3|d1|Qa|combout"
+    Warning (332126): Node "p0|p3|m3|d1|Qb|datac"
+    Warning (332126): Node "p0|p3|m3|d1|Qb|combout"
+    Warning (332126): Node "p0|p3|m3|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p3|m2|d2|Qa|combout"
+    Warning (332126): Node "p0|p3|m2|d2|Qb|datad"
+    Warning (332126): Node "p0|p3|m2|d2|Qb|combout"
+    Warning (332126): Node "p0|p3|m2|d2|Qa|dataa"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p3|m2|d1|Qa|combout"
+    Warning (332126): Node "p0|p3|m2|d1|Qb|datab"
+    Warning (332126): Node "p0|p3|m2|d1|Qb|combout"
+    Warning (332126): Node "p0|p3|m2|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p3|m1|d2|Qa|combout"
+    Warning (332126): Node "p0|p3|m1|d2|Qb|datad"
+    Warning (332126): Node "p0|p3|m1|d2|Qb|combout"
+    Warning (332126): Node "p0|p3|m1|d2|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p3|m1|d1|Qa|combout"
+    Warning (332126): Node "p0|p3|m1|d1|Qb|datad"
+    Warning (332126): Node "p0|p3|m1|d1|Qb|combout"
+    Warning (332126): Node "p0|p3|m1|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p2|m7|d2|Qa|combout"
+    Warning (332126): Node "p0|p2|m7|d2|Qb|datad"
+    Warning (332126): Node "p0|p2|m7|d2|Qb|combout"
+    Warning (332126): Node "p0|p2|m7|d2|Qa|dataa"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p2|m7|d1|Qa|combout"
+    Warning (332126): Node "p0|p2|m7|d1|Qb|dataa"
+    Warning (332126): Node "p0|p2|m7|d1|Qb|combout"
+    Warning (332126): Node "p0|p2|m7|d1|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p2|m6|d2|Qa|combout"
+    Warning (332126): Node "p0|p2|m6|d2|Qb|dataa"
+    Warning (332126): Node "p0|p2|m6|d2|Qb|combout"
+    Warning (332126): Node "p0|p2|m6|d2|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p2|m6|d1|Qa|combout"
+    Warning (332126): Node "p0|p2|m6|d1|Qb|datad"
+    Warning (332126): Node "p0|p2|m6|d1|Qb|combout"
+    Warning (332126): Node "p0|p2|m6|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p2|m5|d2|Qa|combout"
+    Warning (332126): Node "p0|p2|m5|d2|Qb|datad"
+    Warning (332126): Node "p0|p2|m5|d2|Qb|combout"
+    Warning (332126): Node "p0|p2|m5|d2|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p2|m5|d1|Qa|combout"
+    Warning (332126): Node "p0|p2|m5|d1|Qb|dataa"
+    Warning (332126): Node "p0|p2|m5|d1|Qb|combout"
+    Warning (332126): Node "p0|p2|m5|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p2|m4|d2|Qa|combout"
+    Warning (332126): Node "p0|p2|m4|d2|Qb|dataa"
+    Warning (332126): Node "p0|p2|m4|d2|Qb|combout"
+    Warning (332126): Node "p0|p2|m4|d2|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p2|m4|d1|Qa|combout"
+    Warning (332126): Node "p0|p2|m4|d1|Qb|datad"
+    Warning (332126): Node "p0|p2|m4|d1|Qb|combout"
+    Warning (332126): Node "p0|p2|m4|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p2|m3|d2|Qa|combout"
+    Warning (332126): Node "p0|p2|m3|d2|Qb|datad"
+    Warning (332126): Node "p0|p2|m3|d2|Qb|combout"
+    Warning (332126): Node "p0|p2|m3|d2|Qa|dataa"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p2|m3|d1|Qa|combout"
+    Warning (332126): Node "p0|p2|m3|d1|Qb|datad"
+    Warning (332126): Node "p0|p2|m3|d1|Qb|combout"
+    Warning (332126): Node "p0|p2|m3|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p2|m2|d2|Qa|combout"
+    Warning (332126): Node "p0|p2|m2|d2|Qb|datad"
+    Warning (332126): Node "p0|p2|m2|d2|Qb|combout"
+    Warning (332126): Node "p0|p2|m2|d2|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p2|m2|d1|Qa|combout"
+    Warning (332126): Node "p0|p2|m2|d1|Qb|datac"
+    Warning (332126): Node "p0|p2|m2|d1|Qb|combout"
+    Warning (332126): Node "p0|p2|m2|d1|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p2|m1|d2|Qa|combout"
+    Warning (332126): Node "p0|p2|m1|d2|Qb|datad"
+    Warning (332126): Node "p0|p2|m1|d2|Qb|combout"
+    Warning (332126): Node "p0|p2|m1|d2|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p2|m1|d1|Qa|combout"
+    Warning (332126): Node "p0|p2|m1|d1|Qb|datad"
+    Warning (332126): Node "p0|p2|m1|d1|Qb|combout"
+    Warning (332126): Node "p0|p2|m1|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p1|m7|d2|Qa|combout"
+    Warning (332126): Node "p0|p1|m7|d2|Qb|datad"
+    Warning (332126): Node "p0|p1|m7|d2|Qb|combout"
+    Warning (332126): Node "p0|p1|m7|d2|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p1|m7|d1|Qa|combout"
+    Warning (332126): Node "p0|p1|m7|d1|Qb|dataa"
+    Warning (332126): Node "p0|p1|m7|d1|Qb|combout"
+    Warning (332126): Node "p0|p1|m7|d1|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p1|m6|d2|Qa|combout"
+    Warning (332126): Node "p0|p1|m6|d2|Qb|datad"
+    Warning (332126): Node "p0|p1|m6|d2|Qb|combout"
+    Warning (332126): Node "p0|p1|m6|d2|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p1|m6|d1|Qa|combout"
+    Warning (332126): Node "p0|p1|m6|d1|Qb|datad"
+    Warning (332126): Node "p0|p1|m6|d1|Qb|combout"
+    Warning (332126): Node "p0|p1|m6|d1|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p1|m5|d2|Qa|combout"
+    Warning (332126): Node "p0|p1|m5|d2|Qb|datac"
+    Warning (332126): Node "p0|p1|m5|d2|Qb|combout"
+    Warning (332126): Node "p0|p1|m5|d2|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p1|m5|d1|Qa|combout"
+    Warning (332126): Node "p0|p1|m5|d1|Qb|datad"
+    Warning (332126): Node "p0|p1|m5|d1|Qb|combout"
+    Warning (332126): Node "p0|p1|m5|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p1|m4|d2|Qa|combout"
+    Warning (332126): Node "p0|p1|m4|d2|Qb|datad"
+    Warning (332126): Node "p0|p1|m4|d2|Qb|combout"
+    Warning (332126): Node "p0|p1|m4|d2|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p1|m4|d1|Qa|combout"
+    Warning (332126): Node "p0|p1|m4|d1|Qb|datad"
+    Warning (332126): Node "p0|p1|m4|d1|Qb|combout"
+    Warning (332126): Node "p0|p1|m4|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p1|m3|d2|Qa|combout"
+    Warning (332126): Node "p0|p1|m3|d2|Qb|datad"
+    Warning (332126): Node "p0|p1|m3|d2|Qb|combout"
+    Warning (332126): Node "p0|p1|m3|d2|Qa|dataa"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p1|m3|d1|Qa|combout"
+    Warning (332126): Node "p0|p1|m3|d1|Qb|datad"
+    Warning (332126): Node "p0|p1|m3|d1|Qb|combout"
+    Warning (332126): Node "p0|p1|m3|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p1|m2|d2|Qa|combout"
+    Warning (332126): Node "p0|p1|m2|d2|Qb|dataa"
+    Warning (332126): Node "p0|p1|m2|d2|Qb|combout"
+    Warning (332126): Node "p0|p1|m2|d2|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p1|m2|d1|Qa|combout"
+    Warning (332126): Node "p0|p1|m2|d1|Qb|datad"
+    Warning (332126): Node "p0|p1|m2|d1|Qb|combout"
+    Warning (332126): Node "p0|p1|m2|d1|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p1|m1|d2|Qa|combout"
+    Warning (332126): Node "p0|p1|m1|d2|Qb|datab"
+    Warning (332126): Node "p0|p1|m1|d2|Qb|combout"
+    Warning (332126): Node "p0|p1|m1|d2|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p1|m1|d1|Qa|combout"
+    Warning (332126): Node "p0|p1|m1|d1|Qb|datad"
+    Warning (332126): Node "p0|p1|m1|d1|Qb|combout"
+    Warning (332126): Node "p0|p1|m1|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p0|m7|d2|Qa|combout"
+    Warning (332126): Node "p0|p0|m7|d2|Qb|datad"
+    Warning (332126): Node "p0|p0|m7|d2|Qb|combout"
+    Warning (332126): Node "p0|p0|m7|d2|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p0|m7|d1|Qa|combout"
+    Warning (332126): Node "p0|p0|m7|d1|Qb|dataa"
+    Warning (332126): Node "p0|p0|m7|d1|Qb|combout"
+    Warning (332126): Node "p0|p0|m7|d1|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p0|m6|d2|Qa|combout"
+    Warning (332126): Node "p0|p0|m6|d2|Qb|datab"
+    Warning (332126): Node "p0|p0|m6|d2|Qb|combout"
+    Warning (332126): Node "p0|p0|m6|d2|Qa|datad"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p0|m6|d1|Qa|combout"
+    Warning (332126): Node "p0|p0|m6|d1|Qb|datad"
+    Warning (332126): Node "p0|p0|m6|d1|Qb|combout"
+    Warning (332126): Node "p0|p0|m6|d1|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p0|m5|d2|Qa|combout"
+    Warning (332126): Node "p0|p0|m5|d2|Qb|datad"
+    Warning (332126): Node "p0|p0|m5|d2|Qb|combout"
+    Warning (332126): Node "p0|p0|m5|d2|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p0|m5|d1|Qa|combout"
+    Warning (332126): Node "p0|p0|m5|d1|Qb|datac"
+    Warning (332126): Node "p0|p0|m5|d1|Qb|combout"
+    Warning (332126): Node "p0|p0|m5|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p0|m4|d2|Qa|combout"
+    Warning (332126): Node "p0|p0|m4|d2|Qb|datad"
+    Warning (332126): Node "p0|p0|m4|d2|Qb|combout"
+    Warning (332126): Node "p0|p0|m4|d2|Qa|dataa"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p0|m4|d1|Qa|combout"
+    Warning (332126): Node "p0|p0|m4|d1|Qb|datac"
+    Warning (332126): Node "p0|p0|m4|d1|Qb|combout"
+    Warning (332126): Node "p0|p0|m4|d1|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p0|m3|d2|Qa|combout"
+    Warning (332126): Node "p0|p0|m3|d2|Qb|datab"
+    Warning (332126): Node "p0|p0|m3|d2|Qb|combout"
+    Warning (332126): Node "p0|p0|m3|d2|Qa|dataa"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p0|m3|d1|Qa|combout"
+    Warning (332126): Node "p0|p0|m3|d1|Qb|datad"
+    Warning (332126): Node "p0|p0|m3|d1|Qb|combout"
+    Warning (332126): Node "p0|p0|m3|d1|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p0|m2|d2|Qa|combout"
+    Warning (332126): Node "p0|p0|m2|d2|Qb|datad"
+    Warning (332126): Node "p0|p0|m2|d2|Qb|combout"
+    Warning (332126): Node "p0|p0|m2|d2|Qa|datab"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p0|m2|d1|Qa|combout"
+    Warning (332126): Node "p0|p0|m2|d1|Qb|datad"
+    Warning (332126): Node "p0|p0|m2|d1|Qb|combout"
+    Warning (332126): Node "p0|p0|m2|d1|Qa|dataa"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p0|m1|d2|Qa|combout"
+    Warning (332126): Node "p0|p0|m1|d2|Qb|datac"
+    Warning (332126): Node "p0|p0|m1|d2|Qb|combout"
+    Warning (332126): Node "p0|p0|m1|d2|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "p0|p0|m1|d1|Qa|combout"
+    Warning (332126): Node "p0|p0|m1|d1|Qb|dataa"
+    Warning (332126): Node "p0|p0|m1|d1|Qb|combout"
+    Warning (332126): Node "p0|p0|m1|d1|Qa|datac"
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.273
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.273        -0.273 KEY0 
+Info (332146): Worst-case hold slack is 0.524
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.524         0.000 KEY0 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.222
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.222       -10.222 KEY0 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 0.429
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.429         0.000 KEY0 
+Info (332146): Worst-case hold slack is 0.240
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.240         0.000 KEY0 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case minimum pulse width slack is -1.222
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.222       -10.222 KEY0 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 564 warnings
+    Info: Peak virtual memory: 444 megabytes
+    Info: Processing ended: Thu Jun 23 08:54:22 2016
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:01
+
+

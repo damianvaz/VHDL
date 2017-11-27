@@ -1,0 +1,7 @@
+
+State Machine - |part5|state
+Name state.mostraAB state.armazenaB state.mostraA state.armazenaA 
+state.armazenaA 0 0 0 0 
+state.mostraA 0 0 1 1 
+state.armazenaB 0 1 0 1 
+state.mostraAB 1 0 0 1 

@@ -1,0 +1,66 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity simpleFSM is
+	port(
+		clk, rst: in std_logic;
+		sensorOpened, sensorClosed, sensorObstacle, remoteControl: in std_logic;
+		motorOpen, motorClose: out std_logic	
+	);
+end;
+
+architecture arch1 of simpleFSM is
+type TpState is (Opening, Opened, Closing, Closed);
+signal state, next_state: TpState; 
+begin
+	-- next state logic
+	process(state, sensorOpened, sensorClosed, sensorObstacle, remoteControl)
+	begin
+		next_state <= state;
+		case state is
+			when Opening =>
+				if sensorOpened='1' then 
+					next_state <= Opened;
+				end if; 
+			when Opened =>
+				if remoteControl='1' then
+					next_state <= Closing;
+				end if;
+			when Closing =>
+				if sensorClosed='1' then
+					next_state <= Closed;
+				elsif sensorObstacle='1' then
+					next_state <= Opening;
+				end if;
+			when Closed =>
+				if remoteControl='1' then
+					next_state <= Opening;
+				end if;
+		end case;
+	end process;
+	
+	-- memory/state element
+	process(rst,clk)
+	begin
+		if (rst='1') then
+			state <= Closing;
+		elsif (rising_edge(clk)) then
+			state <= next_state;
+		end if;
+	end process;
+	
+	-- output logic
+	process(state)
+	begin
+		motorOpen <= '0';
+		motorClose <= '0';
+		case state is
+			when Opening =>
+				motorOpen <= '1'; 
+			when Opened =>
+			when Closing =>
+				motorClose <= '1';
+			when Closed =>
+		end case;
+	end process;
+end;

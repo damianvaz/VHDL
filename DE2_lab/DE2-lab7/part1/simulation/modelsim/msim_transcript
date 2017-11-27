@@ -1,0 +1,100 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do part1_run_msim_gate_vhdl.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {part1.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Compiling entity part1
+# -- Compiling architecture structure of part1
+# 
+vsim +altera -do part1_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp /=C:/Users/damia/OneDrive/Documentos/vhdl/DE2_lab/DE2-lab7/part1/simulation/modelsim/part1_vhd.sdo work.part1
+# vsim +altera -do part1_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp /=C:/Users/damia/OneDrive/Documentos/vhdl/DE2_lab/DE2-lab7/part1/simulation/modelsim/part1_vhd.sdo work.part1 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.part1(structure)
+# SDF 10.1d Compiler 2012.11 Nov  2 2012
+# 
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)
+# Loading cycloneii.cycloneii_mux21(altvital)
+# Loading cycloneii.cycloneii_dffe(behave)
+# Loading cycloneii.cycloneii_asynch_io(behave)
+# Loading instances from C:/Users/damia/OneDrive/Documentos/vhdl/DE2_lab/DE2-lab7/part1/simulation/modelsim/part1_vhd.sdo
+# Loading timing data from C:/Users/damia/OneDrive/Documentos/vhdl/DE2_lab/DE2-lab7/part1/simulation/modelsim/part1_vhd.sdo
+# ** Warning: Design size of 2 instances exceeds ModelSim ALTERA recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim Altera version. Expect performance to be adversely affected.
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /part1 File: part1.vho
+# do part1_run_msim_gate_vhdl.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {part1.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Compiling entity part1
+# -- Compiling architecture structure of part1
+# 
+add wave  \
+sim:/part1/SW \
+sim:/part1/SW(1) \
+sim:/part1/SW(0) \
+sim:/part1/KEY0 \
+sim:/part1/LEDG0
+add wave  \
+sim:/part1/SW \
+sim:/part1/SW(1) \
+sim:/part1/SW(0) \
+sim:/part1/KEY0 \
+sim:/part1/LEDG0 \
+sim:/part1/LEDR
+do C:/Users/damia/OneDrive/Documentos/vhdl/DE2_lab/DE2-lab7/part1/simulation/modelsim/stimulus.do
+# ** Error: invalid command name "force /SW(1) 0 0 ns, 1 60 ns ­r 130 ns"
+# Error in macro C:\Users\damia\OneDrive\Documentos\vhdl\DE2_lab\DE2-lab7\part1\simulation\modelsim\stimulus.do line 1
+# invalid command name "force /SW(1) 0 0 ns, 1 60 ns ­r 130 ns"
+#     while executing
+# "force /SW(1) 0 0 ns, 1 60 ns ­r 130 ns"
+do C:/Users/damia/OneDrive/Documentos/vhdl/DE2_lab/DE2-lab7/part1/simulation/modelsim/stimulus.do
+# ** Error: invalid command name "force /SW 01 0 ns, 10 60 ns ­r 130 ns"
+# Error in macro C:\Users\damia\OneDrive\Documentos\vhdl\DE2_lab\DE2-lab7\part1\simulation\modelsim\stimulus.do line 1
+# invalid command name "force /SW 01 0 ns, 10 60 ns ­r 130 ns"
+#     while executing
+# "force /SW 01 0 ns, 10 60 ns ­r 130 ns"
+force /KEY0   0 0 ns, 1 10  ns ­r 20  ns
+# invalid command name "force /KEY0   0 0 ns, 1 10  ns ­r 20  ns"
+force /KEY0   '0' 0 ns, '1' 10  ns ­r 20  ns
+# invalid command name "force /KEY0   '0' 0 ns, '1' 10  ns ­r 20  ns"
+force /KEY0 0 0 ns, 1 10 ns ­r 20 ns
+# invalid command name "force /KEY0"

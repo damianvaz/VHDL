@@ -1,0 +1,1936 @@
+|part6
+KEY0 => fsm:F0.reset
+KEY0 => pipeline:p0.reset
+CLOCK_50 => fsm:F0.Clock
+CLOCK_50 => pipeline:p0.clock
+HEX0[0] <= pipeline:p0.out0[0]
+HEX0[1] <= pipeline:p0.out0[1]
+HEX0[2] <= pipeline:p0.out0[2]
+HEX0[3] <= pipeline:p0.out0[3]
+HEX0[4] <= pipeline:p0.out0[4]
+HEX0[5] <= pipeline:p0.out0[5]
+HEX0[6] <= pipeline:p0.out0[6]
+HEX1[0] <= pipeline:p0.out1[0]
+HEX1[1] <= pipeline:p0.out1[1]
+HEX1[2] <= pipeline:p0.out1[2]
+HEX1[3] <= pipeline:p0.out1[3]
+HEX1[4] <= pipeline:p0.out1[4]
+HEX1[5] <= pipeline:p0.out1[5]
+HEX1[6] <= pipeline:p0.out1[6]
+HEX2[0] <= pipeline:p0.out2[0]
+HEX2[1] <= pipeline:p0.out2[1]
+HEX2[2] <= pipeline:p0.out2[2]
+HEX2[3] <= pipeline:p0.out2[3]
+HEX2[4] <= pipeline:p0.out2[4]
+HEX2[5] <= pipeline:p0.out2[5]
+HEX2[6] <= pipeline:p0.out2[6]
+HEX3[0] <= pipeline:p0.out3[0]
+HEX3[1] <= pipeline:p0.out3[1]
+HEX3[2] <= pipeline:p0.out3[2]
+HEX3[3] <= pipeline:p0.out3[3]
+HEX3[4] <= pipeline:p0.out3[4]
+HEX3[5] <= pipeline:p0.out3[5]
+HEX3[6] <= pipeline:p0.out3[6]
+HEX4[0] <= pipeline:p0.out4[0]
+HEX4[1] <= pipeline:p0.out4[1]
+HEX4[2] <= pipeline:p0.out4[2]
+HEX4[3] <= pipeline:p0.out4[3]
+HEX4[4] <= pipeline:p0.out4[4]
+HEX4[5] <= pipeline:p0.out4[5]
+HEX4[6] <= pipeline:p0.out4[6]
+HEX5[0] <= pipeline:p0.out5[0]
+HEX5[1] <= pipeline:p0.out5[1]
+HEX5[2] <= pipeline:p0.out5[2]
+HEX5[3] <= pipeline:p0.out5[3]
+HEX5[4] <= pipeline:p0.out5[4]
+HEX5[5] <= pipeline:p0.out5[5]
+HEX5[6] <= pipeline:p0.out5[6]
+HEX6[0] <= pipeline:p0.out6[0]
+HEX6[1] <= pipeline:p0.out6[1]
+HEX6[2] <= pipeline:p0.out6[2]
+HEX6[3] <= pipeline:p0.out6[3]
+HEX6[4] <= pipeline:p0.out6[4]
+HEX6[5] <= pipeline:p0.out6[5]
+HEX6[6] <= pipeline:p0.out6[6]
+HEX7[0] <= pipeline:p0.out7[0]
+HEX7[1] <= pipeline:p0.out7[1]
+HEX7[2] <= pipeline:p0.out7[2]
+HEX7[3] <= pipeline:p0.out7[3]
+HEX7[4] <= pipeline:p0.out7[4]
+HEX7[5] <= pipeline:p0.out7[5]
+HEX7[6] <= pipeline:p0.out7[6]
+
+
+|part6|fsm:F0
+Clock => board~reg0.CLK
+Clock => count[0].CLK
+Clock => count[1].CLK
+Clock => count[2].CLK
+Clock => count[3].CLK
+Clock => count[4].CLK
+Clock => count[5].CLK
+Clock => count[6].CLK
+Clock => count[7].CLK
+Clock => count[8].CLK
+Clock => count[9].CLK
+Clock => count[10].CLK
+Clock => count[11].CLK
+Clock => count[12].CLK
+Clock => count[13].CLK
+Clock => count[14].CLK
+Clock => count[15].CLK
+Clock => count[16].CLK
+Clock => count[17].CLK
+Clock => count[18].CLK
+Clock => count[19].CLK
+Clock => count[20].CLK
+Clock => count[21].CLK
+Clock => count[22].CLK
+Clock => count[23].CLK
+Clock => count[24].CLK
+Clock => count[25].CLK
+Clock => count[26].CLK
+Clock => count[27].CLK
+Clock => count[28].CLK
+Clock => count[29].CLK
+Clock => count[30].CLK
+Clock => count[31].CLK
+Clock => state~8.DATAIN
+reset => state~10.DATAIN
+reset => count[31].ENA
+reset => count[30].ENA
+reset => count[29].ENA
+reset => count[28].ENA
+reset => count[27].ENA
+reset => count[26].ENA
+reset => count[25].ENA
+reset => count[24].ENA
+reset => count[23].ENA
+reset => count[22].ENA
+reset => count[21].ENA
+reset => count[20].ENA
+reset => count[19].ENA
+reset => count[18].ENA
+reset => count[17].ENA
+reset => count[16].ENA
+reset => count[15].ENA
+reset => count[14].ENA
+reset => count[13].ENA
+reset => count[12].ENA
+reset => count[11].ENA
+reset => count[10].ENA
+reset => count[9].ENA
+reset => count[8].ENA
+reset => count[7].ENA
+reset => count[6].ENA
+reset => count[5].ENA
+reset => count[4].ENA
+reset => count[3].ENA
+reset => count[2].ENA
+reset => count[1].ENA
+reset => count[0].ENA
+reset => board~reg0.ENA
+board <= board~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATAO[0] <= DATAO.DB_MAX_OUTPUT_PORT_TYPE
+DATAO[1] <= DATAO.DB_MAX_OUTPUT_PORT_TYPE
+DATAO[2] <= DATAO.DB_MAX_OUTPUT_PORT_TYPE
+DATAO[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+DATAO[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+DATAO[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+DATAO[6] <= DATAO.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0
+clock => bit7_reg:p0.clk
+clock => bit7_reg:p1.clk
+clock => bit7_reg:p2.clk
+clock => bit7_reg:p3.clk
+clock => bit7_reg:p4.clk
+clock => bit7_reg:p5.clk
+clock => bit7_reg:p6.clk
+clock => bit7_reg:p7.clk
+reset => bit7_reg:p0.rst
+reset => bit7_reg:p1.rst
+reset => bit7_reg:p2.rst
+reset => bit7_reg:p3.rst
+reset => bit7_reg:p4.rst
+reset => bit7_reg:p5.rst
+reset => bit7_reg:p6.rst
+reset => bit7_reg:p7.rst
+ena => bit7_reg:p0.en
+ena => bit7_reg:p1.en
+ena => bit7_reg:p2.en
+ena => bit7_reg:p3.en
+ena => bit7_reg:p4.en
+ena => bit7_reg:p5.en
+ena => bit7_reg:p6.en
+ena => bit7_reg:p7.en
+dt[0] => bit7_reg:p0.Dat[0]
+dt[1] => bit7_reg:p0.Dat[1]
+dt[2] => bit7_reg:p0.Dat[2]
+dt[3] => bit7_reg:p0.Dat[3]
+dt[4] => bit7_reg:p0.Dat[4]
+dt[5] => bit7_reg:p0.Dat[5]
+dt[6] => bit7_reg:p0.Dat[6]
+out0[0] <= bit7_reg:p0.Quat[0]
+out0[1] <= bit7_reg:p0.Quat[1]
+out0[2] <= bit7_reg:p0.Quat[2]
+out0[3] <= bit7_reg:p0.Quat[3]
+out0[4] <= bit7_reg:p0.Quat[4]
+out0[5] <= bit7_reg:p0.Quat[5]
+out0[6] <= bit7_reg:p0.Quat[6]
+out1[0] <= bit7_reg:p1.Quat[0]
+out1[1] <= bit7_reg:p1.Quat[1]
+out1[2] <= bit7_reg:p1.Quat[2]
+out1[3] <= bit7_reg:p1.Quat[3]
+out1[4] <= bit7_reg:p1.Quat[4]
+out1[5] <= bit7_reg:p1.Quat[5]
+out1[6] <= bit7_reg:p1.Quat[6]
+out2[0] <= bit7_reg:p2.Quat[0]
+out2[1] <= bit7_reg:p2.Quat[1]
+out2[2] <= bit7_reg:p2.Quat[2]
+out2[3] <= bit7_reg:p2.Quat[3]
+out2[4] <= bit7_reg:p2.Quat[4]
+out2[5] <= bit7_reg:p2.Quat[5]
+out2[6] <= bit7_reg:p2.Quat[6]
+out3[0] <= bit7_reg:p3.Quat[0]
+out3[1] <= bit7_reg:p3.Quat[1]
+out3[2] <= bit7_reg:p3.Quat[2]
+out3[3] <= bit7_reg:p3.Quat[3]
+out3[4] <= bit7_reg:p3.Quat[4]
+out3[5] <= bit7_reg:p3.Quat[5]
+out3[6] <= bit7_reg:p3.Quat[6]
+out4[0] <= bit7_reg:p4.Quat[0]
+out4[1] <= bit7_reg:p4.Quat[1]
+out4[2] <= bit7_reg:p4.Quat[2]
+out4[3] <= bit7_reg:p4.Quat[3]
+out4[4] <= bit7_reg:p4.Quat[4]
+out4[5] <= bit7_reg:p4.Quat[5]
+out4[6] <= bit7_reg:p4.Quat[6]
+out5[0] <= bit7_reg:p5.Quat[0]
+out5[1] <= bit7_reg:p5.Quat[1]
+out5[2] <= bit7_reg:p5.Quat[2]
+out5[3] <= bit7_reg:p5.Quat[3]
+out5[4] <= bit7_reg:p5.Quat[4]
+out5[5] <= bit7_reg:p5.Quat[5]
+out5[6] <= bit7_reg:p5.Quat[6]
+out6[0] <= bit7_reg:p6.Quat[0]
+out6[1] <= bit7_reg:p6.Quat[1]
+out6[2] <= bit7_reg:p6.Quat[2]
+out6[3] <= bit7_reg:p6.Quat[3]
+out6[4] <= bit7_reg:p6.Quat[4]
+out6[5] <= bit7_reg:p6.Quat[5]
+out6[6] <= bit7_reg:p6.Quat[6]
+out7[0] <= bit7_reg:p7.Quat[0]
+out7[1] <= bit7_reg:p7.Quat[1]
+out7[2] <= bit7_reg:p7.Quat[2]
+out7[3] <= bit7_reg:p7.Quat[3]
+out7[4] <= bit7_reg:p7.Quat[4]
+out7[5] <= bit7_reg:p7.Quat[5]
+out7[6] <= bit7_reg:p7.Quat[6]
+
+
+|part6|pipeline:p0|bit7_reg:p0
+Dat[0] => dflipf:m1.Dt
+Dat[1] => dflipf:m2.Dt
+Dat[2] => dflipf:m3.Dt
+Dat[3] => dflipf:m4.Dt
+Dat[4] => dflipf:m5.Dt
+Dat[5] => dflipf:m6.Dt
+Dat[6] => dflipf:m7.Dt
+clk => dflipf:m1.clk
+clk => dflipf:m2.clk
+clk => dflipf:m3.clk
+clk => dflipf:m4.clk
+clk => dflipf:m5.clk
+clk => dflipf:m6.clk
+clk => dflipf:m7.clk
+rst => dflipf:m1.rst
+rst => dflipf:m2.rst
+rst => dflipf:m3.rst
+rst => dflipf:m4.rst
+rst => dflipf:m5.rst
+rst => dflipf:m6.rst
+rst => dflipf:m7.rst
+en => dflipf:m1.enable
+en => dflipf:m2.enable
+en => dflipf:m3.enable
+en => dflipf:m4.enable
+en => dflipf:m5.enable
+en => dflipf:m6.enable
+en => dflipf:m7.enable
+Quat[0] <= dflipf:m1.Qt
+Quat[1] <= dflipf:m2.Qt
+Quat[2] <= dflipf:m3.Qt
+Quat[3] <= dflipf:m4.Qt
+Quat[4] <= dflipf:m5.Qt
+Quat[5] <= dflipf:m6.Qt
+Quat[6] <= dflipf:m7.Qt
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m1
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m1|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m1|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m2
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m2|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m2|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m3
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m3|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m3|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m4
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m4|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m4|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m5
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m5|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m5|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m6
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m6|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m6|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m7
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m7|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p0|dflipf:m7|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1
+Dat[0] => dflipf:m1.Dt
+Dat[1] => dflipf:m2.Dt
+Dat[2] => dflipf:m3.Dt
+Dat[3] => dflipf:m4.Dt
+Dat[4] => dflipf:m5.Dt
+Dat[5] => dflipf:m6.Dt
+Dat[6] => dflipf:m7.Dt
+clk => dflipf:m1.clk
+clk => dflipf:m2.clk
+clk => dflipf:m3.clk
+clk => dflipf:m4.clk
+clk => dflipf:m5.clk
+clk => dflipf:m6.clk
+clk => dflipf:m7.clk
+rst => dflipf:m1.rst
+rst => dflipf:m2.rst
+rst => dflipf:m3.rst
+rst => dflipf:m4.rst
+rst => dflipf:m5.rst
+rst => dflipf:m6.rst
+rst => dflipf:m7.rst
+en => dflipf:m1.enable
+en => dflipf:m2.enable
+en => dflipf:m3.enable
+en => dflipf:m4.enable
+en => dflipf:m5.enable
+en => dflipf:m6.enable
+en => dflipf:m7.enable
+Quat[0] <= dflipf:m1.Qt
+Quat[1] <= dflipf:m2.Qt
+Quat[2] <= dflipf:m3.Qt
+Quat[3] <= dflipf:m4.Qt
+Quat[4] <= dflipf:m5.Qt
+Quat[5] <= dflipf:m6.Qt
+Quat[6] <= dflipf:m7.Qt
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m1
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m1|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m1|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m2
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m2|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m2|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m3
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m3|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m3|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m4
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m4|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m4|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m5
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m5|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m5|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m6
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m6|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m6|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m7
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m7|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p1|dflipf:m7|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2
+Dat[0] => dflipf:m1.Dt
+Dat[1] => dflipf:m2.Dt
+Dat[2] => dflipf:m3.Dt
+Dat[3] => dflipf:m4.Dt
+Dat[4] => dflipf:m5.Dt
+Dat[5] => dflipf:m6.Dt
+Dat[6] => dflipf:m7.Dt
+clk => dflipf:m1.clk
+clk => dflipf:m2.clk
+clk => dflipf:m3.clk
+clk => dflipf:m4.clk
+clk => dflipf:m5.clk
+clk => dflipf:m6.clk
+clk => dflipf:m7.clk
+rst => dflipf:m1.rst
+rst => dflipf:m2.rst
+rst => dflipf:m3.rst
+rst => dflipf:m4.rst
+rst => dflipf:m5.rst
+rst => dflipf:m6.rst
+rst => dflipf:m7.rst
+en => dflipf:m1.enable
+en => dflipf:m2.enable
+en => dflipf:m3.enable
+en => dflipf:m4.enable
+en => dflipf:m5.enable
+en => dflipf:m6.enable
+en => dflipf:m7.enable
+Quat[0] <= dflipf:m1.Qt
+Quat[1] <= dflipf:m2.Qt
+Quat[2] <= dflipf:m3.Qt
+Quat[3] <= dflipf:m4.Qt
+Quat[4] <= dflipf:m5.Qt
+Quat[5] <= dflipf:m6.Qt
+Quat[6] <= dflipf:m7.Qt
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m1
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m1|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m1|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m2
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m2|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m2|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m3
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m3|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m3|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m4
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m4|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m4|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m5
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m5|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m5|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m6
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m6|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m6|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m7
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m7|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p2|dflipf:m7|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3
+Dat[0] => dflipf:m1.Dt
+Dat[1] => dflipf:m2.Dt
+Dat[2] => dflipf:m3.Dt
+Dat[3] => dflipf:m4.Dt
+Dat[4] => dflipf:m5.Dt
+Dat[5] => dflipf:m6.Dt
+Dat[6] => dflipf:m7.Dt
+clk => dflipf:m1.clk
+clk => dflipf:m2.clk
+clk => dflipf:m3.clk
+clk => dflipf:m4.clk
+clk => dflipf:m5.clk
+clk => dflipf:m6.clk
+clk => dflipf:m7.clk
+rst => dflipf:m1.rst
+rst => dflipf:m2.rst
+rst => dflipf:m3.rst
+rst => dflipf:m4.rst
+rst => dflipf:m5.rst
+rst => dflipf:m6.rst
+rst => dflipf:m7.rst
+en => dflipf:m1.enable
+en => dflipf:m2.enable
+en => dflipf:m3.enable
+en => dflipf:m4.enable
+en => dflipf:m5.enable
+en => dflipf:m6.enable
+en => dflipf:m7.enable
+Quat[0] <= dflipf:m1.Qt
+Quat[1] <= dflipf:m2.Qt
+Quat[2] <= dflipf:m3.Qt
+Quat[3] <= dflipf:m4.Qt
+Quat[4] <= dflipf:m5.Qt
+Quat[5] <= dflipf:m6.Qt
+Quat[6] <= dflipf:m7.Qt
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m1
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m1|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m1|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m2
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m2|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m2|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m3
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m3|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m3|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m4
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m4|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m4|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m5
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m5|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m5|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m6
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m6|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m6|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m7
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m7|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p3|dflipf:m7|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4
+Dat[0] => dflipf:m1.Dt
+Dat[1] => dflipf:m2.Dt
+Dat[2] => dflipf:m3.Dt
+Dat[3] => dflipf:m4.Dt
+Dat[4] => dflipf:m5.Dt
+Dat[5] => dflipf:m6.Dt
+Dat[6] => dflipf:m7.Dt
+clk => dflipf:m1.clk
+clk => dflipf:m2.clk
+clk => dflipf:m3.clk
+clk => dflipf:m4.clk
+clk => dflipf:m5.clk
+clk => dflipf:m6.clk
+clk => dflipf:m7.clk
+rst => dflipf:m1.rst
+rst => dflipf:m2.rst
+rst => dflipf:m3.rst
+rst => dflipf:m4.rst
+rst => dflipf:m5.rst
+rst => dflipf:m6.rst
+rst => dflipf:m7.rst
+en => dflipf:m1.enable
+en => dflipf:m2.enable
+en => dflipf:m3.enable
+en => dflipf:m4.enable
+en => dflipf:m5.enable
+en => dflipf:m6.enable
+en => dflipf:m7.enable
+Quat[0] <= dflipf:m1.Qt
+Quat[1] <= dflipf:m2.Qt
+Quat[2] <= dflipf:m3.Qt
+Quat[3] <= dflipf:m4.Qt
+Quat[4] <= dflipf:m5.Qt
+Quat[5] <= dflipf:m6.Qt
+Quat[6] <= dflipf:m7.Qt
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m1
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m1|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m1|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m2
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m2|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m2|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m3
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m3|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m3|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m4
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m4|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m4|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m5
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m5|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m5|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m6
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m6|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m6|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m7
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m7|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p4|dflipf:m7|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5
+Dat[0] => dflipf:m1.Dt
+Dat[1] => dflipf:m2.Dt
+Dat[2] => dflipf:m3.Dt
+Dat[3] => dflipf:m4.Dt
+Dat[4] => dflipf:m5.Dt
+Dat[5] => dflipf:m6.Dt
+Dat[6] => dflipf:m7.Dt
+clk => dflipf:m1.clk
+clk => dflipf:m2.clk
+clk => dflipf:m3.clk
+clk => dflipf:m4.clk
+clk => dflipf:m5.clk
+clk => dflipf:m6.clk
+clk => dflipf:m7.clk
+rst => dflipf:m1.rst
+rst => dflipf:m2.rst
+rst => dflipf:m3.rst
+rst => dflipf:m4.rst
+rst => dflipf:m5.rst
+rst => dflipf:m6.rst
+rst => dflipf:m7.rst
+en => dflipf:m1.enable
+en => dflipf:m2.enable
+en => dflipf:m3.enable
+en => dflipf:m4.enable
+en => dflipf:m5.enable
+en => dflipf:m6.enable
+en => dflipf:m7.enable
+Quat[0] <= dflipf:m1.Qt
+Quat[1] <= dflipf:m2.Qt
+Quat[2] <= dflipf:m3.Qt
+Quat[3] <= dflipf:m4.Qt
+Quat[4] <= dflipf:m5.Qt
+Quat[5] <= dflipf:m6.Qt
+Quat[6] <= dflipf:m7.Qt
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m1
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m1|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m1|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m2
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m2|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m2|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m3
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m3|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m3|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m4
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m4|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m4|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m5
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m5|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m5|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m6
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m6|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m6|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m7
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m7|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p5|dflipf:m7|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6
+Dat[0] => dflipf:m1.Dt
+Dat[1] => dflipf:m2.Dt
+Dat[2] => dflipf:m3.Dt
+Dat[3] => dflipf:m4.Dt
+Dat[4] => dflipf:m5.Dt
+Dat[5] => dflipf:m6.Dt
+Dat[6] => dflipf:m7.Dt
+clk => dflipf:m1.clk
+clk => dflipf:m2.clk
+clk => dflipf:m3.clk
+clk => dflipf:m4.clk
+clk => dflipf:m5.clk
+clk => dflipf:m6.clk
+clk => dflipf:m7.clk
+rst => dflipf:m1.rst
+rst => dflipf:m2.rst
+rst => dflipf:m3.rst
+rst => dflipf:m4.rst
+rst => dflipf:m5.rst
+rst => dflipf:m6.rst
+rst => dflipf:m7.rst
+en => dflipf:m1.enable
+en => dflipf:m2.enable
+en => dflipf:m3.enable
+en => dflipf:m4.enable
+en => dflipf:m5.enable
+en => dflipf:m6.enable
+en => dflipf:m7.enable
+Quat[0] <= dflipf:m1.Qt
+Quat[1] <= dflipf:m2.Qt
+Quat[2] <= dflipf:m3.Qt
+Quat[3] <= dflipf:m4.Qt
+Quat[4] <= dflipf:m5.Qt
+Quat[5] <= dflipf:m6.Qt
+Quat[6] <= dflipf:m7.Qt
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m1
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m1|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m1|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m2
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m2|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m2|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m3
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m3|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m3|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m4
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m4|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m4|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m5
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m5|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m5|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m6
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m6|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m6|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m7
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m7|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p6|dflipf:m7|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7
+Dat[0] => dflipf:m1.Dt
+Dat[1] => dflipf:m2.Dt
+Dat[2] => dflipf:m3.Dt
+Dat[3] => dflipf:m4.Dt
+Dat[4] => dflipf:m5.Dt
+Dat[5] => dflipf:m6.Dt
+Dat[6] => dflipf:m7.Dt
+clk => dflipf:m1.clk
+clk => dflipf:m2.clk
+clk => dflipf:m3.clk
+clk => dflipf:m4.clk
+clk => dflipf:m5.clk
+clk => dflipf:m6.clk
+clk => dflipf:m7.clk
+rst => dflipf:m1.rst
+rst => dflipf:m2.rst
+rst => dflipf:m3.rst
+rst => dflipf:m4.rst
+rst => dflipf:m5.rst
+rst => dflipf:m6.rst
+rst => dflipf:m7.rst
+en => dflipf:m1.enable
+en => dflipf:m2.enable
+en => dflipf:m3.enable
+en => dflipf:m4.enable
+en => dflipf:m5.enable
+en => dflipf:m6.enable
+en => dflipf:m7.enable
+Quat[0] <= dflipf:m1.Qt
+Quat[1] <= dflipf:m2.Qt
+Quat[2] <= dflipf:m3.Qt
+Quat[3] <= dflipf:m4.Qt
+Quat[4] <= dflipf:m5.Qt
+Quat[5] <= dflipf:m6.Qt
+Quat[6] <= dflipf:m7.Qt
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m1
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m1|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m1|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m2
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m2|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m2|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m3
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m3|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m3|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m4
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m4|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m4|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m5
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m5|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m5|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m6
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m6|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m6|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m7
+Dt => y.DATAB
+clk => dla:d2.Clk
+clk => dla:d1.Clk
+rst => Qt.OUTPUTSELECT
+enable => y.OUTPUTSELECT
+Qt <= Qt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m7|dla:d1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part6|pipeline:p0|bit7_reg:p7|dflipf:m7|dla:d2
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+

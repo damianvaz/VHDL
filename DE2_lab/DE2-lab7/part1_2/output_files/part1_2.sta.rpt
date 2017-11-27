@@ -1,0 +1,661 @@
+TimeQuest Timing Analyzer report for part1_2
+Thu Jun 23 09:08:46 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Propagation Delay
+ 12. Minimum Propagation Delay
+ 13. Fast Model Setup Summary
+ 14. Fast Model Hold Summary
+ 15. Fast Model Recovery Summary
+ 16. Fast Model Removal Summary
+ 17. Fast Model Minimum Pulse Width Summary
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Multicorner Timing Analysis Summary
+ 21. Progagation Delay
+ 22. Minimum Progagation Delay
+ 23. Clock Transfers
+ 24. Report TCCS
+ 25. Report RSKM
+ 26. Unconstrained Paths
+ 27. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; part1_2                                                           ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
+----------
+; Clocks ;
+----------
+No clocks to report.
+
+
+---------------------------
+; Slow Model Fmax Summary ;
+---------------------------
+No paths to report.
+
+
+----------------------------
+; Slow Model Setup Summary ;
+----------------------------
+No paths to report.
+
+
+---------------------------
+; Slow Model Hold Summary ;
+---------------------------
+No paths to report.
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
+------------------------------------------
+; Slow Model Minimum Pulse Width Summary ;
+------------------------------------------
+No paths to report.
+
+
++--------------------------------------------------------------+
+; Propagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; KEY0       ; LEDG0       ; 17.145 ; 18.311 ; 18.311 ; 17.145 ;
+; KEY0       ; LEDR[0]     ; 12.607 ; 14.213 ; 14.213 ; 12.607 ;
+; KEY0       ; LEDR[1]     ; 16.808 ; 15.202 ; 15.202 ; 16.808 ;
+; KEY0       ; LEDR[2]     ; 14.511 ; 16.117 ; 16.117 ; 14.511 ;
+; KEY0       ; LEDR[3]     ; 14.106 ; 15.712 ; 15.712 ; 14.106 ;
+; KEY0       ; LEDR[4]     ; 14.137 ; 15.743 ; 15.743 ; 14.137 ;
+; KEY0       ; LEDR[5]     ; 16.963 ; 15.357 ; 15.357 ; 16.963 ;
+; KEY0       ; LEDR[6]     ; 14.213 ; 15.819 ; 15.819 ; 14.213 ;
+; KEY0       ; LEDR[7]     ; 14.335 ; 15.941 ; 15.941 ; 14.335 ;
+; KEY0       ; LEDR[8]     ; 15.220 ; 16.826 ; 16.826 ; 15.220 ;
+; SW[0]      ; LEDG0       ; 10.271 ; 10.825 ; 10.825 ; 10.271 ;
+; SW[0]      ; LEDR[0]     ;        ; 6.727  ; 6.727  ;        ;
+; SW[0]      ; LEDR[1]     ; 9.322  ; 8.768  ; 8.768  ; 9.322  ;
+; SW[0]      ; LEDR[2]     ; 8.077  ; 8.631  ; 8.631  ; 8.077  ;
+; SW[0]      ; LEDR[3]     ; 7.672  ; 8.226  ; 8.226  ; 7.672  ;
+; SW[0]      ; LEDR[4]     ; 7.703  ; 8.257  ; 8.257  ; 7.703  ;
+; SW[0]      ; LEDR[5]     ; 9.477  ; 8.923  ; 8.923  ; 9.477  ;
+; SW[0]      ; LEDR[6]     ; 7.779  ; 8.333  ; 8.333  ; 7.779  ;
+; SW[0]      ; LEDR[7]     ; 7.901  ; 8.455  ; 8.455  ; 7.901  ;
+; SW[0]      ; LEDR[8]     ; 8.786  ; 9.340  ; 9.340  ; 8.786  ;
+; SW[1]      ; LEDG0       ; 10.036 ; 8.870  ; 8.870  ; 10.036 ;
+; SW[1]      ; LEDR[1]     ;        ; 8.533  ; 8.533  ;        ;
+; SW[1]      ; LEDR[2]     ; 7.842  ;        ;        ; 7.842  ;
+; SW[1]      ; LEDR[3]     ; 7.437  ;        ;        ; 7.437  ;
+; SW[1]      ; LEDR[4]     ; 7.468  ;        ;        ; 7.468  ;
+; SW[1]      ; LEDR[5]     ;        ; 8.688  ; 8.688  ;        ;
+; SW[1]      ; LEDR[6]     ; 7.544  ;        ;        ; 7.544  ;
+; SW[1]      ; LEDR[7]     ; 7.666  ;        ;        ; 7.666  ;
+; SW[1]      ; LEDR[8]     ; 8.551  ;        ;        ; 8.551  ;
++------------+-------------+--------+--------+--------+--------+
+
+
++--------------------------------------------------------------+
+; Minimum Propagation Delay                                    ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; KEY0       ; LEDG0       ; 12.370 ; 12.370 ; 12.370 ; 12.370 ;
+; KEY0       ; LEDR[0]     ; 12.607 ; 13.095 ; 13.095 ; 12.607 ;
+; KEY0       ; LEDR[1]     ; 14.807 ; 12.691 ; 12.691 ; 14.807 ;
+; KEY0       ; LEDR[2]     ; 12.000 ; 14.116 ; 14.116 ; 12.000 ;
+; KEY0       ; LEDR[3]     ; 11.595 ; 13.711 ; 13.711 ; 11.595 ;
+; KEY0       ; LEDR[4]     ; 11.626 ; 13.742 ; 13.742 ; 11.626 ;
+; KEY0       ; LEDR[5]     ; 14.962 ; 12.846 ; 12.846 ; 14.962 ;
+; KEY0       ; LEDR[6]     ; 11.702 ; 13.818 ; 13.818 ; 11.702 ;
+; KEY0       ; LEDR[7]     ; 11.824 ; 13.940 ; 13.940 ; 11.824 ;
+; KEY0       ; LEDR[8]     ; 12.709 ; 14.825 ; 14.825 ; 12.709 ;
+; SW[0]      ; LEDG0       ; 7.553  ; 7.617  ; 7.617  ; 7.553  ;
+; SW[0]      ; LEDR[0]     ;        ; 6.727  ; 6.727  ;        ;
+; SW[0]      ; LEDR[1]     ; 9.322  ; 6.521  ; 6.521  ; 9.322  ;
+; SW[0]      ; LEDR[2]     ; 7.867  ; 6.495  ; 6.495  ; 7.867  ;
+; SW[0]      ; LEDR[3]     ; 7.462  ; 6.634  ; 6.634  ; 7.462  ;
+; SW[0]      ; LEDR[4]     ; 7.493  ; 6.790  ; 6.790  ; 7.493  ;
+; SW[0]      ; LEDR[5]     ; 9.477  ; 6.541  ; 6.541  ; 9.477  ;
+; SW[0]      ; LEDR[6]     ; 7.569  ; 6.535  ; 6.535  ; 7.569  ;
+; SW[0]      ; LEDR[7]     ; 7.691  ; 6.901  ; 6.901  ; 7.691  ;
+; SW[0]      ; LEDR[8]     ; 8.576  ; 7.956  ; 7.956  ; 8.576  ;
+; SW[1]      ; LEDG0       ; 7.889  ; 7.889  ; 7.889  ; 7.889  ;
+; SW[1]      ; LEDR[1]     ;        ; 8.210  ; 8.210  ;        ;
+; SW[1]      ; LEDR[2]     ; 7.519  ;        ;        ; 7.519  ;
+; SW[1]      ; LEDR[3]     ; 7.114  ;        ;        ; 7.114  ;
+; SW[1]      ; LEDR[4]     ; 7.145  ;        ;        ; 7.145  ;
+; SW[1]      ; LEDR[5]     ;        ; 8.365  ; 8.365  ;        ;
+; SW[1]      ; LEDR[6]     ; 7.221  ;        ;        ; 7.221  ;
+; SW[1]      ; LEDR[7]     ; 7.343  ;        ;        ; 7.343  ;
+; SW[1]      ; LEDR[8]     ; 8.228  ;        ;        ; 8.228  ;
++------------+-------------+--------+--------+--------+--------+
+
+
+----------------------------
+; Fast Model Setup Summary ;
+----------------------------
+No paths to report.
+
+
+---------------------------
+; Fast Model Hold Summary ;
+---------------------------
+No paths to report.
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
+------------------------------------------
+; Fast Model Minimum Pulse Width Summary ;
+------------------------------------------
+No paths to report.
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; KEY0       ; LEDG0       ; 8.863 ; 9.340 ; 9.340 ; 8.863 ;
+; KEY0       ; LEDR[0]     ; 6.884 ; 7.555 ; 7.555 ; 6.884 ;
+; KEY0       ; LEDR[1]     ; 8.703 ; 8.032 ; 8.032 ; 8.703 ;
+; KEY0       ; LEDR[2]     ; 7.720 ; 8.391 ; 8.391 ; 7.720 ;
+; KEY0       ; LEDR[3]     ; 7.562 ; 8.233 ; 8.233 ; 7.562 ;
+; KEY0       ; LEDR[4]     ; 7.545 ; 8.216 ; 8.216 ; 7.545 ;
+; KEY0       ; LEDR[5]     ; 8.747 ; 8.076 ; 8.076 ; 8.747 ;
+; KEY0       ; LEDR[6]     ; 7.599 ; 8.270 ; 8.270 ; 7.599 ;
+; KEY0       ; LEDR[7]     ; 7.656 ; 8.327 ; 8.327 ; 7.656 ;
+; KEY0       ; LEDR[8]     ; 8.054 ; 8.725 ; 8.725 ; 8.054 ;
+; SW[0]      ; LEDG0       ; 5.070 ; 5.306 ; 5.306 ; 5.070 ;
+; SW[0]      ; LEDR[0]     ;       ; 3.521 ; 3.521 ;       ;
+; SW[0]      ; LEDR[1]     ; 4.669 ; 4.433 ; 4.433 ; 4.669 ;
+; SW[0]      ; LEDR[2]     ; 4.121 ; 4.357 ; 4.357 ; 4.121 ;
+; SW[0]      ; LEDR[3]     ; 3.963 ; 4.199 ; 4.199 ; 3.963 ;
+; SW[0]      ; LEDR[4]     ; 3.946 ; 4.182 ; 4.182 ; 3.946 ;
+; SW[0]      ; LEDR[5]     ; 4.713 ; 4.477 ; 4.477 ; 4.713 ;
+; SW[0]      ; LEDR[6]     ; 4.000 ; 4.236 ; 4.236 ; 4.000 ;
+; SW[0]      ; LEDR[7]     ; 4.057 ; 4.293 ; 4.293 ; 4.057 ;
+; SW[0]      ; LEDR[8]     ; 4.455 ; 4.691 ; 4.691 ; 4.455 ;
+; SW[1]      ; LEDG0       ; 4.972 ; 4.495 ; 4.495 ; 4.972 ;
+; SW[1]      ; LEDR[1]     ;       ; 4.335 ; 4.335 ;       ;
+; SW[1]      ; LEDR[2]     ; 4.023 ;       ;       ; 4.023 ;
+; SW[1]      ; LEDR[3]     ; 3.865 ;       ;       ; 3.865 ;
+; SW[1]      ; LEDR[4]     ; 3.848 ;       ;       ; 3.848 ;
+; SW[1]      ; LEDR[5]     ;       ; 4.379 ; 4.379 ;       ;
+; SW[1]      ; LEDR[6]     ; 3.902 ;       ;       ; 3.902 ;
+; SW[1]      ; LEDR[7]     ; 3.959 ;       ;       ; 3.959 ;
+; SW[1]      ; LEDR[8]     ; 4.357 ;       ;       ; 4.357 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; KEY0       ; LEDG0       ; 6.783 ; 6.783 ; 6.783 ; 6.783 ;
+; KEY0       ; LEDR[0]     ; 6.884 ; 7.079 ; 7.079 ; 6.884 ;
+; KEY0       ; LEDR[1]     ; 7.844 ; 6.917 ; 6.917 ; 7.844 ;
+; KEY0       ; LEDR[2]     ; 6.605 ; 7.532 ; 7.532 ; 6.605 ;
+; KEY0       ; LEDR[3]     ; 6.447 ; 7.374 ; 7.374 ; 6.447 ;
+; KEY0       ; LEDR[4]     ; 6.430 ; 7.357 ; 7.357 ; 6.430 ;
+; KEY0       ; LEDR[5]     ; 7.888 ; 6.961 ; 6.961 ; 7.888 ;
+; KEY0       ; LEDR[6]     ; 6.484 ; 7.411 ; 7.411 ; 6.484 ;
+; KEY0       ; LEDR[7]     ; 6.541 ; 7.468 ; 7.468 ; 6.541 ;
+; KEY0       ; LEDR[8]     ; 6.939 ; 7.866 ; 7.866 ; 6.939 ;
+; SW[0]      ; LEDG0       ; 3.908 ; 3.913 ; 3.913 ; 3.908 ;
+; SW[0]      ; LEDR[0]     ;       ; 3.521 ; 3.521 ;       ;
+; SW[0]      ; LEDR[1]     ; 4.669 ; 3.427 ; 3.427 ; 4.669 ;
+; SW[0]      ; LEDR[2]     ; 4.026 ; 3.398 ; 3.398 ; 4.026 ;
+; SW[0]      ; LEDR[3]     ; 3.868 ; 3.482 ; 3.482 ; 3.868 ;
+; SW[0]      ; LEDR[4]     ; 3.851 ; 3.564 ; 3.564 ; 3.851 ;
+; SW[0]      ; LEDR[5]     ; 4.713 ; 3.439 ; 3.439 ; 4.713 ;
+; SW[0]      ; LEDR[6]     ; 3.905 ; 3.433 ; 3.433 ; 3.905 ;
+; SW[0]      ; LEDR[7]     ; 3.962 ; 3.586 ; 3.586 ; 3.962 ;
+; SW[0]      ; LEDR[8]     ; 4.360 ; 4.069 ; 4.069 ; 4.360 ;
+; SW[1]      ; LEDG0       ; 4.036 ; 4.036 ; 4.036 ; 4.036 ;
+; SW[1]      ; LEDR[1]     ;       ; 4.170 ; 4.170 ;       ;
+; SW[1]      ; LEDR[2]     ; 3.858 ;       ;       ; 3.858 ;
+; SW[1]      ; LEDR[3]     ; 3.700 ;       ;       ; 3.700 ;
+; SW[1]      ; LEDR[4]     ; 3.683 ;       ;       ; 3.683 ;
+; SW[1]      ; LEDR[5]     ;       ; 4.214 ; 4.214 ;       ;
+; SW[1]      ; LEDR[6]     ; 3.737 ;       ;       ; 3.737 ;
+; SW[1]      ; LEDR[7]     ; 3.794 ;       ;       ; 3.794 ;
+; SW[1]      ; LEDR[8]     ; 4.192 ;       ;       ; 4.192 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                        ;
++------------------+-------+------+----------+---------+---------------------+
+; Clock            ; Setup ; Hold ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-------+------+----------+---------+---------------------+
+; Worst-case Slack ; N/A   ; N/A  ; N/A      ; N/A     ; N/A                 ;
+; Design-wide TNS  ; 0.0   ; 0.0  ; 0.0      ; 0.0     ; 0.0                 ;
++------------------+-------+------+----------+---------+---------------------+
+
+
++--------------------------------------------------------------+
+; Progagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; KEY0       ; LEDG0       ; 17.145 ; 18.311 ; 18.311 ; 17.145 ;
+; KEY0       ; LEDR[0]     ; 12.607 ; 14.213 ; 14.213 ; 12.607 ;
+; KEY0       ; LEDR[1]     ; 16.808 ; 15.202 ; 15.202 ; 16.808 ;
+; KEY0       ; LEDR[2]     ; 14.511 ; 16.117 ; 16.117 ; 14.511 ;
+; KEY0       ; LEDR[3]     ; 14.106 ; 15.712 ; 15.712 ; 14.106 ;
+; KEY0       ; LEDR[4]     ; 14.137 ; 15.743 ; 15.743 ; 14.137 ;
+; KEY0       ; LEDR[5]     ; 16.963 ; 15.357 ; 15.357 ; 16.963 ;
+; KEY0       ; LEDR[6]     ; 14.213 ; 15.819 ; 15.819 ; 14.213 ;
+; KEY0       ; LEDR[7]     ; 14.335 ; 15.941 ; 15.941 ; 14.335 ;
+; KEY0       ; LEDR[8]     ; 15.220 ; 16.826 ; 16.826 ; 15.220 ;
+; SW[0]      ; LEDG0       ; 10.271 ; 10.825 ; 10.825 ; 10.271 ;
+; SW[0]      ; LEDR[0]     ;        ; 6.727  ; 6.727  ;        ;
+; SW[0]      ; LEDR[1]     ; 9.322  ; 8.768  ; 8.768  ; 9.322  ;
+; SW[0]      ; LEDR[2]     ; 8.077  ; 8.631  ; 8.631  ; 8.077  ;
+; SW[0]      ; LEDR[3]     ; 7.672  ; 8.226  ; 8.226  ; 7.672  ;
+; SW[0]      ; LEDR[4]     ; 7.703  ; 8.257  ; 8.257  ; 7.703  ;
+; SW[0]      ; LEDR[5]     ; 9.477  ; 8.923  ; 8.923  ; 9.477  ;
+; SW[0]      ; LEDR[6]     ; 7.779  ; 8.333  ; 8.333  ; 7.779  ;
+; SW[0]      ; LEDR[7]     ; 7.901  ; 8.455  ; 8.455  ; 7.901  ;
+; SW[0]      ; LEDR[8]     ; 8.786  ; 9.340  ; 9.340  ; 8.786  ;
+; SW[1]      ; LEDG0       ; 10.036 ; 8.870  ; 8.870  ; 10.036 ;
+; SW[1]      ; LEDR[1]     ;        ; 8.533  ; 8.533  ;        ;
+; SW[1]      ; LEDR[2]     ; 7.842  ;        ;        ; 7.842  ;
+; SW[1]      ; LEDR[3]     ; 7.437  ;        ;        ; 7.437  ;
+; SW[1]      ; LEDR[4]     ; 7.468  ;        ;        ; 7.468  ;
+; SW[1]      ; LEDR[5]     ;        ; 8.688  ; 8.688  ;        ;
+; SW[1]      ; LEDR[6]     ; 7.544  ;        ;        ; 7.544  ;
+; SW[1]      ; LEDR[7]     ; 7.666  ;        ;        ; 7.666  ;
+; SW[1]      ; LEDR[8]     ; 8.551  ;        ;        ; 8.551  ;
++------------+-------------+--------+--------+--------+--------+
+
+
++----------------------------------------------------------+
+; Minimum Progagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; KEY0       ; LEDG0       ; 6.783 ; 6.783 ; 6.783 ; 6.783 ;
+; KEY0       ; LEDR[0]     ; 6.884 ; 7.079 ; 7.079 ; 6.884 ;
+; KEY0       ; LEDR[1]     ; 7.844 ; 6.917 ; 6.917 ; 7.844 ;
+; KEY0       ; LEDR[2]     ; 6.605 ; 7.532 ; 7.532 ; 6.605 ;
+; KEY0       ; LEDR[3]     ; 6.447 ; 7.374 ; 7.374 ; 6.447 ;
+; KEY0       ; LEDR[4]     ; 6.430 ; 7.357 ; 7.357 ; 6.430 ;
+; KEY0       ; LEDR[5]     ; 7.888 ; 6.961 ; 6.961 ; 7.888 ;
+; KEY0       ; LEDR[6]     ; 6.484 ; 7.411 ; 7.411 ; 6.484 ;
+; KEY0       ; LEDR[7]     ; 6.541 ; 7.468 ; 7.468 ; 6.541 ;
+; KEY0       ; LEDR[8]     ; 6.939 ; 7.866 ; 7.866 ; 6.939 ;
+; SW[0]      ; LEDG0       ; 3.908 ; 3.913 ; 3.913 ; 3.908 ;
+; SW[0]      ; LEDR[0]     ;       ; 3.521 ; 3.521 ;       ;
+; SW[0]      ; LEDR[1]     ; 4.669 ; 3.427 ; 3.427 ; 4.669 ;
+; SW[0]      ; LEDR[2]     ; 4.026 ; 3.398 ; 3.398 ; 4.026 ;
+; SW[0]      ; LEDR[3]     ; 3.868 ; 3.482 ; 3.482 ; 3.868 ;
+; SW[0]      ; LEDR[4]     ; 3.851 ; 3.564 ; 3.564 ; 3.851 ;
+; SW[0]      ; LEDR[5]     ; 4.713 ; 3.439 ; 3.439 ; 4.713 ;
+; SW[0]      ; LEDR[6]     ; 3.905 ; 3.433 ; 3.433 ; 3.905 ;
+; SW[0]      ; LEDR[7]     ; 3.962 ; 3.586 ; 3.586 ; 3.962 ;
+; SW[0]      ; LEDR[8]     ; 4.360 ; 4.069 ; 4.069 ; 4.360 ;
+; SW[1]      ; LEDG0       ; 4.036 ; 4.036 ; 4.036 ; 4.036 ;
+; SW[1]      ; LEDR[1]     ;       ; 4.170 ; 4.170 ;       ;
+; SW[1]      ; LEDR[2]     ; 3.858 ;       ;       ; 3.858 ;
+; SW[1]      ; LEDR[3]     ; 3.700 ;       ;       ; 3.700 ;
+; SW[1]      ; LEDR[4]     ; 3.683 ;       ;       ; 3.683 ;
+; SW[1]      ; LEDR[5]     ;       ; 4.214 ; 4.214 ;       ;
+; SW[1]      ; LEDR[6]     ; 3.737 ;       ;       ; 3.737 ;
+; SW[1]      ; LEDR[7]     ; 3.794 ;       ;       ; 3.794 ;
+; SW[1]      ; LEDR[8]     ; 4.192 ;       ;       ; 4.192 ;
++------------+-------------+-------+-------+-------+-------+
+
+
+-------------------
+; Clock Transfers ;
+-------------------
+Nothing to report.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 29    ; 29   ;
+; Unconstrained Output Ports      ; 10    ; 10   ;
+; Unconstrained Output Port Paths ; 29    ; 29   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Jun 23 09:08:45 2016
+Info: Command: quartus_sta part1_2 -c part1_2
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'part1_2.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
+Warning (332125): Found combinational loop of 187 nodes
+    Warning (332126): Node "y3|Qt~0|datac"
+    Warning (332126): Node "y3|Qt~0|combout"
+    Warning (332126): Node "otp~0|datac"
+    Warning (332126): Node "otp~0|combout"
+    Warning (332126): Node "y5|m1|R_g|datad"
+    Warning (332126): Node "y5|m1|R_g|combout"
+    Warning (332126): Node "y5|m1|Qb|datab"
+    Warning (332126): Node "y5|m1|Qb|combout"
+    Warning (332126): Node "y5|m1|Qa|dataa"
+    Warning (332126): Node "y5|m1|Qa|combout"
+    Warning (332126): Node "y5|m2|R_g|datad"
+    Warning (332126): Node "y5|m2|R_g|combout"
+    Warning (332126): Node "y5|m2|Qb|dataa"
+    Warning (332126): Node "y5|m2|Qb|combout"
+    Warning (332126): Node "y5|m2|Qa|datab"
+    Warning (332126): Node "y5|m2|Qa|combout"
+    Warning (332126): Node "comb~0|dataa"
+    Warning (332126): Node "comb~0|combout"
+    Warning (332126): Node "comb~1|datab"
+    Warning (332126): Node "comb~1|combout"
+    Warning (332126): Node "y1|m1|S_g|datab"
+    Warning (332126): Node "y1|m1|S_g|combout"
+    Warning (332126): Node "y1|m1|Qa|datab"
+    Warning (332126): Node "y1|m1|Qa|combout"
+    Warning (332126): Node "y1|m2|S_g|datac"
+    Warning (332126): Node "y1|m2|S_g|combout"
+    Warning (332126): Node "y1|m2|Qa|datac"
+    Warning (332126): Node "y1|m2|Qa|combout"
+    Warning (332126): Node "y2|m1|R_g|datac"
+    Warning (332126): Node "y2|m1|R_g|combout"
+    Warning (332126): Node "y2|m1|Qb|datac"
+    Warning (332126): Node "y2|m1|Qb|combout"
+    Warning (332126): Node "y2|m1|Qa|datab"
+    Warning (332126): Node "y2|m1|Qa|combout"
+    Warning (332126): Node "y2|m2|R_g|datac"
+    Warning (332126): Node "y2|m2|R_g|combout"
+    Warning (332126): Node "y2|m2|Qb|datab"
+    Warning (332126): Node "y2|m2|Qb|combout"
+    Warning (332126): Node "y2|m2|Qa|datab"
+    Warning (332126): Node "y2|m2|Qa|combout"
+    Warning (332126): Node "y3|m1|S_g|datab"
+    Warning (332126): Node "y3|m1|S_g|combout"
+    Warning (332126): Node "y3|m1|Qa|dataa"
+    Warning (332126): Node "y3|m1|Qa|combout"
+    Warning (332126): Node "y3|m2|R_g|datab"
+    Warning (332126): Node "y3|m2|R_g|combout"
+    Warning (332126): Node "y3|m2|Qb|datab"
+    Warning (332126): Node "y3|m2|Qb|combout"
+    Warning (332126): Node "y3|m2|Qa|dataa"
+    Warning (332126): Node "y3|m2|Qa|combout"
+    Warning (332126): Node "y3|m2|Qb|datad"
+    Warning (332126): Node "y4|m1|S_g~0|dataa"
+    Warning (332126): Node "y4|m1|S_g~0|combout"
+    Warning (332126): Node "y4|m1|S_g|dataa"
+    Warning (332126): Node "y4|m1|S_g|combout"
+    Warning (332126): Node "y4|m1|Qa|dataa"
+    Warning (332126): Node "y4|m1|Qa|combout"
+    Warning (332126): Node "y4|m2|R_g|datab"
+    Warning (332126): Node "y4|m2|R_g|combout"
+    Warning (332126): Node "y4|m2|Qb|datad"
+    Warning (332126): Node "y4|m2|Qb|combout"
+    Warning (332126): Node "y4|m2|Qa|datab"
+    Warning (332126): Node "y4|m2|Qa|combout"
+    Warning (332126): Node "y4|m2|Qb|datab"
+    Warning (332126): Node "y4|m1|S_g~0|datab"
+    Warning (332126): Node "y4|Qt~0|datad"
+    Warning (332126): Node "y4|Qt~0|combout"
+    Warning (332126): Node "y5|m1|R_g|datab"
+    Warning (332126): Node "y5|m1|S_g|datab"
+    Warning (332126): Node "y5|m1|S_g|combout"
+    Warning (332126): Node "y5|m1|Qa|datad"
+    Warning (332126): Node "y4|m1|Qb|datab"
+    Warning (332126): Node "y4|m1|Qb|combout"
+    Warning (332126): Node "y4|m1|Qa|datac"
+    Warning (332126): Node "y4|m2|S_g|datab"
+    Warning (332126): Node "y4|m2|S_g|combout"
+    Warning (332126): Node "y4|m2|Qa|datad"
+    Warning (332126): Node "y4|m1|R_g|dataa"
+    Warning (332126): Node "y4|m1|R_g|combout"
+    Warning (332126): Node "y4|m1|Qb|datad"
+    Warning (332126): Node "y3|m1|Qb|datad"
+    Warning (332126): Node "y3|m1|Qb|combout"
+    Warning (332126): Node "y3|m1|Qa|datac"
+    Warning (332126): Node "y3|m2|S_g|datab"
+    Warning (332126): Node "y3|m2|S_g|combout"
+    Warning (332126): Node "y3|m2|Qa|datad"
+    Warning (332126): Node "y2|m2|Qb|datad"
+    Warning (332126): Node "y2|Qt~0|datab"
+    Warning (332126): Node "y2|Qt~0|combout"
+    Warning (332126): Node "otp~0|dataa"
+    Warning (332126): Node "y3|m1|R_g|datab"
+    Warning (332126): Node "y3|m1|R_g|combout"
+    Warning (332126): Node "y3|m1|Qb|datac"
+    Warning (332126): Node "y2|m1|Qb|datab"
+    Warning (332126): Node "y2|m2|S_g|datac"
+    Warning (332126): Node "y2|m2|S_g|combout"
+    Warning (332126): Node "y2|m2|Qa|datad"
+    Warning (332126): Node "y1|Qt~0|dataa"
+    Warning (332126): Node "y1|Qt~0|combout"
+    Warning (332126): Node "otp~0|datab"
+    Warning (332126): Node "y1|m2|Qb|datad"
+    Warning (332126): Node "y1|m2|Qb|combout"
+    Warning (332126): Node "y1|m2|Qa|datad"
+    Warning (332126): Node "y2|m1|S_g|datac"
+    Warning (332126): Node "y2|m1|S_g|combout"
+    Warning (332126): Node "y2|m1|Qa|datad"
+    Warning (332126): Node "y1|m1|Qb|datac"
+    Warning (332126): Node "y1|m1|Qb|combout"
+    Warning (332126): Node "y1|m1|Qa|datac"
+    Warning (332126): Node "y1|m2|R_g|datac"
+    Warning (332126): Node "y1|m2|R_g|combout"
+    Warning (332126): Node "y1|m2|Qb|datab"
+    Warning (332126): Node "y1|m1|R_g|datab"
+    Warning (332126): Node "y1|m1|R_g|combout"
+    Warning (332126): Node "y1|m1|Qb|datab"
+    Warning (332126): Node "y6|m1|S_g|datab"
+    Warning (332126): Node "y6|m1|S_g|combout"
+    Warning (332126): Node "y6|m1|Qa|datab"
+    Warning (332126): Node "y6|m1|Qa|combout"
+    Warning (332126): Node "y6|m2|R_g|datab"
+    Warning (332126): Node "y6|m2|R_g|combout"
+    Warning (332126): Node "y6|m2|Qb|datac"
+    Warning (332126): Node "y6|m2|Qb|combout"
+    Warning (332126): Node "y6|m2|Qa|datac"
+    Warning (332126): Node "y6|m2|Qa|combout"
+    Warning (332126): Node "comb~0|datad"
+    Warning (332126): Node "y7|m1|R_g|dataa"
+    Warning (332126): Node "y7|m1|R_g|combout"
+    Warning (332126): Node "y7|m1|Qb|datac"
+    Warning (332126): Node "y7|m1|Qb|combout"
+    Warning (332126): Node "y7|m1|Qa|datab"
+    Warning (332126): Node "y7|m1|Qa|combout"
+    Warning (332126): Node "y7|m2|R_g|datab"
+    Warning (332126): Node "y7|m2|R_g|combout"
+    Warning (332126): Node "y7|m2|Qb|datac"
+    Warning (332126): Node "y7|m2|Qb|combout"
+    Warning (332126): Node "y7|m2|Qa|datab"
+    Warning (332126): Node "y7|m2|Qa|combout"
+    Warning (332126): Node "comb~0|datab"
+    Warning (332126): Node "y7|m2|Qb|datad"
+    Warning (332126): Node "y8|m1|S_g~0|datab"
+    Warning (332126): Node "y8|m1|S_g~0|combout"
+    Warning (332126): Node "y8|m1|R_g|dataa"
+    Warning (332126): Node "y8|m1|R_g|combout"
+    Warning (332126): Node "y8|m1|Qb|dataa"
+    Warning (332126): Node "y8|m1|Qb|combout"
+    Warning (332126): Node "y8|m1|Qa|datac"
+    Warning (332126): Node "y8|m1|Qa|combout"
+    Warning (332126): Node "y8|m2|R_g|datab"
+    Warning (332126): Node "y8|m2|R_g|combout"
+    Warning (332126): Node "y8|m2|Qb|datab"
+    Warning (332126): Node "y8|m2|Qb|combout"
+    Warning (332126): Node "y8|m2|Qa|datac"
+    Warning (332126): Node "y8|m2|Qa|combout"
+    Warning (332126): Node "y8|m2|Qb|datad"
+    Warning (332126): Node "y8|m1|S_g~0|dataa"
+    Warning (332126): Node "comb~1|datad"
+    Warning (332126): Node "y8|m1|Qb|datad"
+    Warning (332126): Node "y8|m2|S_g|datab"
+    Warning (332126): Node "y8|m2|S_g|combout"
+    Warning (332126): Node "y8|m2|Qa|datad"
+    Warning (332126): Node "y8|m1|S_g|dataa"
+    Warning (332126): Node "y8|m1|S_g|combout"
+    Warning (332126): Node "y8|m1|Qa|datad"
+    Warning (332126): Node "y7|m1|Qb|datad"
+    Warning (332126): Node "y7|m2|S_g|datab"
+    Warning (332126): Node "y7|m2|S_g|combout"
+    Warning (332126): Node "y7|m2|Qa|datad"
+    Warning (332126): Node "y6|m2|Qb|datad"
+    Warning (332126): Node "y7|m1|S_g|dataa"
+    Warning (332126): Node "y7|m1|S_g|combout"
+    Warning (332126): Node "y7|m1|Qa|datac"
+    Warning (332126): Node "y6|m1|Qb|datad"
+    Warning (332126): Node "y6|m1|Qb|combout"
+    Warning (332126): Node "y6|m1|Qa|datad"
+    Warning (332126): Node "y6|m2|S_g|datab"
+    Warning (332126): Node "y6|m2|S_g|combout"
+    Warning (332126): Node "y6|m2|Qa|datad"
+    Warning (332126): Node "y5|m2|Qb|datad"
+    Warning (332126): Node "y6|m1|R_g|datab"
+    Warning (332126): Node "y6|m1|R_g|combout"
+    Warning (332126): Node "y6|m1|Qb|dataa"
+    Warning (332126): Node "y5|m1|Qb|datad"
+    Warning (332126): Node "y5|m2|S_g|datad"
+    Warning (332126): Node "y5|m2|S_g|combout"
+    Warning (332126): Node "y5|m2|Qa|datac"
+    Warning (332126): Node "y5|m1|S_g|datad"
+Critical Warning (332081): Design contains combinational loop of 187 nodes. Estimating the delays through the loop.
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "y0|m2|Qa|combout"
+    Warning (332126): Node "y0|m2|Qb|datad"
+    Warning (332126): Node "y0|m2|Qb|combout"
+    Warning (332126): Node "y0|m2|Qa|datac"
+Warning (332125): Found combinational loop of 4 nodes
+    Warning (332126): Node "y0|m1|Qa|combout"
+    Warning (332126): Node "y0|m1|Qb|datad"
+    Warning (332126): Node "y0|m1|Qb|combout"
+    Warning (332126): Node "y0|m1|Qa|datac"
+Warning (332068): No clocks defined in design.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info (332159): No clocks to report
+Info: Analyzing Slow Model
+Info (332140): No fmax paths to report
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332140): No Minimum Pulse Width paths to report
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
+Warning (332068): No clocks defined in design.
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332140): No Minimum Pulse Width paths to report
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 203 warnings
+    Info: Peak virtual memory: 428 megabytes
+    Info: Processing ended: Thu Jun 23 09:08:46 2016
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

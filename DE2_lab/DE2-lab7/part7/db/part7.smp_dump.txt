@@ -1,0 +1,24 @@
+
+State Machine - |part7|pushbutton_fsm:F1|state
+Name state.Btwo state.Atwo state.waitBB state.waitAA state.Bone state.Aone state.WaitB state.WaitA state.Inicio 
+state.Inicio 0 0 0 0 0 0 0 0 0 
+state.WaitA 0 0 0 0 0 0 0 1 1 
+state.WaitB 0 0 0 0 0 0 1 0 1 
+state.Aone 0 0 0 0 0 1 0 0 1 
+state.Bone 0 0 0 0 1 0 0 0 1 
+state.waitAA 0 0 0 1 0 0 0 0 1 
+state.waitBB 0 0 1 0 0 0 0 0 1 
+state.Atwo 0 1 0 0 0 0 0 0 1 
+state.Btwo 1 0 0 0 0 0 0 0 1 
+
+State Machine - |part7|fsm:F0|state
+Name state.I state.H state.G state.F state.E state.D state.C state.B state.A 
+state.A 0 0 0 0 0 0 0 0 0 
+state.B 0 0 0 0 0 0 0 1 1 
+state.C 0 0 0 0 0 0 1 0 1 
+state.D 0 0 0 0 0 1 0 0 1 
+state.E 0 0 0 0 1 0 0 0 1 
+state.F 0 0 0 1 0 0 0 0 1 
+state.G 0 0 1 0 0 0 0 0 1 
+state.H 0 1 0 0 0 0 0 0 1 
+state.I 1 0 0 0 0 0 0 0 1 

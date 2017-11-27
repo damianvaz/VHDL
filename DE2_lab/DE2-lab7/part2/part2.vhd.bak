@@ -1,0 +1,105 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY part2 IS
+
+PORT 
+(
+   SW: IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+   KEY0: IN STD_LOGIC;
+   LEDG: OUT STD_LOGIC;
+	LEDR: OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
+);
+END part2;
+
+ARCHITECTURE Behavior OF part2 IS
+SIGNAL w, rst, clock: std_LOGIC;
+TYPE State_type IS (A, B, C, D, E, F, G, H, I);
+SIGNAL state, next_state : State_type;     -- state is present state, next_state is next state
+BEGIN
+w <= SW(1);
+rst <= SW(0);
+clock <= KEY0;
+
+-- next state logic
+PROCESS (w, state) -- state table
+BEGIN
+   case state IS
+      WHEN A IF (w = ’0’) THEN next_state <= B;
+                ELSE next_state <= F;
+             END IF;
+				 
+		WHEN B IF (w = ’0’) THEN next_state <= C;
+                ELSE next_state <= F;
+             END IF;
+		
+		WHEN C IF (w = ’0’) THEN next_state <= D;
+                ELSE next_state <= F;
+             END IF;
+		WHEN D IF (w = ’0’) THEN next_state <= E;
+                ELSE next_state <= F;
+             END IF;
+		WHEN E IF (w = ’0’) THEN next_state <= E;
+                ELSE next_state <= F;
+             END IF;
+		WHEN F IF (w = ’1’) THEN next_state <= G;
+                ELSE next_state <= B;
+             END IF;
+		WHEN G IF (w = ’1’) THEN next_state <= H;
+                ELSE next_state <= B;
+             END IF;
+		WHEN H IF (w = ’1’) THEN next_state <= I;
+                ELSE next_state <= B;
+             END IF;
+		WHEN I IF (w = ’1’) THEN next_state <= I;
+                ELSE next_state <= B;
+             END IF;
+   END CASE;
+END PROCESS; 
+
+-- memory/state element
+PROCESS (Clock, rst) -- state flip-flops
+BEGIN
+   if (rst='1') then
+      state <= A;
+		elsif (rising_edge(clock)) then
+			state <= next_state;
+		end if;
+END PROCESS;
+   process(state)
+	begin
+		z <= '0';
+		LEDG <= '1
+		LEDR <= (others => '1');
+		case state is
+			when A =>
+				z <= 0;
+				LEDR <= "000000001";
+			when B =>
+				z <= 0;
+				LEDR <= "000000010";
+			when C =>
+				z <= 0;
+				LEDR <= "000000100";
+			when D =>
+				z <= 0; 
+				LEDR <= "000001000";
+			when E =>
+				z <= 1;
+				LEDR <= "000010000";
+			when F =>
+				z <= 0;
+				LEDR <= "000100000";
+			when G =>
+				z <= 0;
+			   LEDR <= "001000000";	
+			when H =>
+				z <= 0;
+				LEDR <= "010000000";
+			when I =>
+				z <= 1;
+				LEDR <= "100000000";
+		end case;
+		LEDG <= z;
+	end process;
+END Behavior;

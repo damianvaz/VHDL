@@ -1,0 +1,90 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity part5 is
+	port
+	    (
+		     clk, rst: in std_logic;
+           SW : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+           HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7 : OUT STD_LOGIC_VECTOR(0 TO 6)	
+       );
+end;
+
+architecture arch1 of part5 is
+
+COMPONENT char7seg
+   PORT 
+      (
+         C : IN STD_LOGIC_VECTOR(15 DOWNTO 0); 
+         Display : OUT STD_LOGIC_VECTOR(0 TO 24) -- Display(0 to 6) = 1 7seg, (7 to 12) = 2 , (13 to 18) =3 (19 to 24)=4
+      );
+END COMPONENT;
+SIGNAL Display1, Display2 : STD_LOGIC_VECTOR(0 TO 24);
+
+
+--D0: char7seg PORT MAP (SW(15 DOWNTO 0), Display1);
+--D1: char7seg PORT MAP (SW(15 DOWNTO 0), Display2);
+
+
+type TpState is (pegaA, pegaB);
+signal state, next_state: TpState; 
+begin
+	-- next state logic
+	process(state)
+	begin
+		next_state <= state;
+		case state is
+			when pegaA =>
+					next_state <= pegaB; 
+			when pegaB =>
+					next_state <= pegaA;
+		end case;
+	end process;
+	
+	
+	
+	-- memory/state element
+	process(rst,clk)
+	begin
+		if (rst='1') then
+			state <= pegaA;
+		elsif (rising_edge(clk)) then
+			state <= next_state;
+		end if;
+	end process;
+	
+	-- output logic
+	process(state)
+	begin
+		HEX0 <= "111111";
+		HEX1 <= "111111";
+		HEX2 <= "111111";
+		HEX3 <= "111111";
+		HEX4 <= "111111";
+		HEX5 <= "111111";
+		HEX6 <= "111111";
+		HEX7 <= "111111";
+		case state is
+			when pegaA =>
+			D0: char7seg PORT MAP (SW(15 DOWNTO 0), Display1);
+				HEX0 <= Display1(0 to 6);
+			   HEX1 <= Display1(7 to 12);
+			   HEX2 <= Display1(13 to 18);
+			   HEX3 <= Display1(19 to 24);
+			   HEX4 <= "111111";
+			   HEX5 <= "111111";
+			   HEX6 <= "111111";
+			   HEX7 <= "111111";
+			when pegaB =>
+			D1: char7seg PORT MAP (SW(15 DOWNTO 0), Display2);
+				HEX0 <= Display1(0 to 6);
+			   HEX1 <= Display1(7 to 12);
+			   HEX2 <= Display1(13 to 18);
+			   HEX3 <= Display1(19 to 24);
+			   HEX4 <= Display2(0 to 6);
+			   HEX5 <= Display2(7 to 12);
+			   HEX6 <= Display2(13 to 18);
+			   HEX7 <= Display2(19 to 24);
+		end case;
+	end process;
+end;

@@ -1,0 +1,905 @@
+TimeQuest Timing Analyzer report for part3
+Thu Jun 16 10:02:58 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'KEY0'
+ 12. Slow Model Hold: 'KEY0'
+ 13. Slow Model Minimum Pulse Width: 'KEY0'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Fast Model Setup Summary
+ 21. Fast Model Hold Summary
+ 22. Fast Model Recovery Summary
+ 23. Fast Model Removal Summary
+ 24. Fast Model Minimum Pulse Width Summary
+ 25. Fast Model Setup: 'KEY0'
+ 26. Fast Model Hold: 'KEY0'
+ 27. Fast Model Minimum Pulse Width: 'KEY0'
+ 28. Setup Times
+ 29. Hold Times
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Propagation Delay
+ 33. Minimum Propagation Delay
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Progagation Delay
+ 40. Minimum Progagation Delay
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; part3                                                             ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                           ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets  ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
+; KEY0       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { KEY0 } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 410.34 MHz ; 410.34 MHz      ; KEY0       ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; KEY0  ; -1.437 ; -11.022       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; KEY0  ; 0.391 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; KEY0  ; -1.222 ; -9.222                ;
++-------+--------+-----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'KEY0'                                                                                                             ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; -1.437 ; shiftRegister:s2|state[3] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.473      ;
+; -1.437 ; shiftRegister:s2|state[3] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.473      ;
+; -1.437 ; shiftRegister:s2|state[3] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.473      ;
+; -1.436 ; shiftRegister:s2|state[3] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.472      ;
+; -1.436 ; shiftRegister:s2|state[3] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.472      ;
+; -1.436 ; shiftRegister:s2|state[3] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.472      ;
+; -1.370 ; shiftRegister:s2|state[2] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.406      ;
+; -1.370 ; shiftRegister:s2|state[2] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.406      ;
+; -1.370 ; shiftRegister:s2|state[2] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.406      ;
+; -1.369 ; shiftRegister:s2|state[2] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.405      ;
+; -1.369 ; shiftRegister:s2|state[2] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.405      ;
+; -1.369 ; shiftRegister:s2|state[2] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.405      ;
+; -1.279 ; shiftRegister:s1|state[3] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.315      ;
+; -1.279 ; shiftRegister:s1|state[3] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.315      ;
+; -1.279 ; shiftRegister:s1|state[3] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.315      ;
+; -1.278 ; shiftRegister:s1|state[3] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.314      ;
+; -1.278 ; shiftRegister:s1|state[3] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.314      ;
+; -1.278 ; shiftRegister:s1|state[3] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.314      ;
+; -1.277 ; shiftRegister:s2|state[1] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.313      ;
+; -1.277 ; shiftRegister:s2|state[1] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.313      ;
+; -1.277 ; shiftRegister:s2|state[1] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.313      ;
+; -1.276 ; shiftRegister:s2|state[1] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.312      ;
+; -1.276 ; shiftRegister:s2|state[1] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.312      ;
+; -1.276 ; shiftRegister:s2|state[1] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.312      ;
+; -1.246 ; shiftRegister:s2|state[0] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.011      ; 2.293      ;
+; -1.246 ; shiftRegister:s2|state[0] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.011      ; 2.293      ;
+; -1.246 ; shiftRegister:s2|state[0] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.011      ; 2.293      ;
+; -1.245 ; shiftRegister:s2|state[0] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.011      ; 2.292      ;
+; -1.245 ; shiftRegister:s2|state[0] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.011      ; 2.292      ;
+; -1.245 ; shiftRegister:s2|state[0] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.011      ; 2.292      ;
+; -1.213 ; shiftRegister:s1|state[2] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.249      ;
+; -1.213 ; shiftRegister:s1|state[2] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.249      ;
+; -1.213 ; shiftRegister:s1|state[2] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.249      ;
+; -1.212 ; shiftRegister:s1|state[2] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.248      ;
+; -1.212 ; shiftRegister:s1|state[2] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.248      ;
+; -1.212 ; shiftRegister:s1|state[2] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.248      ;
+; -1.203 ; shiftRegister:s2|state[3] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.011     ; 2.228      ;
+; -1.200 ; shiftRegister:s2|state[3] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.011     ; 2.225      ;
+; -1.145 ; shiftRegister:s1|state[0] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.011      ; 2.192      ;
+; -1.145 ; shiftRegister:s1|state[0] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.011      ; 2.192      ;
+; -1.145 ; shiftRegister:s1|state[0] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.011      ; 2.192      ;
+; -1.144 ; shiftRegister:s1|state[0] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.011      ; 2.191      ;
+; -1.144 ; shiftRegister:s1|state[0] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.011      ; 2.191      ;
+; -1.144 ; shiftRegister:s1|state[0] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.011      ; 2.191      ;
+; -1.136 ; shiftRegister:s2|state[2] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.011     ; 2.161      ;
+; -1.133 ; shiftRegister:s2|state[2] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.011     ; 2.158      ;
+; -1.128 ; shiftRegister:s1|state[1] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.164      ;
+; -1.128 ; shiftRegister:s1|state[1] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.164      ;
+; -1.128 ; shiftRegister:s1|state[1] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.164      ;
+; -1.127 ; shiftRegister:s1|state[1] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.163      ;
+; -1.127 ; shiftRegister:s1|state[1] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.163      ;
+; -1.127 ; shiftRegister:s1|state[1] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.163      ;
+; -1.043 ; shiftRegister:s2|state[1] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.011     ; 2.068      ;
+; -1.040 ; shiftRegister:s2|state[1] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.011     ; 2.065      ;
+; -1.012 ; shiftRegister:s2|state[0] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.048      ;
+; -1.009 ; shiftRegister:s2|state[0] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 2.045      ;
+; -0.684 ; shiftRegister:s1|state[3] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.011     ; 1.709      ;
+; -0.682 ; shiftRegister:s1|state[3] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.011     ; 1.707      ;
+; -0.618 ; shiftRegister:s1|state[2] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.011     ; 1.643      ;
+; -0.616 ; shiftRegister:s1|state[2] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.011     ; 1.641      ;
+; -0.550 ; shiftRegister:s1|state[0] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.586      ;
+; -0.548 ; shiftRegister:s1|state[0] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.584      ;
+; -0.533 ; shiftRegister:s1|state[1] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.011     ; 1.558      ;
+; -0.531 ; shiftRegister:s1|state[1] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.011     ; 1.556      ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'KEY0'                                                                                                             ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; shiftRegister:s2|state[0] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; shiftRegister:s1|state[0] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.657      ;
+; 0.681 ; shiftRegister:s2|state[1] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.947      ;
+; 0.684 ; shiftRegister:s1|state[1] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.950      ;
+; 0.706 ; shiftRegister:s1|state[0] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.011      ; 0.983      ;
+; 0.792 ; shiftRegister:s2|state[2] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.058      ;
+; 0.815 ; shiftRegister:s1|state[2] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.081      ;
+; 1.004 ; shiftRegister:s2|state[0] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.011      ; 1.281      ;
+; 1.301 ; shiftRegister:s1|state[1] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.011     ; 1.556      ;
+; 1.303 ; shiftRegister:s1|state[1] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.011     ; 1.558      ;
+; 1.320 ; shiftRegister:s1|state[0] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.586      ;
+; 1.386 ; shiftRegister:s1|state[2] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.011     ; 1.641      ;
+; 1.388 ; shiftRegister:s1|state[2] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.011     ; 1.643      ;
+; 1.452 ; shiftRegister:s1|state[3] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.011     ; 1.707      ;
+; 1.454 ; shiftRegister:s1|state[3] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.011     ; 1.709      ;
+; 1.782 ; shiftRegister:s2|state[0] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.048      ;
+; 1.810 ; shiftRegister:s2|state[1] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.011     ; 2.065      ;
+; 1.813 ; shiftRegister:s2|state[1] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.011     ; 2.068      ;
+; 1.897 ; shiftRegister:s1|state[1] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.163      ;
+; 1.897 ; shiftRegister:s1|state[1] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.163      ;
+; 1.898 ; shiftRegister:s1|state[1] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.164      ;
+; 1.898 ; shiftRegister:s1|state[1] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.164      ;
+; 1.898 ; shiftRegister:s1|state[1] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.164      ;
+; 1.903 ; shiftRegister:s2|state[2] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.011     ; 2.158      ;
+; 1.906 ; shiftRegister:s2|state[2] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.011     ; 2.161      ;
+; 1.914 ; shiftRegister:s1|state[0] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.011      ; 2.191      ;
+; 1.914 ; shiftRegister:s1|state[0] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.011      ; 2.191      ;
+; 1.915 ; shiftRegister:s1|state[0] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.011      ; 2.192      ;
+; 1.915 ; shiftRegister:s1|state[0] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.011      ; 2.192      ;
+; 1.915 ; shiftRegister:s1|state[0] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.011      ; 2.192      ;
+; 1.970 ; shiftRegister:s2|state[3] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.011     ; 2.225      ;
+; 1.973 ; shiftRegister:s2|state[3] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.011     ; 2.228      ;
+; 1.982 ; shiftRegister:s1|state[2] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.248      ;
+; 1.982 ; shiftRegister:s1|state[2] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.248      ;
+; 1.983 ; shiftRegister:s1|state[2] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.249      ;
+; 1.983 ; shiftRegister:s1|state[2] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.249      ;
+; 1.983 ; shiftRegister:s1|state[2] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.249      ;
+; 2.015 ; shiftRegister:s2|state[0] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.011      ; 2.292      ;
+; 2.015 ; shiftRegister:s2|state[0] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.011      ; 2.292      ;
+; 2.015 ; shiftRegister:s2|state[0] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.011      ; 2.292      ;
+; 2.016 ; shiftRegister:s2|state[0] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.011      ; 2.293      ;
+; 2.016 ; shiftRegister:s2|state[0] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.011      ; 2.293      ;
+; 2.046 ; shiftRegister:s2|state[1] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.312      ;
+; 2.046 ; shiftRegister:s2|state[1] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.312      ;
+; 2.046 ; shiftRegister:s2|state[1] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.312      ;
+; 2.047 ; shiftRegister:s2|state[1] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.313      ;
+; 2.047 ; shiftRegister:s2|state[1] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.313      ;
+; 2.048 ; shiftRegister:s1|state[3] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.314      ;
+; 2.048 ; shiftRegister:s1|state[3] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.314      ;
+; 2.048 ; shiftRegister:s1|state[3] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.314      ;
+; 2.049 ; shiftRegister:s1|state[3] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.315      ;
+; 2.049 ; shiftRegister:s1|state[3] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.315      ;
+; 2.049 ; shiftRegister:s1|state[3] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.315      ;
+; 2.139 ; shiftRegister:s2|state[2] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.405      ;
+; 2.139 ; shiftRegister:s2|state[2] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.405      ;
+; 2.139 ; shiftRegister:s2|state[2] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.405      ;
+; 2.140 ; shiftRegister:s2|state[2] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.406      ;
+; 2.140 ; shiftRegister:s2|state[2] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.406      ;
+; 2.206 ; shiftRegister:s2|state[3] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.472      ;
+; 2.206 ; shiftRegister:s2|state[3] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.472      ;
+; 2.206 ; shiftRegister:s2|state[3] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.472      ;
+; 2.207 ; shiftRegister:s2|state[3] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.473      ;
+; 2.207 ; shiftRegister:s2|state[3] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.473      ;
+; 2.207 ; shiftRegister:s2|state[3] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 2.473      ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'KEY0'                                                                     ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; KEY0  ; Rise       ; KEY0                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; shiftRegister:s1|state[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; shiftRegister:s1|state[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; shiftRegister:s1|state[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; shiftRegister:s1|state[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; shiftRegister:s1|state[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; shiftRegister:s1|state[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; shiftRegister:s1|state[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; shiftRegister:s1|state[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; shiftRegister:s2|state[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; shiftRegister:s2|state[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; shiftRegister:s2|state[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; shiftRegister:s2|state[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; shiftRegister:s2|state[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; shiftRegister:s2|state[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; shiftRegister:s2|state[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; shiftRegister:s2|state[3] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; KEY0|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; KEY0|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; s1|state[0]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; s1|state[0]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; s1|state[1]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; s1|state[1]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; s1|state[2]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; s1|state[2]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; s1|state[3]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; s1|state[3]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; s2|state[0]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; s2|state[0]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; s2|state[1]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; s2|state[1]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; s2|state[2]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; s2|state[2]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; s2|state[3]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; s2|state[3]|clk           ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW[*]     ; KEY0       ; 1.163 ; 1.163 ; Rise       ; KEY0            ;
+;  SW[1]    ; KEY0       ; 1.163 ; 1.163 ; Rise       ; KEY0            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW[*]     ; KEY0       ; 0.191 ; 0.191 ; Rise       ; KEY0            ;
+;  SW[1]    ; KEY0       ; 0.191 ; 0.191 ; Rise       ; KEY0            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDG      ; KEY0       ; 9.984 ; 9.984 ; Rise       ; KEY0            ;
+; LEDR[*]   ; KEY0       ; 9.099 ; 9.099 ; Rise       ; KEY0            ;
+;  LEDR[0]  ; KEY0       ; 9.099 ; 9.099 ; Rise       ; KEY0            ;
+;  LEDR[1]  ; KEY0       ; 8.665 ; 8.665 ; Rise       ; KEY0            ;
+;  LEDR[2]  ; KEY0       ; 8.846 ; 8.846 ; Rise       ; KEY0            ;
+;  LEDR[3]  ; KEY0       ; 8.683 ; 8.683 ; Rise       ; KEY0            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDG      ; KEY0       ; 9.312 ; 9.312 ; Rise       ; KEY0            ;
+; LEDR[*]   ; KEY0       ; 8.333 ; 8.333 ; Rise       ; KEY0            ;
+;  LEDR[0]  ; KEY0       ; 8.854 ; 8.854 ; Rise       ; KEY0            ;
+;  LEDR[1]  ; KEY0       ; 8.522 ; 8.522 ; Rise       ; KEY0            ;
+;  LEDR[2]  ; KEY0       ; 8.333 ; 8.333 ; Rise       ; KEY0            ;
+;  LEDR[3]  ; KEY0       ; 8.507 ; 8.507 ; Rise       ; KEY0            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[1]      ; LEDR[0]     ; 7.668 ; 7.668 ; 7.668 ; 7.668 ;
+; SW[1]      ; LEDR[1]     ; 7.679 ; 7.679 ; 7.679 ; 7.679 ;
+; SW[1]      ; LEDR[2]     ; 7.887 ; 7.887 ; 7.887 ; 7.887 ;
+; SW[1]      ; LEDR[3]     ; 7.967 ; 7.967 ; 7.967 ; 7.967 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[1]      ; LEDR[0]     ; 7.668 ; 7.668 ; 7.668 ; 7.668 ;
+; SW[1]      ; LEDR[1]     ; 7.679 ; 7.679 ; 7.679 ; 7.679 ;
+; SW[1]      ; LEDR[2]     ; 7.887 ; 7.887 ; 7.887 ; 7.887 ;
+; SW[1]      ; LEDR[3]     ; 7.967 ; 7.967 ; 7.967 ; 7.967 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; KEY0  ; -0.170 ; -1.014        ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; KEY0  ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; KEY0  ; -1.222 ; -9.222                ;
++-------+--------+-----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'KEY0'                                                                                                             ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; -0.170 ; shiftRegister:s2|state[3] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.202      ;
+; -0.170 ; shiftRegister:s2|state[3] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.202      ;
+; -0.170 ; shiftRegister:s2|state[3] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.202      ;
+; -0.168 ; shiftRegister:s2|state[3] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.001      ; 1.201      ;
+; -0.168 ; shiftRegister:s2|state[3] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.001      ; 1.201      ;
+; -0.168 ; shiftRegister:s2|state[3] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.001      ; 1.201      ;
+; -0.159 ; shiftRegister:s2|state[2] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.191      ;
+; -0.159 ; shiftRegister:s2|state[2] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.191      ;
+; -0.159 ; shiftRegister:s2|state[2] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.191      ;
+; -0.157 ; shiftRegister:s2|state[2] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.001      ; 1.190      ;
+; -0.157 ; shiftRegister:s2|state[2] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.001      ; 1.190      ;
+; -0.157 ; shiftRegister:s2|state[2] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.001      ; 1.190      ;
+; -0.105 ; shiftRegister:s1|state[3] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 1.000        ; -0.001     ; 1.136      ;
+; -0.105 ; shiftRegister:s1|state[3] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 1.000        ; -0.001     ; 1.136      ;
+; -0.105 ; shiftRegister:s1|state[3] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 1.000        ; -0.001     ; 1.136      ;
+; -0.103 ; shiftRegister:s1|state[3] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.135      ;
+; -0.103 ; shiftRegister:s1|state[3] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.135      ;
+; -0.103 ; shiftRegister:s1|state[3] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.135      ;
+; -0.099 ; shiftRegister:s1|state[2] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 1.000        ; -0.001     ; 1.130      ;
+; -0.099 ; shiftRegister:s1|state[2] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 1.000        ; -0.001     ; 1.130      ;
+; -0.099 ; shiftRegister:s1|state[2] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 1.000        ; -0.001     ; 1.130      ;
+; -0.097 ; shiftRegister:s1|state[2] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.129      ;
+; -0.097 ; shiftRegister:s1|state[2] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.129      ;
+; -0.097 ; shiftRegister:s1|state[2] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.129      ;
+; -0.096 ; shiftRegister:s2|state[1] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.128      ;
+; -0.096 ; shiftRegister:s2|state[1] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.128      ;
+; -0.096 ; shiftRegister:s2|state[1] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.128      ;
+; -0.094 ; shiftRegister:s2|state[1] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.001      ; 1.127      ;
+; -0.094 ; shiftRegister:s2|state[1] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.001      ; 1.127      ;
+; -0.094 ; shiftRegister:s2|state[1] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.001      ; 1.127      ;
+; -0.087 ; shiftRegister:s2|state[0] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.006      ; 1.125      ;
+; -0.087 ; shiftRegister:s2|state[0] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.006      ; 1.125      ;
+; -0.087 ; shiftRegister:s2|state[0] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.006      ; 1.125      ;
+; -0.085 ; shiftRegister:s2|state[0] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.007      ; 1.124      ;
+; -0.085 ; shiftRegister:s2|state[0] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.007      ; 1.124      ;
+; -0.085 ; shiftRegister:s2|state[0] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.007      ; 1.124      ;
+; -0.043 ; shiftRegister:s1|state[0] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.006      ; 1.081      ;
+; -0.043 ; shiftRegister:s1|state[0] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.006      ; 1.081      ;
+; -0.043 ; shiftRegister:s1|state[0] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.006      ; 1.081      ;
+; -0.041 ; shiftRegister:s1|state[0] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.007      ; 1.080      ;
+; -0.041 ; shiftRegister:s1|state[0] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.007      ; 1.080      ;
+; -0.041 ; shiftRegister:s1|state[0] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.007      ; 1.080      ;
+; -0.039 ; shiftRegister:s1|state[1] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 1.000        ; -0.001     ; 1.070      ;
+; -0.039 ; shiftRegister:s1|state[1] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 1.000        ; -0.001     ; 1.070      ;
+; -0.039 ; shiftRegister:s1|state[1] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 1.000        ; -0.001     ; 1.070      ;
+; -0.037 ; shiftRegister:s1|state[1] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.069      ;
+; -0.037 ; shiftRegister:s1|state[1] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.069      ;
+; -0.037 ; shiftRegister:s1|state[1] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.069      ;
+; 0.001  ; shiftRegister:s2|state[3] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.006     ; 1.025      ;
+; 0.004  ; shiftRegister:s2|state[3] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.006     ; 1.022      ;
+; 0.012  ; shiftRegister:s2|state[2] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.006     ; 1.014      ;
+; 0.015  ; shiftRegister:s2|state[2] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.006     ; 1.011      ;
+; 0.075  ; shiftRegister:s2|state[1] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.006     ; 0.951      ;
+; 0.078  ; shiftRegister:s2|state[1] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.006     ; 0.948      ;
+; 0.084  ; shiftRegister:s2|state[0] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.948      ;
+; 0.087  ; shiftRegister:s2|state[0] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.945      ;
+; 0.233  ; shiftRegister:s1|state[3] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.007     ; 0.792      ;
+; 0.235  ; shiftRegister:s1|state[3] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.007     ; 0.790      ;
+; 0.239  ; shiftRegister:s1|state[2] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.007     ; 0.786      ;
+; 0.241  ; shiftRegister:s1|state[2] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.007     ; 0.784      ;
+; 0.295  ; shiftRegister:s1|state[0] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.737      ;
+; 0.297  ; shiftRegister:s1|state[0] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.735      ;
+; 0.299  ; shiftRegister:s1|state[1] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.007     ; 0.726      ;
+; 0.301  ; shiftRegister:s1|state[1] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 1.000        ; -0.007     ; 0.724      ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'KEY0'                                                                                                             ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; shiftRegister:s2|state[0] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; shiftRegister:s1|state[0] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.367      ;
+; 0.321 ; shiftRegister:s1|state[0] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.007      ; 0.480      ;
+; 0.337 ; shiftRegister:s2|state[1] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.489      ;
+; 0.338 ; shiftRegister:s1|state[1] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.490      ;
+; 0.374 ; shiftRegister:s2|state[2] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; shiftRegister:s1|state[2] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.526      ;
+; 0.463 ; shiftRegister:s2|state[0] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.006      ; 0.621      ;
+; 0.579 ; shiftRegister:s1|state[1] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.007     ; 0.724      ;
+; 0.581 ; shiftRegister:s1|state[1] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.007     ; 0.726      ;
+; 0.585 ; shiftRegister:s1|state[0] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.737      ;
+; 0.639 ; shiftRegister:s1|state[2] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.007     ; 0.784      ;
+; 0.641 ; shiftRegister:s1|state[2] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.007     ; 0.786      ;
+; 0.645 ; shiftRegister:s1|state[3] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.007     ; 0.790      ;
+; 0.647 ; shiftRegister:s1|state[3] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.007     ; 0.792      ;
+; 0.796 ; shiftRegister:s2|state[0] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.948      ;
+; 0.802 ; shiftRegister:s2|state[1] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.006     ; 0.948      ;
+; 0.805 ; shiftRegister:s2|state[1] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.006     ; 0.951      ;
+; 0.865 ; shiftRegister:s2|state[2] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.006     ; 1.011      ;
+; 0.868 ; shiftRegister:s2|state[2] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.006     ; 1.014      ;
+; 0.876 ; shiftRegister:s2|state[3] ; shiftRegister:s2|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.006     ; 1.022      ;
+; 0.879 ; shiftRegister:s2|state[3] ; shiftRegister:s1|state[0] ; KEY0         ; KEY0        ; 0.000        ; -0.006     ; 1.025      ;
+; 0.917 ; shiftRegister:s1|state[1] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.069      ;
+; 0.917 ; shiftRegister:s1|state[1] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.069      ;
+; 0.919 ; shiftRegister:s1|state[1] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 0.000        ; -0.001     ; 1.070      ;
+; 0.919 ; shiftRegister:s1|state[1] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 0.000        ; -0.001     ; 1.070      ;
+; 0.919 ; shiftRegister:s1|state[1] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 0.000        ; -0.001     ; 1.070      ;
+; 0.921 ; shiftRegister:s1|state[0] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.007      ; 1.080      ;
+; 0.921 ; shiftRegister:s1|state[0] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.007      ; 1.080      ;
+; 0.923 ; shiftRegister:s1|state[0] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.006      ; 1.081      ;
+; 0.923 ; shiftRegister:s1|state[0] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.006      ; 1.081      ;
+; 0.923 ; shiftRegister:s1|state[0] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.006      ; 1.081      ;
+; 0.965 ; shiftRegister:s2|state[0] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.007      ; 1.124      ;
+; 0.965 ; shiftRegister:s2|state[0] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.007      ; 1.124      ;
+; 0.965 ; shiftRegister:s2|state[0] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.007      ; 1.124      ;
+; 0.967 ; shiftRegister:s2|state[0] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.006      ; 1.125      ;
+; 0.967 ; shiftRegister:s2|state[0] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.006      ; 1.125      ;
+; 0.974 ; shiftRegister:s2|state[1] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.001      ; 1.127      ;
+; 0.974 ; shiftRegister:s2|state[1] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.001      ; 1.127      ;
+; 0.974 ; shiftRegister:s2|state[1] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.001      ; 1.127      ;
+; 0.976 ; shiftRegister:s2|state[1] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.128      ;
+; 0.976 ; shiftRegister:s2|state[1] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.128      ;
+; 0.977 ; shiftRegister:s1|state[2] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.129      ;
+; 0.977 ; shiftRegister:s1|state[2] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.129      ;
+; 0.979 ; shiftRegister:s1|state[2] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 0.000        ; -0.001     ; 1.130      ;
+; 0.979 ; shiftRegister:s1|state[2] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 0.000        ; -0.001     ; 1.130      ;
+; 0.979 ; shiftRegister:s1|state[2] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 0.000        ; -0.001     ; 1.130      ;
+; 0.983 ; shiftRegister:s1|state[3] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.135      ;
+; 0.983 ; shiftRegister:s1|state[3] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.135      ;
+; 0.983 ; shiftRegister:s1|state[3] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.135      ;
+; 0.985 ; shiftRegister:s1|state[3] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 0.000        ; -0.001     ; 1.136      ;
+; 0.985 ; shiftRegister:s1|state[3] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 0.000        ; -0.001     ; 1.136      ;
+; 0.985 ; shiftRegister:s1|state[3] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 0.000        ; -0.001     ; 1.136      ;
+; 1.037 ; shiftRegister:s2|state[2] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.001      ; 1.190      ;
+; 1.037 ; shiftRegister:s2|state[2] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.001      ; 1.190      ;
+; 1.037 ; shiftRegister:s2|state[2] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.001      ; 1.190      ;
+; 1.039 ; shiftRegister:s2|state[2] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.191      ;
+; 1.039 ; shiftRegister:s2|state[2] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.191      ;
+; 1.048 ; shiftRegister:s2|state[3] ; shiftRegister:s1|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.001      ; 1.201      ;
+; 1.048 ; shiftRegister:s2|state[3] ; shiftRegister:s1|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.001      ; 1.201      ;
+; 1.048 ; shiftRegister:s2|state[3] ; shiftRegister:s1|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.001      ; 1.201      ;
+; 1.050 ; shiftRegister:s2|state[3] ; shiftRegister:s2|state[1] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.202      ;
+; 1.050 ; shiftRegister:s2|state[3] ; shiftRegister:s2|state[2] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.202      ;
+; 1.050 ; shiftRegister:s2|state[3] ; shiftRegister:s2|state[3] ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.202      ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'KEY0'                                                                     ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; KEY0  ; Rise       ; KEY0                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; shiftRegister:s1|state[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; shiftRegister:s1|state[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; shiftRegister:s1|state[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; shiftRegister:s1|state[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; shiftRegister:s1|state[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; shiftRegister:s1|state[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; shiftRegister:s1|state[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; shiftRegister:s1|state[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; shiftRegister:s2|state[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; shiftRegister:s2|state[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; shiftRegister:s2|state[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; shiftRegister:s2|state[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; shiftRegister:s2|state[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; shiftRegister:s2|state[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; shiftRegister:s2|state[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; shiftRegister:s2|state[3] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; KEY0|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; KEY0|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; s1|state[0]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; s1|state[0]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; s1|state[1]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; s1|state[1]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; s1|state[2]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; s1|state[2]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; s1|state[3]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; s1|state[3]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; s2|state[0]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; s2|state[0]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; s2|state[1]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; s2|state[1]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; s2|state[2]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; s2|state[2]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; s2|state[3]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; s2|state[3]|clk           ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW[*]     ; KEY0       ; 0.488 ; 0.488 ; Rise       ; KEY0            ;
+;  SW[1]    ; KEY0       ; 0.488 ; 0.488 ; Rise       ; KEY0            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW[*]     ; KEY0       ; 0.225 ; 0.225 ; Rise       ; KEY0            ;
+;  SW[1]    ; KEY0       ; 0.225 ; 0.225 ; Rise       ; KEY0            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDG      ; KEY0       ; 5.091 ; 5.091 ; Rise       ; KEY0            ;
+; LEDR[*]   ; KEY0       ; 4.704 ; 4.704 ; Rise       ; KEY0            ;
+;  LEDR[0]  ; KEY0       ; 4.704 ; 4.704 ; Rise       ; KEY0            ;
+;  LEDR[1]  ; KEY0       ; 4.520 ; 4.520 ; Rise       ; KEY0            ;
+;  LEDR[2]  ; KEY0       ; 4.562 ; 4.562 ; Rise       ; KEY0            ;
+;  LEDR[3]  ; KEY0       ; 4.495 ; 4.495 ; Rise       ; KEY0            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDG      ; KEY0       ; 4.793 ; 4.793 ; Rise       ; KEY0            ;
+; LEDR[*]   ; KEY0       ; 4.347 ; 4.347 ; Rise       ; KEY0            ;
+;  LEDR[0]  ; KEY0       ; 4.583 ; 4.583 ; Rise       ; KEY0            ;
+;  LEDR[1]  ; KEY0       ; 4.445 ; 4.445 ; Rise       ; KEY0            ;
+;  LEDR[2]  ; KEY0       ; 4.347 ; 4.347 ; Rise       ; KEY0            ;
+;  LEDR[3]  ; KEY0       ; 4.415 ; 4.415 ; Rise       ; KEY0            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[1]      ; LEDR[0]     ; 3.931 ; 3.931 ; 3.931 ; 3.931 ;
+; SW[1]      ; LEDR[1]     ; 3.939 ; 3.939 ; 3.939 ; 3.939 ;
+; SW[1]      ; LEDR[2]     ; 4.025 ; 4.025 ; 4.025 ; 4.025 ;
+; SW[1]      ; LEDR[3]     ; 4.052 ; 4.052 ; 4.052 ; 4.052 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[1]      ; LEDR[0]     ; 3.931 ; 3.931 ; 3.931 ; 3.931 ;
+; SW[1]      ; LEDR[1]     ; 3.939 ; 3.939 ; 3.939 ; 3.939 ;
+; SW[1]      ; LEDR[2]     ; 4.025 ; 4.025 ; 4.025 ; 4.025 ;
+; SW[1]      ; LEDR[3]     ; 4.052 ; 4.052 ; 4.052 ; 4.052 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -1.437  ; 0.215 ; N/A      ; N/A     ; -1.222              ;
+;  KEY0            ; -1.437  ; 0.215 ; N/A      ; N/A     ; -1.222              ;
+; Design-wide TNS  ; -11.022 ; 0.0   ; 0.0      ; 0.0     ; -9.222              ;
+;  KEY0            ; -11.022 ; 0.000 ; N/A      ; N/A     ; -9.222              ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW[*]     ; KEY0       ; 1.163 ; 1.163 ; Rise       ; KEY0            ;
+;  SW[1]    ; KEY0       ; 1.163 ; 1.163 ; Rise       ; KEY0            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW[*]     ; KEY0       ; 0.225 ; 0.225 ; Rise       ; KEY0            ;
+;  SW[1]    ; KEY0       ; 0.225 ; 0.225 ; Rise       ; KEY0            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDG      ; KEY0       ; 9.984 ; 9.984 ; Rise       ; KEY0            ;
+; LEDR[*]   ; KEY0       ; 9.099 ; 9.099 ; Rise       ; KEY0            ;
+;  LEDR[0]  ; KEY0       ; 9.099 ; 9.099 ; Rise       ; KEY0            ;
+;  LEDR[1]  ; KEY0       ; 8.665 ; 8.665 ; Rise       ; KEY0            ;
+;  LEDR[2]  ; KEY0       ; 8.846 ; 8.846 ; Rise       ; KEY0            ;
+;  LEDR[3]  ; KEY0       ; 8.683 ; 8.683 ; Rise       ; KEY0            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDG      ; KEY0       ; 4.793 ; 4.793 ; Rise       ; KEY0            ;
+; LEDR[*]   ; KEY0       ; 4.347 ; 4.347 ; Rise       ; KEY0            ;
+;  LEDR[0]  ; KEY0       ; 4.583 ; 4.583 ; Rise       ; KEY0            ;
+;  LEDR[1]  ; KEY0       ; 4.445 ; 4.445 ; Rise       ; KEY0            ;
+;  LEDR[2]  ; KEY0       ; 4.347 ; 4.347 ; Rise       ; KEY0            ;
+;  LEDR[3]  ; KEY0       ; 4.415 ; 4.415 ; Rise       ; KEY0            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Progagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[1]      ; LEDR[0]     ; 7.668 ; 7.668 ; 7.668 ; 7.668 ;
+; SW[1]      ; LEDR[1]     ; 7.679 ; 7.679 ; 7.679 ; 7.679 ;
+; SW[1]      ; LEDR[2]     ; 7.887 ; 7.887 ; 7.887 ; 7.887 ;
+; SW[1]      ; LEDR[3]     ; 7.967 ; 7.967 ; 7.967 ; 7.967 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Progagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[1]      ; LEDR[0]     ; 3.931 ; 3.931 ; 3.931 ; 3.931 ;
+; SW[1]      ; LEDR[1]     ; 3.939 ; 3.939 ; 3.939 ; 3.939 ;
+; SW[1]      ; LEDR[2]     ; 4.025 ; 4.025 ; 4.025 ; 4.025 ;
+; SW[1]      ; LEDR[3]     ; 4.052 ; 4.052 ; 4.052 ; 4.052 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; KEY0       ; KEY0     ; 72       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; KEY0       ; KEY0     ; 72       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 20    ; 20   ;
+; Unconstrained Output Ports      ; 5     ; 5    ;
+; Unconstrained Output Port Paths ; 20    ; 20   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Jun 16 10:02:57 2016
+Info: Command: quartus_sta part3 -c part3
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'part3.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name KEY0 KEY0
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.437
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.437       -11.022 KEY0 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 KEY0 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.222
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.222        -9.222 KEY0 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.170
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.170        -1.014 KEY0 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 KEY0 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.222
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.222        -9.222 KEY0 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 424 megabytes
+    Info: Processing ended: Thu Jun 16 10:02:58 2016
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

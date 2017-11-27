@@ -1,0 +1,423 @@
+Analysis & Synthesis report for part5
+Thu May 19 02:21:06 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |part5|state
+  9. User-Specified and Inferred Latches
+ 10. General Register Statistics
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu May 19 02:21:06 2016           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; part5                                           ;
+; Top-level Entity Name              ; part5                                           ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 144                                             ;
+;     Total combinational functions  ; 142                                             ;
+;     Dedicated logic registers      ; 4                                               ;
+; Total registers                    ; 4                                               ;
+; Total pins                         ; 74                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; part5              ; part5              ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
+; part5.vhd                        ; yes             ; User VHDL File  ; C:/Users/damia/OneDrive/Documentos/vhdl/DE2_lab/DE2-lab3/part5/part5.vhd        ;         ;
+; char7seg.vhd                     ; yes             ; User VHDL File  ; C:/Users/damia/OneDrive/Documentos/vhdl/DE2_lab/DE2-lab3/part5/char7seg.vhd     ;         ;
+; binaryto7seg.vhd                 ; yes             ; User VHDL File  ; C:/Users/damia/OneDrive/Documentos/vhdl/DE2_lab/DE2-lab3/part5/binaryto7seg.vhd ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimated Total logic elements              ; 144             ;
+;                                             ;                 ;
+; Total combinational functions               ; 142             ;
+; Logic element usage by number of LUT inputs ;                 ;
+;     -- 4 input functions                    ; 28              ;
+;     -- 3 input functions                    ; 84              ;
+;     -- <=2 input functions                  ; 30              ;
+;                                             ;                 ;
+; Logic elements by mode                      ;                 ;
+;     -- normal mode                          ; 142             ;
+;     -- arithmetic mode                      ; 0               ;
+;                                             ;                 ;
+; Total registers                             ; 4               ;
+;     -- Dedicated logic registers            ; 4               ;
+;     -- I/O registers                        ; 0               ;
+;                                             ;                 ;
+; I/O pins                                    ; 74              ;
+; Embedded Multiplier 9-bit elements          ; 0               ;
+; Maximum fan-out node                        ; state.armazenaB ;
+; Maximum fan-out                             ; 57              ;
+; Total fan-out                               ; 490             ;
+; Average fan-out                             ; 2.23            ;
++---------------------------------------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                        ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+--------------+
+; |part5                     ; 142 (114)         ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 74   ; 0            ; |part5                             ; work         ;
+;    |char7seg:D0|           ; 28 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |part5|char7seg:D0                 ; work         ;
+;       |binaryto7seg:h1|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |part5|char7seg:D0|binaryto7seg:h1 ; work         ;
+;       |binaryto7seg:h2|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |part5|char7seg:D0|binaryto7seg:h2 ; work         ;
+;       |binaryto7seg:h3|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |part5|char7seg:D0|binaryto7seg:h3 ; work         ;
+;       |binaryto7seg:h4|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |part5|char7seg:D0|binaryto7seg:h4 ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------+
+; State Machine - |part5|state                                                         ;
++-----------------+----------------+-----------------+---------------+-----------------+
+; Name            ; state.mostraAB ; state.armazenaB ; state.mostraA ; state.armazenaA ;
++-----------------+----------------+-----------------+---------------+-----------------+
+; state.armazenaA ; 0              ; 0               ; 0             ; 0               ;
+; state.mostraA   ; 0              ; 0               ; 1             ; 1               ;
+; state.armazenaB ; 0              ; 1               ; 0             ; 1               ;
+; state.mostraAB  ; 1              ; 0               ; 0             ; 1               ;
++-----------------+----------------+-----------------+---------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; A[6]                                                ; state.armazenaA     ; yes                    ;
+; A[5]                                                ; state.armazenaA     ; yes                    ;
+; A[4]                                                ; state.armazenaA     ; yes                    ;
+; A[3]                                                ; state.armazenaA     ; yes                    ;
+; A[2]                                                ; state.armazenaA     ; yes                    ;
+; A[1]                                                ; state.armazenaA     ; yes                    ;
+; A[0]                                                ; state.armazenaA     ; yes                    ;
+; A[13]                                               ; state.armazenaA     ; yes                    ;
+; A[12]                                               ; state.armazenaA     ; yes                    ;
+; A[11]                                               ; state.armazenaA     ; yes                    ;
+; A[10]                                               ; state.armazenaA     ; yes                    ;
+; A[9]                                                ; state.armazenaA     ; yes                    ;
+; A[8]                                                ; state.armazenaA     ; yes                    ;
+; A[7]                                                ; state.armazenaA     ; yes                    ;
+; A[20]                                               ; state.armazenaA     ; yes                    ;
+; A[19]                                               ; state.armazenaA     ; yes                    ;
+; A[18]                                               ; state.armazenaA     ; yes                    ;
+; A[17]                                               ; state.armazenaA     ; yes                    ;
+; A[16]                                               ; state.armazenaA     ; yes                    ;
+; A[15]                                               ; state.armazenaA     ; yes                    ;
+; A[14]                                               ; state.armazenaA     ; yes                    ;
+; A[27]                                               ; state.armazenaA     ; yes                    ;
+; A[26]                                               ; state.armazenaA     ; yes                    ;
+; A[25]                                               ; state.armazenaA     ; yes                    ;
+; A[24]                                               ; state.armazenaA     ; yes                    ;
+; A[23]                                               ; state.armazenaA     ; yes                    ;
+; A[22]                                               ; state.armazenaA     ; yes                    ;
+; A[21]                                               ; state.armazenaA     ; yes                    ;
+; B[6]                                                ; state.armazenaB     ; yes                    ;
+; B[5]                                                ; state.armazenaB     ; yes                    ;
+; B[4]                                                ; state.armazenaB     ; yes                    ;
+; B[3]                                                ; state.armazenaB     ; yes                    ;
+; B[2]                                                ; state.armazenaB     ; yes                    ;
+; B[1]                                                ; state.armazenaB     ; yes                    ;
+; B[0]                                                ; state.armazenaB     ; yes                    ;
+; B[13]                                               ; state.armazenaB     ; yes                    ;
+; B[12]                                               ; state.armazenaB     ; yes                    ;
+; B[11]                                               ; state.armazenaB     ; yes                    ;
+; B[10]                                               ; state.armazenaB     ; yes                    ;
+; B[9]                                                ; state.armazenaB     ; yes                    ;
+; B[8]                                                ; state.armazenaB     ; yes                    ;
+; B[7]                                                ; state.armazenaB     ; yes                    ;
+; B[20]                                               ; state.armazenaB     ; yes                    ;
+; B[19]                                               ; state.armazenaB     ; yes                    ;
+; B[18]                                               ; state.armazenaB     ; yes                    ;
+; B[17]                                               ; state.armazenaB     ; yes                    ;
+; B[16]                                               ; state.armazenaB     ; yes                    ;
+; B[15]                                               ; state.armazenaB     ; yes                    ;
+; B[14]                                               ; state.armazenaB     ; yes                    ;
+; B[27]                                               ; state.armazenaB     ; yes                    ;
+; B[26]                                               ; state.armazenaB     ; yes                    ;
+; B[25]                                               ; state.armazenaB     ; yes                    ;
+; B[24]                                               ; state.armazenaB     ; yes                    ;
+; B[23]                                               ; state.armazenaB     ; yes                    ;
+; B[22]                                               ; state.armazenaB     ; yes                    ;
+; B[21]                                               ; state.armazenaB     ; yes                    ;
+; Number of user-specified and inferred latches = 56  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 4     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu May 19 02:21:04 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off part5 -c part5
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file part5.vhd
+    Info (12022): Found design unit 1: part5-arch1
+    Info (12023): Found entity 1: part5
+Info (12021): Found 2 design units, including 1 entities, in source file char7seg.vhd
+    Info (12022): Found design unit 1: char7seg-a1
+    Info (12023): Found entity 1: char7seg
+Info (12021): Found 2 design units, including 1 entities, in source file binaryto7seg.vhd
+    Info (12022): Found design unit 1: binaryto7seg-comp
+    Info (12023): Found entity 1: binaryto7seg
+Info (12127): Elaborating entity "part5" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at part5.vhd(76): signal "Display" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at part5.vhd(78): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at part5.vhd(79): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at part5.vhd(80): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at part5.vhd(81): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at part5.vhd(83): signal "Display" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at part5.vhd(85): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at part5.vhd(86): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at part5.vhd(87): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at part5.vhd(88): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at part5.vhd(89): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at part5.vhd(90): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at part5.vhd(91): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at part5.vhd(92): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at part5.vhd(64): inferring latch(es) for signal or variable "A", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at part5.vhd(64): inferring latch(es) for signal or variable "B", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "B[27]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[26]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[25]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[24]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[23]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[22]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[21]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[20]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[19]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[18]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[17]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[16]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[15]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[14]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[13]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[12]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[11]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[10]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[9]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[8]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[7]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[6]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[5]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[4]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[3]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[2]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[1]" at part5.vhd(64)
+Info (10041): Inferred latch for "B[0]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[27]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[26]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[25]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[24]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[23]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[22]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[21]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[20]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[19]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[18]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[17]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[16]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[15]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[14]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[13]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[12]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[11]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[10]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[9]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[8]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[7]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[6]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[5]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[4]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[3]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[2]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[1]" at part5.vhd(64)
+Info (10041): Inferred latch for "A[0]" at part5.vhd(64)
+Info (12128): Elaborating entity "char7seg" for hierarchy "char7seg:D0"
+Info (12128): Elaborating entity "binaryto7seg" for hierarchy "char7seg:D0|binaryto7seg:h1"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 218 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 56 output pins
+    Info (21061): Implemented 144 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 17 warnings
+    Info: Peak virtual memory: 515 megabytes
+    Info: Processing ended: Thu May 19 02:21:06 2016
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

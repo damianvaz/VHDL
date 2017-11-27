@@ -1,0 +1,68 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY part1 IS
+
+PORT 
+( 
+   SW : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+   KEY0 : IN STD_LOGIC;
+	LEDG0: OUT STD_LOGIC;
+	LEDR: OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
+);
+END part1 ;
+
+ARCHITECTURE Structural OF part1 IS
+   SIGNAL sff: STD_LOGIC_VECTOR(8 DOWNTO 0);
+	SIGNAL data: STD_LOGIC_VECTOR(8 DOWNTO 0);
+   COMPONENT dff PORT (Dt, clock, rst: IN std_LOGIC;
+	                    Qt: OUT STD_LOGIC);
+	END COMPONENT;
+	BEGIN 
+	   
+		data(0) <= 0 WHEN rst = '0' ELSE
+		           '1';
+		y8: dff PORT MAP (Dt => data(0),
+                        clock => KEY0,
+								rst => '0',        -- reset vai ser testado no data(0) e se for 1 o valor de dt deve ser 1 não 0
+						      Qt => sff(8));
+								
+		y7: dff PORT MAP (Dt => ,
+                        clock => KEY0,
+								rst => SW(0),
+						      Qt => sff(7));
+	   y6: dff PORT MAP (Dt => ,
+                        clock => KEY0,
+								rst => SW(0),
+						      Qt => sff(6));
+								
+		y5: dff PORT MAP (Dt => ,
+                        clock => KEY0,
+								rst => SW(0),
+						      Qt => sff(5));
+								
+		y4: dff PORT MAP (Dt => ,
+                        clock => KEY0,
+								rst => SW(0),
+						      Qt => sff(4));
+								
+		y3: dff PORT MAP (Dt => ,
+                        clock => KEY0,
+								rst => SW(0),
+						      Qt => sff(3));
+	   y2: dff PORT MAP (Dt => ,
+                        clock => KEY0,
+								rst => SW(0),
+						      Qt => sff(2));
+								
+		y1: dff PORT MAP (Dt => ,
+                        clock => KEY0,
+								rst => SW(0),
+						      Qt => sff(1));
+		
+		y0: dff PORT MAP (Dt => ,
+                        clock => KEY0,
+								rst => SW(0),
+						      Qt => sff(0));
+								
+END Structural;

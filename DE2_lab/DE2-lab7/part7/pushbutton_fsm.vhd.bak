@@ -1,0 +1,88 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+
+ENTITY pushbutton_fsm IS
+PORT 
+( 
+     buttonA, buttonB: IN std_logic;
+     Clock, reset : IN std_logic;                   
+     A, B : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)                          
+); 
+END pushbutton_fsm;
+
+ARCHITECTURE Behavior OF pushbutton_fsm IS
+SIGNAL RST, CLK: STD_logic;
+
+
+type TpState is (Inicio, WaitA, WaitB, Apressed, Bpressed);
+signal state, next_state: TpState; 
+	BEGIN
+	   CLK <= clock;
+		RST <= reset;
+ -- next state logic
+	process(state)
+	begin
+		next_state <= state;
+		case state is
+			when Inicio =>
+			   if buttonA = '1' then
+					next_state <= waitA; 
+				Elsif buttonB = '1' then
+				   next_state <= waitB;
+				else 
+					next_state <=inicio;
+				end if;
+			when waitA =>
+			   if buttonA = '0' then
+					next_state <= Apressed;
+				else
+				   next_state <= waitA;
+			when waitB =>
+			   if buttonB = '0' then
+				   next_state <= Bpressed;
+				Else
+					next_state <= waitB;
+			when Apressed =>
+					next_state <= inicio;
+			when Bpressed =>
+					next_state <= inicio;
+	   end case;
+	end process;
+	
+-- memory/state element
+	process(rst,clk)
+	begin
+		if (rst='1') then
+			state <= Closing;
+		elsif (rising_edge(clk)) then
+			state <= next_state;
+		end if;
+	end process;
+	end process;
+	
+	-- output logic
+	process(state)
+	begin
+		A <= '0';
+		B <= '0';
+		case state is
+			when inicio =>
+				A <= '0';
+			   B <= '0';	
+			when waitA =>
+				A <= '0';
+			   B <= '0';	
+			when waitB =>
+				A <= '0';
+			   B <= '0';	
+			when Apressed =>
+				A <= '1';
+			   B <= '0';	
+			when Bpressed =>
+				A <= '0';
+			   B <= '1';	
+		end case;
+	end process;
+	
+END Behavior;

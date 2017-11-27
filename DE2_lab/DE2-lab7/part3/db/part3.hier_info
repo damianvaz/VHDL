@@ -1,0 +1,88 @@
+|part3
+SW[0] => shiftRegister:s1.rst
+SW[0] => shiftRegister:s2.rst
+SW[1] => shiftRegister:s1.load
+SW[1] => shiftRegister:s2.load
+SW[1] => LEDR.OUTPUTSELECT
+SW[1] => LEDR.OUTPUTSELECT
+SW[1] => LEDR.OUTPUTSELECT
+SW[1] => LEDR.OUTPUTSELECT
+KEY0 => shiftRegister:s1.clk
+KEY0 => shiftRegister:s2.clk
+LEDG <= otp.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[0] <= LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] <= LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] <= LEDR.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part3|shiftRegister:s1
+clk => state[0].CLK
+clk => state[1].CLK
+clk => state[2].CLK
+clk => state[3].CLK
+rst => state[0].ACLR
+rst => state[1].ACLR
+rst => state[2].ACLR
+rst => state[3].ACLR
+load => next_state[3].OUTPUTSELECT
+load => next_state[2].OUTPUTSELECT
+load => next_state[1].OUTPUTSELECT
+load => next_state[0].OUTPUTSELECT
+enb => next_state.OUTPUTSELECT
+enb => next_state.OUTPUTSELECT
+enb => next_state.OUTPUTSELECT
+enb => next_state.OUTPUTSELECT
+shiftLeft => next_state.OUTPUTSELECT
+shiftLeft => next_state.OUTPUTSELECT
+shiftLeft => next_state.OUTPUTSELECT
+shiftLeft => next_state.OUTPUTSELECT
+leftIn => next_state.DATAA
+rightIn => next_state.DATAB
+d[0] => next_state[0].DATAB
+d[1] => next_state[1].DATAB
+d[2] => next_state[2].DATAB
+d[3] => next_state[3].DATAB
+leftOut <= state[3].DB_MAX_OUTPUT_PORT_TYPE
+rightOut <= state[0].DB_MAX_OUTPUT_PORT_TYPE
+q[0] <= state[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= state[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= state[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= state[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part3|shiftRegister:s2
+clk => state[0].CLK
+clk => state[1].CLK
+clk => state[2].CLK
+clk => state[3].CLK
+rst => state[0].ACLR
+rst => state[1].ACLR
+rst => state[2].ACLR
+rst => state[3].ACLR
+load => next_state[3].OUTPUTSELECT
+load => next_state[2].OUTPUTSELECT
+load => next_state[1].OUTPUTSELECT
+load => next_state[0].OUTPUTSELECT
+enb => next_state.OUTPUTSELECT
+enb => next_state.OUTPUTSELECT
+enb => next_state.OUTPUTSELECT
+enb => next_state.OUTPUTSELECT
+shiftLeft => next_state.OUTPUTSELECT
+shiftLeft => next_state.OUTPUTSELECT
+shiftLeft => next_state.OUTPUTSELECT
+shiftLeft => next_state.OUTPUTSELECT
+leftIn => next_state.DATAA
+rightIn => next_state.DATAB
+d[0] => next_state[0].DATAB
+d[1] => next_state[1].DATAB
+d[2] => next_state[2].DATAB
+d[3] => next_state[3].DATAB
+leftOut <= state[3].DB_MAX_OUTPUT_PORT_TYPE
+rightOut <= state[0].DB_MAX_OUTPUT_PORT_TYPE
+q[0] <= state[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= state[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= state[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= state[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,14 @@
+|part2
+SW[0] => dla:m1.d
+SW[1] => dla:m1.Clk
+LEDR <= dla:m1.Q
+
+
+|part2|dla:m1
+Clk => R_g.IN0
+Clk => S_g.IN0
+D => S_g.IN1
+D => R_g.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+

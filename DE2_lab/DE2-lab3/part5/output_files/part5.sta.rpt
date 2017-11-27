@@ -1,0 +1,2328 @@
+TimeQuest Timing Analyzer report for part5
+Thu May 19 02:21:20 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'KEY[0]'
+ 12. Slow Model Hold: 'KEY[0]'
+ 13. Slow Model Minimum Pulse Width: 'KEY[0]'
+ 14. Slow Model Minimum Pulse Width: 'state.armazenaA'
+ 15. Slow Model Minimum Pulse Width: 'state.armazenaB'
+ 16. Setup Times
+ 17. Hold Times
+ 18. Clock to Output Times
+ 19. Minimum Clock to Output Times
+ 20. Fast Model Setup Summary
+ 21. Fast Model Hold Summary
+ 22. Fast Model Recovery Summary
+ 23. Fast Model Removal Summary
+ 24. Fast Model Minimum Pulse Width Summary
+ 25. Fast Model Setup: 'KEY[0]'
+ 26. Fast Model Hold: 'KEY[0]'
+ 27. Fast Model Minimum Pulse Width: 'KEY[0]'
+ 28. Fast Model Minimum Pulse Width: 'state.armazenaA'
+ 29. Fast Model Minimum Pulse Width: 'state.armazenaB'
+ 30. Setup Times
+ 31. Hold Times
+ 32. Clock to Output Times
+ 33. Minimum Clock to Output Times
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Setup Transfers
+ 40. Hold Transfers
+ 41. Report TCCS
+ 42. Report RSKM
+ 43. Unconstrained Paths
+ 44. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; part5                                                             ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                           ;
++-----------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------+
+; Clock Name      ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets             ;
++-----------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------+
+; KEY[0]          ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { KEY[0] }          ;
+; state.armazenaA ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { state.armazenaA } ;
+; state.armazenaB ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { state.armazenaB } ;
++-----------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                    ;
++-------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax        ; Restricted Fmax ; Clock Name ; Note                                                          ;
++-------------+-----------------+------------+---------------------------------------------------------------+
+; 1328.02 MHz ; 450.05 MHz      ; KEY[0]     ; limit due to minimum period restriction (max I/O toggle rate) ;
++-------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; KEY[0] ; 0.247 ; 0.000         ;
++--------+-------+---------------+
+
+
++---------------------------------+
+; Slow Model Hold Summary         ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; KEY[0] ; -3.815 ; -7.456        ;
++--------+--------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++------------------------------------------+
+; Slow Model Minimum Pulse Width Summary   ;
++-----------------+--------+---------------+
+; Clock           ; Slack  ; End Point TNS ;
++-----------------+--------+---------------+
+; KEY[0]          ; -1.222 ; -5.222        ;
+; state.armazenaA ; 0.500  ; 0.000         ;
+; state.armazenaB ; 0.500  ; 0.000         ;
++-----------------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'KEY[0]'                                                                                         ;
++-------+-----------------+-----------------+-----------------+-------------+--------------+------------+------------+
+; Slack ; From Node       ; To Node         ; Launch Clock    ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------+-----------------+-----------------+-------------+--------------+------------+------------+
+; 0.247 ; state.mostraAB  ; state.armazenaA ; KEY[0]          ; KEY[0]      ; 1.000        ; 0.000      ; 0.789      ;
+; 0.253 ; state.mostraA   ; state.armazenaB ; KEY[0]          ; KEY[0]      ; 1.000        ; 0.000      ; 0.783      ;
+; 3.911 ; state.armazenaA ; state.mostraA   ; state.armazenaA ; KEY[0]      ; 0.500        ; 4.251      ; 1.126      ;
+; 4.085 ; state.armazenaB ; state.mostraAB  ; state.armazenaB ; KEY[0]      ; 0.500        ; 4.251      ; 0.952      ;
+; 4.411 ; state.armazenaA ; state.mostraA   ; state.armazenaA ; KEY[0]      ; 1.000        ; 4.251      ; 1.126      ;
+; 4.585 ; state.armazenaB ; state.mostraAB  ; state.armazenaB ; KEY[0]      ; 1.000        ; 4.251      ; 0.952      ;
++-------+-----------------+-----------------+-----------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'KEY[0]'                                                                                           ;
++--------+-----------------+-----------------+-----------------+-------------+--------------+------------+------------+
+; Slack  ; From Node       ; To Node         ; Launch Clock    ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------+-----------------+-----------------+-------------+--------------+------------+------------+
+; -3.815 ; state.armazenaB ; state.mostraAB  ; state.armazenaB ; KEY[0]      ; 0.000        ; 4.251      ; 0.952      ;
+; -3.641 ; state.armazenaA ; state.mostraA   ; state.armazenaA ; KEY[0]      ; 0.000        ; 4.251      ; 1.126      ;
+; -3.315 ; state.armazenaB ; state.mostraAB  ; state.armazenaB ; KEY[0]      ; -0.500       ; 4.251      ; 0.952      ;
+; -3.141 ; state.armazenaA ; state.mostraA   ; state.armazenaA ; KEY[0]      ; -0.500       ; 4.251      ; 1.126      ;
+; 0.517  ; state.mostraA   ; state.armazenaB ; KEY[0]          ; KEY[0]      ; 0.000        ; 0.000      ; 0.783      ;
+; 0.523  ; state.mostraAB  ; state.armazenaA ; KEY[0]          ; KEY[0]      ; 0.000        ; 0.000      ; 0.789      ;
++--------+-----------------+-----------------+-----------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'KEY[0]'                                                              ;
++--------+--------------+----------------+------------------+--------+------------+---------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target              ;
++--------+--------------+----------------+------------------+--------+------------+---------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; KEY[0] ; Rise       ; KEY[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY[0] ; Rise       ; state.armazenaA     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; state.armazenaA     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY[0] ; Rise       ; state.armazenaB     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; state.armazenaB     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY[0] ; Rise       ; state.mostraA       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; state.mostraA       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY[0] ; Rise       ; state.mostraAB      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; state.mostraAB      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; KEY[0]|combout      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; KEY[0]|combout      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; state.armazenaA|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; state.armazenaA|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; state.armazenaB|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; state.armazenaB|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; state.mostraAB|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; state.mostraAB|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; state.mostraA|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; state.mostraA|clk   ;
++--------+--------------+----------------+------------------+--------+------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'state.armazenaA'                                                     ;
++-------+--------------+----------------+------------------+-----------------+------------+-------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock           ; Clock Edge ; Target      ;
++-------+--------------+----------------+------------------+-----------------+------------+-------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[0]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[0]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[0]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[0]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[10]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[10]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[10]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[10]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[11]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[11]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[11]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[11]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[12]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[12]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[12]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[12]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[13]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[13]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[13]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[13]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[14]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[14]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[14]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[14]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[15]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[15]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[15]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[15]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[16]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[16]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[16]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[16]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[17]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[17]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[17]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[17]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[18]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[18]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[18]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[18]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[19]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[19]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[19]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[19]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[1]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[1]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[1]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[1]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[20]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[20]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[20]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[20]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[21]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[21]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[21]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[21]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[22]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[22]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[22]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[22]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[23]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[23]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[23]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[23]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[24]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[24]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[24]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[24]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[25]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[25]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[25]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[25]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[26]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[26]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[26]|datac ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[26]|datac ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[27]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[27]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[27]|datac ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[27]|datac ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[2]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[2]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[2]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[2]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[3]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[3]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[3]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[3]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[4]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[4]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[4]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[4]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[5]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[5]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[5]|datac  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[5]|datac  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[6]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[6]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[6]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[6]|datad  ;
++-------+--------------+----------------+------------------+-----------------+------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'state.armazenaB'                                                     ;
++-------+--------------+----------------+------------------+-----------------+------------+-------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock           ; Clock Edge ; Target      ;
++-------+--------------+----------------+------------------+-----------------+------------+-------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[0]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[0]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[0]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[0]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[10]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[10]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[10]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[10]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[11]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[11]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[11]|datac ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[11]|datac ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[12]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[12]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[12]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[12]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[13]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[13]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[13]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[13]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[14]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[14]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[14]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[14]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[15]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[15]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[15]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[15]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[16]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[16]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[16]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[16]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[17]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[17]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[17]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[17]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[18]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[18]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[18]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[18]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[19]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[19]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[19]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[19]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[1]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[1]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[1]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[1]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[20]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[20]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[20]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[20]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[21]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[21]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[21]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[21]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[22]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[22]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[22]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[22]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[23]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[23]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[23]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[23]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[24]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[24]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[24]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[24]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[25]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[25]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[25]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[25]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[26]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[26]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[26]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[26]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[27]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[27]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[27]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[27]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[2]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[2]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[2]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[2]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[3]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[3]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[3]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[3]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[4]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[4]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[4]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[4]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[5]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[5]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[5]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[5]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[6]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[6]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[6]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[6]|datad  ;
++-------+--------------+----------------+------------------+-----------------+------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; SW[*]     ; state.armazenaA ; 5.428 ; 5.428 ; Rise       ; state.armazenaA ;
+;  SW[0]    ; state.armazenaA ; 3.865 ; 3.865 ; Rise       ; state.armazenaA ;
+;  SW[1]    ; state.armazenaA ; 3.826 ; 3.826 ; Rise       ; state.armazenaA ;
+;  SW[2]    ; state.armazenaA ; 3.537 ; 3.537 ; Rise       ; state.armazenaA ;
+;  SW[3]    ; state.armazenaA ; 3.576 ; 3.576 ; Rise       ; state.armazenaA ;
+;  SW[4]    ; state.armazenaA ; 3.292 ; 3.292 ; Rise       ; state.armazenaA ;
+;  SW[5]    ; state.armazenaA ; 3.161 ; 3.161 ; Rise       ; state.armazenaA ;
+;  SW[6]    ; state.armazenaA ; 2.667 ; 2.667 ; Rise       ; state.armazenaA ;
+;  SW[7]    ; state.armazenaA ; 3.151 ; 3.151 ; Rise       ; state.armazenaA ;
+;  SW[8]    ; state.armazenaA ; 3.613 ; 3.613 ; Rise       ; state.armazenaA ;
+;  SW[9]    ; state.armazenaA ; 3.300 ; 3.300 ; Rise       ; state.armazenaA ;
+;  SW[10]   ; state.armazenaA ; 2.141 ; 2.141 ; Rise       ; state.armazenaA ;
+;  SW[11]   ; state.armazenaA ; 2.308 ; 2.308 ; Rise       ; state.armazenaA ;
+;  SW[12]   ; state.armazenaA ; 1.558 ; 1.558 ; Rise       ; state.armazenaA ;
+;  SW[13]   ; state.armazenaA ; 5.428 ; 5.428 ; Rise       ; state.armazenaA ;
+;  SW[14]   ; state.armazenaA ; 5.011 ; 5.011 ; Rise       ; state.armazenaA ;
+;  SW[15]   ; state.armazenaA ; 5.110 ; 5.110 ; Rise       ; state.armazenaA ;
+; SW[*]     ; state.armazenaB ; 5.938 ; 5.938 ; Fall       ; state.armazenaB ;
+;  SW[0]    ; state.armazenaB ; 3.883 ; 3.883 ; Fall       ; state.armazenaB ;
+;  SW[1]    ; state.armazenaB ; 3.844 ; 3.844 ; Fall       ; state.armazenaB ;
+;  SW[2]    ; state.armazenaB ; 3.555 ; 3.555 ; Fall       ; state.armazenaB ;
+;  SW[3]    ; state.armazenaB ; 3.594 ; 3.594 ; Fall       ; state.armazenaB ;
+;  SW[4]    ; state.armazenaB ; 3.650 ; 3.650 ; Fall       ; state.armazenaB ;
+;  SW[5]    ; state.armazenaB ; 3.535 ; 3.535 ; Fall       ; state.armazenaB ;
+;  SW[6]    ; state.armazenaB ; 3.022 ; 3.022 ; Fall       ; state.armazenaB ;
+;  SW[7]    ; state.armazenaB ; 3.523 ; 3.523 ; Fall       ; state.armazenaB ;
+;  SW[8]    ; state.armazenaB ; 3.213 ; 3.213 ; Fall       ; state.armazenaB ;
+;  SW[9]    ; state.armazenaB ; 2.898 ; 2.898 ; Fall       ; state.armazenaB ;
+;  SW[10]   ; state.armazenaB ; 1.740 ; 1.740 ; Fall       ; state.armazenaB ;
+;  SW[11]   ; state.armazenaB ; 1.908 ; 1.908 ; Fall       ; state.armazenaB ;
+;  SW[12]   ; state.armazenaB ; 2.036 ; 2.036 ; Fall       ; state.armazenaB ;
+;  SW[13]   ; state.armazenaB ; 5.938 ; 5.938 ; Fall       ; state.armazenaB ;
+;  SW[14]   ; state.armazenaB ; 5.490 ; 5.490 ; Fall       ; state.armazenaB ;
+;  SW[15]   ; state.armazenaB ; 5.589 ; 5.589 ; Fall       ; state.armazenaB ;
++-----------+-----------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Hold Times                                                                   ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; SW[*]     ; state.armazenaA ; -0.549 ; -0.549 ; Rise       ; state.armazenaA ;
+;  SW[0]    ; state.armazenaA ; -2.632 ; -2.632 ; Rise       ; state.armazenaA ;
+;  SW[1]    ; state.armazenaA ; -2.596 ; -2.596 ; Rise       ; state.armazenaA ;
+;  SW[2]    ; state.armazenaA ; -2.302 ; -2.302 ; Rise       ; state.armazenaA ;
+;  SW[3]    ; state.armazenaA ; -2.343 ; -2.343 ; Rise       ; state.armazenaA ;
+;  SW[4]    ; state.armazenaA ; -1.968 ; -1.968 ; Rise       ; state.armazenaA ;
+;  SW[5]    ; state.armazenaA ; -1.837 ; -1.837 ; Rise       ; state.armazenaA ;
+;  SW[6]    ; state.armazenaA ; -1.347 ; -1.347 ; Rise       ; state.armazenaA ;
+;  SW[7]    ; state.armazenaA ; -1.826 ; -1.826 ; Rise       ; state.armazenaA ;
+;  SW[8]    ; state.armazenaA ; -2.565 ; -2.565 ; Rise       ; state.armazenaA ;
+;  SW[9]    ; state.armazenaA ; -2.247 ; -2.247 ; Rise       ; state.armazenaA ;
+;  SW[10]   ; state.armazenaA ; -1.088 ; -1.088 ; Rise       ; state.armazenaA ;
+;  SW[11]   ; state.armazenaA ; -1.235 ; -1.235 ; Rise       ; state.armazenaA ;
+;  SW[12]   ; state.armazenaA ; -0.549 ; -0.549 ; Rise       ; state.armazenaA ;
+;  SW[13]   ; state.armazenaA ; -4.445 ; -4.445 ; Rise       ; state.armazenaA ;
+;  SW[14]   ; state.armazenaA ; -4.021 ; -4.021 ; Rise       ; state.armazenaA ;
+;  SW[15]   ; state.armazenaA ; -4.116 ; -4.116 ; Rise       ; state.armazenaA ;
+; SW[*]     ; state.armazenaB ; -0.504 ; -0.504 ; Fall       ; state.armazenaB ;
+;  SW[0]    ; state.armazenaB ; -2.743 ; -2.743 ; Fall       ; state.armazenaB ;
+;  SW[1]    ; state.armazenaB ; -2.732 ; -2.732 ; Fall       ; state.armazenaB ;
+;  SW[2]    ; state.armazenaB ; -2.450 ; -2.450 ; Fall       ; state.armazenaB ;
+;  SW[3]    ; state.armazenaB ; -2.482 ; -2.482 ; Fall       ; state.armazenaB ;
+;  SW[4]    ; state.armazenaB ; -2.485 ; -2.485 ; Fall       ; state.armazenaB ;
+;  SW[5]    ; state.armazenaB ; -2.352 ; -2.352 ; Fall       ; state.armazenaB ;
+;  SW[6]    ; state.armazenaB ; -1.860 ; -1.860 ; Fall       ; state.armazenaB ;
+;  SW[7]    ; state.armazenaB ; -2.343 ; -2.343 ; Fall       ; state.armazenaB ;
+;  SW[8]    ; state.armazenaB ; -1.975 ; -1.975 ; Fall       ; state.armazenaB ;
+;  SW[9]    ; state.armazenaB ; -1.663 ; -1.663 ; Fall       ; state.armazenaB ;
+;  SW[10]   ; state.armazenaB ; -0.504 ; -0.504 ; Fall       ; state.armazenaB ;
+;  SW[11]   ; state.armazenaB ; -0.671 ; -0.671 ; Fall       ; state.armazenaB ;
+;  SW[12]   ; state.armazenaB ; -0.986 ; -0.986 ; Fall       ; state.armazenaB ;
+;  SW[13]   ; state.armazenaB ; -4.900 ; -4.900 ; Fall       ; state.armazenaB ;
+;  SW[14]   ; state.armazenaB ; -4.460 ; -4.460 ; Fall       ; state.armazenaB ;
+;  SW[15]   ; state.armazenaB ; -4.587 ; -4.587 ; Fall       ; state.armazenaB ;
++-----------+-----------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; HEX4[*]   ; KEY[0]          ; 9.444  ; 9.444  ; Rise       ; KEY[0]          ;
+;  HEX4[0]  ; KEY[0]          ; 9.444  ; 9.444  ; Rise       ; KEY[0]          ;
+;  HEX4[1]  ; KEY[0]          ; 9.160  ; 9.160  ; Rise       ; KEY[0]          ;
+;  HEX4[2]  ; KEY[0]          ; 9.338  ; 9.338  ; Rise       ; KEY[0]          ;
+;  HEX4[3]  ; KEY[0]          ; 9.175  ; 9.175  ; Rise       ; KEY[0]          ;
+;  HEX4[4]  ; KEY[0]          ; 9.166  ; 9.166  ; Rise       ; KEY[0]          ;
+;  HEX4[5]  ; KEY[0]          ; 9.175  ; 9.175  ; Rise       ; KEY[0]          ;
+;  HEX4[6]  ; KEY[0]          ; 9.094  ; 9.094  ; Rise       ; KEY[0]          ;
+; HEX5[*]   ; KEY[0]          ; 9.407  ; 9.407  ; Rise       ; KEY[0]          ;
+;  HEX5[0]  ; KEY[0]          ; 9.343  ; 9.343  ; Rise       ; KEY[0]          ;
+;  HEX5[1]  ; KEY[0]          ; 9.407  ; 9.407  ; Rise       ; KEY[0]          ;
+;  HEX5[2]  ; KEY[0]          ; 9.324  ; 9.324  ; Rise       ; KEY[0]          ;
+;  HEX5[3]  ; KEY[0]          ; 8.648  ; 8.648  ; Rise       ; KEY[0]          ;
+;  HEX5[4]  ; KEY[0]          ; 8.912  ; 8.912  ; Rise       ; KEY[0]          ;
+;  HEX5[5]  ; KEY[0]          ; 8.907  ; 8.907  ; Rise       ; KEY[0]          ;
+;  HEX5[6]  ; KEY[0]          ; 8.574  ; 8.574  ; Rise       ; KEY[0]          ;
+; HEX6[*]   ; KEY[0]          ; 9.543  ; 9.543  ; Rise       ; KEY[0]          ;
+;  HEX6[0]  ; KEY[0]          ; 9.389  ; 9.389  ; Rise       ; KEY[0]          ;
+;  HEX6[1]  ; KEY[0]          ; 9.112  ; 9.112  ; Rise       ; KEY[0]          ;
+;  HEX6[2]  ; KEY[0]          ; 8.891  ; 8.891  ; Rise       ; KEY[0]          ;
+;  HEX6[3]  ; KEY[0]          ; 9.422  ; 9.422  ; Rise       ; KEY[0]          ;
+;  HEX6[4]  ; KEY[0]          ; 9.415  ; 9.415  ; Rise       ; KEY[0]          ;
+;  HEX6[5]  ; KEY[0]          ; 9.543  ; 9.543  ; Rise       ; KEY[0]          ;
+;  HEX6[6]  ; KEY[0]          ; 9.385  ; 9.385  ; Rise       ; KEY[0]          ;
+; HEX7[*]   ; KEY[0]          ; 9.485  ; 9.485  ; Rise       ; KEY[0]          ;
+;  HEX7[0]  ; KEY[0]          ; 9.484  ; 9.484  ; Rise       ; KEY[0]          ;
+;  HEX7[1]  ; KEY[0]          ; 9.485  ; 9.485  ; Rise       ; KEY[0]          ;
+;  HEX7[2]  ; KEY[0]          ; 9.439  ; 9.439  ; Rise       ; KEY[0]          ;
+;  HEX7[3]  ; KEY[0]          ; 9.319  ; 9.319  ; Rise       ; KEY[0]          ;
+;  HEX7[4]  ; KEY[0]          ; 9.472  ; 9.472  ; Rise       ; KEY[0]          ;
+;  HEX7[5]  ; KEY[0]          ; 9.163  ; 9.163  ; Rise       ; KEY[0]          ;
+;  HEX7[6]  ; KEY[0]          ; 9.419  ; 9.419  ; Rise       ; KEY[0]          ;
+; HEX0[*]   ; state.armazenaA ; 8.964  ; 8.964  ; Rise       ; state.armazenaA ;
+;  HEX0[0]  ; state.armazenaA ; 7.110  ; 7.110  ; Rise       ; state.armazenaA ;
+;  HEX0[1]  ; state.armazenaA ; 8.319  ; 8.319  ; Rise       ; state.armazenaA ;
+;  HEX0[2]  ; state.armazenaA ; 7.467  ; 7.467  ; Rise       ; state.armazenaA ;
+;  HEX0[3]  ; state.armazenaA ; 8.829  ; 8.829  ; Rise       ; state.armazenaA ;
+;  HEX0[4]  ; state.armazenaA ; 7.888  ; 7.888  ; Rise       ; state.armazenaA ;
+;  HEX0[5]  ; state.armazenaA ; 8.964  ; 8.964  ; Rise       ; state.armazenaA ;
+;  HEX0[6]  ; state.armazenaA ; 7.902  ; 7.902  ; Rise       ; state.armazenaA ;
+; HEX1[*]   ; state.armazenaA ; 9.702  ; 9.702  ; Rise       ; state.armazenaA ;
+;  HEX1[0]  ; state.armazenaA ; 9.126  ; 9.126  ; Rise       ; state.armazenaA ;
+;  HEX1[1]  ; state.armazenaA ; 8.580  ; 8.580  ; Rise       ; state.armazenaA ;
+;  HEX1[2]  ; state.armazenaA ; 9.193  ; 9.193  ; Rise       ; state.armazenaA ;
+;  HEX1[3]  ; state.armazenaA ; 9.197  ; 9.197  ; Rise       ; state.armazenaA ;
+;  HEX1[4]  ; state.armazenaA ; 9.702  ; 9.702  ; Rise       ; state.armazenaA ;
+;  HEX1[5]  ; state.armazenaA ; 9.231  ; 9.231  ; Rise       ; state.armazenaA ;
+;  HEX1[6]  ; state.armazenaA ; 8.273  ; 8.273  ; Rise       ; state.armazenaA ;
+; HEX2[*]   ; state.armazenaA ; 10.660 ; 10.660 ; Rise       ; state.armazenaA ;
+;  HEX2[0]  ; state.armazenaA ; 10.660 ; 10.660 ; Rise       ; state.armazenaA ;
+;  HEX2[1]  ; state.armazenaA ; 9.248  ; 9.248  ; Rise       ; state.armazenaA ;
+;  HEX2[2]  ; state.armazenaA ; 8.598  ; 8.598  ; Rise       ; state.armazenaA ;
+;  HEX2[3]  ; state.armazenaA ; 9.520  ; 9.520  ; Rise       ; state.armazenaA ;
+;  HEX2[4]  ; state.armazenaA ; 9.688  ; 9.688  ; Rise       ; state.armazenaA ;
+;  HEX2[5]  ; state.armazenaA ; 9.450  ; 9.450  ; Rise       ; state.armazenaA ;
+;  HEX2[6]  ; state.armazenaA ; 8.654  ; 8.654  ; Rise       ; state.armazenaA ;
+; HEX3[*]   ; state.armazenaA ; 9.216  ; 9.216  ; Rise       ; state.armazenaA ;
+;  HEX3[0]  ; state.armazenaA ; 8.482  ; 8.482  ; Rise       ; state.armazenaA ;
+;  HEX3[1]  ; state.armazenaA ; 9.156  ; 9.156  ; Rise       ; state.armazenaA ;
+;  HEX3[2]  ; state.armazenaA ; 8.409  ; 8.409  ; Rise       ; state.armazenaA ;
+;  HEX3[3]  ; state.armazenaA ; 9.216  ; 9.216  ; Rise       ; state.armazenaA ;
+;  HEX3[4]  ; state.armazenaA ; 8.311  ; 8.311  ; Rise       ; state.armazenaA ;
+;  HEX3[5]  ; state.armazenaA ; 8.841  ; 8.841  ; Rise       ; state.armazenaA ;
+;  HEX3[6]  ; state.armazenaA ; 8.366  ; 8.366  ; Rise       ; state.armazenaA ;
+; HEX0[*]   ; state.armazenaA ; 7.243  ;        ; Fall       ; state.armazenaA ;
+;  HEX0[0]  ; state.armazenaA ; 5.942  ;        ; Fall       ; state.armazenaA ;
+;  HEX0[1]  ; state.armazenaA ; 7.243  ;        ; Fall       ; state.armazenaA ;
+;  HEX0[2]  ; state.armazenaA ; 5.788  ;        ; Fall       ; state.armazenaA ;
+;  HEX0[3]  ; state.armazenaA ; 7.009  ;        ; Fall       ; state.armazenaA ;
+;  HEX0[4]  ; state.armazenaA ; 6.027  ;        ; Fall       ; state.armazenaA ;
+;  HEX0[5]  ; state.armazenaA ; 6.973  ;        ; Fall       ; state.armazenaA ;
+;  HEX0[6]  ; state.armazenaA ; 6.055  ;        ; Fall       ; state.armazenaA ;
+; HEX1[*]   ; state.armazenaA ; 9.046  ;        ; Fall       ; state.armazenaA ;
+;  HEX1[0]  ; state.armazenaA ; 8.508  ;        ; Fall       ; state.armazenaA ;
+;  HEX1[1]  ; state.armazenaA ; 7.416  ;        ; Fall       ; state.armazenaA ;
+;  HEX1[2]  ; state.armazenaA ; 8.533  ;        ; Fall       ; state.armazenaA ;
+;  HEX1[3]  ; state.armazenaA ; 7.863  ;        ; Fall       ; state.armazenaA ;
+;  HEX1[4]  ; state.armazenaA ; 9.046  ;        ; Fall       ; state.armazenaA ;
+;  HEX1[5]  ; state.armazenaA ; 8.201  ;        ; Fall       ; state.armazenaA ;
+;  HEX1[6]  ; state.armazenaA ; 7.602  ;        ; Fall       ; state.armazenaA ;
+; HEX2[*]   ; state.armazenaA ; 9.062  ;        ; Fall       ; state.armazenaA ;
+;  HEX2[0]  ; state.armazenaA ; 9.004  ;        ; Fall       ; state.armazenaA ;
+;  HEX2[1]  ; state.armazenaA ; 7.892  ;        ; Fall       ; state.armazenaA ;
+;  HEX2[2]  ; state.armazenaA ; 7.244  ;        ; Fall       ; state.armazenaA ;
+;  HEX2[3]  ; state.armazenaA ; 8.846  ;        ; Fall       ; state.armazenaA ;
+;  HEX2[4]  ; state.armazenaA ; 9.062  ;        ; Fall       ; state.armazenaA ;
+;  HEX2[5]  ; state.armazenaA ; 9.006  ;        ; Fall       ; state.armazenaA ;
+;  HEX2[6]  ; state.armazenaA ; 8.219  ;        ; Fall       ; state.armazenaA ;
+; HEX3[*]   ; state.armazenaA ; 8.269  ;        ; Fall       ; state.armazenaA ;
+;  HEX3[0]  ; state.armazenaA ; 6.936  ;        ; Fall       ; state.armazenaA ;
+;  HEX3[1]  ; state.armazenaA ; 7.464  ;        ; Fall       ; state.armazenaA ;
+;  HEX3[2]  ; state.armazenaA ; 7.075  ;        ; Fall       ; state.armazenaA ;
+;  HEX3[3]  ; state.armazenaA ; 8.269  ;        ; Fall       ; state.armazenaA ;
+;  HEX3[4]  ; state.armazenaA ; 6.974  ;        ; Fall       ; state.armazenaA ;
+;  HEX3[5]  ; state.armazenaA ; 7.396  ;        ; Fall       ; state.armazenaA ;
+;  HEX3[6]  ; state.armazenaA ; 6.764  ;        ; Fall       ; state.armazenaA ;
+; HEX0[*]   ; state.armazenaB ; 7.161  ;        ; Rise       ; state.armazenaB ;
+;  HEX0[0]  ; state.armazenaB ; 6.311  ;        ; Rise       ; state.armazenaB ;
+;  HEX0[1]  ; state.armazenaB ; 7.161  ;        ; Rise       ; state.armazenaB ;
+;  HEX0[2]  ; state.armazenaB ; 5.467  ;        ; Rise       ; state.armazenaB ;
+;  HEX0[3]  ; state.armazenaB ; 7.087  ;        ; Rise       ; state.armazenaB ;
+;  HEX0[4]  ; state.armazenaB ; 6.105  ;        ; Rise       ; state.armazenaB ;
+;  HEX0[5]  ; state.armazenaB ; 7.053  ;        ; Rise       ; state.armazenaB ;
+;  HEX0[6]  ; state.armazenaB ; 5.668  ;        ; Rise       ; state.armazenaB ;
+; HEX1[*]   ; state.armazenaB ; 8.833  ;        ; Rise       ; state.armazenaB ;
+;  HEX1[0]  ; state.armazenaB ; 8.295  ;        ; Rise       ; state.armazenaB ;
+;  HEX1[1]  ; state.armazenaB ; 7.785  ;        ; Rise       ; state.armazenaB ;
+;  HEX1[2]  ; state.armazenaB ; 8.320  ;        ; Rise       ; state.armazenaB ;
+;  HEX1[3]  ; state.armazenaB ; 8.390  ;        ; Rise       ; state.armazenaB ;
+;  HEX1[4]  ; state.armazenaB ; 8.833  ;        ; Rise       ; state.armazenaB ;
+;  HEX1[5]  ; state.armazenaB ; 8.723  ;        ; Rise       ; state.armazenaB ;
+;  HEX1[6]  ; state.armazenaB ; 7.400  ;        ; Rise       ; state.armazenaB ;
+; HEX2[*]   ; state.armazenaB ; 9.369  ;        ; Rise       ; state.armazenaB ;
+;  HEX2[0]  ; state.armazenaB ; 9.369  ;        ; Rise       ; state.armazenaB ;
+;  HEX2[1]  ; state.armazenaB ; 8.262  ;        ; Rise       ; state.armazenaB ;
+;  HEX2[2]  ; state.armazenaB ; 7.613  ;        ; Rise       ; state.armazenaB ;
+;  HEX2[3]  ; state.armazenaB ; 8.973  ;        ; Rise       ; state.armazenaB ;
+;  HEX2[4]  ; state.armazenaB ; 9.297  ;        ; Rise       ; state.armazenaB ;
+;  HEX2[5]  ; state.armazenaB ; 8.802  ;        ; Rise       ; state.armazenaB ;
+;  HEX2[6]  ; state.armazenaB ; 8.016  ;        ; Rise       ; state.armazenaB ;
+; HEX3[*]   ; state.armazenaB ; 8.707  ;        ; Rise       ; state.armazenaB ;
+;  HEX3[0]  ; state.armazenaB ; 7.992  ;        ; Rise       ; state.armazenaB ;
+;  HEX3[1]  ; state.armazenaB ; 7.708  ;        ; Rise       ; state.armazenaB ;
+;  HEX3[2]  ; state.armazenaB ; 7.686  ;        ; Rise       ; state.armazenaB ;
+;  HEX3[3]  ; state.armazenaB ; 8.707  ;        ; Rise       ; state.armazenaB ;
+;  HEX3[4]  ; state.armazenaB ; 7.690  ;        ; Rise       ; state.armazenaB ;
+;  HEX3[5]  ; state.armazenaB ; 8.007  ;        ; Rise       ; state.armazenaB ;
+;  HEX3[6]  ; state.armazenaB ; 7.820  ;        ; Rise       ; state.armazenaB ;
+; HEX0[*]   ; state.armazenaB ;        ; 7.161  ; Fall       ; state.armazenaB ;
+;  HEX0[0]  ; state.armazenaB ;        ; 6.311  ; Fall       ; state.armazenaB ;
+;  HEX0[1]  ; state.armazenaB ;        ; 7.161  ; Fall       ; state.armazenaB ;
+;  HEX0[2]  ; state.armazenaB ;        ; 5.467  ; Fall       ; state.armazenaB ;
+;  HEX0[3]  ; state.armazenaB ;        ; 7.087  ; Fall       ; state.armazenaB ;
+;  HEX0[4]  ; state.armazenaB ;        ; 6.105  ; Fall       ; state.armazenaB ;
+;  HEX0[5]  ; state.armazenaB ;        ; 7.053  ; Fall       ; state.armazenaB ;
+;  HEX0[6]  ; state.armazenaB ;        ; 5.668  ; Fall       ; state.armazenaB ;
+; HEX1[*]   ; state.armazenaB ;        ; 8.833  ; Fall       ; state.armazenaB ;
+;  HEX1[0]  ; state.armazenaB ;        ; 8.295  ; Fall       ; state.armazenaB ;
+;  HEX1[1]  ; state.armazenaB ;        ; 7.785  ; Fall       ; state.armazenaB ;
+;  HEX1[2]  ; state.armazenaB ;        ; 8.320  ; Fall       ; state.armazenaB ;
+;  HEX1[3]  ; state.armazenaB ;        ; 8.390  ; Fall       ; state.armazenaB ;
+;  HEX1[4]  ; state.armazenaB ;        ; 8.833  ; Fall       ; state.armazenaB ;
+;  HEX1[5]  ; state.armazenaB ;        ; 8.723  ; Fall       ; state.armazenaB ;
+;  HEX1[6]  ; state.armazenaB ;        ; 7.400  ; Fall       ; state.armazenaB ;
+; HEX2[*]   ; state.armazenaB ;        ; 9.369  ; Fall       ; state.armazenaB ;
+;  HEX2[0]  ; state.armazenaB ;        ; 9.369  ; Fall       ; state.armazenaB ;
+;  HEX2[1]  ; state.armazenaB ;        ; 8.262  ; Fall       ; state.armazenaB ;
+;  HEX2[2]  ; state.armazenaB ;        ; 7.613  ; Fall       ; state.armazenaB ;
+;  HEX2[3]  ; state.armazenaB ;        ; 8.973  ; Fall       ; state.armazenaB ;
+;  HEX2[4]  ; state.armazenaB ;        ; 9.297  ; Fall       ; state.armazenaB ;
+;  HEX2[5]  ; state.armazenaB ;        ; 8.802  ; Fall       ; state.armazenaB ;
+;  HEX2[6]  ; state.armazenaB ;        ; 8.016  ; Fall       ; state.armazenaB ;
+; HEX3[*]   ; state.armazenaB ;        ; 8.707  ; Fall       ; state.armazenaB ;
+;  HEX3[0]  ; state.armazenaB ;        ; 7.992  ; Fall       ; state.armazenaB ;
+;  HEX3[1]  ; state.armazenaB ;        ; 7.708  ; Fall       ; state.armazenaB ;
+;  HEX3[2]  ; state.armazenaB ;        ; 7.686  ; Fall       ; state.armazenaB ;
+;  HEX3[3]  ; state.armazenaB ;        ; 8.707  ; Fall       ; state.armazenaB ;
+;  HEX3[4]  ; state.armazenaB ;        ; 7.690  ; Fall       ; state.armazenaB ;
+;  HEX3[5]  ; state.armazenaB ;        ; 8.007  ; Fall       ; state.armazenaB ;
+;  HEX3[6]  ; state.armazenaB ;        ; 7.820  ; Fall       ; state.armazenaB ;
+; HEX4[*]   ; state.armazenaB ; 6.290  ; 6.290  ; Fall       ; state.armazenaB ;
+;  HEX4[0]  ; state.armazenaB ; 6.161  ; 6.161  ; Fall       ; state.armazenaB ;
+;  HEX4[1]  ; state.armazenaB ; 6.180  ; 6.180  ; Fall       ; state.armazenaB ;
+;  HEX4[2]  ; state.armazenaB ; 5.841  ; 5.841  ; Fall       ; state.armazenaB ;
+;  HEX4[3]  ; state.armazenaB ; 5.758  ; 5.758  ; Fall       ; state.armazenaB ;
+;  HEX4[4]  ; state.armazenaB ; 5.680  ; 5.680  ; Fall       ; state.armazenaB ;
+;  HEX4[5]  ; state.armazenaB ; 5.682  ; 5.682  ; Fall       ; state.armazenaB ;
+;  HEX4[6]  ; state.armazenaB ; 6.290  ; 6.290  ; Fall       ; state.armazenaB ;
+; HEX5[*]   ; state.armazenaB ; 6.245  ; 6.245  ; Fall       ; state.armazenaB ;
+;  HEX5[0]  ; state.armazenaB ; 6.191  ; 6.191  ; Fall       ; state.armazenaB ;
+;  HEX5[1]  ; state.armazenaB ; 6.127  ; 6.127  ; Fall       ; state.armazenaB ;
+;  HEX5[2]  ; state.armazenaB ; 6.156  ; 6.156  ; Fall       ; state.armazenaB ;
+;  HEX5[3]  ; state.armazenaB ; 5.991  ; 5.991  ; Fall       ; state.armazenaB ;
+;  HEX5[4]  ; state.armazenaB ; 6.176  ; 6.176  ; Fall       ; state.armazenaB ;
+;  HEX5[5]  ; state.armazenaB ; 5.814  ; 5.814  ; Fall       ; state.armazenaB ;
+;  HEX5[6]  ; state.armazenaB ; 6.245  ; 6.245  ; Fall       ; state.armazenaB ;
+; HEX6[*]   ; state.armazenaB ; 6.792  ; 6.792  ; Fall       ; state.armazenaB ;
+;  HEX6[0]  ; state.armazenaB ; 6.183  ; 6.183  ; Fall       ; state.armazenaB ;
+;  HEX6[1]  ; state.armazenaB ; 6.177  ; 6.177  ; Fall       ; state.armazenaB ;
+;  HEX6[2]  ; state.armazenaB ; 6.516  ; 6.516  ; Fall       ; state.armazenaB ;
+;  HEX6[3]  ; state.armazenaB ; 6.623  ; 6.623  ; Fall       ; state.armazenaB ;
+;  HEX6[4]  ; state.armazenaB ; 6.594  ; 6.594  ; Fall       ; state.armazenaB ;
+;  HEX6[5]  ; state.armazenaB ; 6.678  ; 6.678  ; Fall       ; state.armazenaB ;
+;  HEX6[6]  ; state.armazenaB ; 6.792  ; 6.792  ; Fall       ; state.armazenaB ;
+; HEX7[*]   ; state.armazenaB ; 6.872  ; 6.872  ; Fall       ; state.armazenaB ;
+;  HEX7[0]  ; state.armazenaB ; 6.368  ; 6.368  ; Fall       ; state.armazenaB ;
+;  HEX7[1]  ; state.armazenaB ; 6.377  ; 6.377  ; Fall       ; state.armazenaB ;
+;  HEX7[2]  ; state.armazenaB ; 6.237  ; 6.237  ; Fall       ; state.armazenaB ;
+;  HEX7[3]  ; state.armazenaB ; 6.835  ; 6.835  ; Fall       ; state.armazenaB ;
+;  HEX7[4]  ; state.armazenaB ; 6.354  ; 6.354  ; Fall       ; state.armazenaB ;
+;  HEX7[5]  ; state.armazenaB ; 6.872  ; 6.872  ; Fall       ; state.armazenaB ;
+;  HEX7[6]  ; state.armazenaB ; 6.755  ; 6.755  ; Fall       ; state.armazenaB ;
++-----------+-----------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                               ;
++-----------+-----------------+--------+-------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise   ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+-----------------+--------+-------+------------+-----------------+
+; HEX4[*]   ; KEY[0]          ; 9.094  ; 9.094 ; Rise       ; KEY[0]          ;
+;  HEX4[0]  ; KEY[0]          ; 9.444  ; 9.444 ; Rise       ; KEY[0]          ;
+;  HEX4[1]  ; KEY[0]          ; 9.160  ; 9.160 ; Rise       ; KEY[0]          ;
+;  HEX4[2]  ; KEY[0]          ; 9.338  ; 9.338 ; Rise       ; KEY[0]          ;
+;  HEX4[3]  ; KEY[0]          ; 9.175  ; 9.175 ; Rise       ; KEY[0]          ;
+;  HEX4[4]  ; KEY[0]          ; 9.166  ; 9.166 ; Rise       ; KEY[0]          ;
+;  HEX4[5]  ; KEY[0]          ; 9.175  ; 9.175 ; Rise       ; KEY[0]          ;
+;  HEX4[6]  ; KEY[0]          ; 9.094  ; 9.094 ; Rise       ; KEY[0]          ;
+; HEX5[*]   ; KEY[0]          ; 8.574  ; 8.574 ; Rise       ; KEY[0]          ;
+;  HEX5[0]  ; KEY[0]          ; 9.343  ; 9.343 ; Rise       ; KEY[0]          ;
+;  HEX5[1]  ; KEY[0]          ; 9.407  ; 9.407 ; Rise       ; KEY[0]          ;
+;  HEX5[2]  ; KEY[0]          ; 9.324  ; 9.324 ; Rise       ; KEY[0]          ;
+;  HEX5[3]  ; KEY[0]          ; 8.648  ; 8.648 ; Rise       ; KEY[0]          ;
+;  HEX5[4]  ; KEY[0]          ; 8.912  ; 8.912 ; Rise       ; KEY[0]          ;
+;  HEX5[5]  ; KEY[0]          ; 8.907  ; 8.907 ; Rise       ; KEY[0]          ;
+;  HEX5[6]  ; KEY[0]          ; 8.574  ; 8.574 ; Rise       ; KEY[0]          ;
+; HEX6[*]   ; KEY[0]          ; 8.891  ; 8.891 ; Rise       ; KEY[0]          ;
+;  HEX6[0]  ; KEY[0]          ; 9.389  ; 9.389 ; Rise       ; KEY[0]          ;
+;  HEX6[1]  ; KEY[0]          ; 9.112  ; 9.112 ; Rise       ; KEY[0]          ;
+;  HEX6[2]  ; KEY[0]          ; 8.891  ; 8.891 ; Rise       ; KEY[0]          ;
+;  HEX6[3]  ; KEY[0]          ; 9.422  ; 9.422 ; Rise       ; KEY[0]          ;
+;  HEX6[4]  ; KEY[0]          ; 9.415  ; 9.415 ; Rise       ; KEY[0]          ;
+;  HEX6[5]  ; KEY[0]          ; 9.543  ; 9.543 ; Rise       ; KEY[0]          ;
+;  HEX6[6]  ; KEY[0]          ; 9.385  ; 9.385 ; Rise       ; KEY[0]          ;
+; HEX7[*]   ; KEY[0]          ; 9.163  ; 9.163 ; Rise       ; KEY[0]          ;
+;  HEX7[0]  ; KEY[0]          ; 9.484  ; 9.484 ; Rise       ; KEY[0]          ;
+;  HEX7[1]  ; KEY[0]          ; 9.485  ; 9.485 ; Rise       ; KEY[0]          ;
+;  HEX7[2]  ; KEY[0]          ; 9.439  ; 9.439 ; Rise       ; KEY[0]          ;
+;  HEX7[3]  ; KEY[0]          ; 9.319  ; 9.319 ; Rise       ; KEY[0]          ;
+;  HEX7[4]  ; KEY[0]          ; 9.472  ; 9.472 ; Rise       ; KEY[0]          ;
+;  HEX7[5]  ; KEY[0]          ; 9.163  ; 9.163 ; Rise       ; KEY[0]          ;
+;  HEX7[6]  ; KEY[0]          ; 9.419  ; 9.419 ; Rise       ; KEY[0]          ;
+; HEX0[*]   ; state.armazenaA ; 7.110  ; 5.788 ; Rise       ; state.armazenaA ;
+;  HEX0[0]  ; state.armazenaA ; 7.110  ; 5.942 ; Rise       ; state.armazenaA ;
+;  HEX0[1]  ; state.armazenaA ; 8.319  ; 7.243 ; Rise       ; state.armazenaA ;
+;  HEX0[2]  ; state.armazenaA ; 7.467  ; 5.788 ; Rise       ; state.armazenaA ;
+;  HEX0[3]  ; state.armazenaA ; 8.829  ; 7.009 ; Rise       ; state.armazenaA ;
+;  HEX0[4]  ; state.armazenaA ; 7.888  ; 6.027 ; Rise       ; state.armazenaA ;
+;  HEX0[5]  ; state.armazenaA ; 8.964  ; 6.973 ; Rise       ; state.armazenaA ;
+;  HEX0[6]  ; state.armazenaA ; 7.902  ; 6.055 ; Rise       ; state.armazenaA ;
+; HEX1[*]   ; state.armazenaA ; 8.273  ; 7.416 ; Rise       ; state.armazenaA ;
+;  HEX1[0]  ; state.armazenaA ; 9.126  ; 8.508 ; Rise       ; state.armazenaA ;
+;  HEX1[1]  ; state.armazenaA ; 8.580  ; 7.416 ; Rise       ; state.armazenaA ;
+;  HEX1[2]  ; state.armazenaA ; 9.193  ; 8.533 ; Rise       ; state.armazenaA ;
+;  HEX1[3]  ; state.armazenaA ; 9.197  ; 7.863 ; Rise       ; state.armazenaA ;
+;  HEX1[4]  ; state.armazenaA ; 9.702  ; 9.046 ; Rise       ; state.armazenaA ;
+;  HEX1[5]  ; state.armazenaA ; 9.231  ; 8.201 ; Rise       ; state.armazenaA ;
+;  HEX1[6]  ; state.armazenaA ; 8.273  ; 7.602 ; Rise       ; state.armazenaA ;
+; HEX2[*]   ; state.armazenaA ; 8.598  ; 7.244 ; Rise       ; state.armazenaA ;
+;  HEX2[0]  ; state.armazenaA ; 10.660 ; 9.004 ; Rise       ; state.armazenaA ;
+;  HEX2[1]  ; state.armazenaA ; 9.248  ; 7.892 ; Rise       ; state.armazenaA ;
+;  HEX2[2]  ; state.armazenaA ; 8.598  ; 7.244 ; Rise       ; state.armazenaA ;
+;  HEX2[3]  ; state.armazenaA ; 9.520  ; 8.846 ; Rise       ; state.armazenaA ;
+;  HEX2[4]  ; state.armazenaA ; 9.688  ; 9.062 ; Rise       ; state.armazenaA ;
+;  HEX2[5]  ; state.armazenaA ; 9.450  ; 9.006 ; Rise       ; state.armazenaA ;
+;  HEX2[6]  ; state.armazenaA ; 8.654  ; 8.219 ; Rise       ; state.armazenaA ;
+; HEX3[*]   ; state.armazenaA ; 8.311  ; 6.764 ; Rise       ; state.armazenaA ;
+;  HEX3[0]  ; state.armazenaA ; 8.482  ; 6.936 ; Rise       ; state.armazenaA ;
+;  HEX3[1]  ; state.armazenaA ; 9.156  ; 7.464 ; Rise       ; state.armazenaA ;
+;  HEX3[2]  ; state.armazenaA ; 8.409  ; 7.075 ; Rise       ; state.armazenaA ;
+;  HEX3[3]  ; state.armazenaA ; 9.216  ; 8.269 ; Rise       ; state.armazenaA ;
+;  HEX3[4]  ; state.armazenaA ; 8.311  ; 6.974 ; Rise       ; state.armazenaA ;
+;  HEX3[5]  ; state.armazenaA ; 8.841  ; 7.396 ; Rise       ; state.armazenaA ;
+;  HEX3[6]  ; state.armazenaA ; 8.366  ; 6.764 ; Rise       ; state.armazenaA ;
+; HEX0[*]   ; state.armazenaA ; 5.788  ;       ; Fall       ; state.armazenaA ;
+;  HEX0[0]  ; state.armazenaA ; 5.942  ;       ; Fall       ; state.armazenaA ;
+;  HEX0[1]  ; state.armazenaA ; 7.243  ;       ; Fall       ; state.armazenaA ;
+;  HEX0[2]  ; state.armazenaA ; 5.788  ;       ; Fall       ; state.armazenaA ;
+;  HEX0[3]  ; state.armazenaA ; 7.009  ;       ; Fall       ; state.armazenaA ;
+;  HEX0[4]  ; state.armazenaA ; 6.027  ;       ; Fall       ; state.armazenaA ;
+;  HEX0[5]  ; state.armazenaA ; 6.973  ;       ; Fall       ; state.armazenaA ;
+;  HEX0[6]  ; state.armazenaA ; 6.055  ;       ; Fall       ; state.armazenaA ;
+; HEX1[*]   ; state.armazenaA ; 7.416  ;       ; Fall       ; state.armazenaA ;
+;  HEX1[0]  ; state.armazenaA ; 8.508  ;       ; Fall       ; state.armazenaA ;
+;  HEX1[1]  ; state.armazenaA ; 7.416  ;       ; Fall       ; state.armazenaA ;
+;  HEX1[2]  ; state.armazenaA ; 8.533  ;       ; Fall       ; state.armazenaA ;
+;  HEX1[3]  ; state.armazenaA ; 7.863  ;       ; Fall       ; state.armazenaA ;
+;  HEX1[4]  ; state.armazenaA ; 9.046  ;       ; Fall       ; state.armazenaA ;
+;  HEX1[5]  ; state.armazenaA ; 8.201  ;       ; Fall       ; state.armazenaA ;
+;  HEX1[6]  ; state.armazenaA ; 7.602  ;       ; Fall       ; state.armazenaA ;
+; HEX2[*]   ; state.armazenaA ; 7.244  ;       ; Fall       ; state.armazenaA ;
+;  HEX2[0]  ; state.armazenaA ; 9.004  ;       ; Fall       ; state.armazenaA ;
+;  HEX2[1]  ; state.armazenaA ; 7.892  ;       ; Fall       ; state.armazenaA ;
+;  HEX2[2]  ; state.armazenaA ; 7.244  ;       ; Fall       ; state.armazenaA ;
+;  HEX2[3]  ; state.armazenaA ; 8.846  ;       ; Fall       ; state.armazenaA ;
+;  HEX2[4]  ; state.armazenaA ; 9.062  ;       ; Fall       ; state.armazenaA ;
+;  HEX2[5]  ; state.armazenaA ; 9.006  ;       ; Fall       ; state.armazenaA ;
+;  HEX2[6]  ; state.armazenaA ; 8.219  ;       ; Fall       ; state.armazenaA ;
+; HEX3[*]   ; state.armazenaA ; 6.764  ;       ; Fall       ; state.armazenaA ;
+;  HEX3[0]  ; state.armazenaA ; 6.936  ;       ; Fall       ; state.armazenaA ;
+;  HEX3[1]  ; state.armazenaA ; 7.464  ;       ; Fall       ; state.armazenaA ;
+;  HEX3[2]  ; state.armazenaA ; 7.075  ;       ; Fall       ; state.armazenaA ;
+;  HEX3[3]  ; state.armazenaA ; 8.269  ;       ; Fall       ; state.armazenaA ;
+;  HEX3[4]  ; state.armazenaA ; 6.974  ;       ; Fall       ; state.armazenaA ;
+;  HEX3[5]  ; state.armazenaA ; 7.396  ;       ; Fall       ; state.armazenaA ;
+;  HEX3[6]  ; state.armazenaA ; 6.764  ;       ; Fall       ; state.armazenaA ;
+; HEX0[*]   ; state.armazenaB ; 5.467  ;       ; Rise       ; state.armazenaB ;
+;  HEX0[0]  ; state.armazenaB ; 6.311  ;       ; Rise       ; state.armazenaB ;
+;  HEX0[1]  ; state.armazenaB ; 7.161  ;       ; Rise       ; state.armazenaB ;
+;  HEX0[2]  ; state.armazenaB ; 5.467  ;       ; Rise       ; state.armazenaB ;
+;  HEX0[3]  ; state.armazenaB ; 7.087  ;       ; Rise       ; state.armazenaB ;
+;  HEX0[4]  ; state.armazenaB ; 6.105  ;       ; Rise       ; state.armazenaB ;
+;  HEX0[5]  ; state.armazenaB ; 7.053  ;       ; Rise       ; state.armazenaB ;
+;  HEX0[6]  ; state.armazenaB ; 5.668  ;       ; Rise       ; state.armazenaB ;
+; HEX1[*]   ; state.armazenaB ; 7.400  ;       ; Rise       ; state.armazenaB ;
+;  HEX1[0]  ; state.armazenaB ; 8.295  ;       ; Rise       ; state.armazenaB ;
+;  HEX1[1]  ; state.armazenaB ; 7.785  ;       ; Rise       ; state.armazenaB ;
+;  HEX1[2]  ; state.armazenaB ; 8.320  ;       ; Rise       ; state.armazenaB ;
+;  HEX1[3]  ; state.armazenaB ; 8.390  ;       ; Rise       ; state.armazenaB ;
+;  HEX1[4]  ; state.armazenaB ; 8.833  ;       ; Rise       ; state.armazenaB ;
+;  HEX1[5]  ; state.armazenaB ; 8.723  ;       ; Rise       ; state.armazenaB ;
+;  HEX1[6]  ; state.armazenaB ; 7.400  ;       ; Rise       ; state.armazenaB ;
+; HEX2[*]   ; state.armazenaB ; 7.613  ;       ; Rise       ; state.armazenaB ;
+;  HEX2[0]  ; state.armazenaB ; 9.369  ;       ; Rise       ; state.armazenaB ;
+;  HEX2[1]  ; state.armazenaB ; 8.262  ;       ; Rise       ; state.armazenaB ;
+;  HEX2[2]  ; state.armazenaB ; 7.613  ;       ; Rise       ; state.armazenaB ;
+;  HEX2[3]  ; state.armazenaB ; 8.973  ;       ; Rise       ; state.armazenaB ;
+;  HEX2[4]  ; state.armazenaB ; 9.297  ;       ; Rise       ; state.armazenaB ;
+;  HEX2[5]  ; state.armazenaB ; 8.802  ;       ; Rise       ; state.armazenaB ;
+;  HEX2[6]  ; state.armazenaB ; 8.016  ;       ; Rise       ; state.armazenaB ;
+; HEX3[*]   ; state.armazenaB ; 7.686  ;       ; Rise       ; state.armazenaB ;
+;  HEX3[0]  ; state.armazenaB ; 7.992  ;       ; Rise       ; state.armazenaB ;
+;  HEX3[1]  ; state.armazenaB ; 7.708  ;       ; Rise       ; state.armazenaB ;
+;  HEX3[2]  ; state.armazenaB ; 7.686  ;       ; Rise       ; state.armazenaB ;
+;  HEX3[3]  ; state.armazenaB ; 8.707  ;       ; Rise       ; state.armazenaB ;
+;  HEX3[4]  ; state.armazenaB ; 7.690  ;       ; Rise       ; state.armazenaB ;
+;  HEX3[5]  ; state.armazenaB ; 8.007  ;       ; Rise       ; state.armazenaB ;
+;  HEX3[6]  ; state.armazenaB ; 7.820  ;       ; Rise       ; state.armazenaB ;
+; HEX0[*]   ; state.armazenaB ;        ; 5.467 ; Fall       ; state.armazenaB ;
+;  HEX0[0]  ; state.armazenaB ;        ; 6.311 ; Fall       ; state.armazenaB ;
+;  HEX0[1]  ; state.armazenaB ;        ; 7.161 ; Fall       ; state.armazenaB ;
+;  HEX0[2]  ; state.armazenaB ;        ; 5.467 ; Fall       ; state.armazenaB ;
+;  HEX0[3]  ; state.armazenaB ;        ; 7.087 ; Fall       ; state.armazenaB ;
+;  HEX0[4]  ; state.armazenaB ;        ; 6.105 ; Fall       ; state.armazenaB ;
+;  HEX0[5]  ; state.armazenaB ;        ; 7.053 ; Fall       ; state.armazenaB ;
+;  HEX0[6]  ; state.armazenaB ;        ; 5.668 ; Fall       ; state.armazenaB ;
+; HEX1[*]   ; state.armazenaB ;        ; 7.400 ; Fall       ; state.armazenaB ;
+;  HEX1[0]  ; state.armazenaB ;        ; 8.295 ; Fall       ; state.armazenaB ;
+;  HEX1[1]  ; state.armazenaB ;        ; 7.785 ; Fall       ; state.armazenaB ;
+;  HEX1[2]  ; state.armazenaB ;        ; 8.320 ; Fall       ; state.armazenaB ;
+;  HEX1[3]  ; state.armazenaB ;        ; 8.390 ; Fall       ; state.armazenaB ;
+;  HEX1[4]  ; state.armazenaB ;        ; 8.833 ; Fall       ; state.armazenaB ;
+;  HEX1[5]  ; state.armazenaB ;        ; 8.723 ; Fall       ; state.armazenaB ;
+;  HEX1[6]  ; state.armazenaB ;        ; 7.400 ; Fall       ; state.armazenaB ;
+; HEX2[*]   ; state.armazenaB ;        ; 7.613 ; Fall       ; state.armazenaB ;
+;  HEX2[0]  ; state.armazenaB ;        ; 9.369 ; Fall       ; state.armazenaB ;
+;  HEX2[1]  ; state.armazenaB ;        ; 8.262 ; Fall       ; state.armazenaB ;
+;  HEX2[2]  ; state.armazenaB ;        ; 7.613 ; Fall       ; state.armazenaB ;
+;  HEX2[3]  ; state.armazenaB ;        ; 8.973 ; Fall       ; state.armazenaB ;
+;  HEX2[4]  ; state.armazenaB ;        ; 9.297 ; Fall       ; state.armazenaB ;
+;  HEX2[5]  ; state.armazenaB ;        ; 8.802 ; Fall       ; state.armazenaB ;
+;  HEX2[6]  ; state.armazenaB ;        ; 8.016 ; Fall       ; state.armazenaB ;
+; HEX3[*]   ; state.armazenaB ;        ; 7.686 ; Fall       ; state.armazenaB ;
+;  HEX3[0]  ; state.armazenaB ;        ; 7.992 ; Fall       ; state.armazenaB ;
+;  HEX3[1]  ; state.armazenaB ;        ; 7.708 ; Fall       ; state.armazenaB ;
+;  HEX3[2]  ; state.armazenaB ;        ; 7.686 ; Fall       ; state.armazenaB ;
+;  HEX3[3]  ; state.armazenaB ;        ; 8.707 ; Fall       ; state.armazenaB ;
+;  HEX3[4]  ; state.armazenaB ;        ; 7.690 ; Fall       ; state.armazenaB ;
+;  HEX3[5]  ; state.armazenaB ;        ; 8.007 ; Fall       ; state.armazenaB ;
+;  HEX3[6]  ; state.armazenaB ;        ; 7.820 ; Fall       ; state.armazenaB ;
+; HEX4[*]   ; state.armazenaB ; 5.680  ; 5.680 ; Fall       ; state.armazenaB ;
+;  HEX4[0]  ; state.armazenaB ; 6.161  ; 6.161 ; Fall       ; state.armazenaB ;
+;  HEX4[1]  ; state.armazenaB ; 6.180  ; 6.180 ; Fall       ; state.armazenaB ;
+;  HEX4[2]  ; state.armazenaB ; 5.841  ; 5.841 ; Fall       ; state.armazenaB ;
+;  HEX4[3]  ; state.armazenaB ; 5.758  ; 5.758 ; Fall       ; state.armazenaB ;
+;  HEX4[4]  ; state.armazenaB ; 5.680  ; 5.680 ; Fall       ; state.armazenaB ;
+;  HEX4[5]  ; state.armazenaB ; 5.682  ; 5.682 ; Fall       ; state.armazenaB ;
+;  HEX4[6]  ; state.armazenaB ; 6.290  ; 6.290 ; Fall       ; state.armazenaB ;
+; HEX5[*]   ; state.armazenaB ; 5.814  ; 5.814 ; Fall       ; state.armazenaB ;
+;  HEX5[0]  ; state.armazenaB ; 6.191  ; 6.191 ; Fall       ; state.armazenaB ;
+;  HEX5[1]  ; state.armazenaB ; 6.127  ; 6.127 ; Fall       ; state.armazenaB ;
+;  HEX5[2]  ; state.armazenaB ; 6.156  ; 6.156 ; Fall       ; state.armazenaB ;
+;  HEX5[3]  ; state.armazenaB ; 5.991  ; 5.991 ; Fall       ; state.armazenaB ;
+;  HEX5[4]  ; state.armazenaB ; 6.176  ; 6.176 ; Fall       ; state.armazenaB ;
+;  HEX5[5]  ; state.armazenaB ; 5.814  ; 5.814 ; Fall       ; state.armazenaB ;
+;  HEX5[6]  ; state.armazenaB ; 6.245  ; 6.245 ; Fall       ; state.armazenaB ;
+; HEX6[*]   ; state.armazenaB ; 6.177  ; 6.177 ; Fall       ; state.armazenaB ;
+;  HEX6[0]  ; state.armazenaB ; 6.183  ; 6.183 ; Fall       ; state.armazenaB ;
+;  HEX6[1]  ; state.armazenaB ; 6.177  ; 6.177 ; Fall       ; state.armazenaB ;
+;  HEX6[2]  ; state.armazenaB ; 6.516  ; 6.516 ; Fall       ; state.armazenaB ;
+;  HEX6[3]  ; state.armazenaB ; 6.623  ; 6.623 ; Fall       ; state.armazenaB ;
+;  HEX6[4]  ; state.armazenaB ; 6.594  ; 6.594 ; Fall       ; state.armazenaB ;
+;  HEX6[5]  ; state.armazenaB ; 6.678  ; 6.678 ; Fall       ; state.armazenaB ;
+;  HEX6[6]  ; state.armazenaB ; 6.792  ; 6.792 ; Fall       ; state.armazenaB ;
+; HEX7[*]   ; state.armazenaB ; 6.237  ; 6.237 ; Fall       ; state.armazenaB ;
+;  HEX7[0]  ; state.armazenaB ; 6.368  ; 6.368 ; Fall       ; state.armazenaB ;
+;  HEX7[1]  ; state.armazenaB ; 6.377  ; 6.377 ; Fall       ; state.armazenaB ;
+;  HEX7[2]  ; state.armazenaB ; 6.237  ; 6.237 ; Fall       ; state.armazenaB ;
+;  HEX7[3]  ; state.armazenaB ; 6.835  ; 6.835 ; Fall       ; state.armazenaB ;
+;  HEX7[4]  ; state.armazenaB ; 6.354  ; 6.354 ; Fall       ; state.armazenaB ;
+;  HEX7[5]  ; state.armazenaB ; 6.872  ; 6.872 ; Fall       ; state.armazenaB ;
+;  HEX7[6]  ; state.armazenaB ; 6.755  ; 6.755 ; Fall       ; state.armazenaB ;
++-----------+-----------------+--------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; KEY[0] ; 0.621 ; 0.000         ;
++--------+-------+---------------+
+
+
++---------------------------------+
+; Fast Model Hold Summary         ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; KEY[0] ; -2.118 ; -4.191        ;
++--------+--------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++------------------------------------------+
+; Fast Model Minimum Pulse Width Summary   ;
++-----------------+--------+---------------+
+; Clock           ; Slack  ; End Point TNS ;
++-----------------+--------+---------------+
+; KEY[0]          ; -1.222 ; -5.222        ;
+; state.armazenaA ; 0.500  ; 0.000         ;
+; state.armazenaB ; 0.500  ; 0.000         ;
++-----------------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'KEY[0]'                                                                                         ;
++-------+-----------------+-----------------+-----------------+-------------+--------------+------------+------------+
+; Slack ; From Node       ; To Node         ; Launch Clock    ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------+-----------------+-----------------+-------------+--------------+------------+------------+
+; 0.621 ; state.mostraAB  ; state.armazenaA ; KEY[0]          ; KEY[0]      ; 1.000        ; 0.000      ; 0.411      ;
+; 0.641 ; state.mostraA   ; state.armazenaB ; KEY[0]          ; KEY[0]      ; 1.000        ; 0.000      ; 0.391      ;
+; 2.453 ; state.armazenaA ; state.mostraA   ; state.armazenaA ; KEY[0]      ; 0.500        ; 2.314      ; 0.534      ;
+; 2.498 ; state.armazenaB ; state.mostraAB  ; state.armazenaB ; KEY[0]      ; 0.500        ; 2.314      ; 0.489      ;
+; 2.953 ; state.armazenaA ; state.mostraA   ; state.armazenaA ; KEY[0]      ; 1.000        ; 2.314      ; 0.534      ;
+; 2.998 ; state.armazenaB ; state.mostraAB  ; state.armazenaB ; KEY[0]      ; 1.000        ; 2.314      ; 0.489      ;
++-------+-----------------+-----------------+-----------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'KEY[0]'                                                                                           ;
++--------+-----------------+-----------------+-----------------+-------------+--------------+------------+------------+
+; Slack  ; From Node       ; To Node         ; Launch Clock    ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------+-----------------+-----------------+-------------+--------------+------------+------------+
+; -2.118 ; state.armazenaB ; state.mostraAB  ; state.armazenaB ; KEY[0]      ; 0.000        ; 2.314      ; 0.489      ;
+; -2.073 ; state.armazenaA ; state.mostraA   ; state.armazenaA ; KEY[0]      ; 0.000        ; 2.314      ; 0.534      ;
+; -1.618 ; state.armazenaB ; state.mostraAB  ; state.armazenaB ; KEY[0]      ; -0.500       ; 2.314      ; 0.489      ;
+; -1.573 ; state.armazenaA ; state.mostraA   ; state.armazenaA ; KEY[0]      ; -0.500       ; 2.314      ; 0.534      ;
+; 0.239  ; state.mostraA   ; state.armazenaB ; KEY[0]          ; KEY[0]      ; 0.000        ; 0.000      ; 0.391      ;
+; 0.259  ; state.mostraAB  ; state.armazenaA ; KEY[0]          ; KEY[0]      ; 0.000        ; 0.000      ; 0.411      ;
++--------+-----------------+-----------------+-----------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'KEY[0]'                                                              ;
++--------+--------------+----------------+------------------+--------+------------+---------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target              ;
++--------+--------------+----------------+------------------+--------+------------+---------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; KEY[0] ; Rise       ; KEY[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY[0] ; Rise       ; state.armazenaA     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; state.armazenaA     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY[0] ; Rise       ; state.armazenaB     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; state.armazenaB     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY[0] ; Rise       ; state.mostraA       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; state.mostraA       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY[0] ; Rise       ; state.mostraAB      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; state.mostraAB      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; KEY[0]|combout      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; KEY[0]|combout      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; state.armazenaA|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; state.armazenaA|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; state.armazenaB|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; state.armazenaB|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; state.mostraAB|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; state.mostraAB|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY[0] ; Rise       ; state.mostraA|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY[0] ; Rise       ; state.mostraA|clk   ;
++--------+--------------+----------------+------------------+--------+------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'state.armazenaA'                                                     ;
++-------+--------------+----------------+------------------+-----------------+------------+-------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock           ; Clock Edge ; Target      ;
++-------+--------------+----------------+------------------+-----------------+------------+-------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[0]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[0]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[0]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[0]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[10]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[10]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[10]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[10]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[11]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[11]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[11]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[11]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[12]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[12]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[12]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[12]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[13]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[13]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[13]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[13]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[14]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[14]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[14]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[14]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[15]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[15]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[15]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[15]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[16]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[16]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[16]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[16]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[17]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[17]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[17]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[17]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[18]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[18]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[18]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[18]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[19]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[19]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[19]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[19]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[1]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[1]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[1]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[1]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[20]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[20]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[20]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[20]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[21]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[21]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[21]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[21]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[22]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[22]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[22]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[22]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[23]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[23]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[23]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[23]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[24]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[24]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[24]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[24]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[25]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[25]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[25]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[25]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[26]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[26]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[26]|datac ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[26]|datac ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[27]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[27]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[27]|datac ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[27]|datac ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[2]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[2]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[2]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[2]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[3]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[3]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[3]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[3]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[4]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[4]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[4]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[4]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[5]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[5]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[5]|datac  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[5]|datac  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[6]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[6]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaA ; Rise       ; A[6]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaA ; Rise       ; A[6]|datad  ;
++-------+--------------+----------------+------------------+-----------------+------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'state.armazenaB'                                                     ;
++-------+--------------+----------------+------------------+-----------------+------------+-------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock           ; Clock Edge ; Target      ;
++-------+--------------+----------------+------------------+-----------------+------------+-------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[0]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[0]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[0]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[0]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[10]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[10]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[10]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[10]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[11]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[11]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[11]|datac ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[11]|datac ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[12]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[12]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[12]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[12]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[13]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[13]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[13]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[13]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[14]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[14]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[14]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[14]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[15]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[15]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[15]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[15]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[16]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[16]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[16]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[16]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[17]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[17]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[17]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[17]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[18]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[18]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[18]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[18]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[19]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[19]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[19]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[19]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[1]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[1]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[1]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[1]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[20]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[20]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[20]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[20]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[21]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[21]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[21]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[21]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[22]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[22]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[22]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[22]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[23]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[23]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[23]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[23]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[24]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[24]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[24]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[24]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[25]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[25]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[25]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[25]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[26]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[26]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[26]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[26]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[27]       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[27]       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[27]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[27]|datad ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[2]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[2]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[2]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[2]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[3]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[3]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[3]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[3]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[4]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[4]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[4]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[4]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[5]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[5]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[5]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[5]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Fall       ; B[6]        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Fall       ; B[6]        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.armazenaB ; Rise       ; B[6]|datad  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.armazenaB ; Rise       ; B[6]|datad  ;
++-------+--------------+----------------+------------------+-----------------+------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; SW[*]     ; state.armazenaA ; 2.880 ; 2.880 ; Rise       ; state.armazenaA ;
+;  SW[0]    ; state.armazenaA ; 1.627 ; 1.627 ; Rise       ; state.armazenaA ;
+;  SW[1]    ; state.armazenaA ; 1.618 ; 1.618 ; Rise       ; state.armazenaA ;
+;  SW[2]    ; state.armazenaA ; 1.488 ; 1.488 ; Rise       ; state.armazenaA ;
+;  SW[3]    ; state.armazenaA ; 1.565 ; 1.565 ; Rise       ; state.armazenaA ;
+;  SW[4]    ; state.armazenaA ; 1.373 ; 1.373 ; Rise       ; state.armazenaA ;
+;  SW[5]    ; state.armazenaA ; 1.289 ; 1.289 ; Rise       ; state.armazenaA ;
+;  SW[6]    ; state.armazenaA ; 1.067 ; 1.067 ; Rise       ; state.armazenaA ;
+;  SW[7]    ; state.armazenaA ; 1.366 ; 1.366 ; Rise       ; state.armazenaA ;
+;  SW[8]    ; state.armazenaA ; 1.529 ; 1.529 ; Rise       ; state.armazenaA ;
+;  SW[9]    ; state.armazenaA ; 1.401 ; 1.401 ; Rise       ; state.armazenaA ;
+;  SW[10]   ; state.armazenaA ; 0.767 ; 0.767 ; Rise       ; state.armazenaA ;
+;  SW[11]   ; state.armazenaA ; 0.829 ; 0.829 ; Rise       ; state.armazenaA ;
+;  SW[12]   ; state.armazenaA ; 0.512 ; 0.512 ; Rise       ; state.armazenaA ;
+;  SW[13]   ; state.armazenaA ; 2.880 ; 2.880 ; Rise       ; state.armazenaA ;
+;  SW[14]   ; state.armazenaA ; 2.688 ; 2.688 ; Rise       ; state.armazenaA ;
+;  SW[15]   ; state.armazenaA ; 2.743 ; 2.743 ; Rise       ; state.armazenaA ;
+; SW[*]     ; state.armazenaB ; 3.097 ; 3.097 ; Fall       ; state.armazenaB ;
+;  SW[0]    ; state.armazenaB ; 1.632 ; 1.632 ; Fall       ; state.armazenaB ;
+;  SW[1]    ; state.armazenaB ; 1.623 ; 1.623 ; Fall       ; state.armazenaB ;
+;  SW[2]    ; state.armazenaB ; 1.493 ; 1.493 ; Fall       ; state.armazenaB ;
+;  SW[3]    ; state.armazenaB ; 1.570 ; 1.570 ; Fall       ; state.armazenaB ;
+;  SW[4]    ; state.armazenaB ; 1.543 ; 1.543 ; Fall       ; state.armazenaB ;
+;  SW[5]    ; state.armazenaB ; 1.468 ; 1.468 ; Fall       ; state.armazenaB ;
+;  SW[6]    ; state.armazenaB ; 1.230 ; 1.230 ; Fall       ; state.armazenaB ;
+;  SW[7]    ; state.armazenaB ; 1.545 ; 1.545 ; Fall       ; state.armazenaB ;
+;  SW[8]    ; state.armazenaB ; 1.331 ; 1.331 ; Fall       ; state.armazenaB ;
+;  SW[9]    ; state.armazenaB ; 1.198 ; 1.198 ; Fall       ; state.armazenaB ;
+;  SW[10]   ; state.armazenaB ; 0.564 ; 0.564 ; Fall       ; state.armazenaB ;
+;  SW[11]   ; state.armazenaB ; 0.627 ; 0.627 ; Fall       ; state.armazenaB ;
+;  SW[12]   ; state.armazenaB ; 0.728 ; 0.728 ; Fall       ; state.armazenaB ;
+;  SW[13]   ; state.armazenaB ; 3.097 ; 3.097 ; Fall       ; state.armazenaB ;
+;  SW[14]   ; state.armazenaB ; 2.904 ; 2.904 ; Fall       ; state.armazenaB ;
+;  SW[15]   ; state.armazenaB ; 2.960 ; 2.960 ; Fall       ; state.armazenaB ;
++-----------+-----------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Hold Times                                                                   ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; SW[*]     ; state.armazenaA ; -0.073 ; -0.073 ; Rise       ; state.armazenaA ;
+;  SW[0]    ; state.armazenaA ; -1.076 ; -1.076 ; Rise       ; state.armazenaA ;
+;  SW[1]    ; state.armazenaA ; -1.067 ; -1.067 ; Rise       ; state.armazenaA ;
+;  SW[2]    ; state.armazenaA ; -0.936 ; -0.936 ; Rise       ; state.armazenaA ;
+;  SW[3]    ; state.armazenaA ; -1.015 ; -1.015 ; Rise       ; state.armazenaA ;
+;  SW[4]    ; state.armazenaA ; -0.798 ; -0.798 ; Rise       ; state.armazenaA ;
+;  SW[5]    ; state.armazenaA ; -0.710 ; -0.710 ; Rise       ; state.armazenaA ;
+;  SW[6]    ; state.armazenaA ; -0.493 ; -0.493 ; Rise       ; state.armazenaA ;
+;  SW[7]    ; state.armazenaA ; -0.786 ; -0.786 ; Rise       ; state.armazenaA ;
+;  SW[8]    ; state.armazenaA ; -1.082 ; -1.082 ; Rise       ; state.armazenaA ;
+;  SW[9]    ; state.armazenaA ; -0.949 ; -0.949 ; Rise       ; state.armazenaA ;
+;  SW[10]   ; state.armazenaA ; -0.315 ; -0.315 ; Rise       ; state.armazenaA ;
+;  SW[11]   ; state.armazenaA ; -0.385 ; -0.385 ; Rise       ; state.armazenaA ;
+;  SW[12]   ; state.armazenaA ; -0.073 ; -0.073 ; Rise       ; state.armazenaA ;
+;  SW[13]   ; state.armazenaA ; -2.454 ; -2.454 ; Rise       ; state.armazenaA ;
+;  SW[14]   ; state.armazenaA ; -2.262 ; -2.262 ; Rise       ; state.armazenaA ;
+;  SW[15]   ; state.armazenaA ; -2.318 ; -2.318 ; Rise       ; state.armazenaA ;
+; SW[*]     ; state.armazenaB ; -0.026 ; -0.026 ; Fall       ; state.armazenaB ;
+;  SW[0]    ; state.armazenaB ; -1.141 ; -1.141 ; Fall       ; state.armazenaB ;
+;  SW[1]    ; state.armazenaB ; -1.134 ; -1.134 ; Fall       ; state.armazenaB ;
+;  SW[2]    ; state.armazenaB ; -1.008 ; -1.008 ; Fall       ; state.armazenaB ;
+;  SW[3]    ; state.armazenaB ; -1.082 ; -1.082 ; Fall       ; state.armazenaB ;
+;  SW[4]    ; state.armazenaB ; -1.046 ; -1.046 ; Fall       ; state.armazenaB ;
+;  SW[5]    ; state.armazenaB ; -0.962 ; -0.962 ; Fall       ; state.armazenaB ;
+;  SW[6]    ; state.armazenaB ; -0.742 ; -0.742 ; Fall       ; state.armazenaB ;
+;  SW[7]    ; state.armazenaB ; -1.039 ; -1.039 ; Fall       ; state.armazenaB ;
+;  SW[8]    ; state.armazenaB ; -0.791 ; -0.791 ; Fall       ; state.armazenaB ;
+;  SW[9]    ; state.armazenaB ; -0.659 ; -0.659 ; Fall       ; state.armazenaB ;
+;  SW[10]   ; state.armazenaB ; -0.026 ; -0.026 ; Fall       ; state.armazenaB ;
+;  SW[11]   ; state.armazenaB ; -0.090 ; -0.090 ; Fall       ; state.armazenaB ;
+;  SW[12]   ; state.armazenaB ; -0.272 ; -0.272 ; Fall       ; state.armazenaB ;
+;  SW[13]   ; state.armazenaB ; -2.657 ; -2.657 ; Fall       ; state.armazenaB ;
+;  SW[14]   ; state.armazenaB ; -2.468 ; -2.468 ; Fall       ; state.armazenaB ;
+;  SW[15]   ; state.armazenaB ; -2.524 ; -2.524 ; Fall       ; state.armazenaB ;
++-----------+-----------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; HEX4[*]   ; KEY[0]          ; 4.931 ; 4.931 ; Rise       ; KEY[0]          ;
+;  HEX4[0]  ; KEY[0]          ; 4.931 ; 4.931 ; Rise       ; KEY[0]          ;
+;  HEX4[1]  ; KEY[0]          ; 4.805 ; 4.805 ; Rise       ; KEY[0]          ;
+;  HEX4[2]  ; KEY[0]          ; 4.891 ; 4.891 ; Rise       ; KEY[0]          ;
+;  HEX4[3]  ; KEY[0]          ; 4.796 ; 4.796 ; Rise       ; KEY[0]          ;
+;  HEX4[4]  ; KEY[0]          ; 4.815 ; 4.815 ; Rise       ; KEY[0]          ;
+;  HEX4[5]  ; KEY[0]          ; 4.816 ; 4.816 ; Rise       ; KEY[0]          ;
+;  HEX4[6]  ; KEY[0]          ; 4.787 ; 4.787 ; Rise       ; KEY[0]          ;
+; HEX5[*]   ; KEY[0]          ; 4.900 ; 4.900 ; Rise       ; KEY[0]          ;
+;  HEX5[0]  ; KEY[0]          ; 4.888 ; 4.888 ; Rise       ; KEY[0]          ;
+;  HEX5[1]  ; KEY[0]          ; 4.900 ; 4.900 ; Rise       ; KEY[0]          ;
+;  HEX5[2]  ; KEY[0]          ; 4.861 ; 4.861 ; Rise       ; KEY[0]          ;
+;  HEX5[3]  ; KEY[0]          ; 4.602 ; 4.602 ; Rise       ; KEY[0]          ;
+;  HEX5[4]  ; KEY[0]          ; 4.694 ; 4.694 ; Rise       ; KEY[0]          ;
+;  HEX5[5]  ; KEY[0]          ; 4.692 ; 4.692 ; Rise       ; KEY[0]          ;
+;  HEX5[6]  ; KEY[0]          ; 4.550 ; 4.550 ; Rise       ; KEY[0]          ;
+; HEX6[*]   ; KEY[0]          ; 5.013 ; 5.013 ; Rise       ; KEY[0]          ;
+;  HEX6[0]  ; KEY[0]          ; 4.893 ; 4.893 ; Rise       ; KEY[0]          ;
+;  HEX6[1]  ; KEY[0]          ; 4.767 ; 4.767 ; Rise       ; KEY[0]          ;
+;  HEX6[2]  ; KEY[0]          ; 4.662 ; 4.662 ; Rise       ; KEY[0]          ;
+;  HEX6[3]  ; KEY[0]          ; 4.967 ; 4.967 ; Rise       ; KEY[0]          ;
+;  HEX6[4]  ; KEY[0]          ; 4.962 ; 4.962 ; Rise       ; KEY[0]          ;
+;  HEX6[5]  ; KEY[0]          ; 5.013 ; 5.013 ; Rise       ; KEY[0]          ;
+;  HEX6[6]  ; KEY[0]          ; 4.935 ; 4.935 ; Rise       ; KEY[0]          ;
+; HEX7[*]   ; KEY[0]          ; 4.999 ; 4.999 ; Rise       ; KEY[0]          ;
+;  HEX7[0]  ; KEY[0]          ; 4.998 ; 4.998 ; Rise       ; KEY[0]          ;
+;  HEX7[1]  ; KEY[0]          ; 4.999 ; 4.999 ; Rise       ; KEY[0]          ;
+;  HEX7[2]  ; KEY[0]          ; 4.973 ; 4.973 ; Rise       ; KEY[0]          ;
+;  HEX7[3]  ; KEY[0]          ; 4.941 ; 4.941 ; Rise       ; KEY[0]          ;
+;  HEX7[4]  ; KEY[0]          ; 4.976 ; 4.976 ; Rise       ; KEY[0]          ;
+;  HEX7[5]  ; KEY[0]          ; 4.860 ; 4.860 ; Rise       ; KEY[0]          ;
+;  HEX7[6]  ; KEY[0]          ; 4.958 ; 4.958 ; Rise       ; KEY[0]          ;
+; HEX0[*]   ; state.armazenaA ; 4.630 ; 4.630 ; Rise       ; state.armazenaA ;
+;  HEX0[0]  ; state.armazenaA ; 3.869 ; 3.869 ; Rise       ; state.armazenaA ;
+;  HEX0[1]  ; state.armazenaA ; 4.341 ; 4.341 ; Rise       ; state.armazenaA ;
+;  HEX0[2]  ; state.armazenaA ; 4.039 ; 4.039 ; Rise       ; state.armazenaA ;
+;  HEX0[3]  ; state.armazenaA ; 4.588 ; 4.588 ; Rise       ; state.armazenaA ;
+;  HEX0[4]  ; state.armazenaA ; 4.204 ; 4.204 ; Rise       ; state.armazenaA ;
+;  HEX0[5]  ; state.armazenaA ; 4.630 ; 4.630 ; Rise       ; state.armazenaA ;
+;  HEX0[6]  ; state.armazenaA ; 4.232 ; 4.232 ; Rise       ; state.armazenaA ;
+; HEX1[*]   ; state.armazenaA ; 4.951 ; 4.951 ; Rise       ; state.armazenaA ;
+;  HEX1[0]  ; state.armazenaA ; 4.770 ; 4.770 ; Rise       ; state.armazenaA ;
+;  HEX1[1]  ; state.armazenaA ; 4.549 ; 4.549 ; Rise       ; state.armazenaA ;
+;  HEX1[2]  ; state.armazenaA ; 4.718 ; 4.718 ; Rise       ; state.armazenaA ;
+;  HEX1[3]  ; state.armazenaA ; 4.766 ; 4.766 ; Rise       ; state.armazenaA ;
+;  HEX1[4]  ; state.armazenaA ; 4.951 ; 4.951 ; Rise       ; state.armazenaA ;
+;  HEX1[5]  ; state.armazenaA ; 4.822 ; 4.822 ; Rise       ; state.armazenaA ;
+;  HEX1[6]  ; state.armazenaA ; 4.347 ; 4.347 ; Rise       ; state.armazenaA ;
+; HEX2[*]   ; state.armazenaA ; 5.555 ; 5.555 ; Rise       ; state.armazenaA ;
+;  HEX2[0]  ; state.armazenaA ; 5.555 ; 5.555 ; Rise       ; state.armazenaA ;
+;  HEX2[1]  ; state.armazenaA ; 4.750 ; 4.750 ; Rise       ; state.armazenaA ;
+;  HEX2[2]  ; state.armazenaA ; 4.515 ; 4.515 ; Rise       ; state.armazenaA ;
+;  HEX2[3]  ; state.armazenaA ; 4.891 ; 4.891 ; Rise       ; state.armazenaA ;
+;  HEX2[4]  ; state.armazenaA ; 4.895 ; 4.895 ; Rise       ; state.armazenaA ;
+;  HEX2[5]  ; state.armazenaA ; 4.822 ; 4.822 ; Rise       ; state.armazenaA ;
+;  HEX2[6]  ; state.armazenaA ; 4.465 ; 4.465 ; Rise       ; state.armazenaA ;
+; HEX3[*]   ; state.armazenaA ; 4.740 ; 4.740 ; Rise       ; state.armazenaA ;
+;  HEX3[0]  ; state.armazenaA ; 4.463 ; 4.463 ; Rise       ; state.armazenaA ;
+;  HEX3[1]  ; state.armazenaA ; 4.703 ; 4.703 ; Rise       ; state.armazenaA ;
+;  HEX3[2]  ; state.armazenaA ; 4.419 ; 4.419 ; Rise       ; state.armazenaA ;
+;  HEX3[3]  ; state.armazenaA ; 4.740 ; 4.740 ; Rise       ; state.armazenaA ;
+;  HEX3[4]  ; state.armazenaA ; 4.374 ; 4.374 ; Rise       ; state.armazenaA ;
+;  HEX3[5]  ; state.armazenaA ; 4.561 ; 4.561 ; Rise       ; state.armazenaA ;
+;  HEX3[6]  ; state.armazenaA ; 4.356 ; 4.356 ; Rise       ; state.armazenaA ;
+; HEX0[*]   ; state.armazenaA ; 3.588 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[0]  ; state.armazenaA ; 3.075 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[1]  ; state.armazenaA ; 3.588 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[2]  ; state.armazenaA ; 2.983 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[3]  ; state.armazenaA ; 3.529 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[4]  ; state.armazenaA ; 3.129 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[5]  ; state.armazenaA ; 3.506 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[6]  ; state.armazenaA ; 3.112 ;       ; Fall       ; state.armazenaA ;
+; HEX1[*]   ; state.armazenaA ; 4.398 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[0]  ; state.armazenaA ; 4.228 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[1]  ; state.armazenaA ; 3.759 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[2]  ; state.armazenaA ; 4.164 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[3]  ; state.armazenaA ; 3.922 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[4]  ; state.armazenaA ; 4.398 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[5]  ; state.armazenaA ; 4.124 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[6]  ; state.armazenaA ; 3.784 ;       ; Fall       ; state.armazenaA ;
+; HEX2[*]   ; state.armazenaA ; 4.556 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[0]  ; state.armazenaA ; 4.556 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[1]  ; state.armazenaA ; 3.879 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[2]  ; state.armazenaA ; 3.642 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[3]  ; state.armazenaA ; 4.328 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[4]  ; state.armazenaA ; 4.347 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[5]  ; state.armazenaA ; 4.367 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[6]  ; state.armazenaA ; 4.012 ;       ; Fall       ; state.armazenaA ;
+; HEX3[*]   ; state.armazenaA ; 4.052 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[0]  ; state.armazenaA ; 3.546 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[1]  ; state.armazenaA ; 3.729 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[2]  ; state.armazenaA ; 3.573 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[3]  ; state.armazenaA ; 4.052 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[4]  ; state.armazenaA ; 3.517 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[5]  ; state.armazenaA ; 3.674 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[6]  ; state.armazenaA ; 3.421 ;       ; Fall       ; state.armazenaA ;
+; HEX0[*]   ; state.armazenaB ; 3.545 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[0]  ; state.armazenaB ; 3.230 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[1]  ; state.armazenaB ; 3.545 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[2]  ; state.armazenaB ; 2.845 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[3]  ; state.armazenaB ; 3.542 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[4]  ; state.armazenaB ; 3.143 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[5]  ; state.armazenaB ; 3.522 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[6]  ; state.armazenaB ; 2.952 ;       ; Rise       ; state.armazenaB ;
+; HEX1[*]   ; state.armazenaB ; 4.338 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[0]  ; state.armazenaB ; 4.151 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[1]  ; state.armazenaB ; 3.913 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[2]  ; state.armazenaB ; 4.087 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[3]  ; state.armazenaB ; 4.142 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[4]  ; state.armazenaB ; 4.321 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[5]  ; state.armazenaB ; 4.338 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[6]  ; state.armazenaB ; 3.718 ;       ; Rise       ; state.armazenaB ;
+; HEX2[*]   ; state.armazenaB ; 4.710 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[0]  ; state.armazenaB ; 4.710 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[1]  ; state.armazenaB ; 4.032 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[2]  ; state.armazenaB ; 3.796 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[3]  ; state.armazenaB ; 4.424 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[4]  ; state.armazenaB ; 4.495 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[5]  ; state.armazenaB ; 4.295 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[6]  ; state.armazenaB ; 3.946 ;       ; Rise       ; state.armazenaB ;
+; HEX3[*]   ; state.armazenaB ; 4.276 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[0]  ; state.armazenaB ; 4.012 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[1]  ; state.armazenaB ; 3.829 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[2]  ; state.armazenaB ; 3.850 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[3]  ; state.armazenaB ; 4.276 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[4]  ; state.armazenaB ; 3.843 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[5]  ; state.armazenaB ; 3.951 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[6]  ; state.armazenaB ; 3.885 ;       ; Rise       ; state.armazenaB ;
+; HEX0[*]   ; state.armazenaB ;       ; 3.545 ; Fall       ; state.armazenaB ;
+;  HEX0[0]  ; state.armazenaB ;       ; 3.230 ; Fall       ; state.armazenaB ;
+;  HEX0[1]  ; state.armazenaB ;       ; 3.545 ; Fall       ; state.armazenaB ;
+;  HEX0[2]  ; state.armazenaB ;       ; 2.845 ; Fall       ; state.armazenaB ;
+;  HEX0[3]  ; state.armazenaB ;       ; 3.542 ; Fall       ; state.armazenaB ;
+;  HEX0[4]  ; state.armazenaB ;       ; 3.143 ; Fall       ; state.armazenaB ;
+;  HEX0[5]  ; state.armazenaB ;       ; 3.522 ; Fall       ; state.armazenaB ;
+;  HEX0[6]  ; state.armazenaB ;       ; 2.952 ; Fall       ; state.armazenaB ;
+; HEX1[*]   ; state.armazenaB ;       ; 4.338 ; Fall       ; state.armazenaB ;
+;  HEX1[0]  ; state.armazenaB ;       ; 4.151 ; Fall       ; state.armazenaB ;
+;  HEX1[1]  ; state.armazenaB ;       ; 3.913 ; Fall       ; state.armazenaB ;
+;  HEX1[2]  ; state.armazenaB ;       ; 4.087 ; Fall       ; state.armazenaB ;
+;  HEX1[3]  ; state.armazenaB ;       ; 4.142 ; Fall       ; state.armazenaB ;
+;  HEX1[4]  ; state.armazenaB ;       ; 4.321 ; Fall       ; state.armazenaB ;
+;  HEX1[5]  ; state.armazenaB ;       ; 4.338 ; Fall       ; state.armazenaB ;
+;  HEX1[6]  ; state.armazenaB ;       ; 3.718 ; Fall       ; state.armazenaB ;
+; HEX2[*]   ; state.armazenaB ;       ; 4.710 ; Fall       ; state.armazenaB ;
+;  HEX2[0]  ; state.armazenaB ;       ; 4.710 ; Fall       ; state.armazenaB ;
+;  HEX2[1]  ; state.armazenaB ;       ; 4.032 ; Fall       ; state.armazenaB ;
+;  HEX2[2]  ; state.armazenaB ;       ; 3.796 ; Fall       ; state.armazenaB ;
+;  HEX2[3]  ; state.armazenaB ;       ; 4.424 ; Fall       ; state.armazenaB ;
+;  HEX2[4]  ; state.armazenaB ;       ; 4.495 ; Fall       ; state.armazenaB ;
+;  HEX2[5]  ; state.armazenaB ;       ; 4.295 ; Fall       ; state.armazenaB ;
+;  HEX2[6]  ; state.armazenaB ;       ; 3.946 ; Fall       ; state.armazenaB ;
+; HEX3[*]   ; state.armazenaB ;       ; 4.276 ; Fall       ; state.armazenaB ;
+;  HEX3[0]  ; state.armazenaB ;       ; 4.012 ; Fall       ; state.armazenaB ;
+;  HEX3[1]  ; state.armazenaB ;       ; 3.829 ; Fall       ; state.armazenaB ;
+;  HEX3[2]  ; state.armazenaB ;       ; 3.850 ; Fall       ; state.armazenaB ;
+;  HEX3[3]  ; state.armazenaB ;       ; 4.276 ; Fall       ; state.armazenaB ;
+;  HEX3[4]  ; state.armazenaB ;       ; 3.843 ; Fall       ; state.armazenaB ;
+;  HEX3[5]  ; state.armazenaB ;       ; 3.951 ; Fall       ; state.armazenaB ;
+;  HEX3[6]  ; state.armazenaB ;       ; 3.885 ; Fall       ; state.armazenaB ;
+; HEX4[*]   ; state.armazenaB ; 3.370 ; 3.370 ; Fall       ; state.armazenaB ;
+;  HEX4[0]  ; state.armazenaB ; 3.297 ; 3.297 ; Fall       ; state.armazenaB ;
+;  HEX4[1]  ; state.armazenaB ; 3.301 ; 3.301 ; Fall       ; state.armazenaB ;
+;  HEX4[2]  ; state.armazenaB ; 3.155 ; 3.155 ; Fall       ; state.armazenaB ;
+;  HEX4[3]  ; state.armazenaB ; 3.111 ; 3.111 ; Fall       ; state.armazenaB ;
+;  HEX4[4]  ; state.armazenaB ; 3.084 ; 3.084 ; Fall       ; state.armazenaB ;
+;  HEX4[5]  ; state.armazenaB ; 3.083 ; 3.083 ; Fall       ; state.armazenaB ;
+;  HEX4[6]  ; state.armazenaB ; 3.370 ; 3.370 ; Fall       ; state.armazenaB ;
+; HEX5[*]   ; state.armazenaB ; 3.339 ; 3.339 ; Fall       ; state.armazenaB ;
+;  HEX5[0]  ; state.armazenaB ; 3.317 ; 3.317 ; Fall       ; state.armazenaB ;
+;  HEX5[1]  ; state.armazenaB ; 3.269 ; 3.269 ; Fall       ; state.armazenaB ;
+;  HEX5[2]  ; state.armazenaB ; 3.282 ; 3.282 ; Fall       ; state.armazenaB ;
+;  HEX5[3]  ; state.armazenaB ; 3.232 ; 3.232 ; Fall       ; state.armazenaB ;
+;  HEX5[4]  ; state.armazenaB ; 3.280 ; 3.280 ; Fall       ; state.armazenaB ;
+;  HEX5[5]  ; state.armazenaB ; 3.140 ; 3.140 ; Fall       ; state.armazenaB ;
+;  HEX5[6]  ; state.armazenaB ; 3.339 ; 3.339 ; Fall       ; state.armazenaB ;
+; HEX6[*]   ; state.armazenaB ; 3.618 ; 3.618 ; Fall       ; state.armazenaB ;
+;  HEX6[0]  ; state.armazenaB ; 3.315 ; 3.315 ; Fall       ; state.armazenaB ;
+;  HEX6[1]  ; state.armazenaB ; 3.308 ; 3.308 ; Fall       ; state.armazenaB ;
+;  HEX6[2]  ; state.armazenaB ; 3.457 ; 3.457 ; Fall       ; state.armazenaB ;
+;  HEX6[3]  ; state.armazenaB ; 3.561 ; 3.561 ; Fall       ; state.armazenaB ;
+;  HEX6[4]  ; state.armazenaB ; 3.546 ; 3.546 ; Fall       ; state.armazenaB ;
+;  HEX6[5]  ; state.armazenaB ; 3.574 ; 3.574 ; Fall       ; state.armazenaB ;
+;  HEX6[6]  ; state.armazenaB ; 3.618 ; 3.618 ; Fall       ; state.armazenaB ;
+; HEX7[*]   ; state.armazenaB ; 3.670 ; 3.670 ; Fall       ; state.armazenaB ;
+;  HEX7[0]  ; state.armazenaB ; 3.453 ; 3.453 ; Fall       ; state.armazenaB ;
+;  HEX7[1]  ; state.armazenaB ; 3.463 ; 3.463 ; Fall       ; state.armazenaB ;
+;  HEX7[2]  ; state.armazenaB ; 3.374 ; 3.374 ; Fall       ; state.armazenaB ;
+;  HEX7[3]  ; state.armazenaB ; 3.641 ; 3.641 ; Fall       ; state.armazenaB ;
+;  HEX7[4]  ; state.armazenaB ; 3.429 ; 3.429 ; Fall       ; state.armazenaB ;
+;  HEX7[5]  ; state.armazenaB ; 3.670 ; 3.670 ; Fall       ; state.armazenaB ;
+;  HEX7[6]  ; state.armazenaB ; 3.613 ; 3.613 ; Fall       ; state.armazenaB ;
++-----------+-----------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                              ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; HEX4[*]   ; KEY[0]          ; 4.787 ; 4.787 ; Rise       ; KEY[0]          ;
+;  HEX4[0]  ; KEY[0]          ; 4.931 ; 4.931 ; Rise       ; KEY[0]          ;
+;  HEX4[1]  ; KEY[0]          ; 4.805 ; 4.805 ; Rise       ; KEY[0]          ;
+;  HEX4[2]  ; KEY[0]          ; 4.891 ; 4.891 ; Rise       ; KEY[0]          ;
+;  HEX4[3]  ; KEY[0]          ; 4.796 ; 4.796 ; Rise       ; KEY[0]          ;
+;  HEX4[4]  ; KEY[0]          ; 4.815 ; 4.815 ; Rise       ; KEY[0]          ;
+;  HEX4[5]  ; KEY[0]          ; 4.816 ; 4.816 ; Rise       ; KEY[0]          ;
+;  HEX4[6]  ; KEY[0]          ; 4.787 ; 4.787 ; Rise       ; KEY[0]          ;
+; HEX5[*]   ; KEY[0]          ; 4.550 ; 4.550 ; Rise       ; KEY[0]          ;
+;  HEX5[0]  ; KEY[0]          ; 4.888 ; 4.888 ; Rise       ; KEY[0]          ;
+;  HEX5[1]  ; KEY[0]          ; 4.900 ; 4.900 ; Rise       ; KEY[0]          ;
+;  HEX5[2]  ; KEY[0]          ; 4.861 ; 4.861 ; Rise       ; KEY[0]          ;
+;  HEX5[3]  ; KEY[0]          ; 4.602 ; 4.602 ; Rise       ; KEY[0]          ;
+;  HEX5[4]  ; KEY[0]          ; 4.694 ; 4.694 ; Rise       ; KEY[0]          ;
+;  HEX5[5]  ; KEY[0]          ; 4.692 ; 4.692 ; Rise       ; KEY[0]          ;
+;  HEX5[6]  ; KEY[0]          ; 4.550 ; 4.550 ; Rise       ; KEY[0]          ;
+; HEX6[*]   ; KEY[0]          ; 4.662 ; 4.662 ; Rise       ; KEY[0]          ;
+;  HEX6[0]  ; KEY[0]          ; 4.893 ; 4.893 ; Rise       ; KEY[0]          ;
+;  HEX6[1]  ; KEY[0]          ; 4.767 ; 4.767 ; Rise       ; KEY[0]          ;
+;  HEX6[2]  ; KEY[0]          ; 4.662 ; 4.662 ; Rise       ; KEY[0]          ;
+;  HEX6[3]  ; KEY[0]          ; 4.967 ; 4.967 ; Rise       ; KEY[0]          ;
+;  HEX6[4]  ; KEY[0]          ; 4.962 ; 4.962 ; Rise       ; KEY[0]          ;
+;  HEX6[5]  ; KEY[0]          ; 5.013 ; 5.013 ; Rise       ; KEY[0]          ;
+;  HEX6[6]  ; KEY[0]          ; 4.935 ; 4.935 ; Rise       ; KEY[0]          ;
+; HEX7[*]   ; KEY[0]          ; 4.860 ; 4.860 ; Rise       ; KEY[0]          ;
+;  HEX7[0]  ; KEY[0]          ; 4.998 ; 4.998 ; Rise       ; KEY[0]          ;
+;  HEX7[1]  ; KEY[0]          ; 4.999 ; 4.999 ; Rise       ; KEY[0]          ;
+;  HEX7[2]  ; KEY[0]          ; 4.973 ; 4.973 ; Rise       ; KEY[0]          ;
+;  HEX7[3]  ; KEY[0]          ; 4.941 ; 4.941 ; Rise       ; KEY[0]          ;
+;  HEX7[4]  ; KEY[0]          ; 4.976 ; 4.976 ; Rise       ; KEY[0]          ;
+;  HEX7[5]  ; KEY[0]          ; 4.860 ; 4.860 ; Rise       ; KEY[0]          ;
+;  HEX7[6]  ; KEY[0]          ; 4.958 ; 4.958 ; Rise       ; KEY[0]          ;
+; HEX0[*]   ; state.armazenaA ; 3.869 ; 2.983 ; Rise       ; state.armazenaA ;
+;  HEX0[0]  ; state.armazenaA ; 3.869 ; 3.075 ; Rise       ; state.armazenaA ;
+;  HEX0[1]  ; state.armazenaA ; 4.341 ; 3.588 ; Rise       ; state.armazenaA ;
+;  HEX0[2]  ; state.armazenaA ; 4.039 ; 2.983 ; Rise       ; state.armazenaA ;
+;  HEX0[3]  ; state.armazenaA ; 4.588 ; 3.529 ; Rise       ; state.armazenaA ;
+;  HEX0[4]  ; state.armazenaA ; 4.204 ; 3.129 ; Rise       ; state.armazenaA ;
+;  HEX0[5]  ; state.armazenaA ; 4.630 ; 3.506 ; Rise       ; state.armazenaA ;
+;  HEX0[6]  ; state.armazenaA ; 4.232 ; 3.112 ; Rise       ; state.armazenaA ;
+; HEX1[*]   ; state.armazenaA ; 4.347 ; 3.759 ; Rise       ; state.armazenaA ;
+;  HEX1[0]  ; state.armazenaA ; 4.770 ; 4.228 ; Rise       ; state.armazenaA ;
+;  HEX1[1]  ; state.armazenaA ; 4.549 ; 3.759 ; Rise       ; state.armazenaA ;
+;  HEX1[2]  ; state.armazenaA ; 4.718 ; 4.164 ; Rise       ; state.armazenaA ;
+;  HEX1[3]  ; state.armazenaA ; 4.766 ; 3.922 ; Rise       ; state.armazenaA ;
+;  HEX1[4]  ; state.armazenaA ; 4.951 ; 4.398 ; Rise       ; state.armazenaA ;
+;  HEX1[5]  ; state.armazenaA ; 4.822 ; 4.124 ; Rise       ; state.armazenaA ;
+;  HEX1[6]  ; state.armazenaA ; 4.347 ; 3.784 ; Rise       ; state.armazenaA ;
+; HEX2[*]   ; state.armazenaA ; 4.465 ; 3.642 ; Rise       ; state.armazenaA ;
+;  HEX2[0]  ; state.armazenaA ; 5.555 ; 4.556 ; Rise       ; state.armazenaA ;
+;  HEX2[1]  ; state.armazenaA ; 4.750 ; 3.879 ; Rise       ; state.armazenaA ;
+;  HEX2[2]  ; state.armazenaA ; 4.515 ; 3.642 ; Rise       ; state.armazenaA ;
+;  HEX2[3]  ; state.armazenaA ; 4.891 ; 4.328 ; Rise       ; state.armazenaA ;
+;  HEX2[4]  ; state.armazenaA ; 4.895 ; 4.347 ; Rise       ; state.armazenaA ;
+;  HEX2[5]  ; state.armazenaA ; 4.822 ; 4.367 ; Rise       ; state.armazenaA ;
+;  HEX2[6]  ; state.armazenaA ; 4.465 ; 4.012 ; Rise       ; state.armazenaA ;
+; HEX3[*]   ; state.armazenaA ; 4.356 ; 3.421 ; Rise       ; state.armazenaA ;
+;  HEX3[0]  ; state.armazenaA ; 4.463 ; 3.546 ; Rise       ; state.armazenaA ;
+;  HEX3[1]  ; state.armazenaA ; 4.703 ; 3.729 ; Rise       ; state.armazenaA ;
+;  HEX3[2]  ; state.armazenaA ; 4.419 ; 3.573 ; Rise       ; state.armazenaA ;
+;  HEX3[3]  ; state.armazenaA ; 4.740 ; 4.052 ; Rise       ; state.armazenaA ;
+;  HEX3[4]  ; state.armazenaA ; 4.374 ; 3.517 ; Rise       ; state.armazenaA ;
+;  HEX3[5]  ; state.armazenaA ; 4.561 ; 3.674 ; Rise       ; state.armazenaA ;
+;  HEX3[6]  ; state.armazenaA ; 4.356 ; 3.421 ; Rise       ; state.armazenaA ;
+; HEX0[*]   ; state.armazenaA ; 2.983 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[0]  ; state.armazenaA ; 3.075 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[1]  ; state.armazenaA ; 3.588 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[2]  ; state.armazenaA ; 2.983 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[3]  ; state.armazenaA ; 3.529 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[4]  ; state.armazenaA ; 3.129 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[5]  ; state.armazenaA ; 3.506 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[6]  ; state.armazenaA ; 3.112 ;       ; Fall       ; state.armazenaA ;
+; HEX1[*]   ; state.armazenaA ; 3.759 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[0]  ; state.armazenaA ; 4.228 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[1]  ; state.armazenaA ; 3.759 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[2]  ; state.armazenaA ; 4.164 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[3]  ; state.armazenaA ; 3.922 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[4]  ; state.armazenaA ; 4.398 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[5]  ; state.armazenaA ; 4.124 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[6]  ; state.armazenaA ; 3.784 ;       ; Fall       ; state.armazenaA ;
+; HEX2[*]   ; state.armazenaA ; 3.642 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[0]  ; state.armazenaA ; 4.556 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[1]  ; state.armazenaA ; 3.879 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[2]  ; state.armazenaA ; 3.642 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[3]  ; state.armazenaA ; 4.328 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[4]  ; state.armazenaA ; 4.347 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[5]  ; state.armazenaA ; 4.367 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[6]  ; state.armazenaA ; 4.012 ;       ; Fall       ; state.armazenaA ;
+; HEX3[*]   ; state.armazenaA ; 3.421 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[0]  ; state.armazenaA ; 3.546 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[1]  ; state.armazenaA ; 3.729 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[2]  ; state.armazenaA ; 3.573 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[3]  ; state.armazenaA ; 4.052 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[4]  ; state.armazenaA ; 3.517 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[5]  ; state.armazenaA ; 3.674 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[6]  ; state.armazenaA ; 3.421 ;       ; Fall       ; state.armazenaA ;
+; HEX0[*]   ; state.armazenaB ; 2.845 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[0]  ; state.armazenaB ; 3.230 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[1]  ; state.armazenaB ; 3.545 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[2]  ; state.armazenaB ; 2.845 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[3]  ; state.armazenaB ; 3.542 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[4]  ; state.armazenaB ; 3.143 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[5]  ; state.armazenaB ; 3.522 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[6]  ; state.armazenaB ; 2.952 ;       ; Rise       ; state.armazenaB ;
+; HEX1[*]   ; state.armazenaB ; 3.718 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[0]  ; state.armazenaB ; 4.151 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[1]  ; state.armazenaB ; 3.913 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[2]  ; state.armazenaB ; 4.087 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[3]  ; state.armazenaB ; 4.142 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[4]  ; state.armazenaB ; 4.321 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[5]  ; state.armazenaB ; 4.338 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[6]  ; state.armazenaB ; 3.718 ;       ; Rise       ; state.armazenaB ;
+; HEX2[*]   ; state.armazenaB ; 3.796 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[0]  ; state.armazenaB ; 4.710 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[1]  ; state.armazenaB ; 4.032 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[2]  ; state.armazenaB ; 3.796 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[3]  ; state.armazenaB ; 4.424 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[4]  ; state.armazenaB ; 4.495 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[5]  ; state.armazenaB ; 4.295 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[6]  ; state.armazenaB ; 3.946 ;       ; Rise       ; state.armazenaB ;
+; HEX3[*]   ; state.armazenaB ; 3.829 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[0]  ; state.armazenaB ; 4.012 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[1]  ; state.armazenaB ; 3.829 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[2]  ; state.armazenaB ; 3.850 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[3]  ; state.armazenaB ; 4.276 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[4]  ; state.armazenaB ; 3.843 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[5]  ; state.armazenaB ; 3.951 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[6]  ; state.armazenaB ; 3.885 ;       ; Rise       ; state.armazenaB ;
+; HEX0[*]   ; state.armazenaB ;       ; 2.845 ; Fall       ; state.armazenaB ;
+;  HEX0[0]  ; state.armazenaB ;       ; 3.230 ; Fall       ; state.armazenaB ;
+;  HEX0[1]  ; state.armazenaB ;       ; 3.545 ; Fall       ; state.armazenaB ;
+;  HEX0[2]  ; state.armazenaB ;       ; 2.845 ; Fall       ; state.armazenaB ;
+;  HEX0[3]  ; state.armazenaB ;       ; 3.542 ; Fall       ; state.armazenaB ;
+;  HEX0[4]  ; state.armazenaB ;       ; 3.143 ; Fall       ; state.armazenaB ;
+;  HEX0[5]  ; state.armazenaB ;       ; 3.522 ; Fall       ; state.armazenaB ;
+;  HEX0[6]  ; state.armazenaB ;       ; 2.952 ; Fall       ; state.armazenaB ;
+; HEX1[*]   ; state.armazenaB ;       ; 3.718 ; Fall       ; state.armazenaB ;
+;  HEX1[0]  ; state.armazenaB ;       ; 4.151 ; Fall       ; state.armazenaB ;
+;  HEX1[1]  ; state.armazenaB ;       ; 3.913 ; Fall       ; state.armazenaB ;
+;  HEX1[2]  ; state.armazenaB ;       ; 4.087 ; Fall       ; state.armazenaB ;
+;  HEX1[3]  ; state.armazenaB ;       ; 4.142 ; Fall       ; state.armazenaB ;
+;  HEX1[4]  ; state.armazenaB ;       ; 4.321 ; Fall       ; state.armazenaB ;
+;  HEX1[5]  ; state.armazenaB ;       ; 4.338 ; Fall       ; state.armazenaB ;
+;  HEX1[6]  ; state.armazenaB ;       ; 3.718 ; Fall       ; state.armazenaB ;
+; HEX2[*]   ; state.armazenaB ;       ; 3.796 ; Fall       ; state.armazenaB ;
+;  HEX2[0]  ; state.armazenaB ;       ; 4.710 ; Fall       ; state.armazenaB ;
+;  HEX2[1]  ; state.armazenaB ;       ; 4.032 ; Fall       ; state.armazenaB ;
+;  HEX2[2]  ; state.armazenaB ;       ; 3.796 ; Fall       ; state.armazenaB ;
+;  HEX2[3]  ; state.armazenaB ;       ; 4.424 ; Fall       ; state.armazenaB ;
+;  HEX2[4]  ; state.armazenaB ;       ; 4.495 ; Fall       ; state.armazenaB ;
+;  HEX2[5]  ; state.armazenaB ;       ; 4.295 ; Fall       ; state.armazenaB ;
+;  HEX2[6]  ; state.armazenaB ;       ; 3.946 ; Fall       ; state.armazenaB ;
+; HEX3[*]   ; state.armazenaB ;       ; 3.829 ; Fall       ; state.armazenaB ;
+;  HEX3[0]  ; state.armazenaB ;       ; 4.012 ; Fall       ; state.armazenaB ;
+;  HEX3[1]  ; state.armazenaB ;       ; 3.829 ; Fall       ; state.armazenaB ;
+;  HEX3[2]  ; state.armazenaB ;       ; 3.850 ; Fall       ; state.armazenaB ;
+;  HEX3[3]  ; state.armazenaB ;       ; 4.276 ; Fall       ; state.armazenaB ;
+;  HEX3[4]  ; state.armazenaB ;       ; 3.843 ; Fall       ; state.armazenaB ;
+;  HEX3[5]  ; state.armazenaB ;       ; 3.951 ; Fall       ; state.armazenaB ;
+;  HEX3[6]  ; state.armazenaB ;       ; 3.885 ; Fall       ; state.armazenaB ;
+; HEX4[*]   ; state.armazenaB ; 3.083 ; 3.083 ; Fall       ; state.armazenaB ;
+;  HEX4[0]  ; state.armazenaB ; 3.297 ; 3.297 ; Fall       ; state.armazenaB ;
+;  HEX4[1]  ; state.armazenaB ; 3.301 ; 3.301 ; Fall       ; state.armazenaB ;
+;  HEX4[2]  ; state.armazenaB ; 3.155 ; 3.155 ; Fall       ; state.armazenaB ;
+;  HEX4[3]  ; state.armazenaB ; 3.111 ; 3.111 ; Fall       ; state.armazenaB ;
+;  HEX4[4]  ; state.armazenaB ; 3.084 ; 3.084 ; Fall       ; state.armazenaB ;
+;  HEX4[5]  ; state.armazenaB ; 3.083 ; 3.083 ; Fall       ; state.armazenaB ;
+;  HEX4[6]  ; state.armazenaB ; 3.370 ; 3.370 ; Fall       ; state.armazenaB ;
+; HEX5[*]   ; state.armazenaB ; 3.140 ; 3.140 ; Fall       ; state.armazenaB ;
+;  HEX5[0]  ; state.armazenaB ; 3.317 ; 3.317 ; Fall       ; state.armazenaB ;
+;  HEX5[1]  ; state.armazenaB ; 3.269 ; 3.269 ; Fall       ; state.armazenaB ;
+;  HEX5[2]  ; state.armazenaB ; 3.282 ; 3.282 ; Fall       ; state.armazenaB ;
+;  HEX5[3]  ; state.armazenaB ; 3.232 ; 3.232 ; Fall       ; state.armazenaB ;
+;  HEX5[4]  ; state.armazenaB ; 3.280 ; 3.280 ; Fall       ; state.armazenaB ;
+;  HEX5[5]  ; state.armazenaB ; 3.140 ; 3.140 ; Fall       ; state.armazenaB ;
+;  HEX5[6]  ; state.armazenaB ; 3.339 ; 3.339 ; Fall       ; state.armazenaB ;
+; HEX6[*]   ; state.armazenaB ; 3.308 ; 3.308 ; Fall       ; state.armazenaB ;
+;  HEX6[0]  ; state.armazenaB ; 3.315 ; 3.315 ; Fall       ; state.armazenaB ;
+;  HEX6[1]  ; state.armazenaB ; 3.308 ; 3.308 ; Fall       ; state.armazenaB ;
+;  HEX6[2]  ; state.armazenaB ; 3.457 ; 3.457 ; Fall       ; state.armazenaB ;
+;  HEX6[3]  ; state.armazenaB ; 3.561 ; 3.561 ; Fall       ; state.armazenaB ;
+;  HEX6[4]  ; state.armazenaB ; 3.546 ; 3.546 ; Fall       ; state.armazenaB ;
+;  HEX6[5]  ; state.armazenaB ; 3.574 ; 3.574 ; Fall       ; state.armazenaB ;
+;  HEX6[6]  ; state.armazenaB ; 3.618 ; 3.618 ; Fall       ; state.armazenaB ;
+; HEX7[*]   ; state.armazenaB ; 3.374 ; 3.374 ; Fall       ; state.armazenaB ;
+;  HEX7[0]  ; state.armazenaB ; 3.453 ; 3.453 ; Fall       ; state.armazenaB ;
+;  HEX7[1]  ; state.armazenaB ; 3.463 ; 3.463 ; Fall       ; state.armazenaB ;
+;  HEX7[2]  ; state.armazenaB ; 3.374 ; 3.374 ; Fall       ; state.armazenaB ;
+;  HEX7[3]  ; state.armazenaB ; 3.641 ; 3.641 ; Fall       ; state.armazenaB ;
+;  HEX7[4]  ; state.armazenaB ; 3.429 ; 3.429 ; Fall       ; state.armazenaB ;
+;  HEX7[5]  ; state.armazenaB ; 3.670 ; 3.670 ; Fall       ; state.armazenaB ;
+;  HEX7[6]  ; state.armazenaB ; 3.613 ; 3.613 ; Fall       ; state.armazenaB ;
++-----------+-----------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+-------+--------+----------+---------+---------------------+
+; Clock            ; Setup ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-------+--------+----------+---------+---------------------+
+; Worst-case Slack ; 0.247 ; -3.815 ; N/A      ; N/A     ; -1.222              ;
+;  KEY[0]          ; 0.247 ; -3.815 ; N/A      ; N/A     ; -1.222              ;
+;  state.armazenaA ; N/A   ; N/A    ; N/A      ; N/A     ; 0.500               ;
+;  state.armazenaB ; N/A   ; N/A    ; N/A      ; N/A     ; 0.500               ;
+; Design-wide TNS  ; 0.0   ; -7.456 ; 0.0      ; 0.0     ; -5.222              ;
+;  KEY[0]          ; 0.000 ; -7.456 ; N/A      ; N/A     ; -5.222              ;
+;  state.armazenaA ; N/A   ; N/A    ; N/A      ; N/A     ; 0.000               ;
+;  state.armazenaB ; N/A   ; N/A    ; N/A      ; N/A     ; 0.000               ;
++------------------+-------+--------+----------+---------+---------------------+
+
+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; SW[*]     ; state.armazenaA ; 5.428 ; 5.428 ; Rise       ; state.armazenaA ;
+;  SW[0]    ; state.armazenaA ; 3.865 ; 3.865 ; Rise       ; state.armazenaA ;
+;  SW[1]    ; state.armazenaA ; 3.826 ; 3.826 ; Rise       ; state.armazenaA ;
+;  SW[2]    ; state.armazenaA ; 3.537 ; 3.537 ; Rise       ; state.armazenaA ;
+;  SW[3]    ; state.armazenaA ; 3.576 ; 3.576 ; Rise       ; state.armazenaA ;
+;  SW[4]    ; state.armazenaA ; 3.292 ; 3.292 ; Rise       ; state.armazenaA ;
+;  SW[5]    ; state.armazenaA ; 3.161 ; 3.161 ; Rise       ; state.armazenaA ;
+;  SW[6]    ; state.armazenaA ; 2.667 ; 2.667 ; Rise       ; state.armazenaA ;
+;  SW[7]    ; state.armazenaA ; 3.151 ; 3.151 ; Rise       ; state.armazenaA ;
+;  SW[8]    ; state.armazenaA ; 3.613 ; 3.613 ; Rise       ; state.armazenaA ;
+;  SW[9]    ; state.armazenaA ; 3.300 ; 3.300 ; Rise       ; state.armazenaA ;
+;  SW[10]   ; state.armazenaA ; 2.141 ; 2.141 ; Rise       ; state.armazenaA ;
+;  SW[11]   ; state.armazenaA ; 2.308 ; 2.308 ; Rise       ; state.armazenaA ;
+;  SW[12]   ; state.armazenaA ; 1.558 ; 1.558 ; Rise       ; state.armazenaA ;
+;  SW[13]   ; state.armazenaA ; 5.428 ; 5.428 ; Rise       ; state.armazenaA ;
+;  SW[14]   ; state.armazenaA ; 5.011 ; 5.011 ; Rise       ; state.armazenaA ;
+;  SW[15]   ; state.armazenaA ; 5.110 ; 5.110 ; Rise       ; state.armazenaA ;
+; SW[*]     ; state.armazenaB ; 5.938 ; 5.938 ; Fall       ; state.armazenaB ;
+;  SW[0]    ; state.armazenaB ; 3.883 ; 3.883 ; Fall       ; state.armazenaB ;
+;  SW[1]    ; state.armazenaB ; 3.844 ; 3.844 ; Fall       ; state.armazenaB ;
+;  SW[2]    ; state.armazenaB ; 3.555 ; 3.555 ; Fall       ; state.armazenaB ;
+;  SW[3]    ; state.armazenaB ; 3.594 ; 3.594 ; Fall       ; state.armazenaB ;
+;  SW[4]    ; state.armazenaB ; 3.650 ; 3.650 ; Fall       ; state.armazenaB ;
+;  SW[5]    ; state.armazenaB ; 3.535 ; 3.535 ; Fall       ; state.armazenaB ;
+;  SW[6]    ; state.armazenaB ; 3.022 ; 3.022 ; Fall       ; state.armazenaB ;
+;  SW[7]    ; state.armazenaB ; 3.523 ; 3.523 ; Fall       ; state.armazenaB ;
+;  SW[8]    ; state.armazenaB ; 3.213 ; 3.213 ; Fall       ; state.armazenaB ;
+;  SW[9]    ; state.armazenaB ; 2.898 ; 2.898 ; Fall       ; state.armazenaB ;
+;  SW[10]   ; state.armazenaB ; 1.740 ; 1.740 ; Fall       ; state.armazenaB ;
+;  SW[11]   ; state.armazenaB ; 1.908 ; 1.908 ; Fall       ; state.armazenaB ;
+;  SW[12]   ; state.armazenaB ; 2.036 ; 2.036 ; Fall       ; state.armazenaB ;
+;  SW[13]   ; state.armazenaB ; 5.938 ; 5.938 ; Fall       ; state.armazenaB ;
+;  SW[14]   ; state.armazenaB ; 5.490 ; 5.490 ; Fall       ; state.armazenaB ;
+;  SW[15]   ; state.armazenaB ; 5.589 ; 5.589 ; Fall       ; state.armazenaB ;
++-----------+-----------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Hold Times                                                                   ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; SW[*]     ; state.armazenaA ; -0.073 ; -0.073 ; Rise       ; state.armazenaA ;
+;  SW[0]    ; state.armazenaA ; -1.076 ; -1.076 ; Rise       ; state.armazenaA ;
+;  SW[1]    ; state.armazenaA ; -1.067 ; -1.067 ; Rise       ; state.armazenaA ;
+;  SW[2]    ; state.armazenaA ; -0.936 ; -0.936 ; Rise       ; state.armazenaA ;
+;  SW[3]    ; state.armazenaA ; -1.015 ; -1.015 ; Rise       ; state.armazenaA ;
+;  SW[4]    ; state.armazenaA ; -0.798 ; -0.798 ; Rise       ; state.armazenaA ;
+;  SW[5]    ; state.armazenaA ; -0.710 ; -0.710 ; Rise       ; state.armazenaA ;
+;  SW[6]    ; state.armazenaA ; -0.493 ; -0.493 ; Rise       ; state.armazenaA ;
+;  SW[7]    ; state.armazenaA ; -0.786 ; -0.786 ; Rise       ; state.armazenaA ;
+;  SW[8]    ; state.armazenaA ; -1.082 ; -1.082 ; Rise       ; state.armazenaA ;
+;  SW[9]    ; state.armazenaA ; -0.949 ; -0.949 ; Rise       ; state.armazenaA ;
+;  SW[10]   ; state.armazenaA ; -0.315 ; -0.315 ; Rise       ; state.armazenaA ;
+;  SW[11]   ; state.armazenaA ; -0.385 ; -0.385 ; Rise       ; state.armazenaA ;
+;  SW[12]   ; state.armazenaA ; -0.073 ; -0.073 ; Rise       ; state.armazenaA ;
+;  SW[13]   ; state.armazenaA ; -2.454 ; -2.454 ; Rise       ; state.armazenaA ;
+;  SW[14]   ; state.armazenaA ; -2.262 ; -2.262 ; Rise       ; state.armazenaA ;
+;  SW[15]   ; state.armazenaA ; -2.318 ; -2.318 ; Rise       ; state.armazenaA ;
+; SW[*]     ; state.armazenaB ; -0.026 ; -0.026 ; Fall       ; state.armazenaB ;
+;  SW[0]    ; state.armazenaB ; -1.141 ; -1.141 ; Fall       ; state.armazenaB ;
+;  SW[1]    ; state.armazenaB ; -1.134 ; -1.134 ; Fall       ; state.armazenaB ;
+;  SW[2]    ; state.armazenaB ; -1.008 ; -1.008 ; Fall       ; state.armazenaB ;
+;  SW[3]    ; state.armazenaB ; -1.082 ; -1.082 ; Fall       ; state.armazenaB ;
+;  SW[4]    ; state.armazenaB ; -1.046 ; -1.046 ; Fall       ; state.armazenaB ;
+;  SW[5]    ; state.armazenaB ; -0.962 ; -0.962 ; Fall       ; state.armazenaB ;
+;  SW[6]    ; state.armazenaB ; -0.742 ; -0.742 ; Fall       ; state.armazenaB ;
+;  SW[7]    ; state.armazenaB ; -1.039 ; -1.039 ; Fall       ; state.armazenaB ;
+;  SW[8]    ; state.armazenaB ; -0.791 ; -0.791 ; Fall       ; state.armazenaB ;
+;  SW[9]    ; state.armazenaB ; -0.659 ; -0.659 ; Fall       ; state.armazenaB ;
+;  SW[10]   ; state.armazenaB ; -0.026 ; -0.026 ; Fall       ; state.armazenaB ;
+;  SW[11]   ; state.armazenaB ; -0.090 ; -0.090 ; Fall       ; state.armazenaB ;
+;  SW[12]   ; state.armazenaB ; -0.272 ; -0.272 ; Fall       ; state.armazenaB ;
+;  SW[13]   ; state.armazenaB ; -2.657 ; -2.657 ; Fall       ; state.armazenaB ;
+;  SW[14]   ; state.armazenaB ; -2.468 ; -2.468 ; Fall       ; state.armazenaB ;
+;  SW[15]   ; state.armazenaB ; -2.524 ; -2.524 ; Fall       ; state.armazenaB ;
++-----------+-----------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; HEX4[*]   ; KEY[0]          ; 9.444  ; 9.444  ; Rise       ; KEY[0]          ;
+;  HEX4[0]  ; KEY[0]          ; 9.444  ; 9.444  ; Rise       ; KEY[0]          ;
+;  HEX4[1]  ; KEY[0]          ; 9.160  ; 9.160  ; Rise       ; KEY[0]          ;
+;  HEX4[2]  ; KEY[0]          ; 9.338  ; 9.338  ; Rise       ; KEY[0]          ;
+;  HEX4[3]  ; KEY[0]          ; 9.175  ; 9.175  ; Rise       ; KEY[0]          ;
+;  HEX4[4]  ; KEY[0]          ; 9.166  ; 9.166  ; Rise       ; KEY[0]          ;
+;  HEX4[5]  ; KEY[0]          ; 9.175  ; 9.175  ; Rise       ; KEY[0]          ;
+;  HEX4[6]  ; KEY[0]          ; 9.094  ; 9.094  ; Rise       ; KEY[0]          ;
+; HEX5[*]   ; KEY[0]          ; 9.407  ; 9.407  ; Rise       ; KEY[0]          ;
+;  HEX5[0]  ; KEY[0]          ; 9.343  ; 9.343  ; Rise       ; KEY[0]          ;
+;  HEX5[1]  ; KEY[0]          ; 9.407  ; 9.407  ; Rise       ; KEY[0]          ;
+;  HEX5[2]  ; KEY[0]          ; 9.324  ; 9.324  ; Rise       ; KEY[0]          ;
+;  HEX5[3]  ; KEY[0]          ; 8.648  ; 8.648  ; Rise       ; KEY[0]          ;
+;  HEX5[4]  ; KEY[0]          ; 8.912  ; 8.912  ; Rise       ; KEY[0]          ;
+;  HEX5[5]  ; KEY[0]          ; 8.907  ; 8.907  ; Rise       ; KEY[0]          ;
+;  HEX5[6]  ; KEY[0]          ; 8.574  ; 8.574  ; Rise       ; KEY[0]          ;
+; HEX6[*]   ; KEY[0]          ; 9.543  ; 9.543  ; Rise       ; KEY[0]          ;
+;  HEX6[0]  ; KEY[0]          ; 9.389  ; 9.389  ; Rise       ; KEY[0]          ;
+;  HEX6[1]  ; KEY[0]          ; 9.112  ; 9.112  ; Rise       ; KEY[0]          ;
+;  HEX6[2]  ; KEY[0]          ; 8.891  ; 8.891  ; Rise       ; KEY[0]          ;
+;  HEX6[3]  ; KEY[0]          ; 9.422  ; 9.422  ; Rise       ; KEY[0]          ;
+;  HEX6[4]  ; KEY[0]          ; 9.415  ; 9.415  ; Rise       ; KEY[0]          ;
+;  HEX6[5]  ; KEY[0]          ; 9.543  ; 9.543  ; Rise       ; KEY[0]          ;
+;  HEX6[6]  ; KEY[0]          ; 9.385  ; 9.385  ; Rise       ; KEY[0]          ;
+; HEX7[*]   ; KEY[0]          ; 9.485  ; 9.485  ; Rise       ; KEY[0]          ;
+;  HEX7[0]  ; KEY[0]          ; 9.484  ; 9.484  ; Rise       ; KEY[0]          ;
+;  HEX7[1]  ; KEY[0]          ; 9.485  ; 9.485  ; Rise       ; KEY[0]          ;
+;  HEX7[2]  ; KEY[0]          ; 9.439  ; 9.439  ; Rise       ; KEY[0]          ;
+;  HEX7[3]  ; KEY[0]          ; 9.319  ; 9.319  ; Rise       ; KEY[0]          ;
+;  HEX7[4]  ; KEY[0]          ; 9.472  ; 9.472  ; Rise       ; KEY[0]          ;
+;  HEX7[5]  ; KEY[0]          ; 9.163  ; 9.163  ; Rise       ; KEY[0]          ;
+;  HEX7[6]  ; KEY[0]          ; 9.419  ; 9.419  ; Rise       ; KEY[0]          ;
+; HEX0[*]   ; state.armazenaA ; 8.964  ; 8.964  ; Rise       ; state.armazenaA ;
+;  HEX0[0]  ; state.armazenaA ; 7.110  ; 7.110  ; Rise       ; state.armazenaA ;
+;  HEX0[1]  ; state.armazenaA ; 8.319  ; 8.319  ; Rise       ; state.armazenaA ;
+;  HEX0[2]  ; state.armazenaA ; 7.467  ; 7.467  ; Rise       ; state.armazenaA ;
+;  HEX0[3]  ; state.armazenaA ; 8.829  ; 8.829  ; Rise       ; state.armazenaA ;
+;  HEX0[4]  ; state.armazenaA ; 7.888  ; 7.888  ; Rise       ; state.armazenaA ;
+;  HEX0[5]  ; state.armazenaA ; 8.964  ; 8.964  ; Rise       ; state.armazenaA ;
+;  HEX0[6]  ; state.armazenaA ; 7.902  ; 7.902  ; Rise       ; state.armazenaA ;
+; HEX1[*]   ; state.armazenaA ; 9.702  ; 9.702  ; Rise       ; state.armazenaA ;
+;  HEX1[0]  ; state.armazenaA ; 9.126  ; 9.126  ; Rise       ; state.armazenaA ;
+;  HEX1[1]  ; state.armazenaA ; 8.580  ; 8.580  ; Rise       ; state.armazenaA ;
+;  HEX1[2]  ; state.armazenaA ; 9.193  ; 9.193  ; Rise       ; state.armazenaA ;
+;  HEX1[3]  ; state.armazenaA ; 9.197  ; 9.197  ; Rise       ; state.armazenaA ;
+;  HEX1[4]  ; state.armazenaA ; 9.702  ; 9.702  ; Rise       ; state.armazenaA ;
+;  HEX1[5]  ; state.armazenaA ; 9.231  ; 9.231  ; Rise       ; state.armazenaA ;
+;  HEX1[6]  ; state.armazenaA ; 8.273  ; 8.273  ; Rise       ; state.armazenaA ;
+; HEX2[*]   ; state.armazenaA ; 10.660 ; 10.660 ; Rise       ; state.armazenaA ;
+;  HEX2[0]  ; state.armazenaA ; 10.660 ; 10.660 ; Rise       ; state.armazenaA ;
+;  HEX2[1]  ; state.armazenaA ; 9.248  ; 9.248  ; Rise       ; state.armazenaA ;
+;  HEX2[2]  ; state.armazenaA ; 8.598  ; 8.598  ; Rise       ; state.armazenaA ;
+;  HEX2[3]  ; state.armazenaA ; 9.520  ; 9.520  ; Rise       ; state.armazenaA ;
+;  HEX2[4]  ; state.armazenaA ; 9.688  ; 9.688  ; Rise       ; state.armazenaA ;
+;  HEX2[5]  ; state.armazenaA ; 9.450  ; 9.450  ; Rise       ; state.armazenaA ;
+;  HEX2[6]  ; state.armazenaA ; 8.654  ; 8.654  ; Rise       ; state.armazenaA ;
+; HEX3[*]   ; state.armazenaA ; 9.216  ; 9.216  ; Rise       ; state.armazenaA ;
+;  HEX3[0]  ; state.armazenaA ; 8.482  ; 8.482  ; Rise       ; state.armazenaA ;
+;  HEX3[1]  ; state.armazenaA ; 9.156  ; 9.156  ; Rise       ; state.armazenaA ;
+;  HEX3[2]  ; state.armazenaA ; 8.409  ; 8.409  ; Rise       ; state.armazenaA ;
+;  HEX3[3]  ; state.armazenaA ; 9.216  ; 9.216  ; Rise       ; state.armazenaA ;
+;  HEX3[4]  ; state.armazenaA ; 8.311  ; 8.311  ; Rise       ; state.armazenaA ;
+;  HEX3[5]  ; state.armazenaA ; 8.841  ; 8.841  ; Rise       ; state.armazenaA ;
+;  HEX3[6]  ; state.armazenaA ; 8.366  ; 8.366  ; Rise       ; state.armazenaA ;
+; HEX0[*]   ; state.armazenaA ; 7.243  ;        ; Fall       ; state.armazenaA ;
+;  HEX0[0]  ; state.armazenaA ; 5.942  ;        ; Fall       ; state.armazenaA ;
+;  HEX0[1]  ; state.armazenaA ; 7.243  ;        ; Fall       ; state.armazenaA ;
+;  HEX0[2]  ; state.armazenaA ; 5.788  ;        ; Fall       ; state.armazenaA ;
+;  HEX0[3]  ; state.armazenaA ; 7.009  ;        ; Fall       ; state.armazenaA ;
+;  HEX0[4]  ; state.armazenaA ; 6.027  ;        ; Fall       ; state.armazenaA ;
+;  HEX0[5]  ; state.armazenaA ; 6.973  ;        ; Fall       ; state.armazenaA ;
+;  HEX0[6]  ; state.armazenaA ; 6.055  ;        ; Fall       ; state.armazenaA ;
+; HEX1[*]   ; state.armazenaA ; 9.046  ;        ; Fall       ; state.armazenaA ;
+;  HEX1[0]  ; state.armazenaA ; 8.508  ;        ; Fall       ; state.armazenaA ;
+;  HEX1[1]  ; state.armazenaA ; 7.416  ;        ; Fall       ; state.armazenaA ;
+;  HEX1[2]  ; state.armazenaA ; 8.533  ;        ; Fall       ; state.armazenaA ;
+;  HEX1[3]  ; state.armazenaA ; 7.863  ;        ; Fall       ; state.armazenaA ;
+;  HEX1[4]  ; state.armazenaA ; 9.046  ;        ; Fall       ; state.armazenaA ;
+;  HEX1[5]  ; state.armazenaA ; 8.201  ;        ; Fall       ; state.armazenaA ;
+;  HEX1[6]  ; state.armazenaA ; 7.602  ;        ; Fall       ; state.armazenaA ;
+; HEX2[*]   ; state.armazenaA ; 9.062  ;        ; Fall       ; state.armazenaA ;
+;  HEX2[0]  ; state.armazenaA ; 9.004  ;        ; Fall       ; state.armazenaA ;
+;  HEX2[1]  ; state.armazenaA ; 7.892  ;        ; Fall       ; state.armazenaA ;
+;  HEX2[2]  ; state.armazenaA ; 7.244  ;        ; Fall       ; state.armazenaA ;
+;  HEX2[3]  ; state.armazenaA ; 8.846  ;        ; Fall       ; state.armazenaA ;
+;  HEX2[4]  ; state.armazenaA ; 9.062  ;        ; Fall       ; state.armazenaA ;
+;  HEX2[5]  ; state.armazenaA ; 9.006  ;        ; Fall       ; state.armazenaA ;
+;  HEX2[6]  ; state.armazenaA ; 8.219  ;        ; Fall       ; state.armazenaA ;
+; HEX3[*]   ; state.armazenaA ; 8.269  ;        ; Fall       ; state.armazenaA ;
+;  HEX3[0]  ; state.armazenaA ; 6.936  ;        ; Fall       ; state.armazenaA ;
+;  HEX3[1]  ; state.armazenaA ; 7.464  ;        ; Fall       ; state.armazenaA ;
+;  HEX3[2]  ; state.armazenaA ; 7.075  ;        ; Fall       ; state.armazenaA ;
+;  HEX3[3]  ; state.armazenaA ; 8.269  ;        ; Fall       ; state.armazenaA ;
+;  HEX3[4]  ; state.armazenaA ; 6.974  ;        ; Fall       ; state.armazenaA ;
+;  HEX3[5]  ; state.armazenaA ; 7.396  ;        ; Fall       ; state.armazenaA ;
+;  HEX3[6]  ; state.armazenaA ; 6.764  ;        ; Fall       ; state.armazenaA ;
+; HEX0[*]   ; state.armazenaB ; 7.161  ;        ; Rise       ; state.armazenaB ;
+;  HEX0[0]  ; state.armazenaB ; 6.311  ;        ; Rise       ; state.armazenaB ;
+;  HEX0[1]  ; state.armazenaB ; 7.161  ;        ; Rise       ; state.armazenaB ;
+;  HEX0[2]  ; state.armazenaB ; 5.467  ;        ; Rise       ; state.armazenaB ;
+;  HEX0[3]  ; state.armazenaB ; 7.087  ;        ; Rise       ; state.armazenaB ;
+;  HEX0[4]  ; state.armazenaB ; 6.105  ;        ; Rise       ; state.armazenaB ;
+;  HEX0[5]  ; state.armazenaB ; 7.053  ;        ; Rise       ; state.armazenaB ;
+;  HEX0[6]  ; state.armazenaB ; 5.668  ;        ; Rise       ; state.armazenaB ;
+; HEX1[*]   ; state.armazenaB ; 8.833  ;        ; Rise       ; state.armazenaB ;
+;  HEX1[0]  ; state.armazenaB ; 8.295  ;        ; Rise       ; state.armazenaB ;
+;  HEX1[1]  ; state.armazenaB ; 7.785  ;        ; Rise       ; state.armazenaB ;
+;  HEX1[2]  ; state.armazenaB ; 8.320  ;        ; Rise       ; state.armazenaB ;
+;  HEX1[3]  ; state.armazenaB ; 8.390  ;        ; Rise       ; state.armazenaB ;
+;  HEX1[4]  ; state.armazenaB ; 8.833  ;        ; Rise       ; state.armazenaB ;
+;  HEX1[5]  ; state.armazenaB ; 8.723  ;        ; Rise       ; state.armazenaB ;
+;  HEX1[6]  ; state.armazenaB ; 7.400  ;        ; Rise       ; state.armazenaB ;
+; HEX2[*]   ; state.armazenaB ; 9.369  ;        ; Rise       ; state.armazenaB ;
+;  HEX2[0]  ; state.armazenaB ; 9.369  ;        ; Rise       ; state.armazenaB ;
+;  HEX2[1]  ; state.armazenaB ; 8.262  ;        ; Rise       ; state.armazenaB ;
+;  HEX2[2]  ; state.armazenaB ; 7.613  ;        ; Rise       ; state.armazenaB ;
+;  HEX2[3]  ; state.armazenaB ; 8.973  ;        ; Rise       ; state.armazenaB ;
+;  HEX2[4]  ; state.armazenaB ; 9.297  ;        ; Rise       ; state.armazenaB ;
+;  HEX2[5]  ; state.armazenaB ; 8.802  ;        ; Rise       ; state.armazenaB ;
+;  HEX2[6]  ; state.armazenaB ; 8.016  ;        ; Rise       ; state.armazenaB ;
+; HEX3[*]   ; state.armazenaB ; 8.707  ;        ; Rise       ; state.armazenaB ;
+;  HEX3[0]  ; state.armazenaB ; 7.992  ;        ; Rise       ; state.armazenaB ;
+;  HEX3[1]  ; state.armazenaB ; 7.708  ;        ; Rise       ; state.armazenaB ;
+;  HEX3[2]  ; state.armazenaB ; 7.686  ;        ; Rise       ; state.armazenaB ;
+;  HEX3[3]  ; state.armazenaB ; 8.707  ;        ; Rise       ; state.armazenaB ;
+;  HEX3[4]  ; state.armazenaB ; 7.690  ;        ; Rise       ; state.armazenaB ;
+;  HEX3[5]  ; state.armazenaB ; 8.007  ;        ; Rise       ; state.armazenaB ;
+;  HEX3[6]  ; state.armazenaB ; 7.820  ;        ; Rise       ; state.armazenaB ;
+; HEX0[*]   ; state.armazenaB ;        ; 7.161  ; Fall       ; state.armazenaB ;
+;  HEX0[0]  ; state.armazenaB ;        ; 6.311  ; Fall       ; state.armazenaB ;
+;  HEX0[1]  ; state.armazenaB ;        ; 7.161  ; Fall       ; state.armazenaB ;
+;  HEX0[2]  ; state.armazenaB ;        ; 5.467  ; Fall       ; state.armazenaB ;
+;  HEX0[3]  ; state.armazenaB ;        ; 7.087  ; Fall       ; state.armazenaB ;
+;  HEX0[4]  ; state.armazenaB ;        ; 6.105  ; Fall       ; state.armazenaB ;
+;  HEX0[5]  ; state.armazenaB ;        ; 7.053  ; Fall       ; state.armazenaB ;
+;  HEX0[6]  ; state.armazenaB ;        ; 5.668  ; Fall       ; state.armazenaB ;
+; HEX1[*]   ; state.armazenaB ;        ; 8.833  ; Fall       ; state.armazenaB ;
+;  HEX1[0]  ; state.armazenaB ;        ; 8.295  ; Fall       ; state.armazenaB ;
+;  HEX1[1]  ; state.armazenaB ;        ; 7.785  ; Fall       ; state.armazenaB ;
+;  HEX1[2]  ; state.armazenaB ;        ; 8.320  ; Fall       ; state.armazenaB ;
+;  HEX1[3]  ; state.armazenaB ;        ; 8.390  ; Fall       ; state.armazenaB ;
+;  HEX1[4]  ; state.armazenaB ;        ; 8.833  ; Fall       ; state.armazenaB ;
+;  HEX1[5]  ; state.armazenaB ;        ; 8.723  ; Fall       ; state.armazenaB ;
+;  HEX1[6]  ; state.armazenaB ;        ; 7.400  ; Fall       ; state.armazenaB ;
+; HEX2[*]   ; state.armazenaB ;        ; 9.369  ; Fall       ; state.armazenaB ;
+;  HEX2[0]  ; state.armazenaB ;        ; 9.369  ; Fall       ; state.armazenaB ;
+;  HEX2[1]  ; state.armazenaB ;        ; 8.262  ; Fall       ; state.armazenaB ;
+;  HEX2[2]  ; state.armazenaB ;        ; 7.613  ; Fall       ; state.armazenaB ;
+;  HEX2[3]  ; state.armazenaB ;        ; 8.973  ; Fall       ; state.armazenaB ;
+;  HEX2[4]  ; state.armazenaB ;        ; 9.297  ; Fall       ; state.armazenaB ;
+;  HEX2[5]  ; state.armazenaB ;        ; 8.802  ; Fall       ; state.armazenaB ;
+;  HEX2[6]  ; state.armazenaB ;        ; 8.016  ; Fall       ; state.armazenaB ;
+; HEX3[*]   ; state.armazenaB ;        ; 8.707  ; Fall       ; state.armazenaB ;
+;  HEX3[0]  ; state.armazenaB ;        ; 7.992  ; Fall       ; state.armazenaB ;
+;  HEX3[1]  ; state.armazenaB ;        ; 7.708  ; Fall       ; state.armazenaB ;
+;  HEX3[2]  ; state.armazenaB ;        ; 7.686  ; Fall       ; state.armazenaB ;
+;  HEX3[3]  ; state.armazenaB ;        ; 8.707  ; Fall       ; state.armazenaB ;
+;  HEX3[4]  ; state.armazenaB ;        ; 7.690  ; Fall       ; state.armazenaB ;
+;  HEX3[5]  ; state.armazenaB ;        ; 8.007  ; Fall       ; state.armazenaB ;
+;  HEX3[6]  ; state.armazenaB ;        ; 7.820  ; Fall       ; state.armazenaB ;
+; HEX4[*]   ; state.armazenaB ; 6.290  ; 6.290  ; Fall       ; state.armazenaB ;
+;  HEX4[0]  ; state.armazenaB ; 6.161  ; 6.161  ; Fall       ; state.armazenaB ;
+;  HEX4[1]  ; state.armazenaB ; 6.180  ; 6.180  ; Fall       ; state.armazenaB ;
+;  HEX4[2]  ; state.armazenaB ; 5.841  ; 5.841  ; Fall       ; state.armazenaB ;
+;  HEX4[3]  ; state.armazenaB ; 5.758  ; 5.758  ; Fall       ; state.armazenaB ;
+;  HEX4[4]  ; state.armazenaB ; 5.680  ; 5.680  ; Fall       ; state.armazenaB ;
+;  HEX4[5]  ; state.armazenaB ; 5.682  ; 5.682  ; Fall       ; state.armazenaB ;
+;  HEX4[6]  ; state.armazenaB ; 6.290  ; 6.290  ; Fall       ; state.armazenaB ;
+; HEX5[*]   ; state.armazenaB ; 6.245  ; 6.245  ; Fall       ; state.armazenaB ;
+;  HEX5[0]  ; state.armazenaB ; 6.191  ; 6.191  ; Fall       ; state.armazenaB ;
+;  HEX5[1]  ; state.armazenaB ; 6.127  ; 6.127  ; Fall       ; state.armazenaB ;
+;  HEX5[2]  ; state.armazenaB ; 6.156  ; 6.156  ; Fall       ; state.armazenaB ;
+;  HEX5[3]  ; state.armazenaB ; 5.991  ; 5.991  ; Fall       ; state.armazenaB ;
+;  HEX5[4]  ; state.armazenaB ; 6.176  ; 6.176  ; Fall       ; state.armazenaB ;
+;  HEX5[5]  ; state.armazenaB ; 5.814  ; 5.814  ; Fall       ; state.armazenaB ;
+;  HEX5[6]  ; state.armazenaB ; 6.245  ; 6.245  ; Fall       ; state.armazenaB ;
+; HEX6[*]   ; state.armazenaB ; 6.792  ; 6.792  ; Fall       ; state.armazenaB ;
+;  HEX6[0]  ; state.armazenaB ; 6.183  ; 6.183  ; Fall       ; state.armazenaB ;
+;  HEX6[1]  ; state.armazenaB ; 6.177  ; 6.177  ; Fall       ; state.armazenaB ;
+;  HEX6[2]  ; state.armazenaB ; 6.516  ; 6.516  ; Fall       ; state.armazenaB ;
+;  HEX6[3]  ; state.armazenaB ; 6.623  ; 6.623  ; Fall       ; state.armazenaB ;
+;  HEX6[4]  ; state.armazenaB ; 6.594  ; 6.594  ; Fall       ; state.armazenaB ;
+;  HEX6[5]  ; state.armazenaB ; 6.678  ; 6.678  ; Fall       ; state.armazenaB ;
+;  HEX6[6]  ; state.armazenaB ; 6.792  ; 6.792  ; Fall       ; state.armazenaB ;
+; HEX7[*]   ; state.armazenaB ; 6.872  ; 6.872  ; Fall       ; state.armazenaB ;
+;  HEX7[0]  ; state.armazenaB ; 6.368  ; 6.368  ; Fall       ; state.armazenaB ;
+;  HEX7[1]  ; state.armazenaB ; 6.377  ; 6.377  ; Fall       ; state.armazenaB ;
+;  HEX7[2]  ; state.armazenaB ; 6.237  ; 6.237  ; Fall       ; state.armazenaB ;
+;  HEX7[3]  ; state.armazenaB ; 6.835  ; 6.835  ; Fall       ; state.armazenaB ;
+;  HEX7[4]  ; state.armazenaB ; 6.354  ; 6.354  ; Fall       ; state.armazenaB ;
+;  HEX7[5]  ; state.armazenaB ; 6.872  ; 6.872  ; Fall       ; state.armazenaB ;
+;  HEX7[6]  ; state.armazenaB ; 6.755  ; 6.755  ; Fall       ; state.armazenaB ;
++-----------+-----------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                              ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; HEX4[*]   ; KEY[0]          ; 4.787 ; 4.787 ; Rise       ; KEY[0]          ;
+;  HEX4[0]  ; KEY[0]          ; 4.931 ; 4.931 ; Rise       ; KEY[0]          ;
+;  HEX4[1]  ; KEY[0]          ; 4.805 ; 4.805 ; Rise       ; KEY[0]          ;
+;  HEX4[2]  ; KEY[0]          ; 4.891 ; 4.891 ; Rise       ; KEY[0]          ;
+;  HEX4[3]  ; KEY[0]          ; 4.796 ; 4.796 ; Rise       ; KEY[0]          ;
+;  HEX4[4]  ; KEY[0]          ; 4.815 ; 4.815 ; Rise       ; KEY[0]          ;
+;  HEX4[5]  ; KEY[0]          ; 4.816 ; 4.816 ; Rise       ; KEY[0]          ;
+;  HEX4[6]  ; KEY[0]          ; 4.787 ; 4.787 ; Rise       ; KEY[0]          ;
+; HEX5[*]   ; KEY[0]          ; 4.550 ; 4.550 ; Rise       ; KEY[0]          ;
+;  HEX5[0]  ; KEY[0]          ; 4.888 ; 4.888 ; Rise       ; KEY[0]          ;
+;  HEX5[1]  ; KEY[0]          ; 4.900 ; 4.900 ; Rise       ; KEY[0]          ;
+;  HEX5[2]  ; KEY[0]          ; 4.861 ; 4.861 ; Rise       ; KEY[0]          ;
+;  HEX5[3]  ; KEY[0]          ; 4.602 ; 4.602 ; Rise       ; KEY[0]          ;
+;  HEX5[4]  ; KEY[0]          ; 4.694 ; 4.694 ; Rise       ; KEY[0]          ;
+;  HEX5[5]  ; KEY[0]          ; 4.692 ; 4.692 ; Rise       ; KEY[0]          ;
+;  HEX5[6]  ; KEY[0]          ; 4.550 ; 4.550 ; Rise       ; KEY[0]          ;
+; HEX6[*]   ; KEY[0]          ; 4.662 ; 4.662 ; Rise       ; KEY[0]          ;
+;  HEX6[0]  ; KEY[0]          ; 4.893 ; 4.893 ; Rise       ; KEY[0]          ;
+;  HEX6[1]  ; KEY[0]          ; 4.767 ; 4.767 ; Rise       ; KEY[0]          ;
+;  HEX6[2]  ; KEY[0]          ; 4.662 ; 4.662 ; Rise       ; KEY[0]          ;
+;  HEX6[3]  ; KEY[0]          ; 4.967 ; 4.967 ; Rise       ; KEY[0]          ;
+;  HEX6[4]  ; KEY[0]          ; 4.962 ; 4.962 ; Rise       ; KEY[0]          ;
+;  HEX6[5]  ; KEY[0]          ; 5.013 ; 5.013 ; Rise       ; KEY[0]          ;
+;  HEX6[6]  ; KEY[0]          ; 4.935 ; 4.935 ; Rise       ; KEY[0]          ;
+; HEX7[*]   ; KEY[0]          ; 4.860 ; 4.860 ; Rise       ; KEY[0]          ;
+;  HEX7[0]  ; KEY[0]          ; 4.998 ; 4.998 ; Rise       ; KEY[0]          ;
+;  HEX7[1]  ; KEY[0]          ; 4.999 ; 4.999 ; Rise       ; KEY[0]          ;
+;  HEX7[2]  ; KEY[0]          ; 4.973 ; 4.973 ; Rise       ; KEY[0]          ;
+;  HEX7[3]  ; KEY[0]          ; 4.941 ; 4.941 ; Rise       ; KEY[0]          ;
+;  HEX7[4]  ; KEY[0]          ; 4.976 ; 4.976 ; Rise       ; KEY[0]          ;
+;  HEX7[5]  ; KEY[0]          ; 4.860 ; 4.860 ; Rise       ; KEY[0]          ;
+;  HEX7[6]  ; KEY[0]          ; 4.958 ; 4.958 ; Rise       ; KEY[0]          ;
+; HEX0[*]   ; state.armazenaA ; 3.869 ; 2.983 ; Rise       ; state.armazenaA ;
+;  HEX0[0]  ; state.armazenaA ; 3.869 ; 3.075 ; Rise       ; state.armazenaA ;
+;  HEX0[1]  ; state.armazenaA ; 4.341 ; 3.588 ; Rise       ; state.armazenaA ;
+;  HEX0[2]  ; state.armazenaA ; 4.039 ; 2.983 ; Rise       ; state.armazenaA ;
+;  HEX0[3]  ; state.armazenaA ; 4.588 ; 3.529 ; Rise       ; state.armazenaA ;
+;  HEX0[4]  ; state.armazenaA ; 4.204 ; 3.129 ; Rise       ; state.armazenaA ;
+;  HEX0[5]  ; state.armazenaA ; 4.630 ; 3.506 ; Rise       ; state.armazenaA ;
+;  HEX0[6]  ; state.armazenaA ; 4.232 ; 3.112 ; Rise       ; state.armazenaA ;
+; HEX1[*]   ; state.armazenaA ; 4.347 ; 3.759 ; Rise       ; state.armazenaA ;
+;  HEX1[0]  ; state.armazenaA ; 4.770 ; 4.228 ; Rise       ; state.armazenaA ;
+;  HEX1[1]  ; state.armazenaA ; 4.549 ; 3.759 ; Rise       ; state.armazenaA ;
+;  HEX1[2]  ; state.armazenaA ; 4.718 ; 4.164 ; Rise       ; state.armazenaA ;
+;  HEX1[3]  ; state.armazenaA ; 4.766 ; 3.922 ; Rise       ; state.armazenaA ;
+;  HEX1[4]  ; state.armazenaA ; 4.951 ; 4.398 ; Rise       ; state.armazenaA ;
+;  HEX1[5]  ; state.armazenaA ; 4.822 ; 4.124 ; Rise       ; state.armazenaA ;
+;  HEX1[6]  ; state.armazenaA ; 4.347 ; 3.784 ; Rise       ; state.armazenaA ;
+; HEX2[*]   ; state.armazenaA ; 4.465 ; 3.642 ; Rise       ; state.armazenaA ;
+;  HEX2[0]  ; state.armazenaA ; 5.555 ; 4.556 ; Rise       ; state.armazenaA ;
+;  HEX2[1]  ; state.armazenaA ; 4.750 ; 3.879 ; Rise       ; state.armazenaA ;
+;  HEX2[2]  ; state.armazenaA ; 4.515 ; 3.642 ; Rise       ; state.armazenaA ;
+;  HEX2[3]  ; state.armazenaA ; 4.891 ; 4.328 ; Rise       ; state.armazenaA ;
+;  HEX2[4]  ; state.armazenaA ; 4.895 ; 4.347 ; Rise       ; state.armazenaA ;
+;  HEX2[5]  ; state.armazenaA ; 4.822 ; 4.367 ; Rise       ; state.armazenaA ;
+;  HEX2[6]  ; state.armazenaA ; 4.465 ; 4.012 ; Rise       ; state.armazenaA ;
+; HEX3[*]   ; state.armazenaA ; 4.356 ; 3.421 ; Rise       ; state.armazenaA ;
+;  HEX3[0]  ; state.armazenaA ; 4.463 ; 3.546 ; Rise       ; state.armazenaA ;
+;  HEX3[1]  ; state.armazenaA ; 4.703 ; 3.729 ; Rise       ; state.armazenaA ;
+;  HEX3[2]  ; state.armazenaA ; 4.419 ; 3.573 ; Rise       ; state.armazenaA ;
+;  HEX3[3]  ; state.armazenaA ; 4.740 ; 4.052 ; Rise       ; state.armazenaA ;
+;  HEX3[4]  ; state.armazenaA ; 4.374 ; 3.517 ; Rise       ; state.armazenaA ;
+;  HEX3[5]  ; state.armazenaA ; 4.561 ; 3.674 ; Rise       ; state.armazenaA ;
+;  HEX3[6]  ; state.armazenaA ; 4.356 ; 3.421 ; Rise       ; state.armazenaA ;
+; HEX0[*]   ; state.armazenaA ; 2.983 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[0]  ; state.armazenaA ; 3.075 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[1]  ; state.armazenaA ; 3.588 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[2]  ; state.armazenaA ; 2.983 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[3]  ; state.armazenaA ; 3.529 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[4]  ; state.armazenaA ; 3.129 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[5]  ; state.armazenaA ; 3.506 ;       ; Fall       ; state.armazenaA ;
+;  HEX0[6]  ; state.armazenaA ; 3.112 ;       ; Fall       ; state.armazenaA ;
+; HEX1[*]   ; state.armazenaA ; 3.759 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[0]  ; state.armazenaA ; 4.228 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[1]  ; state.armazenaA ; 3.759 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[2]  ; state.armazenaA ; 4.164 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[3]  ; state.armazenaA ; 3.922 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[4]  ; state.armazenaA ; 4.398 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[5]  ; state.armazenaA ; 4.124 ;       ; Fall       ; state.armazenaA ;
+;  HEX1[6]  ; state.armazenaA ; 3.784 ;       ; Fall       ; state.armazenaA ;
+; HEX2[*]   ; state.armazenaA ; 3.642 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[0]  ; state.armazenaA ; 4.556 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[1]  ; state.armazenaA ; 3.879 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[2]  ; state.armazenaA ; 3.642 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[3]  ; state.armazenaA ; 4.328 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[4]  ; state.armazenaA ; 4.347 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[5]  ; state.armazenaA ; 4.367 ;       ; Fall       ; state.armazenaA ;
+;  HEX2[6]  ; state.armazenaA ; 4.012 ;       ; Fall       ; state.armazenaA ;
+; HEX3[*]   ; state.armazenaA ; 3.421 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[0]  ; state.armazenaA ; 3.546 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[1]  ; state.armazenaA ; 3.729 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[2]  ; state.armazenaA ; 3.573 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[3]  ; state.armazenaA ; 4.052 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[4]  ; state.armazenaA ; 3.517 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[5]  ; state.armazenaA ; 3.674 ;       ; Fall       ; state.armazenaA ;
+;  HEX3[6]  ; state.armazenaA ; 3.421 ;       ; Fall       ; state.armazenaA ;
+; HEX0[*]   ; state.armazenaB ; 2.845 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[0]  ; state.armazenaB ; 3.230 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[1]  ; state.armazenaB ; 3.545 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[2]  ; state.armazenaB ; 2.845 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[3]  ; state.armazenaB ; 3.542 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[4]  ; state.armazenaB ; 3.143 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[5]  ; state.armazenaB ; 3.522 ;       ; Rise       ; state.armazenaB ;
+;  HEX0[6]  ; state.armazenaB ; 2.952 ;       ; Rise       ; state.armazenaB ;
+; HEX1[*]   ; state.armazenaB ; 3.718 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[0]  ; state.armazenaB ; 4.151 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[1]  ; state.armazenaB ; 3.913 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[2]  ; state.armazenaB ; 4.087 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[3]  ; state.armazenaB ; 4.142 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[4]  ; state.armazenaB ; 4.321 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[5]  ; state.armazenaB ; 4.338 ;       ; Rise       ; state.armazenaB ;
+;  HEX1[6]  ; state.armazenaB ; 3.718 ;       ; Rise       ; state.armazenaB ;
+; HEX2[*]   ; state.armazenaB ; 3.796 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[0]  ; state.armazenaB ; 4.710 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[1]  ; state.armazenaB ; 4.032 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[2]  ; state.armazenaB ; 3.796 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[3]  ; state.armazenaB ; 4.424 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[4]  ; state.armazenaB ; 4.495 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[5]  ; state.armazenaB ; 4.295 ;       ; Rise       ; state.armazenaB ;
+;  HEX2[6]  ; state.armazenaB ; 3.946 ;       ; Rise       ; state.armazenaB ;
+; HEX3[*]   ; state.armazenaB ; 3.829 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[0]  ; state.armazenaB ; 4.012 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[1]  ; state.armazenaB ; 3.829 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[2]  ; state.armazenaB ; 3.850 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[3]  ; state.armazenaB ; 4.276 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[4]  ; state.armazenaB ; 3.843 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[5]  ; state.armazenaB ; 3.951 ;       ; Rise       ; state.armazenaB ;
+;  HEX3[6]  ; state.armazenaB ; 3.885 ;       ; Rise       ; state.armazenaB ;
+; HEX0[*]   ; state.armazenaB ;       ; 2.845 ; Fall       ; state.armazenaB ;
+;  HEX0[0]  ; state.armazenaB ;       ; 3.230 ; Fall       ; state.armazenaB ;
+;  HEX0[1]  ; state.armazenaB ;       ; 3.545 ; Fall       ; state.armazenaB ;
+;  HEX0[2]  ; state.armazenaB ;       ; 2.845 ; Fall       ; state.armazenaB ;
+;  HEX0[3]  ; state.armazenaB ;       ; 3.542 ; Fall       ; state.armazenaB ;
+;  HEX0[4]  ; state.armazenaB ;       ; 3.143 ; Fall       ; state.armazenaB ;
+;  HEX0[5]  ; state.armazenaB ;       ; 3.522 ; Fall       ; state.armazenaB ;
+;  HEX0[6]  ; state.armazenaB ;       ; 2.952 ; Fall       ; state.armazenaB ;
+; HEX1[*]   ; state.armazenaB ;       ; 3.718 ; Fall       ; state.armazenaB ;
+;  HEX1[0]  ; state.armazenaB ;       ; 4.151 ; Fall       ; state.armazenaB ;
+;  HEX1[1]  ; state.armazenaB ;       ; 3.913 ; Fall       ; state.armazenaB ;
+;  HEX1[2]  ; state.armazenaB ;       ; 4.087 ; Fall       ; state.armazenaB ;
+;  HEX1[3]  ; state.armazenaB ;       ; 4.142 ; Fall       ; state.armazenaB ;
+;  HEX1[4]  ; state.armazenaB ;       ; 4.321 ; Fall       ; state.armazenaB ;
+;  HEX1[5]  ; state.armazenaB ;       ; 4.338 ; Fall       ; state.armazenaB ;
+;  HEX1[6]  ; state.armazenaB ;       ; 3.718 ; Fall       ; state.armazenaB ;
+; HEX2[*]   ; state.armazenaB ;       ; 3.796 ; Fall       ; state.armazenaB ;
+;  HEX2[0]  ; state.armazenaB ;       ; 4.710 ; Fall       ; state.armazenaB ;
+;  HEX2[1]  ; state.armazenaB ;       ; 4.032 ; Fall       ; state.armazenaB ;
+;  HEX2[2]  ; state.armazenaB ;       ; 3.796 ; Fall       ; state.armazenaB ;
+;  HEX2[3]  ; state.armazenaB ;       ; 4.424 ; Fall       ; state.armazenaB ;
+;  HEX2[4]  ; state.armazenaB ;       ; 4.495 ; Fall       ; state.armazenaB ;
+;  HEX2[5]  ; state.armazenaB ;       ; 4.295 ; Fall       ; state.armazenaB ;
+;  HEX2[6]  ; state.armazenaB ;       ; 3.946 ; Fall       ; state.armazenaB ;
+; HEX3[*]   ; state.armazenaB ;       ; 3.829 ; Fall       ; state.armazenaB ;
+;  HEX3[0]  ; state.armazenaB ;       ; 4.012 ; Fall       ; state.armazenaB ;
+;  HEX3[1]  ; state.armazenaB ;       ; 3.829 ; Fall       ; state.armazenaB ;
+;  HEX3[2]  ; state.armazenaB ;       ; 3.850 ; Fall       ; state.armazenaB ;
+;  HEX3[3]  ; state.armazenaB ;       ; 4.276 ; Fall       ; state.armazenaB ;
+;  HEX3[4]  ; state.armazenaB ;       ; 3.843 ; Fall       ; state.armazenaB ;
+;  HEX3[5]  ; state.armazenaB ;       ; 3.951 ; Fall       ; state.armazenaB ;
+;  HEX3[6]  ; state.armazenaB ;       ; 3.885 ; Fall       ; state.armazenaB ;
+; HEX4[*]   ; state.armazenaB ; 3.083 ; 3.083 ; Fall       ; state.armazenaB ;
+;  HEX4[0]  ; state.armazenaB ; 3.297 ; 3.297 ; Fall       ; state.armazenaB ;
+;  HEX4[1]  ; state.armazenaB ; 3.301 ; 3.301 ; Fall       ; state.armazenaB ;
+;  HEX4[2]  ; state.armazenaB ; 3.155 ; 3.155 ; Fall       ; state.armazenaB ;
+;  HEX4[3]  ; state.armazenaB ; 3.111 ; 3.111 ; Fall       ; state.armazenaB ;
+;  HEX4[4]  ; state.armazenaB ; 3.084 ; 3.084 ; Fall       ; state.armazenaB ;
+;  HEX4[5]  ; state.armazenaB ; 3.083 ; 3.083 ; Fall       ; state.armazenaB ;
+;  HEX4[6]  ; state.armazenaB ; 3.370 ; 3.370 ; Fall       ; state.armazenaB ;
+; HEX5[*]   ; state.armazenaB ; 3.140 ; 3.140 ; Fall       ; state.armazenaB ;
+;  HEX5[0]  ; state.armazenaB ; 3.317 ; 3.317 ; Fall       ; state.armazenaB ;
+;  HEX5[1]  ; state.armazenaB ; 3.269 ; 3.269 ; Fall       ; state.armazenaB ;
+;  HEX5[2]  ; state.armazenaB ; 3.282 ; 3.282 ; Fall       ; state.armazenaB ;
+;  HEX5[3]  ; state.armazenaB ; 3.232 ; 3.232 ; Fall       ; state.armazenaB ;
+;  HEX5[4]  ; state.armazenaB ; 3.280 ; 3.280 ; Fall       ; state.armazenaB ;
+;  HEX5[5]  ; state.armazenaB ; 3.140 ; 3.140 ; Fall       ; state.armazenaB ;
+;  HEX5[6]  ; state.armazenaB ; 3.339 ; 3.339 ; Fall       ; state.armazenaB ;
+; HEX6[*]   ; state.armazenaB ; 3.308 ; 3.308 ; Fall       ; state.armazenaB ;
+;  HEX6[0]  ; state.armazenaB ; 3.315 ; 3.315 ; Fall       ; state.armazenaB ;
+;  HEX6[1]  ; state.armazenaB ; 3.308 ; 3.308 ; Fall       ; state.armazenaB ;
+;  HEX6[2]  ; state.armazenaB ; 3.457 ; 3.457 ; Fall       ; state.armazenaB ;
+;  HEX6[3]  ; state.armazenaB ; 3.561 ; 3.561 ; Fall       ; state.armazenaB ;
+;  HEX6[4]  ; state.armazenaB ; 3.546 ; 3.546 ; Fall       ; state.armazenaB ;
+;  HEX6[5]  ; state.armazenaB ; 3.574 ; 3.574 ; Fall       ; state.armazenaB ;
+;  HEX6[6]  ; state.armazenaB ; 3.618 ; 3.618 ; Fall       ; state.armazenaB ;
+; HEX7[*]   ; state.armazenaB ; 3.374 ; 3.374 ; Fall       ; state.armazenaB ;
+;  HEX7[0]  ; state.armazenaB ; 3.453 ; 3.453 ; Fall       ; state.armazenaB ;
+;  HEX7[1]  ; state.armazenaB ; 3.463 ; 3.463 ; Fall       ; state.armazenaB ;
+;  HEX7[2]  ; state.armazenaB ; 3.374 ; 3.374 ; Fall       ; state.armazenaB ;
+;  HEX7[3]  ; state.armazenaB ; 3.641 ; 3.641 ; Fall       ; state.armazenaB ;
+;  HEX7[4]  ; state.armazenaB ; 3.429 ; 3.429 ; Fall       ; state.armazenaB ;
+;  HEX7[5]  ; state.armazenaB ; 3.670 ; 3.670 ; Fall       ; state.armazenaB ;
+;  HEX7[6]  ; state.armazenaB ; 3.613 ; 3.613 ; Fall       ; state.armazenaB ;
++-----------+-----------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Setup Transfers                                                        ;
++-----------------+----------+----------+----------+----------+----------+
+; From Clock      ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------+----------+----------+----------+----------+----------+
+; KEY[0]          ; KEY[0]   ; 2        ; 0        ; 0        ; 0        ;
+; state.armazenaA ; KEY[0]   ; 1        ; 1        ; 0        ; 0        ;
+; state.armazenaB ; KEY[0]   ; 1        ; 1        ; 0        ; 0        ;
++-----------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++------------------------------------------------------------------------+
+; Hold Transfers                                                         ;
++-----------------+----------+----------+----------+----------+----------+
+; From Clock      ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------+----------+----------+----------+----------+----------+
+; KEY[0]          ; KEY[0]   ; 2        ; 0        ; 0        ; 0        ;
+; state.armazenaA ; KEY[0]   ; 1        ; 1        ; 0        ; 0        ;
+; state.armazenaB ; KEY[0]   ; 1        ; 1        ; 0        ; 0        ;
++-----------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 17    ; 17   ;
+; Unconstrained Input Port Paths  ; 228   ; 228  ;
+; Unconstrained Output Ports      ; 56    ; 56   ;
+; Unconstrained Output Port Paths ; 140   ; 140  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu May 19 02:21:18 2016
+Info: Command: quartus_sta part5 -c part5
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 56 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'part5.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name KEY[0] KEY[0]
+    Info (332105): create_clock -period 1.000 -name state.armazenaA state.armazenaA
+    Info (332105): create_clock -period 1.000 -name state.armazenaB state.armazenaB
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Info (332146): Worst-case setup slack is 0.247
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.247         0.000 KEY[0] 
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case hold slack is -3.815
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.815        -7.456 KEY[0] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.222
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.222        -5.222 KEY[0] 
+    Info (332119):     0.500         0.000 state.armazenaA 
+    Info (332119):     0.500         0.000 state.armazenaB 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 0.621
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.621         0.000 KEY[0] 
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case hold slack is -2.118
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.118        -4.191 KEY[0] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.222
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.222        -5.222 KEY[0] 
+    Info (332119):     0.500         0.000 state.armazenaA 
+    Info (332119):     0.500         0.000 state.armazenaB 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 439 megabytes
+    Info: Processing ended: Thu May 19 02:21:20 2016
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

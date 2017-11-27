@@ -1,0 +1,83 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do somador1bit_run_msim_gate_vhdl.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {somador1bit.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Compiling entity somador1bit
+# -- Compiling architecture structure of somador1bit
+# 
+vsim +altera -do somador1bit_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp /=C:/Users/damia/OneDrive/Documentos/vhdl/somador1bit/simulation/modelsim/somador1bit_vhd.sdo work.somador1bit
+# vsim +altera -do somador1bit_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp /=C:/Users/damia/OneDrive/Documentos/vhdl/somador1bit/simulation/modelsim/somador1bit_vhd.sdo work.somador1bit 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.somador1bit(structure)
+# SDF 10.1d Compiler 2012.11 Nov  2 2012
+# 
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)
+# Loading cycloneii.cycloneii_mux21(altvital)
+# Loading cycloneii.cycloneii_dffe(behave)
+# Loading cycloneii.cycloneii_asynch_io(behave)
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading instances from C:/Users/damia/OneDrive/Documentos/vhdl/somador1bit/simulation/modelsim/somador1bit_vhd.sdo
+# Loading timing data from C:/Users/damia/OneDrive/Documentos/vhdl/somador1bit/simulation/modelsim/somador1bit_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /somador1bit File: somador1bit.vho
+# do somador1bit_run_msim_gate_vhdl.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {somador1bit.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Compiling entity somador1bit
+# -- Compiling architecture structure of somador1bit
+# 
+add wave  \
+sim:/somador1bit/cin \
+sim:/somador1bit/a \
+sim:/somador1bit/b \
+sim:/somador1bit/s \
+sim:/somador1bit/cout
+do C:/Users/damia/OneDrive/Documentos/vhdl/somador1bit/simulation/modelsim/stimulus.do
+do C:/Users/damia/OneDrive/Documentos/vhdl/somador1bit/simulation/modelsim/stimulus.do
+run
+restart
+# Loading work.somador1bit(structure)
+# Loading instances from C:/Users/damia/OneDrive/Documentos/vhdl/somador1bit/simulation/modelsim/somador1bit_vhd.sdo
+# Loading timing data from C:/Users/damia/OneDrive/Documentos/vhdl/somador1bit/simulation/modelsim/somador1bit_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /somador1bit File: somador1bit.vho
+do C:/Users/damia/OneDrive/Documentos/vhdl/somador1bit/simulation/modelsim/stimulus.do
+run
